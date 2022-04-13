@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Maarten Sap">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  
+  <title>Maarten Sap - Publications</title>
+</head>
+
+<body style="padding-top: 0px;">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container" style="max-width: 80%;">
+    <a class="navbar-brand" href="/~msap/index.html">Maarten Sap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/~msap/publications.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/~msap/contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/~msap/aboutme.html">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/~msap/files/CVMaartenSap.pdf" target="_blank"> <img src="/~msap/files/pdf_icon_white.png" style="height: 1em;"> CV</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="/~msap/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Misc
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/~msap/notes/presenting-your-research.html">Presenting Your Research</a>
+            <a class="dropdown-item" href="/~msap/notes/apply-grad-school.html">How to Apply to Grad School</a>
+            <a class="dropdown-item" href="/~msap/notes/seq2seq-tricks.html">Seq2Seq Magic Tips</a>
+            <a class="dropdown-item" href="/~msap/notes/NLGDecoding.pptx">Tutorial on beam search and NLG decoding [pptx]</a>
+            <a class="dropdown-item" href="/~msap/notes/turking-tips.html">Tips for Turking</a>
+            <a class="dropdown-item" href="/~msap/notes/rebuttals.html">Writing rebuttals</a>
+            <a class="dropdown-item"  href="/~msap/notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+          </div>
+        </li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+
+  <!-- Page Content -->
+  <div class="container" style="padding-top: 10px;">
+    <h2>Publications</h2>
+    <p style="font-style: italic">
+      For a complete list of publications, please check my <a href="https://scholar.google.com/citations?user=gFN4QUYAAAAJ&hl=en">Google Scholar</a>.
+      <br>
+      <small>
+        [<a href="publications_bibtex.html">all bibtex</a>]
+        [<a href="publications_list.html">word-friendly list</a>]
+      </small>
+    </p>
+    <div class="col-12"> 
+      Filter by:&nbsp;
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="badge btn badge-dark active"><input type="radio" value="all" checked>all</label>
+        <label class="badge btn badge-conference"><input type="radio" value="conference">conference</label>
+        <label class="badge btn badge-workshop"><input type="radio" value="workshop">workshop</label>
+        <label class="badge btn badge-journal"><input type="radio" value="journal">journal</label>
+        <label class="badge btn badge-demo"><input type="radio" value="demo">demo</label>
+        <label class="badge btn badge-preprint"><input type="radio" value="preprint">preprint</label>
+        <label class="badge btn badge-other"><input type="radio" value="other">other</label>
+      </div>
+    </div>
+    <hr>
+    <div class="row"><div class="col-12"><h4 class="year">2022</h4></div></div>
+<div class="row conference jumptarget" id=sap2022annotatorsWithAttitudes style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection
+</span></h5></div><div class="col-12">NAACL (2022)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://arxiv.org/abs/2111.07997">[url]</a>&nbsp;
+<strong>Maarten</strong> <strong>Sap</strong>, Swabha Swayamdipta, Laura Vianna, Xuhui Zhou, Yejin Choi & Noah A. Smith<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex0">[bibtex]</a>&nbsp;<div id="bibtex0" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{sap2022annotatorsWithAttitudes,</br>&nbsp;&nbsp;title={Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection},</br>&nbsp;&nbsp;author={Sap, Maarten and Swayamdipta, Swabha and Vianna, Laura and Zhou, Xuhui and Choi, Yejin and Smith, Noah A.},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2111.07997},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;journal={NAACL},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=Ammanabrolu2022galad style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Aligning to Normative Values in Morally Informed Game Environments
+</span></h5></div><div class="col-12">NAACL (2022)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12">Prithviraj Ammanabrolu, Liwei Jiang, <strong>Maarten</strong> <strong>Sap</strong>, Hanna Hajishirzi, Yejin Choi & Noah A. Smith<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex1">[bibtex]</a>&nbsp;<div id="bibtex1" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{Ammanabrolu2022galad,</br>&nbsp;&nbsp;title={Aligning to Normative Values in Morally Informed Game Environments},</br>&nbsp;&nbsp;author={Ammanabrolu, Prithviraj and Jiang, Liwei and Sap, Maarten and Hajishirzi, Hanna and Choi, Yejin and Smith, Noah A.},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;journal={NAACL},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=hartvigsen2022toxigen style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">TOXIGEN: Controlling Language Models to Generate Implied and Adversarial Toxicity
+</span></h5></div><div class="col-12">ACL (2022)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12">Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, <strong>Maarten</strong> <strong>Sap</strong>, Dipankar Ray & Ece Kamar<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex2">[bibtex]</a>&nbsp;<div id="bibtex2" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{hartvigsen2022toxigen,</br>&nbsp;&nbsp;title={TOXIGEN: Controlling Language Models to Generate Implied and Adversarial Toxicity},</br>&nbsp;&nbsp;author={Hartvigsen, Thomas and Gabriel, Saadia and Palangi, Hamid and Sap, Maarten and Ray, Dipankar and Kamar, Ece},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;year={2022},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=gabriel2022misinfoReactionFrames style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Misinfo Reaction Frames: Reasoning about Readers' Reactions to News Headlines
+</span></h5></div><div class="col-12">ACL (2022)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://arxiv.org/abs/2104.08790">[url]</a>&nbsp;
+Saadia Gabriel, Skyler Hallinan, <strong>Maarten</strong> <strong>Sap</strong>, Pemi, Nguyen, Franziska Roesner, Eunsol Choi & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex3">[bibtex]</a>&nbsp;<div id="bibtex3" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{gabriel2022misinfoReactionFrames,</br>&nbsp;&nbsp;title={Misinfo Reaction Frames: Reasoning about Readers' Reactions to News Headlines},</br>&nbsp;&nbsp;author={Gabriel, Saadia and Hallinan, Skyler and Sap, Maarten and Nguyen, Pemi, and Roesner, Franziska and Choi, Eunsol and Choi, Yejin},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2104.08790},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row preprint jumptarget" id=sap2022computationLensCognition style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Computational Lens on Cognition: Study Of Autobiographical Versus Imagined Stories With Large-Scale Language Models
+</span></h5></div><div class="col-12">arXiv (2022)&nbsp;<span class="badge badge-preprint">preprint</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://arxiv.org/abs/2201.02662">[url]</a>&nbsp;
+<strong>Maarten</strong> <strong>Sap</strong>, Anna Jafarpour, Yejin Choi, Noah A. Smith, James W. Pennebaker & Eric Horvitz<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex4">[bibtex]</a>&nbsp;<div id="bibtex4" class="collapse bibtex citation-box">
+<code class="bibtex">@preprint{sap2022computationLensCognition,</br>&nbsp;&nbsp;title={Computational Lens on Cognition: Study Of Autobiographical Versus Imagined Stories With Large-Scale Language Models},</br>&nbsp;&nbsp;author={Sap, Maarten and Jafarpour, Anna and Choi, Yejin and Smith, Noah A. and Pennebaker, James W. and Horvitz, Eric},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;journal={arXiv},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2201.02662},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12"><h4 class="year">2021</h4></div></div>
+<div class="row preprint jumptarget" id=jiang2021delphi style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Delphi: Towards Machine Ethics and Norms
+</span></h5></div><div class="col-12">arXiv (2021)&nbsp;<span class="badge badge-preprint">preprint</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://arxiv.org/abs/2110.07574">[url]</a>&nbsp;
+Liwei Jiang, Jena D. Hwang, Chandra Bhagavatula, Le Bras Ronan, Maxwell Forbes, Jon Borchardt, Jenny Liang, Oren Etzioni, <strong>Maarten</strong> <strong>Sap</strong> & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex5">[bibtex]</a>&nbsp;<div id="bibtex5" class="collapse bibtex citation-box">
+<code class="bibtex">@preprint{jiang2021delphi,</br>&nbsp;&nbsp;title={Delphi: Towards Machine Ethics and Norms},</br>&nbsp;&nbsp;author={Jiang, Liwei and Hwang, Jena D. and Bhagavatula, Chandra and Ronan, Le Bras and Forbes, Maxwell and Borchardt, Jon and Liang, Jenny and Etzioni, Oren and Sap, Maarten and Choi, Yejin},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2110.07574},</br>&nbsp;&nbsp;year={2021},</br>&nbsp;&nbsp;journal={arXiv},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=dodge2021documentingC4 style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus
+</span></h5></div><div class="col-12">EMNLP (2021)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12">Jesse Dodge, <strong>Maarten</strong> <strong>Sap</strong>, Ana Marasović, William Agnew, Gabriel Ilharco, Dirk Groeneveld, Margaret Mitchell & Matt Gardner<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex6">[bibtex]</a>&nbsp;<div id="bibtex6" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{dodge2021documentingC4,</br>&nbsp;&nbsp;title={Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus},</br>&nbsp;&nbsp;author={Dodge, Jesse and Sap, Maarten and Marasović, Ana and Agnew, William and Ilharco, Gabriel and Groeneveld, Dirk and Mitchell, Margaret and Gardner, Matt},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;year={2021},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=baheti2021justSayNo style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Just Say No: Analyzing the Stance of Neural Dialogue Generation in Offensive Contexts
+</span></h5></div><div class="col-12">EMNLP (2021)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://arxiv.org/abs/2108.11830">[url]</a>&nbsp;
+Ashutosh Baheti, <strong>Maarten</strong> <strong>Sap</strong>, Alan Ritter & Mark Riedl<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex7">[bibtex]</a>&nbsp;<div id="bibtex7" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{baheti2021justSayNo,</br>&nbsp;&nbsp;title={Just Say No: Analyzing the Stance of Neural Dialogue Generation in Offensive Contexts},</br>&nbsp;&nbsp;author={Baheti, Ashutosh and Sap, Maarten and Ritter, Alan and Riedl, Mark},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;year={2021},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2108.11830},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row other jumptarget" id=sap2021positiveAIwithSocialCommonsenseModels style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Positive AI with Social Commonsense Models
+</span></h5></div><div class="col-12"> (2021)&nbsp;<span class="badge badge-other">other</span></div>
+<div class="in-citation col-12"><strong>Maarten</strong> <strong>Sap</strong><br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex8">[bibtex]</a>&nbsp;<div id="bibtex8" class="collapse bibtex citation-box">
+<code class="bibtex">@phdthesis{sap2021positiveAIwithSocialCommonsenseModels,</br>&nbsp;&nbsp;title={Positive AI with Social Commonsense Models},</br>&nbsp;&nbsp;author={Sap, Maarten},</br>&nbsp;&nbsp;year={2021},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=liu2021dexperts style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts
+</span></h5></div><div class="col-12">ACL (2021)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://aclanthology.org/2021.acl-long.522/">[url]</a>&nbsp;
+Alisa Liu, <strong>Maarten</strong> <strong>Sap</strong>, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A. Smith & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex9">[bibtex]</a>&nbsp;<div id="bibtex9" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{liu2021dexperts,</br>&nbsp;&nbsp;title={DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts},</br>&nbsp;&nbsp;author={Liu, Alisa and Sap, Maarten and Lu, Ximing and Swayamdipta, Swabha and Bhagavatula, Chandra and Smith, Noah A. and Choi, Yejin},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;year={2021},</br>&nbsp;&nbsp;url={https://aclanthology.org/2021.acl-long.522/},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=xu2021detoxifying style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Detoxifying Language Models Risks Marginalizing Minority Voices
+</span></h5></div><div class="col-12">NAACL (2021)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://arxiv.org/abs/2104.06390">[url]</a>&nbsp;
+Albert Xu, Eshaan Pathak, Eric Wallace, Suchin, Gururangan, <strong>Maarten</strong> <strong>Sap</strong> & Dan Klein<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex10">[bibtex]</a>&nbsp;<div id="bibtex10" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{xu2021detoxifying,</br>&nbsp;&nbsp;title={Detoxifying Language Models Risks Marginalizing Minority Voices},</br>&nbsp;&nbsp;author={Xu, Albert and Pathak, Eshaan and Wallace, Eric and Gururangan, Suchin, and Sap, Maarten and Klein, Dan},</br>&nbsp;&nbsp;booktitle={NAACL},</br>&nbsp;&nbsp;year={2021},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2104.06390},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=zhou2021challenges style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Challenges in Automated Debiasing for Toxic Language Detection
+</span></h5></div><div class="col-12">EACL (2021)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12">Xuhui Zhou, <strong>Maarten</strong> <strong>Sap</strong>, Swabha Swayamdipta, Yejin Choi & Noah A. Smith<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex11">[bibtex]</a>&nbsp;<div id="bibtex11" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{zhou2021challenges,</br>&nbsp;&nbsp;title={Challenges in Automated Debiasing for Toxic Language Detection},</br>&nbsp;&nbsp;author={Zhou, Xuhui and Sap, Maarten and Swayamdipta, Swabha and Choi, Yejin and Smith, Noah A.},</br>&nbsp;&nbsp;booktitle={EACL},</br>&nbsp;&nbsp;year={2021},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12"><h4 class="year">2020</h4></div></div>
+<div class="row conference jumptarget" id=ma2020powerTransformer style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction
+</span><span class="project-url"> <a target="_blank" href="controllable-debiasing/">[project website]</a>
+</span></h5></div><div class="col-12">EMNLP (2020)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/2020.emnlp-main.602">[url]</a>&nbsp;
+Xinyao Ma<sup>*</sup>, <strong>Maarten</strong> <strong>Sap</strong><sup>*</sup>, Hannah Rashkin & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex12">[bibtex]</a>&nbsp;<div id="bibtex12" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{ma2020powerTransformer,</br>&nbsp;&nbsp;title={PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction},</br>&nbsp;&nbsp;author={Ma, Xinyao and Sap, Maarten and Rashkin, Hannah and Choi, Yejin},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.emnlp-main.602},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=gehman2020realtoxicityprompts style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models
+</span><span class="project-url"> <a target="_blank" href="http://toxicdegeneration.allenai.org">[project website]</a>
+</span></h5></div><div class="col-12">Findings of EMNLP (2020)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/2020.findings-emnlp.301/">[url]</a>&nbsp;
+Sam Gehman, Suchin Gururangan, <strong>Maarten</strong> <strong>Sap</strong>, Yejin Choi & Noah A Smith<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex13">[bibtex]</a>&nbsp;<div id="bibtex13" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{gehman2020realtoxicityprompts,</br>&nbsp;&nbsp;title={RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models},</br>&nbsp;&nbsp;author={Gehman, Sam and Gururangan, Suchin and Sap, Maarten and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={Findings of EMNLP},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.findings-emnlp.301/},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=forbes2020socialchemistry style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Social Chemistry 101: Learning to Reason about Social and Moral Norms
+</span></h5></div><div class="col-12">EMNLP (2020)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/2020.emnlp-main.48">[url]</a>&nbsp;
+Maxwell Forbes, Jena D Hwang, Vered Shwartz, <strong>Maarten</strong> <strong>Sap</strong> & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex14">[bibtex]</a>&nbsp;<div id="bibtex14" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{forbes2020socialchemistry,</br>&nbsp;&nbsp;title={Social Chemistry 101: Learning to Reason about Social and Moral Norms},</br>&nbsp;&nbsp;author={Forbes, Maxwell and Hwang, Jena D and Shwartz, Vered and Sap, Maarten and Choi, Yejin},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.emnlp-main.48},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=sap2020recollectionImagination style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models
+</span><span class="project-url"> <a target="_blank" href="https://www.microsoft.com/en-us/research/project/neural-models-for-studies-of-human-cognition/">[project website]</a>
+</span></h5></div><div class="col-12">ACL (2020)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/2020.acl-main.178">[url]</a>&nbsp;
+<strong>Maarten</strong> <strong>Sap</strong>, Eric Horvitz, Yejin Choi, Noah A Smith & James W Pennebaker<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex15">[bibtex]</a>&nbsp;<div id="bibtex15" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{sap2020recollectionImagination,</br>&nbsp;&nbsp;title={Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models},</br>&nbsp;&nbsp;author={Sap, Maarten and Horvitz, Eric and Choi, Yejin and Smith, Noah A and Pennebaker, James W},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.acl-main.178},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=sap2020socialbiasframes style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Social Bias Frames: Reasoning about Social and Power Implications of Language
+</span><span class="project-url"> <a target="_blank" href="social-bias-frames/">[project website]</a>
+</span></h5></div><div class="col-12">ACL (2020)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/2020.acl-main.486">[url]</a>&nbsp;
+<strong>Maarten</strong> <strong>Sap</strong>, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex16">[bibtex]</a>&nbsp;<div id="bibtex16" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{sap2020socialbiasframes,</br>&nbsp;&nbsp;title={Social Bias Frames: Reasoning about Social and Power Implications of Language},</br>&nbsp;&nbsp;author={Sap, Maarten and Gabriel, Saadia and Qin, Lianhui and Jurafsky, Dan and Smith, Noah A and Choi, Yejin},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.acl-main.486},</br>}</code>
+</div>
+<br><span class="awards">Best paper at WeCNLP 2020</span>
+</div>
+</div>
+<div class="row workshop jumptarget" id=august2020storiesInTheWild style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Exploring the Effect of Author and Reader Identity in Online Story Writing: the StoriesInTheWild Corpus
+</span><span class="project-url"> <a target="_blank" href="https://gist.github.com/talaugust/edc87a274ae6dcedf43774a8d9e91bb4">[project website]</a>
+</span></h5></div><div class="col-12">Workshop on Narrative Understanding, Storylines, and Events (NUSE)@ ACL (2020)&nbsp;<span class="badge badge-workshop">workshop</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/2020.nuse-1.6">[url]</a>&nbsp;
+Tal August, <strong>Maarten</strong> <strong>Sap</strong>, Elizabeth Clark, Katharina Reinecke & Noah A. Smith<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex17">[bibtex]</a>&nbsp;<div id="bibtex17" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{august2020storiesInTheWild,</br>&nbsp;&nbsp;title={Exploring the Effect of Author and Reader Identity in Online Story Writing: the StoriesInTheWild Corpus},</br>&nbsp;&nbsp;author={August, Tal and Sap, Maarten and Clark, Elizabeth and Reinecke, Katharina and Smith, Noah A.},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={Workshop on Narrative Understanding, Storylines, and Events (NUSE)@ ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.nuse-1.6},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12"><h4 class="year">2019</h4></div></div>
+<div class="row conference jumptarget" id=sap2019socialIQa style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Social IQa: Commonsense Reasoning about Social Interactions
+</span><span class="project-url"> <a target="_blank" href="https://leaderboard.allenai.org/socialiqa/submissions/get-started">[project website]</a>
+</span></h5></div><div class="col-12">EMNLP (2019)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/D19-1454">[url]</a>&nbsp;
+<strong>Maarten</strong> <strong>Sap</strong><sup>*</sup>, Hannah, Rashkin<sup>*</sup>, Derek Chen, Ronan LeBras & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex18">[bibtex]</a>&nbsp;<div id="bibtex18" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{sap2019socialIQa,</br>&nbsp;&nbsp;title={Social IQa: Commonsense Reasoning about Social Interactions},</br>&nbsp;&nbsp;author={Sap, Maarten and Rashkin, Hannah, and Chen, Derek and LeBras, Ronan and Choi, Yejin},</br>&nbsp;&nbsp;year={2019},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D19-1454},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=sap2019risk style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">The Risk of Racial Bias in Hate Speech Detection
+</span></h5></div><div class="col-12">ACL (2019)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/P19-1163.pdf">[url]</a>&nbsp;
+<strong>Maarten</strong> <strong>Sap</strong>, Dallas Card, Saadia Gabriel, Yejin Choi & Noah A Smith<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex19">[bibtex]</a>&nbsp;<div id="bibtex19" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{sap2019risk,</br>&nbsp;&nbsp;title={The Risk of Racial Bias in Hate Speech Detection},</br>&nbsp;&nbsp;author={Sap, Maarten and Card, Dallas and Gabriel, Saadia and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;year={2019},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P19-1163.pdf},</br>}</code>
+</div>
+<br><span class="awards">Best short paper nomination (top 5%)</span>
+</div>
+</div>
+<div class="row conference jumptarget" id=bosselut2019comet style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">COMET: Commonsense Transformers for Automatic Knowledge Graph Construction
+</span><span class="project-url"> <a target="_blank" href="https://mosaickg.apps.allenai.org/">[project website]</a>
+</span></h5></div><div class="col-12">ACL (2019)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/P19-1470">[url]</a>&nbsp;
+Antoine Bosselut, Hannah Rashkin, <strong>Maarten</strong> <strong>Sap</strong>, Chaitanya Malaviya, Asli Celikyilmaz & Yejin  Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex20">[bibtex]</a>&nbsp;<div id="bibtex20" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{bosselut2019comet,</br>&nbsp;&nbsp;title={COMET: Commonsense Transformers for Automatic Knowledge Graph Construction},</br>&nbsp;&nbsp;author={Bosselut, Antoine and Rashkin, Hannah and Sap, Maarten and Malaviya, Chaitanya and Celikyilmaz, Asli and Choi, Yejin },</br>&nbsp;&nbsp;year={2019},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P19-1470},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=sap2019atomic style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning
+</span><span class="project-url"> <a target="_blank" href="atomic/">[project website]</a>
+</span></h5></div><div class="col-12">AAAI (2019)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://aaai.org/ojs/index.php/AAAI/article/view/4160">[url]</a>&nbsp;
+<strong>Maarten</strong> <strong>Sap</strong>, Ronan LeBras, Emily Allaway, Chandra Bhagavatula, Nicholas Lourie, Hannah Rashkin, Brendan Roof, Noah A Smith & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex21">[bibtex]</a>&nbsp;<div id="bibtex21" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{sap2019atomic,</br>&nbsp;&nbsp;title={ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning},</br>&nbsp;&nbsp;author={Sap, Maarten and LeBras, Ronan and Allaway, Emily and Bhagavatula, Chandra and Lourie, Nicholas and Rashkin, Hannah and Roof, Brendan and Smith, Noah A and Choi, Yejin},</br>&nbsp;&nbsp;year={2019},</br>&nbsp;&nbsp;booktitle={AAAI},</br>&nbsp;&nbsp;url={https://aaai.org/ojs/index.php/AAAI/article/view/4160},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12"><h4 class="year">2018</h4></div></div>
+<div class="row conference jumptarget" id=rashkin2018modeling style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Modeling Naive Psychology of Characters in Simple Commonsense Stories
+</span><span class="project-url"> <a target="_blank" href="storycommonsense/">[project website]</a>
+</span></h5></div><div class="col-12">ACL (2018)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/P18-1213">[url]</a>&nbsp;
+Hannah Rashkin, Antoine Bosselut, <strong>Maarten</strong> <strong>Sap</strong>, Kevin Knight & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex22">[bibtex]</a>&nbsp;<div id="bibtex22" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{rashkin2018modeling,</br>&nbsp;&nbsp;title={Modeling Naive Psychology of Characters in Simple Commonsense Stories},</br>&nbsp;&nbsp;author={Rashkin, Hannah and Bosselut, Antoine and Sap, Maarten and Knight, Kevin and Choi, Yejin},</br>&nbsp;&nbsp;year={2018},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P18-1213},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=rashkin2018event2mind style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Event2Mind: Commonsense Inference on Events, Intents, and Reactions
+</span><span class="project-url"> <a target="_blank" href="event2mind/">[project website]</a>
+</span></h5></div><div class="col-12">ACL (2018)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/P18-1043">[url]</a>&nbsp;
+Hannah Rashkin<sup>*</sup>, <strong>Maarten</strong> <strong>Sap</strong><sup>*</sup>, Emily Allaway, Noah A. Smith & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex23">[bibtex]</a>&nbsp;<div id="bibtex23" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{rashkin2018event2mind,</br>&nbsp;&nbsp;title={Event2Mind: Commonsense Inference on Events, Intents, and Reactions},</br>&nbsp;&nbsp;author={Rashkin, Hannah and Sap, Maarten and Allaway, Emily and Smith, Noah A. and Choi, Yejin},</br>&nbsp;&nbsp;year={2018},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P18-1043},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row demo jumptarget" id=fang2018soundingboard style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Sounding Board: A User-Centric and Content-Driven Social Chatbot
+</span></h5></div><div class="col-12">NAACL System Demonstrations (2018)&nbsp;<span class="badge badge-demo">demo</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/N18-5020">[url]</a>&nbsp;
+Hao Fang, Hao Cheng, <strong>Maarten</strong> <strong>Sap</strong>, Elizabeth Clark, Ariel Holtzman, Yejin Choi, Noah A Smith & Mari Ostendorf<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex24">[bibtex]</a>&nbsp;<div id="bibtex24" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{fang2018soundingboard,</br>&nbsp;&nbsp;title={Sounding Board: A User-Centric and Content-Driven Social Chatbot},</br>&nbsp;&nbsp;author={Fang, Hao and Cheng, Hao and Sap, Maarten and Clark, Elizabeth and Holtzman, Ariel and Choi, Yejin and Smith, Noah A and Ostendorf, Mari},</br>&nbsp;&nbsp;year={2018},</br>&nbsp;&nbsp;booktitle={NAACL System Demonstrations},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/N18-5020},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12"><h4 class="year">2017</h4></div></div>
+<div class="row demo jumptarget" id=schwartz2017dlatk style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">DLATK: Differential Language Analysis ToolKit
+</span><span class="project-url"> <a target="_blank" href="https://dlatk.wwbp.org/">[project website]</a>
+</span></h5></div><div class="col-12">EMNLP System Demonstrations (2017)&nbsp;<span class="badge badge-demo">demo</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/D17-2010">[url]</a>&nbsp;
+H Andrew Schwartz, Salvatore Giorgi, <strong>Maarten</strong> <strong>Sap</strong>, Patrick Crutchley, Lyle Ungar & Johannes Eichstaedt<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex25">[bibtex]</a>&nbsp;<div id="bibtex25" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{schwartz2017dlatk,</br>&nbsp;&nbsp;title={DLATK: Differential Language Analysis ToolKit},</br>&nbsp;&nbsp;author={Schwartz, H Andrew and Giorgi, Salvatore and Sap, Maarten and Crutchley, Patrick and Ungar, Lyle and Eichstaedt, Johannes},</br>&nbsp;&nbsp;booktitle={EMNLP System Demonstrations},</br>&nbsp;&nbsp;pages={55--60},</br>&nbsp;&nbsp;year={2017},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D17-2010},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row other jumptarget" id=fang2017alexatechreport style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Sounding Board - University of Washington’s Alexa Prize Submission
+</span><span class="project-url"> <a target="_blank" href="sounding-board/">[project website]</a>
+</span></h5></div><div class="col-12">Alexa Prize Proceedings (2017)&nbsp;<span class="badge badge-other">other</span></div>
+<div class="in-citation col-12">Hao Fang, Hao Cheng, Elizabeth Clark, Ariel Holtzman, <strong>Maarten</strong> <strong>Sap</strong>, Mari Ostendorf, Yejin Choi & Noah A Smith<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex26">[bibtex]</a>&nbsp;<div id="bibtex26" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{fang2017alexatechreport,</br>&nbsp;&nbsp;title={Sounding Board - University of Washington’s Alexa Prize Submission},</br>&nbsp;&nbsp;author={Fang, Hao and Cheng, Hao and Clark, Elizabeth and Holtzman, Ariel and Sap, Maarten and Ostendorf, Mari and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;booktitle={Alexa Prize Proceedings},</br>&nbsp;&nbsp;year={2017},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=sap2017connotation style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Connotation Frames of Power and Agency in Modern Films
+</span><span class="project-url"> <a target="_blank" href="movie-bias/">[project website]</a>
+</span></h5></div><div class="col-12">EMNLP (2017)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/D17-1247">[url]</a>&nbsp;
+<strong>Maarten</strong> <strong>Sap</strong>, Marcella Cindy Prasetio, Ari Holtzman, Hannah Rashkin & Yejin Choi<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex27">[bibtex]</a>&nbsp;<div id="bibtex27" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{sap2017connotation,</br>&nbsp;&nbsp;title={Connotation Frames of Power and Agency in Modern Films},</br>&nbsp;&nbsp;author={Sap, Maarten and Prasetio, Marcella Cindy and Holtzman, Ari and Rashkin, Hannah and Choi, Yejin},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;year={2017},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D17-1247},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=schwartz2017effect style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">The Effect of Different Writing Tasks on Linguistic Style: A Case Study of the ROC Story Cloze Task
+</span></h5></div><div class="col-12">CoNLL (2017)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/K17-1004">[url]</a>&nbsp;
+Roy Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Ioannis Konstas, Li Zilles, Yejin Choi & Noah A Smith<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex28">[bibtex]</a>&nbsp;<div id="bibtex28" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{schwartz2017effect,</br>&nbsp;&nbsp;title={The Effect of Different Writing Tasks on Linguistic Style: A Case Study of the ROC Story Cloze Task},</br>&nbsp;&nbsp;author={Schwartz, Roy and Sap, Maarten and Konstas, Ioannis and Zilles, Li and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;booktitle={CoNLL},</br>&nbsp;&nbsp;year={2017},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/K17-1004},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row workshop jumptarget" id=schwartz2017story style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Story Cloze task: UW NLP System
+</span></h5></div><div class="col-12">EACL Workshop LSD Sem (2017)&nbsp;<span class="badge badge-workshop">workshop</span></div>
+<div class="in-citation col-12">Roy Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Ioannis Konstas, Li Zilles, Yejin Choi & Noah A Smith<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex29">[bibtex]</a>&nbsp;<div id="bibtex29" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{schwartz2017story,</br>&nbsp;&nbsp;title={Story Cloze task: UW NLP System},</br>&nbsp;&nbsp;author={Schwartz, Roy and Sap, Maarten and Konstas, Ioannis and Zilles, Li and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;booktitle={EACL Workshop LSD Sem},</br>&nbsp;&nbsp;pages={52--55},</br>&nbsp;&nbsp;year={2017},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row journal jumptarget" id=park2017living style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Living in the Past, Present, and Future: Measuring Temporal Orientation with Language
+</span></h5></div><div class="col-12">Journal of Personality (2017)&nbsp;<span class="badge badge-journal">journal</span></div>
+<div class="in-citation col-12">Gregory Park, H Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Margaret L Kern, Evan Weingarten, Johannes C Eichstaedt, Jonah Berger, David J Stillwell, Michal Kosinski, Lyle H Ungar & Martin E P Seligman<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex30">[bibtex]</a>&nbsp;<div id="bibtex30" class="collapse bibtex citation-box">
+<code class="bibtex">@article{park2017living,</br>&nbsp;&nbsp;title={Living in the Past, Present, and Future: Measuring Temporal Orientation with Language},</br>&nbsp;&nbsp;author={Park, Gregory and Schwartz, H Andrew and Sap, Maarten and Kern, Margaret L and Weingarten, Evan and Eichstaedt, Johannes C and Berger, Jonah and Stillwell, David J and Kosinski, Michal and Ungar, Lyle H and Seligman, Martin E P},</br>&nbsp;&nbsp;journal={Journal of Personality},</br>&nbsp;&nbsp;year={2017},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12"><h4 class="year">2016</h4></div></div>
+<div class="row journal jumptarget" id=kern2016gaining style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Gaining Insights From Social Media Language: Methodologies and Challenges
+</span></h5></div><div class="col-12">Psychological Methods (2016)&nbsp;<span class="badge badge-journal">journal</span></div>
+<div class="in-citation col-12"><a target="_blank" href="http://dx.doi.org/10.1037/met0000091">[url]</a>&nbsp;
+Margaret L Kern, Gregory Park, Johannes C Eichstaedt, H Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Laura K, Smith & Lyle H Ungar<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex31">[bibtex]</a>&nbsp;<div id="bibtex31" class="collapse bibtex citation-box">
+<code class="bibtex">@article{kern2016gaining,</br>&nbsp;&nbsp;title={Gaining Insights From Social Media Language: Methodologies and Challenges},</br>&nbsp;&nbsp;author={Kern, Margaret L and Park, Gregory and Eichstaedt, Johannes C and Schwartz, H Andrew and Sap, Maarten and Smith, Laura K, and Ungar, Lyle H},</br>&nbsp;&nbsp;year={2016},</br>&nbsp;&nbsp;journal={Psychological Methods},</br>&nbsp;&nbsp;doi={10.1037/met0000091},</br>&nbsp;&nbsp;url={http://dx.doi.org/10.1037/met0000091},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row other jumptarget" id=schwartz2016predicting style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Predicting individual well-being through the language of social media
+</span></h5></div><div class="col-12">Biocomputing 2016: Proceedings of the Pacific Symposium (2016)&nbsp;<span class="badge badge-other">other</span></div>
+<div class="in-citation col-12">H Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Margaret L Kern, Johannes C Eichstaedt, Adam Kapelner, Megha Agrawal, Eduardo Blanco, Lukasz Dziurzynski, Gregory Park, David Stillwell, Michal Kosinski, Martin E P Seligman & Lyle H Ungar<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex32">[bibtex]</a>&nbsp;<div id="bibtex32" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{schwartz2016predicting,</br>&nbsp;&nbsp;title={Predicting individual well-being through the language of social media},</br>&nbsp;&nbsp;author={Schwartz, H Andrew and Sap, Maarten and Kern, Margaret L and Eichstaedt, Johannes C and Kapelner, Adam and Agrawal, Megha and Blanco, Eduardo and Dziurzynski, Lukasz and Park, Gregory and Stillwell, David and Kosinski, Michal and Seligman, Martin E P and Ungar, Lyle H},</br>&nbsp;&nbsp;booktitle={Biocomputing 2016: Proceedings of the Pacific Symposium},</br>&nbsp;&nbsp;pages={516--527},</br>&nbsp;&nbsp;year={2016},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12"><h4 class="year">2015</h4></div></div>
+<div class="row journal jumptarget" id=eichstaedt2015psychological style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Psychological Language on Twitter Predicts County-level Heart Disease Mortality
+</span></h5></div><div class="col-12">Psychological Science (2015)&nbsp;<span class="badge badge-journal">journal</span></div>
+<div class="in-citation col-12">Johannes C Eichstaedt, H Andrew Schwartz, Margaret L Kern, Gregory Park, Darwin R Labarthe, Raina M Merchant, Sneha Jha, Megha Agrawal, Lukasz A Dziurzynski, <strong>Maarten</strong> <strong>Sap</strong>, Christopher Weeg, Emily Larson, Lyle H Ungar & Martin E P Seligman<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex33">[bibtex]</a>&nbsp;<div id="bibtex33" class="collapse bibtex citation-box">
+<code class="bibtex">@article{eichstaedt2015psychological,</br>&nbsp;&nbsp;title={Psychological Language on Twitter Predicts County-level Heart Disease Mortality},</br>&nbsp;&nbsp;author={Eichstaedt, Johannes C and Schwartz, H Andrew and Kern, Margaret L and Park, Gregory and Labarthe, Darwin R and Merchant, Raina M and Jha, Sneha and Agrawal, Megha and Dziurzynski, Lukasz A and Sap, Maarten and Weeg, Christopher and Larson, Emily and Ungar, Lyle H and Seligman, Martin E P},</br>&nbsp;&nbsp;journal={Psychological Science},</br>&nbsp;&nbsp;volume={26},</br>&nbsp;&nbsp;number={2},</br>&nbsp;&nbsp;pages={159--169},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;publisher={SAGE Publications},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row conference jumptarget" id=schwartz2015extracting style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Extracting Human Temporal Orientation from Facebook Language
+</span></h5></div><div class="col-12">NAACL (2015)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="http://www.aclweb.org/anthology/N15-1044">[url]</a>&nbsp;
+H. Andrew  Schwartz, Gregory   Park, <strong>Maarten</strong>   <strong>Sap</strong>, Evan   Weingarten, Johannes   Eichstaedt, Margaret   Kern, David   Stillwell, Michal   Kosinski, Jonah   Berger, Martin   Seligman & Lyle  Ungar<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex34">[bibtex]</a>&nbsp;<div id="bibtex34" class="collapse bibtex citation-box">
+<code class="bibtex">@article{schwartz2015extracting,</br>&nbsp;&nbsp;title={Extracting Human Temporal Orientation from Facebook Language},</br>&nbsp;&nbsp;author={Schwartz, H. Andrew  and  Park, Gregory  and  Sap, Maarten  and  Weingarten, Evan  and  Eichstaedt, Johannes  and  Kern, Margaret  and  Stillwell, David  and  Kosinski, Michal  and  Berger, Jonah  and  Seligman, Martin  and  Ungar, Lyle},</br>&nbsp;&nbsp;booktitle={NAACL},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;url={http://www.aclweb.org/anthology/N15-1044},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row workshop jumptarget" id=preotiuc2015mental style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Mental Illness Detection at the World Well-Being Project for the CLPsych 2015 Shared Task
+</span></h5></div><div class="col-12">NAACL Workshop on CLPsych (2015)&nbsp;<span class="badge badge-workshop">workshop</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/W15-1205">[url]</a>&nbsp;
+Daniel Preotiuc-Pietro, <strong>Maarten</strong> <strong>Sap</strong>, H Andrew Schwartz & Lyle Ungar<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex35">[bibtex]</a>&nbsp;<div id="bibtex35" class="collapse bibtex citation-box">
+<code class="bibtex">@article{preotiuc2015mental,</br>&nbsp;&nbsp;title={Mental Illness Detection at the World Well-Being Project for the CLPsych 2015 Shared Task},</br>&nbsp;&nbsp;author={Preotiuc-Pietro, Daniel and Sap, Maarten and Schwartz, H Andrew and Ungar, Lyle},</br>&nbsp;&nbsp;journal={NAACL Workshop on CLPsych},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/W15-1205},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row workshop jumptarget" id=preotiuc2015role style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">The Role of Personality, Age and Gender in Tweeting about Mental Illnesses
+</span></h5></div><div class="col-12">NAACL Workshop on CLPsych (2015)&nbsp;<span class="badge badge-workshop">workshop</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/W15-1203">[url]</a>&nbsp;
+Daniel Preotiuc-Pietro, Johannes Eichstaedt, Gregory Park, <strong>Maarten</strong> <strong>Sap</strong>, Laura Smith, Victoria Tobolsky, H Andrew Schwartz & Lyle Ungar<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex36">[bibtex]</a>&nbsp;<div id="bibtex36" class="collapse bibtex citation-box">
+<code class="bibtex">@article{preotiuc2015role,</br>&nbsp;&nbsp;title={The Role of Personality, Age and Gender in Tweeting about Mental Illnesses},</br>&nbsp;&nbsp;author={Preotiuc-Pietro, Daniel and Eichstaedt, Johannes and Park, Gregory and Sap, Maarten and Smith, Laura and Tobolsky, Victoria and Schwartz, H Andrew and Ungar, Lyle},</br>&nbsp;&nbsp;journal={NAACL Workshop on CLPsych},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/W15-1203},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row journal jumptarget" id=wong2015twitter style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Twitter Sentiment Predicts Affordable Care Act Marketplace Enrollment
+</span></h5></div><div class="col-12">Journal of Medical Internet Research (2015)&nbsp;<span class="badge badge-journal">journal</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.jmir.org/2015/2/e51/">[url]</a>&nbsp;
+Charlene A Wong, <strong>Maarten</strong> <strong>Sap</strong>, Hansen Andrew Schwartz, Robert Town, Tom Baker, Lyle Ungar & Raina M Merchant<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex37">[bibtex]</a>&nbsp;<div id="bibtex37" class="collapse bibtex citation-box">
+<code class="bibtex">@article{wong2015twitter,</br>&nbsp;&nbsp;title={Twitter Sentiment Predicts Affordable Care Act Marketplace Enrollment},</br>&nbsp;&nbsp;author={Wong, Charlene A and Sap, Maarten and Schwartz, Hansen Andrew and Town, Robert and Baker, Tom and Ungar, Lyle and Merchant, Raina M},</br>&nbsp;&nbsp;journal={Journal of Medical Internet Research},</br>&nbsp;&nbsp;volume={17},</br>&nbsp;&nbsp;number={2},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;publisher={JMIR Publications Inc.},</br>&nbsp;&nbsp;url={https://www.jmir.org/2015/2/e51/},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-12"><h4 class="year">2014</h4></div></div>
+<div class="row conference jumptarget" id=sap2014developing style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Developing Age and Gender Predictive Lexica over Social Media
+</span></h5></div><div class="col-12">EMNLP (2014)&nbsp;<span class="badge badge-conference">conference</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/D14-1121/">[url]</a>&nbsp;
+<strong>Maarten</strong> <strong>Sap</strong>, Gregory Park, Johannes C. Eichstaedt, Margaret L. Kern, David J. Stillwell, Michal Kosinski, Lyle H. Ungar & Hansen Andrew Schwartz<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex38">[bibtex]</a>&nbsp;<div id="bibtex38" class="collapse bibtex citation-box">
+<code class="bibtex">@inproceedings{sap2014developing,</br>&nbsp;&nbsp;title={Developing Age and Gender Predictive Lexica over Social Media},</br>&nbsp;&nbsp;author={Sap, Maarten and Park, Gregory and Eichstaedt, Johannes C. and Kern, Margaret L. and Stillwell, David J. and Kosinski, Michal and Ungar, Lyle H. and Schwartz, Hansen Andrew},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;year={2014},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D14-1121/},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row workshop jumptarget" id=schwartz2014towards style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">Towards Assessing Changes in Degree of Depression through Facebook
+</span></h5></div><div class="col-12">ACL Workshop on CLPsych (2014)&nbsp;<span class="badge badge-workshop">workshop</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.aclweb.org/anthology/W14-3214">[url]</a>&nbsp;
+H Andrew Schwartz, Johannes Eichstaedt, Margaret L Kern, Gregory Park, <strong>Maarten</strong> <strong>Sap</strong>, David Stillwell, Michal Kosinski & Lyle Ungar<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex39">[bibtex]</a>&nbsp;<div id="bibtex39" class="collapse bibtex citation-box">
+<code class="bibtex">@article{schwartz2014towards,</br>&nbsp;&nbsp;title={Towards Assessing Changes in Degree of Depression through Facebook},</br>&nbsp;&nbsp;author={Schwartz, H Andrew and Eichstaedt, Johannes and Kern, Margaret L and Park, Gregory and Sap, Maarten and Stillwell, David and Kosinski, Michal and Ungar, Lyle},</br>&nbsp;&nbsp;journal={ACL Workshop on CLPsych},</br>&nbsp;&nbsp;pages={118--125},</br>&nbsp;&nbsp;year={2014},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/W14-3214},</br>}</code>
+</div>
+</div>
+</div>
+<div class="row journal jumptarget" id=merchant20142013 style="margin-bottom: 10px;">
+<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">The 2013 US Government Shutdown (#Shutdown) and Health: An Emerging Role for Social Media
+</span></h5></div><div class="col-12">American Journal of Public Health (2014)&nbsp;<span class="badge badge-journal">journal</span></div>
+<div class="in-citation col-12"><a target="_blank" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4232112/">[url]</a>&nbsp;
+Raina M. Merchant, Yoonhee P. Ha, Charlene A. Wong, H. Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Lyle H. Ungar & David A. Asch<br>
+<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex40">[bibtex]</a>&nbsp;<div id="bibtex40" class="collapse bibtex citation-box">
+<code class="bibtex">@article{merchant20142013,</br>&nbsp;&nbsp;title={The 2013 US Government Shutdown (#Shutdown) and Health: An Emerging Role for Social Media},</br>&nbsp;&nbsp;author={Merchant, Raina M. and Ha, Yoonhee P. and Wong, Charlene A. and Schwartz, H. Andrew and Sap, Maarten and Ungar, Lyle H. and Asch, David A.},</br>&nbsp;&nbsp;journal={American Journal of Public Health},</br>&nbsp;&nbsp;volume={2014},</br>&nbsp;&nbsp;pages={e1--e3},</br>&nbsp;&nbsp;year={2014},</br>&nbsp;&nbsp;url={https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4232112/},</br>}</code>
+</div>
+</div>
+</div>
+
+    <?php
+      $anyEqContrib = false;
+      $year = date("Y")+1;
+      foreach ($pubs as $i => $bibtex){
+        //$pub_array = $bibtex;
+        $pub_array = bibtex_parse($bibtex);
+
+        // Updating year if needed
+        if ($pub_array["year"] != $year){
+            $year = $pub_array["year"];
+            echo '<div class="row"><div class="col-12"><h4 class="year">'.$year.'</h4></div></div>';
+        }
+
+        $anyEqContrib = $anyEqContrib || array_key_exists('equalcontrib',$pub_array);
+
+        //var_dump($pub_array);
+        $cit = full_citation($pub_array);
+        $type = get_pub_type($pub_array);
+        echo '<div class="row '.$type.' jumptarget" id='.$pub_array["bibtex_key"].' style="margin-bottom: 10px;">';
+        echo '<div class="col-12">'."<h5 style=\"margin: 15px 0px 5px 0px\"><span class=\"title\">".$pub_array["title"];
+        if (array_key_exists("projecturl",$pub_array)) echo '</span><span class="project-url"> <a target="_blank" href="'.$pub_array['projecturl'].'">[project website]</a>';
+        echo "</span></h5></div>".'<div class="col-12">'.$pub_array["venue"]." (".$pub_array["year"].")&nbsp;".generate_badge($pub_array)."</div>";
+        echo '<div class="in-citation col-12">';
+        if (file_exists("pdfs/".$pub_array["bibtex_key"].".pdf")){
+          echo '<a target="_blank" href="pdfs/' . $pub_array['bibtex_key'] . '.pdf">[pdf]</a>';
+        } else if (array_key_exists("url", $pub_array)){
+          echo '<a target="_blank" href="'.$pub_array['url'].'">[url]</a>&nbsp;';
+        }
+        
+        //echo str_replace("Maarten Sap","<b>Maarten Sap</b>",authors_full($pub_array));
+        //echo "[".$mainAuthorFirst. " ". $mainAuthorLast."]";
+        echo authors_full_pretty($pub_array);
+        echo "<br /><a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#citation". $i ."\">[full citation]</a>&nbsp;";
+        echo "<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#bibtex". $i ."\">[bibtex]</a>&nbsp;";
+        echo "<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#apa". $i ."\">[apa]</a>&nbsp;";
+        echo "<div id=\"citation". $i ."\" class=\"collapse citation-box\">";
+        echo $cit . "<br />";
+        echo "</div>";
+        echo "<div id=\"bibtex". $i ."\" class=\"collapse bibtex citation-box\">";
+        echo "<code class=\"bibtex\">".beautify_bibtex($bibtex)."</code>";
+        echo "</div>";
+        echo "<div id=\"apa". $i ."\" class=\"collapse citation-box\">";
+        echo APA_citation($pub_array);
+        echo "</div>";
+        if (array_key_exists("awards",$pub_array)){
+          echo "<br><span class=\"awards\">".$pub_array["awards"]."</span>";
+        }
+        echo "</div>";
+        echo "</div>";
+       }
+    if ($anyEqContrib){
+      echo '
+  <div class="row" style="margin-top: 40px;">
+    <small>
+      <sup>*</sup> denotes equal contributions.
+    </small>
+   </div>';
+    }
+    ?>
+   
+    <!-- Footer -->
+     
+  <footer class="footer">
+    <hr>
+    <div style="width:99%">
+    <!--div class="wraptocenter"-->    
+    <!--div class="col-sm-12">
+        <img src="files/AllenSchool.png" style="width:200px;">
+      </div-->
+      <div class="row">
+        <div class="col-2">
+          
+        </div>
+        <div class="col-8 text-center">
+          <img src="https://homes.cs.washington.edu/~msap/files/cse-logo.png" style="width:250px; margin-bottom: 20px;">
+        </div>
+        <div class="col-2 mb-1">
+          <div class="text-muted small" style="font-style: italic; text-align: right;"><?php
+            $backfiles=debug_backtrace();
+            $file_called_from=$backfiles[0]['file']; // complete filepath
+            echo "Last updated:<br>".date("F d Y", filemtime($file_called_from))."<br>";
+          ?></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  </div>
+  <!-- /.container -->
+  
+  <!-- jQuery >
+  <script src="tools/bootstrap/js/jquery.js"></script>
+  
+  <!- Bootstrap Core JavaScript ->
+  <script src="tools/bootstrap/js/bootstrap.min.js"></script-->
+  <style>
+    .in-citation {
+      margin-left: 20px;
+    }
+    .citation-toggle {
+      
+    }
+    .year {
+      font-weight: 100;
+      font-style: italic;
+      text-align: center;
+      margin: .5em 0 0 0;
+    }
+    a.badge.active {
+      border: 1px solid red;
+    }
+    .awards {
+      margin-top: .5em;
+      display: block;
+      font-style: italic;
+      font-weight: 600;
+      color: ForestGreen;
+    }
+    .highlighted {
+      background-color: #d8ebff;
+      box-shadow: 0px 0px 1.5px 1.5px #d8ebff;
+      border-radius: 10px;
+    }
+    .badge-conference {
+      background-color: #decbe4;
+    }
+    .badge-workshop {
+      background-color: #b3cde3;
+    }
+    .badge-demo {
+      background-color: #ffffcc;
+    }
+    .badge-journal {
+      background-color: #ccebc5;
+    }
+    .badge-other {
+      background-color: #fed9a6;
+    }
+    .badge-preprint {
+      background-color: #fbb4ae;
+    }
+  </style>
+  <script>
+    var targ, d;
+    function jumpAndHighlight(){
+      targ = window.location.hash;
+      if (targ == "")
+        return ;
+      
+      d = $(targ);
+      d.addClass("highlighted");
+      setTimeout(function(){ d.removeClass("highlighted") }, 5000);
+    }
+    
+    var t;
+    $("label.badge>input[type='radio']").on("change", function(e){
+      //e.preventDefault();
+      t = e.target;
+      var type = e.target.value;
+      console.log(e.target.value);
+      if (type==="all"){
+        $("div.jumptarget").show();
+      } else {
+        $("div.jumptarget").not("."+type).hide();
+        $("div.jumptarget."+type).show();
+      }
+    });
+    window.onload = jumpAndHighlight;
+  </script>
+</body>
+</html>

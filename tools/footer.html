@@ -1,0 +1,26 @@
+
+  <footer class="footer">
+    <hr>
+    <div style="width:99%">
+    <!--div class="wraptocenter"-->    
+    <!--div class="col-sm-12">
+        <img src="files/AllenSchool.png" style="width:200px;">
+      </div-->
+      <div class="row">
+        <div class="col-2">
+          
+        </div>
+        <div class="col-8 text-center">
+          <img src="https://homes.cs.washington.edu/~msap/files/cse-logo.png" style="width:250px; margin-bottom: 20px;">
+        </div>
+        <div class="col-2 mb-1">
+          <div class="text-muted small" style="font-style: italic; text-align: right;"><?php
+            $backfiles=debug_backtrace();
+            $file_called_from=$backfiles[0]['file']; // complete filepath
+            echo "Last updated:<br>".date("F d Y", filemtime($file_called_from))."<br>";
+          ?></div>
+        </div>
+      </div>
+    </div>
+  </footer>
+

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
+  <python addHeader>
+  
+  <title>Maarten Sap - Publications</title>
+</head>
+
+<body style="padding-top: 0px;">
+  <python addNavBar>
+
+  <!-- Page Content -->
+  <div class="container" style="padding-top: 10px;">
+    <h2>Publications</h2>
+    <p style="font-style: italic">
+      For a complete list of publications, please check my <a href="https://scholar.google.com/citations?user=gFN4QUYAAAAJ&hl=en">Google Scholar</a>.
+      <br>
+      <small>
+        [<a href="publications_bibtex.html">all bibtex</a>]
+        [<a href="publications_list.html">word-friendly list</a>]
+      </small>
+    </p>
+    <div class="col-12"> 
+      Filter by:&nbsp;
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="badge btn badge-dark active"><input type="radio" value="all" checked>all</label>
+        <label class="badge btn badge-conference"><input type="radio" value="conference">conference</label>
+        <label class="badge btn badge-workshop"><input type="radio" value="workshop">workshop</label>
+        <label class="badge btn badge-journal"><input type="radio" value="journal">journal</label>
+        <label class="badge btn badge-demo"><input type="radio" value="demo">demo</label>
+        <label class="badge btn badge-preprint"><input type="radio" value="preprint">preprint</label>
+        <label class="badge btn badge-other"><input type="radio" value="other">other</label>
+      </div>
+    </div>
+    <hr>
+    <python generateHTMLpublications>
+    <?php
+      $anyEqContrib = false;
+      $year = date("Y")+1;
+      foreach ($pubs as $i => $bibtex){
+        //$pub_array = $bibtex;
+        $pub_array = bibtex_parse($bibtex);
+
+        // Updating year if needed
+        if ($pub_array["year"] != $year){
+            $year = $pub_array["year"];
+            echo '<div class="row"><div class="col-12"><h4 class="year">'.$year.'</h4></div></div>';
+        }
+
+        $anyEqContrib = $anyEqContrib || array_key_exists('equalcontrib',$pub_array);
+
+        //var_dump($pub_array);
+        $cit = full_citation($pub_array);
+        $type = get_pub_type($pub_array);
+        echo '<div class="row '.$type.' jumptarget" id='.$pub_array["bibtex_key"].' style="margin-bottom: 10px;">';
+        echo '<div class="col-12">'."<h5 style=\"margin: 15px 0px 5px 0px\"><span class=\"title\">".$pub_array["title"];
+        if (array_key_exists("projecturl",$pub_array)) echo '</span><span class="project-url"> <a target="_blank" href="'.$pub_array['projecturl'].'">[project website]</a>';
+        echo "</span></h5></div>".'<div class="col-12">'.$pub_array["venue"]." (".$pub_array["year"].")&nbsp;".generate_badge($pub_array)."</div>";
+        echo '<div class="in-citation col-12">';
+        if (file_exists("pdfs/".$pub_array["bibtex_key"].".pdf")){
+          echo '<a target="_blank" href="pdfs/' . $pub_array['bibtex_key'] . '.pdf">[pdf]</a>';
+        } else if (array_key_exists("url", $pub_array)){
+          echo '<a target="_blank" href="'.$pub_array['url'].'">[url]</a>&nbsp;';
+        }
+        
+        //echo str_replace("Maarten Sap","<b>Maarten Sap</b>",authors_full($pub_array));
+        //echo "[".$mainAuthorFirst. " ". $mainAuthorLast."]";
+        echo authors_full_pretty($pub_array);
+        echo "<br /><a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#citation". $i ."\">[full citation]</a>&nbsp;";
+        echo "<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#bibtex". $i ."\">[bibtex]</a>&nbsp;";
+        echo "<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#apa". $i ."\">[apa]</a>&nbsp;";
+        echo "<div id=\"citation". $i ."\" class=\"collapse citation-box\">";
+        echo $cit . "<br />";
+        echo "</div>";
+        echo "<div id=\"bibtex". $i ."\" class=\"collapse bibtex citation-box\">";
+        echo "<code class=\"bibtex\">".beautify_bibtex($bibtex)."</code>";
+        echo "</div>";
+        echo "<div id=\"apa". $i ."\" class=\"collapse citation-box\">";
+        echo APA_citation($pub_array);
+        echo "</div>";
+        if (array_key_exists("awards",$pub_array)){
+          echo "<br><span class=\"awards\">".$pub_array["awards"]."</span>";
+        }
+        echo "</div>";
+        echo "</div>";
+       }
+    if ($anyEqContrib){
+      echo '
+  <div class="row" style="margin-top: 40px;">
+    <small>
+      <sup>*</sup> denotes equal contributions.
+    </small>
+   </div>';
+    }
+    ?>
+   
+    <!-- Footer -->
+     <python addFooter>
+  </div>
+  <!-- /.container -->
+  
+  <!-- jQuery >
+  <script src="tools/bootstrap/js/jquery.js"></script>
+  
+  <!- Bootstrap Core JavaScript ->
+  <script src="tools/bootstrap/js/bootstrap.min.js"></script-->
+  <style>
+    .in-citation {
+      margin-left: 20px;
+    }
+    .citation-toggle {
+      
+    }
+    .year {
+      font-weight: 100;
+      font-style: italic;
+      text-align: center;
+      margin: .5em 0 0 0;
+    }
+    a.badge.active {
+      border: 1px solid red;
+    }
+    .awards {
+      margin-top: .5em;
+      display: block;
+      font-style: italic;
+      font-weight: 600;
+      color: ForestGreen;
+    }
+    .highlighted {
+      background-color: #d8ebff;
+      box-shadow: 0px 0px 1.5px 1.5px #d8ebff;
+      border-radius: 10px;
+    }
+    .badge-conference {
+      background-color: #decbe4;
+    }
+    .badge-workshop {
+      background-color: #b3cde3;
+    }
+    .badge-demo {
+      background-color: #ffffcc;
+    }
+    .badge-journal {
+      background-color: #ccebc5;
+    }
+    .badge-other {
+      background-color: #fed9a6;
+    }
+    .badge-preprint {
+      background-color: #fbb4ae;
+    }
+  </style>
+  <script>
+    var targ, d;
+    function jumpAndHighlight(){
+      targ = window.location.hash;
+      if (targ == "")
+        return ;
+      
+      d = $(targ);
+      d.addClass("highlighted");
+      setTimeout(function(){ d.removeClass("highlighted") }, 5000);
+    }
+    
+    var t;
+    $("label.badge>input[type='radio']").on("change", function(e){
+      //e.preventDefault();
+      t = e.target;
+      var type = e.target.value;
+      console.log(e.target.value);
+      if (type==="all"){
+        $("div.jumptarget").show();
+      } else {
+        $("div.jumptarget").not("."+type).hide();
+        $("div.jumptarget."+type).show();
+      }
+    });
+    window.onload = jumpAndHighlight;
+  </script>
+</body>
+</html>
