@@ -34,65 +34,6 @@
     </div>
     <hr>
     <python generateHTMLpublications>
-    <?php
-      $anyEqContrib = false;
-      $year = date("Y")+1;
-      foreach ($pubs as $i => $bibtex){
-        //$pub_array = $bibtex;
-        $pub_array = bibtex_parse($bibtex);
-
-        // Updating year if needed
-        if ($pub_array["year"] != $year){
-            $year = $pub_array["year"];
-            echo '<div class="row"><div class="col-12"><h4 class="year">'.$year.'</h4></div></div>';
-        }
-
-        $anyEqContrib = $anyEqContrib || array_key_exists('equalcontrib',$pub_array);
-
-        //var_dump($pub_array);
-        $cit = full_citation($pub_array);
-        $type = get_pub_type($pub_array);
-        echo '<div class="row '.$type.' jumptarget" id='.$pub_array["bibtex_key"].' style="margin-bottom: 10px;">';
-        echo '<div class="col-12">'."<h5 style=\"margin: 15px 0px 5px 0px\"><span class=\"title\">".$pub_array["title"];
-        if (array_key_exists("projecturl",$pub_array)) echo '</span><span class="project-url"> <a target="_blank" href="'.$pub_array['projecturl'].'">[project website]</a>';
-        echo "</span></h5></div>".'<div class="col-12">'.$pub_array["venue"]." (".$pub_array["year"].")&nbsp;".generate_badge($pub_array)."</div>";
-        echo '<div class="in-citation col-12">';
-        if (file_exists("pdfs/".$pub_array["bibtex_key"].".pdf")){
-          echo '<a target="_blank" href="pdfs/' . $pub_array['bibtex_key'] . '.pdf">[pdf]</a>';
-        } else if (array_key_exists("url", $pub_array)){
-          echo '<a target="_blank" href="'.$pub_array['url'].'">[url]</a>&nbsp;';
-        }
-        
-        //echo str_replace("Maarten Sap","<b>Maarten Sap</b>",authors_full($pub_array));
-        //echo "[".$mainAuthorFirst. " ". $mainAuthorLast."]";
-        echo authors_full_pretty($pub_array);
-        echo "<br /><a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#citation". $i ."\">[full citation]</a>&nbsp;";
-        echo "<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#bibtex". $i ."\">[bibtex]</a>&nbsp;";
-        echo "<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#apa". $i ."\">[apa]</a>&nbsp;";
-        echo "<div id=\"citation". $i ."\" class=\"collapse citation-box\">";
-        echo $cit . "<br />";
-        echo "</div>";
-        echo "<div id=\"bibtex". $i ."\" class=\"collapse bibtex citation-box\">";
-        echo "<code class=\"bibtex\">".beautify_bibtex($bibtex)."</code>";
-        echo "</div>";
-        echo "<div id=\"apa". $i ."\" class=\"collapse citation-box\">";
-        echo APA_citation($pub_array);
-        echo "</div>";
-        if (array_key_exists("awards",$pub_array)){
-          echo "<br><span class=\"awards\">".$pub_array["awards"]."</span>";
-        }
-        echo "</div>";
-        echo "</div>";
-       }
-    if ($anyEqContrib){
-      echo '
-  <div class="row" style="margin-top: 40px;">
-    <small>
-      <sup>*</sup> denotes equal contributions.
-    </small>
-   </div>';
-    }
-    ?>
    
     <!-- Footer -->
      <python addFooter>

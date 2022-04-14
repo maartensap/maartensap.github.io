@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <python addHeader>
+  <title>Maarten Sap - Applying to grad school</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <python addNavBar>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12" style="margin-top: 10px;">
+      
+        <img src="http://www.phdcomics.com/comics/archive/phd091903s.gif">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9" style="margin-top: 10px;margin-bottom: 20px;" id="content">
+# Random tips on applying to grad school
+
+## _<small class="text-muted">Preface</small>_
+
+_This is just advice that I've compiled based on my own experience. Feel free to disregard everything I wrote._
+
+### Where to start?
+
+Based on my approach, here's my advice:
+
+1.  Start with an existing list (or ranking) of schools.  
+    I started with the [top 100 AI graduate schools according to US news](https://www.usnews.com/best-graduate-schools/top-science-schools/artificial-intelligence-rankings), but really many lists will do.
+2.  Start as spreadsheet, put each school in a row.
+3.  In order, go down the list of schools and:
+    *   On the school's CS website, find 1-3 faculty members whose research agenda matches yours. Write them down in your spreadsheet. _Note: make sure the professor is still actively publishing_
+    *   Based on research match and other factors (location, etc) assign a score from 0-1 of how much you like the school.
+    *   If you can't find any, check the iSchool or other relevant departments. If there's still no one, assign 0.
+4.  Once you have 15-20 schools with non-zero scores, stop going down the list.
+5.  Start a new tab with your top 20, and go through the list again, being more selective. _Factors here could include size of CS department (for collaboration), location of the school, climate, type of city/suburb, etc._
+6.  Once you have a top 5-10, you're ready to start applying. Applying can be expensive, so that can definitely be a limiting factor.
+
+_Note:_ emailing professors can sometimes work, but given that professors tend to get _a lot_ of email, it's very likely that they won't respond. Also make sure that the [NAACL](https://www.google.com/search?q=naacl+nlp+conference) or [ACL](https://www.google.com/search?q=acl+nlp+conference) deadlines aren't happening, in which case grad students and faculty will likely not be responsive.
+
+_Note (2):_ start studying for GRE/TOEFL early enough. This isn't too important but can help.
+
+_Note (3) -- **cost**:_ applying to grad school is expensive; try to see if departments have application waivers, and if they take unofficial test scores upon application.
+
+### Actually applying
+
+Once you're figured out where you want to apply, start working on the following (in order of importance):
+
+*   **Recommendation Letters**: the better your potential future advisors know the writers, the better for you.
+*   **Statement of purpose**: there's a wealth of advice online as to how to write these. Make sure you get plenty of feedback from faculty at your current school. Some thoughts:
+    *   Avoid a re-hashing of your CV
+    *   Make sure to empahsize your research plans, while highlighting how your experience has helped you understand the problems you're trying to solve
+*   **CV**: highlight your strengths that are relevant to your future research field. Have you done research? Published papers? Done relevant class projects?
+
+### Grad school visits
+
+This part can be really exhausting, but it's probably what will give you the most information to make your decision. Here are a couple of things I learned:
+
+*   **Talk to students** (esp. your potential advisor's):  
+    Students will give you inside information on your potential research group and department culture. Things that you could ask about:
+    *   How supportive is the culture of burnout, imposter syndrome, and other mental health issues.
+    *   How is the work-life balance, and how easy is it to meet people outside of the CS department.
+    *   How hands-on/off, responsive, supportive, is your potential advisor.
+    *   How much do students have to TA, how easy is it for your advisor to get research grants, etc.
+*   **Ditch your regular duties**.  
+    This is one of the most important times in your graduate career. Your job, undergraduate work can wait (you already got into grad school, your grades don't matter as much anymore), as long as you make the necessary prior arrangements.
+*   Don't be afraid to **take a break** if you're tired.  
+    At UW, we always make sure that students get the mental breaks they need by asking if they want to skip a student meeting.
+*   Don't hesitate to **talk to people about something other than research**.  
+    A lot of people you'll meet will be your colleagues in the coming years (inside or outside your research area); it's nice to know whether they share common hobbies or interests.
+*   **Think about what you want to work on** beforehand.  
+    People are likely going to ask you think repeatedly, so it's good to have something prepared. 
+    This isn't binding in any way, but the idea is to show how you think.
+    Having that ready will save you massive amounts of cognitive efforts when you're on your 12th coffee at your 4th visit in a row.
+
+### The ultimate decision
+
+_This was for me the hardest._
+
+I realized that I would probably be fine whichever school I chose, so it really ended up being a gut feeling. The truth is, you will be fine wherever you go, if you've made it this far.
+
+### Other people's advice
+
+I really liked Noah Smith's [advice (updated 2020)](https://docs.google.com/document/d/1lT-bsIP0GKfh8l5sQnM2hCzzR9prt-QLx16rimUOdIM/edit), which stressed that you should _"focus on the **people** who will become your mentors and collaborators"._
+
+
+Other resources:
+
+*   [Mor Harchol-Balter's detailed advice on choosing to get a PhD, how to apply, etc.](https://www.cs.cmu.edu/~harchol/gradschooltalk.pdf)
+*   [General applying advice, focusing on how applications are read very quickly](https://cs.brown.edu/~sk/Memos/Grad-School-Recos/)
+*   [Mike Ernst's short advice (+ many other links)](https://homes.cs.washington.edu/~mernst/advice/apply-grad-school.html)
+*   [Philip Guo's 5-minute advice](http://www.pgbovine.net/PhD-application-tips.htm)
+*   [Marianna Rapoport's honest look at the PhD: mental health, job prospects and work/life balance](https://mrapoport.com/blog/plmw-1/)
+      </div>
+    </div>
+    <python addFooter>
+  </div>
+    
+</body>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>

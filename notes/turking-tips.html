@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Maarten Sap">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <title>Maarten Sap - Turking tips</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container" style="max-width: 80%;">
+    <a class="navbar-brand" href="../index.html">Maarten Sap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../publications.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../aboutme.html">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../files/CVMaartenSap.pdf" target="_blank"> <img src="../images/pdf_icon_white.png" style="height: 1em;"> CV</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="../" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Notes/Blogposts
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  <a class="dropdown-item" href="../notes/apply-grad-school.html">Applying to grad school</a>
+  <a class="dropdown-item" href="../notes/giving-talk-feedback.html">Giving feedback for talks</a>
+  <a class="dropdown-item" href="../notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+  <a class="dropdown-item" href="../notes/NLGDecoding.pptx">NLGDecoding [pptx]</a>
+  <a class="dropdown-item" href="../notes/presenting-your-research.html">Presenting your research</a>
+  <a class="dropdown-item" href="../notes/rebuttals.html">Writing rebuttals</a>
+  <a class="dropdown-item" href="../notes/turking-tips.html">Turking tips</a>
+</div>
+
+          <!--div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="../notes/presenting-your-research.html">Presenting Your Research</a>
+            <a class="dropdown-item" href="../notes/apply-grad-school.html">How to Apply to Grad School</a>
+            <a class="dropdown-item" href="../notes/seq2seq-tricks.html">Seq2Seq Magic Tips</a>
+            <a class="dropdown-item" href="../notes/NLGDecoding.pptx">Tutorial on beam search and NLG decoding [pptx]</a>
+            <a class="dropdown-item" href="../notes/turking-tips.html">Tips for Turking</a>
+            <a class="dropdown-item" href="../notes/rebuttals.html">Writing rebuttals</a>
+            <a class="dropdown-item"  href="../notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+          </div-->
+        </li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+  <div class="row justify-content-center" style="background-color:#2EADA6; width: 100%; margin: 0;">
+    
+    <div class="col-6" style="margin-top: 10px;color: #FFFFFF;font-weight: 100; max-width: 660px;">
+      <h1>Crowdsourcing tips</h1>
+      <em>Based on my own experience with Amazon Mechanical Turk and valuable advice from my lab members.</em>
+    </div>
+    <div class="col-3" style="text-align: center;">
+      <img style="width: 100%; max-width: 300px; margin: auto;"src="../images/crowdsourcing.jpg">
+      </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-10" style="margin-top: 10px;margin-bottom: 20px;font-weight: 200;" id="content">
+### Overall turking recipe
+1. Create a Turk task 
+2. Debug it on the MTurk sandbox
+3. Figure out pricing to pay people reasonably
+4. Lauch the task on "real" MTurk and find good workers
+
+#### Sandbox and pricing
+1. Create an MTurk sandbox [requester](https://requestersandbox.mturk.com/) and [worker](https://workersandbox.mturk.com/) accounts
+2. Upload a small batch of hits (~10)
+3. Do like 2 or 3 hits (and share the sandbox link with co-authors), see how long it takes for all of us on average  / median time.
+4. Using those times, find a price per HIT that amounts to like ~$12-15/h approximately (goal is to be above minimum wage)
+
+#### Launching the task and finding good workers
+1. Run a <emm>pilot task</emm> on a small amount of examples (between 100-500), with a slightly higher number of workers/HIT than what your final task will be, to ensure wide participation.
+   - For <emm>categorical</emm> tasks: consider selecting the examples that you know the answer to, for easier grading of workers.
+2. Assess the quality of each worker's responses:
+   - For <emm>categorical</emm> tasks: you can set up an autograder based on the responses you expect (if you have your own answers).
+   - For <emm>free-text</emm> tasks: download CSV of results and scan through HITs, <emm>sorted by workerID</emm>.
+3. While scanning, make two lists of workerIDs
+   - List of <emm class="good">good workers</emm>.
+   - List of <emm class="bad">bad workers</emm>.
+4. Create two MTurk qualifications on Mturk:
+   - For <emm class="good">good workers</emm>: call it "GreatAtMyTask"
+   - For <emm class="bad">bad workers</emm>: call it "PreviouslyDoneMyTask"; the idea is that we can avoid upsetting workers by avoiding saying that they're bad at something.
+5. Assign <emm class="bad">bad workers</emm> to bad qual and <emm class="good">good workers</emm> to good qual.
+6. Create a copy of your pilot task
+   - Set the requisites to be GoodAtMyTask (and other quals)
+   - Reduce the number of workers/HIT to what you intended originally
+7. If needed, re-run small "qualification" batch and do 1-6 again.  
+Make sure to disallow good and bad workers from doing this qualification task.
+
+### Background
+I compiled this high-level recipe based on valuable advice I got from my current and former labmates who Turk (including [Emily Allaway](https://www.aclweb.org/anthology/people/e/emily-allaway/), [Hannah Rashkin](https://homes.cs.washington.edu/~hrashkin/)) and my own experience Turking (specifically, on the [ATOMIC](https://mosaickg.apps.allenai.org/kg_atomic), [SocialIQa](https://leaderboard.allenai.org/socialiqa/submissions/get-started), and [Social Bias Frames](https://homes.cs.washington.edu/~msap/social-bias-frames/) projects)
+
+
+      </div>
+    </div>
+    
+  <footer class="footer">
+    <hr>
+    <div style="width:99%">
+    <!--div class="wraptocenter"-->    
+    <!--div class="col-sm-12">
+        <img src="files/AllenSchool.png" style="width:200px;">
+      </div-->
+      <div class="row">
+        <div class="col-2">
+          
+        </div>
+        <div class="col-8 text-center">
+          <img src="../images/LTI-logo.png" style="width:300px; margin-bottom: 20px;">
+        </div>
+        <div class="col-2 mb-1">
+          <div class="text-muted small" style="font-style: italic; text-align: right;">
+          Last updated: <br>
+          2022-04-14
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  </div>
+    
+</body>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>
+<style>
+h1,h2,h3,h4, .col {
+  font-style: italic;
+  font-weight: 200;
+}
+
+emm{
+  font-weight: 400;
+}
+.good {
+  color: #053061;
+}
+.bad {
+  color: #67001f;
+}
+</style>

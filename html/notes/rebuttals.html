@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <python addHeader>
+  <link rel="stylesheet" type="text/css" href="..//tools/style.css">
+  <title>Maarten Sap - Writing rebuttals</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <python addNavBar>
+  <div class="row justify-content-center" style="background-color:#D1EDF4; width: 100%; margin: 0;">
+    
+    <div class="col-6" style="margin-top: 10px;font-weight: 100; max-width: 660px;">
+      <h1>Rebuttal tips</h1>
+      <em>Based on my own experience writing rebuttals, which I learned from Yejin Choi and Noah Smith.</em>
+    </div>
+    <div class="col-3" style="text-align: center;">
+      <img style="max-width: 100%; max-height: 150px; margin: auto;"src="websiteRoot/images/peerReview.png">
+      </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-10" style="margin-top: 10px;margin-bottom: 20px;font-weight: 200;" id="content">
+
+- Do a first read: 
+   - Put the reviews in a Google doc, start color coding parts of the review: I like to highlight <span style="background-color: #d9ead3">positive snippets in green</span>, <span style="background-color: #f4cccc">negative ones in red </span>, and <span style="background-color: #fce5cd">other addressable parts in orange</span>.
+   - Identify if there are any quick data analyses that you can start running (e.g., correlations, agreement numbers, etc).
+   - Draft an angry response. Then, <emm>sleep on it</emm>!
+- Drafting the rebuttal:
+   - Identify the each of concerns that the reviewers had, and make sure that each has a dedicated bullet point. 
+   - If there are shared concerns among reviewers, you can use the general comments box. Don't forget to point to it in the response to individual reviewers too.
+   - Be concrete when addressing comments. For example, if they complained that some measure wasn't used, say that you'll add these measures, and give an example of that measure to show that you can run it, if it's feasible.
+   - Back up your points with numbers, citations, or even what other reviewers said. You can re-use citations from your paper, or introduce new ones to make your points.
+   - Try to see from the reviewers perspective (this is a hard one). Try to understand what the reviewer values, what subfield they care most about, etc. Then you can try to appeal what they value by pointing out how your paper works towards their own goals.
+- Finetuning the rebuttal: 
+   - Be polite and considerate. You too are a reviewer, so imagine what tone of rebuttal you would want to read. 
+   - Promise and give clarifications instead of correcting the reviewer. I like to use the phrasing of "we'll clarify _[something that we already wrote in the paper]_ in the final version" because chances are that if they missed that point, and any other hasty reader will too, so in the end clarification can help your paper. 
+   - Start off with thanking them, and if you can, quote something positive the reviewer said. This serves two purposes: (1) it reminds the reviewer that they did like some aspects of your paper, and (2) it shows the area chair and other reviewers that this reviewer liked something about the paper. Note: phrasing this is tricky.
+   - Don't hesitate to use formatting in your rebuttal. I like to bullet and italicize the main points that I'm responding to, and I sometimes bold things that are really important.
+   - Don't forget to thank them for suggesting citations, pointing out typos, etc., and say you'll address them.
+   
+Another great resource for writing rebuttals: _[How we write rebuttals](https://deviparikh.medium.com/how-we-write-rebuttals-dc84742fece1)_ by Devi Parikh, Dhruv Batra, Stefan Lee.
+ 
+Thanks to Saadia Gabriel for comments on this, and to all my co-authors who have helped me write rebuttals.
+      </div>
+    </div>
+    <python addFooter>  
+  </div>
+    
+</body>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>
+<style>
+h1,h2,h3,h4, .col {
+  font-style: italic;
+  font-weight: 200;
+}
+
+emm{
+  font-weight: 400;
+}
+.good {
+  color: #053061;
+}
+.bad {
+  color: #67001f;
+}
+</style>

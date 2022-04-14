@@ -4,19 +4,45 @@ from parseBibtex import *
 from IPython import embed
 import re, os
 import datetime
+from glob import glob
 
 findPythonRE = re.compile(r"<python ([^>]+)>")
+findTitleRE = re.compile(r"<title>(.+)</title>")
+def loadAndReplaceFile(fn,d="",parentPath=""):
+  ffn = f"html/{d}{fn}"
+  html = open(f"html/{d}{fn}").read()
+  print(fn)
 
-def addHeader():
+  lastEditTime = str(datetime.date.fromtimestamp(os.path.getmtime(ffn)))
+  
+  for m in findPythonRE.findall(html):
+    res = eval(m+f"(parentPath='{parentPath}',lastEditTime=lastEditTime)")
+    html= html.replace(f"<python {m}>",res)
+    print(fn,m)
+    
+  html = html.replace("lastEditTime",lastEditTime)
+  html = html.replace("websiteRoot/", parentPath)
+  open(f"{d}{fn}","w+").write(html)
+
+
+def addHeader(**kwargs):
   return open("tools/header.html").read()
 
-def addNavBar():
-  return open("tools/nav.html").read()
+def addNavBar(parentPath="",**kwargs):
+  navHTML = open("tools/nav.html").read()
+  for m in findPythonRE.findall(navHTML):
+    res = eval(m+f"(parentPath='{parentPath}')")
+    navHTML= navHTML.replace(f"<python {m}>",res)
 
-def addFooter():
-  return open("tools/footer.html").read()
+  return navHTML
+  
+def addFooter(lastEditTime="",parentPath="",**kwargs):
+  html = open("tools/footer.html").read()
+  # html = html.replace("lastEditTime",lastEditTime)
+  # html = html.replace("websiteRoot/", parentPath)
+  return html
 
-def generateHTMLpublications():
+def generateHTMLpublications(**kwargs):
   out = ""
   pubs = loadPubs()
   year = datetime.date.today().year+1
@@ -59,18 +85,95 @@ def generateHTMLpublications():
   # embed();exit()
   return out
 
+
+def generateIndexFile():
+  loadAndReplaceFile("index.html")
+  # html = open("html/index.html").read()
+  # lastEditTime = str(datetime.date.fromtimestamp(os.path.getmtime("html/index.html")))
+  # for m in findPythonRE.findall(html):
+  #   res = eval(m+"(parentPath='',lastEditTime=lastEditTime)")
+  #   html= html.replace(f"<python {m}>",res)
+
+  # open("index.html","w+").write(html)
   
 
 def generatePublicationsFile():
-  html = open("html/publications.html").read()
-  for m in findPythonRE.findall(html):
-    res = eval(m+"()")
-    html= html.replace(f"<python {m}>",res)
-
-  open("publications.html","w+").write(html)
+  loadAndReplaceFile("publications.html")
   
+  # html = open("html/publications.html").read()
+  # lastEditTime = str(datetime.date.fromtimestamp(os.path.getmtime("html/publications.html")))
 
+  # for m in findPythonRE.findall(html):
+  #   res = eval(m+"(parentPath='',lastEditTime=lastEditTime)")
+  #   html= html.replace(f"<python {m}>",res)
+
+  # open("publications.html","w+").write(html)
+
+def grabTitleOfPage(f):
+  if not f.endswith("html"):
+    return os.path.basename(f).replace(".", " [") +"]"
+  
+  m = findTitleRE.findall(open(f).read())[0]
+  m = m.replace("Maarten Sap - ","").strip()
+  return m
+
+def generateNotesList(**kwargs):
+  print("notes list")
+  notesFiles = glob("html/notes/*.*")
+  notesFiles = {os.path.basename(f):grabTitleOfPage(f)
+                for f in notesFiles if "index" not in f}
+
+  out = "<ul>\n"
+  out += "\n".join([f'  <li><a href="{f}">{t}</a></li>' for f,t in notesFiles.items()])
+  out +="\n</ul>\n"
+  return out
+
+def generateNotesNavBar(**kwargs):
+  print("notes navbar list")
+  notesFiles = glob("html/notes/*.*")
+  notesFiles = {os.path.basename(f):grabTitleOfPage(f)
+                for f in notesFiles if "index" not in f}
+  
+  out = '<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">\n'
+
+  out += "\n".join([
+    f'  <a class="dropdown-item" href="websiteRoot/notes/{f}">{t}</a>'
+    for f,t in notesFiles.items()])
+  out +="\n</div>\n"
+  return out
+
+def addBio(**kwargs):
+  bio = open("bio.html").read()
+  return bio
+
+def generateNotesFiles():
+  notesFiles = glob("html/notes/*.html")
+  # notesFiles = [os.path.basename(ffn) for ffn in notesFiles]
+  for ffn in notesFiles:
+    fn = os.path.basename(ffn)
+    loadAndReplaceFile(fn,d="notes/",parentPath="../")
+    
+    # html = open(f"html/notes/{fn}").read()
+    # print(fn)
+
+    # lastEditTime = str(datetime.date.fromtimestamp(os.path.getmtime(ffn)))
+    
+    # for m in findPythonRE.findall(html):
+    #   res = eval(m+"(parentPath='../',lastEditTime=lastEditTime)")
+    #   html= html.replace(f"<python {m}>",res)
+    #   print(fn,m)
+
+    # open(f"notes/{fn}","w+").write(html)
+
+def generateMainFiles():
+  notesFiles = glob("html/*.html")
+  # notesFiles = [os.path.basename(ffn) for ffn in notesFiles]
+  for ffn in notesFiles:
+    fn = os.path.basename(ffn)
+    loadAndReplaceFile(fn)
+  
 if __name__ == "__main__":
-  generatePublicationsFile()
-
-  
+  # generatePublicationsFile()
+  # generateIndexFile()
+  generateNotesFiles()
+  generateMainFiles()

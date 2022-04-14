@@ -19,37 +19,47 @@
 <body style="padding-top: 0px;">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container" style="max-width: 80%;">
-    <a class="navbar-brand" href="/~msap/index.html">Maarten Sap</a>
+    <a class="navbar-brand" href="index.html">Maarten Sap</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/~msap/publications.html">Publications</a>
+          <a class="nav-link" href="publications.html">Publications</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/~msap/contact.html">Contact</a>
+          <a class="nav-link" href="contact.html">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/~msap/aboutme.html">About Me</a>
+          <a class="nav-link" href="aboutme.html">About Me</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/~msap/files/CVMaartenSap.pdf" target="_blank"> <img src="/~msap/files/pdf_icon_white.png" style="height: 1em;"> CV</a>
+          <a class="nav-link" href="files/CVMaartenSap.pdf" target="_blank"> <img src="images/pdf_icon_white.png" style="height: 1em;"> CV</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/~msap/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Misc
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Notes/Blogposts
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="/~msap/notes/presenting-your-research.html">Presenting Your Research</a>
-            <a class="dropdown-item" href="/~msap/notes/apply-grad-school.html">How to Apply to Grad School</a>
-            <a class="dropdown-item" href="/~msap/notes/seq2seq-tricks.html">Seq2Seq Magic Tips</a>
-            <a class="dropdown-item" href="/~msap/notes/NLGDecoding.pptx">Tutorial on beam search and NLG decoding [pptx]</a>
-            <a class="dropdown-item" href="/~msap/notes/turking-tips.html">Tips for Turking</a>
-            <a class="dropdown-item" href="/~msap/notes/rebuttals.html">Writing rebuttals</a>
-            <a class="dropdown-item"  href="/~msap/notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
-          </div>
+  <a class="dropdown-item" href="notes/apply-grad-school.html">Applying to grad school</a>
+  <a class="dropdown-item" href="notes/giving-talk-feedback.html">Giving feedback for talks</a>
+  <a class="dropdown-item" href="notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+  <a class="dropdown-item" href="notes/NLGDecoding.pptx">NLGDecoding [pptx]</a>
+  <a class="dropdown-item" href="notes/presenting-your-research.html">Presenting your research</a>
+  <a class="dropdown-item" href="notes/rebuttals.html">Writing rebuttals</a>
+  <a class="dropdown-item" href="notes/turking-tips.html">Turking tips</a>
+</div>
+
+          <!--div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="notes/presenting-your-research.html">Presenting Your Research</a>
+            <a class="dropdown-item" href="notes/apply-grad-school.html">How to Apply to Grad School</a>
+            <a class="dropdown-item" href="notes/seq2seq-tricks.html">Seq2Seq Magic Tips</a>
+            <a class="dropdown-item" href="notes/NLGDecoding.pptx">Tutorial on beam search and NLG decoding [pptx]</a>
+            <a class="dropdown-item" href="notes/turking-tips.html">Tips for Turking</a>
+            <a class="dropdown-item" href="notes/rebuttals.html">Writing rebuttals</a>
+            <a class="dropdown-item"  href="notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+          </div-->
         </li>
       </ul>
     </div>  
@@ -505,65 +515,6 @@ Raina M. Merchant, Yoonhee P. Ha, Charlene A. Wong, H. Andrew Schwartz, <strong>
 </div>
 </div>
 
-    <?php
-      $anyEqContrib = false;
-      $year = date("Y")+1;
-      foreach ($pubs as $i => $bibtex){
-        //$pub_array = $bibtex;
-        $pub_array = bibtex_parse($bibtex);
-
-        // Updating year if needed
-        if ($pub_array["year"] != $year){
-            $year = $pub_array["year"];
-            echo '<div class="row"><div class="col-12"><h4 class="year">'.$year.'</h4></div></div>';
-        }
-
-        $anyEqContrib = $anyEqContrib || array_key_exists('equalcontrib',$pub_array);
-
-        //var_dump($pub_array);
-        $cit = full_citation($pub_array);
-        $type = get_pub_type($pub_array);
-        echo '<div class="row '.$type.' jumptarget" id='.$pub_array["bibtex_key"].' style="margin-bottom: 10px;">';
-        echo '<div class="col-12">'."<h5 style=\"margin: 15px 0px 5px 0px\"><span class=\"title\">".$pub_array["title"];
-        if (array_key_exists("projecturl",$pub_array)) echo '</span><span class="project-url"> <a target="_blank" href="'.$pub_array['projecturl'].'">[project website]</a>';
-        echo "</span></h5></div>".'<div class="col-12">'.$pub_array["venue"]." (".$pub_array["year"].")&nbsp;".generate_badge($pub_array)."</div>";
-        echo '<div class="in-citation col-12">';
-        if (file_exists("pdfs/".$pub_array["bibtex_key"].".pdf")){
-          echo '<a target="_blank" href="pdfs/' . $pub_array['bibtex_key'] . '.pdf">[pdf]</a>';
-        } else if (array_key_exists("url", $pub_array)){
-          echo '<a target="_blank" href="'.$pub_array['url'].'">[url]</a>&nbsp;';
-        }
-        
-        //echo str_replace("Maarten Sap","<b>Maarten Sap</b>",authors_full($pub_array));
-        //echo "[".$mainAuthorFirst. " ". $mainAuthorLast."]";
-        echo authors_full_pretty($pub_array);
-        echo "<br /><a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#citation". $i ."\">[full citation]</a>&nbsp;";
-        echo "<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#bibtex". $i ."\">[bibtex]</a>&nbsp;";
-        echo "<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#apa". $i ."\">[apa]</a>&nbsp;";
-        echo "<div id=\"citation". $i ."\" class=\"collapse citation-box\">";
-        echo $cit . "<br />";
-        echo "</div>";
-        echo "<div id=\"bibtex". $i ."\" class=\"collapse bibtex citation-box\">";
-        echo "<code class=\"bibtex\">".beautify_bibtex($bibtex)."</code>";
-        echo "</div>";
-        echo "<div id=\"apa". $i ."\" class=\"collapse citation-box\">";
-        echo APA_citation($pub_array);
-        echo "</div>";
-        if (array_key_exists("awards",$pub_array)){
-          echo "<br><span class=\"awards\">".$pub_array["awards"]."</span>";
-        }
-        echo "</div>";
-        echo "</div>";
-       }
-    if ($anyEqContrib){
-      echo '
-  <div class="row" style="margin-top: 40px;">
-    <small>
-      <sup>*</sup> denotes equal contributions.
-    </small>
-   </div>';
-    }
-    ?>
    
     <!-- Footer -->
      
@@ -579,14 +530,13 @@ Raina M. Merchant, Yoonhee P. Ha, Charlene A. Wong, H. Andrew Schwartz, <strong>
           
         </div>
         <div class="col-8 text-center">
-          <img src="https://homes.cs.washington.edu/~msap/files/cse-logo.png" style="width:250px; margin-bottom: 20px;">
+          <img src="images/LTI-logo.png" style="width:300px; margin-bottom: 20px;">
         </div>
         <div class="col-2 mb-1">
-          <div class="text-muted small" style="font-style: italic; text-align: right;"><?php
-            $backfiles=debug_backtrace();
-            $file_called_from=$backfiles[0]['file']; // complete filepath
-            echo "Last updated:<br>".date("F d Y", filemtime($file_called_from))."<br>";
-          ?></div>
+          <div class="text-muted small" style="font-style: italic; text-align: right;">
+          Last updated: <br>
+          2022-04-13
+          </div>
         </div>
       </div>
     </div>

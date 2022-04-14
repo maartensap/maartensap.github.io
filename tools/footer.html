@@ -11,14 +11,13 @@
           
         </div>
         <div class="col-8 text-center">
-          <img src="https://homes.cs.washington.edu/~msap/files/cse-logo.png" style="width:250px; margin-bottom: 20px;">
+          <img src="websiteRoot/images/LTI-logo.png" style="width:300px; margin-bottom: 20px;">
         </div>
         <div class="col-2 mb-1">
-          <div class="text-muted small" style="font-style: italic; text-align: right;"><?php
-            $backfiles=debug_backtrace();
-            $file_called_from=$backfiles[0]['file']; // complete filepath
-            echo "Last updated:<br>".date("F d Y", filemtime($file_called_from))."<br>";
-          ?></div>
+          <div class="text-muted small" style="font-style: italic; text-align: right;">
+          Last updated: <br>
+          lastEditTime
+          </div>
         </div>
       </div>
     </div>

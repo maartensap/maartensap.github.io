@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <python addHeader>
+  <title>Maarten Sap - Turking tips</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <python addNavBar>
+  <div class="row justify-content-center" style="background-color:#2EADA6; width: 100%; margin: 0;">
+    
+    <div class="col-6" style="margin-top: 10px;color: #FFFFFF;font-weight: 100; max-width: 660px;">
+      <h1>Crowdsourcing tips</h1>
+      <em>Based on my own experience with Amazon Mechanical Turk and valuable advice from my lab members.</em>
+    </div>
+    <div class="col-3" style="text-align: center;">
+      <img style="width: 100%; max-width: 300px; margin: auto;"src="websiteRoot/images/crowdsourcing.jpg">
+      </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-10" style="margin-top: 10px;margin-bottom: 20px;font-weight: 200;" id="content">
+### Overall turking recipe
+1. Create a Turk task 
+2. Debug it on the MTurk sandbox
+3. Figure out pricing to pay people reasonably
+4. Lauch the task on "real" MTurk and find good workers
+
+#### Sandbox and pricing
+1. Create an MTurk sandbox [requester](https://requestersandbox.mturk.com/) and [worker](https://workersandbox.mturk.com/) accounts
+2. Upload a small batch of hits (~10)
+3. Do like 2 or 3 hits (and share the sandbox link with co-authors), see how long it takes for all of us on average  / median time.
+4. Using those times, find a price per HIT that amounts to like ~$12-15/h approximately (goal is to be above minimum wage)
+
+#### Launching the task and finding good workers
+1. Run a <emm>pilot task</emm> on a small amount of examples (between 100-500), with a slightly higher number of workers/HIT than what your final task will be, to ensure wide participation.
+   - For <emm>categorical</emm> tasks: consider selecting the examples that you know the answer to, for easier grading of workers.
+2. Assess the quality of each worker's responses:
+   - For <emm>categorical</emm> tasks: you can set up an autograder based on the responses you expect (if you have your own answers).
+   - For <emm>free-text</emm> tasks: download CSV of results and scan through HITs, <emm>sorted by workerID</emm>.
+3. While scanning, make two lists of workerIDs
+   - List of <emm class="good">good workers</emm>.
+   - List of <emm class="bad">bad workers</emm>.
+4. Create two MTurk qualifications on Mturk:
+   - For <emm class="good">good workers</emm>: call it "GreatAtMyTask"
+   - For <emm class="bad">bad workers</emm>: call it "PreviouslyDoneMyTask"; the idea is that we can avoid upsetting workers by avoiding saying that they're bad at something.
+5. Assign <emm class="bad">bad workers</emm> to bad qual and <emm class="good">good workers</emm> to good qual.
+6. Create a copy of your pilot task
+   - Set the requisites to be GoodAtMyTask (and other quals)
+   - Reduce the number of workers/HIT to what you intended originally
+7. If needed, re-run small "qualification" batch and do 1-6 again.  
+Make sure to disallow good and bad workers from doing this qualification task.
+
+### Background
+I compiled this high-level recipe based on valuable advice I got from my current and former labmates who Turk (including [Emily Allaway](https://www.aclweb.org/anthology/people/e/emily-allaway/), [Hannah Rashkin](https://homes.cs.washington.edu/~hrashkin/)) and my own experience Turking (specifically, on the [ATOMIC](https://mosaickg.apps.allenai.org/kg_atomic), [SocialIQa](https://leaderboard.allenai.org/socialiqa/submissions/get-started), and [Social Bias Frames](https://homes.cs.washington.edu/~msap/social-bias-frames/) projects)
+
+
+      </div>
+    </div>
+    <python addFooter>
+  </div>
+    
+</body>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>
+<style>
+h1,h2,h3,h4, .col {
+  font-style: italic;
+  font-weight: 200;
+}
+
+emm{
+  font-weight: 400;
+}
+.good {
+  color: #053061;
+}
+.bad {
+  color: #67001f;
+}
+</style>

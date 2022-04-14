@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Maarten Sap">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+  <title>Maarten Sap - Presenting your research</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container" style="max-width: 80%;">
+    <a class="navbar-brand" href="../index.html">Maarten Sap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="../publications.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../aboutme.html">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="../files/CVMaartenSap.pdf" target="_blank"> <img src="../images/pdf_icon_white.png" style="height: 1em;"> CV</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="../" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Notes/Blogposts
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  <a class="dropdown-item" href="../notes/apply-grad-school.html">Applying to grad school</a>
+  <a class="dropdown-item" href="../notes/giving-talk-feedback.html">Giving feedback for talks</a>
+  <a class="dropdown-item" href="../notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+  <a class="dropdown-item" href="../notes/NLGDecoding.pptx">NLGDecoding [pptx]</a>
+  <a class="dropdown-item" href="../notes/presenting-your-research.html">Presenting your research</a>
+  <a class="dropdown-item" href="../notes/rebuttals.html">Writing rebuttals</a>
+  <a class="dropdown-item" href="../notes/turking-tips.html">Turking tips</a>
+</div>
+
+          <!--div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="../notes/presenting-your-research.html">Presenting Your Research</a>
+            <a class="dropdown-item" href="../notes/apply-grad-school.html">How to Apply to Grad School</a>
+            <a class="dropdown-item" href="../notes/seq2seq-tricks.html">Seq2Seq Magic Tips</a>
+            <a class="dropdown-item" href="../notes/NLGDecoding.pptx">Tutorial on beam search and NLG decoding [pptx]</a>
+            <a class="dropdown-item" href="../notes/turking-tips.html">Tips for Turking</a>
+            <a class="dropdown-item" href="../notes/rebuttals.html">Writing rebuttals</a>
+            <a class="dropdown-item"  href="../notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+          </div-->
+        </li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+  <div class="container">
+    <div class="row"> 
+      <div class="col-9" id="content">
+# Dos and Don'ts for research presentations
+
+## Tips for your slide deck
+
+### Introduction
+
+*   Assume an adversarial crowd - assume they don't care about your project
+*   Motivate your project by explaining: why it matters, what real-world problem it might solve, etc.
+*   Reel people in using a captivating example! Simplify your task and walk through an example so people really understand. High level data descriptions don't give the listener a concrete idea of the data we're looking at.
+    Caveat: make sure the example is short; people shouldn't be reading for more than 10-15 seconds.
+
+### Data description
+
+*   Include interesting examples if it’s data that people are unfamiliar with or if the data has interesting properties
+*   Include data statistics (with numbers and/or graphs)
+
+### Methodology
+
+*   Diagrams, flowcharts, drawings are much better than text  
+    Often it takes a while to come up with a good visualization for your model, but it can create much more lasting impression than 5 equations.
+*   Keep equations at a minimum (and don't put more than 1 or 2 equations in one slide)
+*   Also, using animation as you explain your models or algorithmic procedures can help people follow along as you are talking.
+*   Use intuitive labels or icons.
+    *   If it's a vector, draw a narrow vertical rectangle
+    *   Use logos or cliparts for articles, stories, people, etc.
+
+### Experimental Set-Up
+
+*   Include what the train/dev/test split is.
+*   Include what objective function you are optimizing and what metrics you will be evaluating
+
+### Results
+
+*   Make visuals (tables and graphs) easy to follow with a clear takeaway message.  Audiences should be able to look at tables and draw conclusions without having to interpret them on their own. You can also use bold font to make the best performing models more clear in tables.
+*   Prefer graphs/other types of visualizations over tables.  
+    Check out these tips for data viz: [http://guides.library.duke.edu/datavis/topten](https://www.google.com/url?q=http://guides.library.duke.edu/datavis/topten&sa=D&ust=1531730806395000)
+*   Make sure to title and label tables/axis/legends correctly.
+*   Limit significant figures! p= 0.35 is much more legible than p = 0.346749362.
+*   Include short takeaways from results (plots/tables)
+*   Tell the audience what an ideal plot would look like to help understand the plot
+
+## General tips
+
+*   Limit the number of words per slide as much as you can  
+    Try writing out what you want to say first, then replace words with graphs/images/icons.
+*   Rehearse your talk fully at least once, it helps debug structural and technical issues and helps you figure out how you're doing on the time limit.  
+    This is especially helpful if you're co-presenting
+*   Make sure you look up at the audience and not your slides (especially if those are behind you). Using speaker notes is fine but make sure you're not reading them out loud.
+*   If you're pointing at something in the slide, try to highlight it either using a laser pointer or using animations (fade, red circles, etc).
+      </div>
+    </div>
+    
+  <footer class="footer">
+    <hr>
+    <div style="width:99%">
+    <!--div class="wraptocenter"-->    
+    <!--div class="col-sm-12">
+        <img src="files/AllenSchool.png" style="width:200px;">
+      </div-->
+      <div class="row">
+        <div class="col-2">
+          
+        </div>
+        <div class="col-8 text-center">
+          <img src="../images/LTI-logo.png" style="width:300px; margin-bottom: 20px;">
+        </div>
+        <div class="col-2 mb-1">
+          <div class="text-muted small" style="font-style: italic; text-align: right;">
+          Last updated: <br>
+          2022-04-14
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+  </div>
+</body>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>

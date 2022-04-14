@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <python addHeader>
+  <title>Maarten Sap - Giving feedback for talks</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <python addNavBar>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12" style="margin-top: 10px;">
+      
+        <img src="http://www.phdcomics.com/comics/archive/phd082504s.gif">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-9" style="margin-top: 10px;margin-bottom: 20px;" id="content">
+
+# How to give good feedback for practice talks
+## _<small class="text-muted">Preface</small>_
+Giving talks can be a very high-stakes activity for various reasons (e.g., person's first talk, person's job talk, person has a fear of public speaking).
+It really helps to remember that, when giving feedback, advice will stick better if the person is in a good mental state to handle it.
+
+_Also note: this is mostly advice given to me by [Hannah Rashkin](https://homes.cs.washington.edu/~hrashkin/), who gives very helpful and constructive feedback._
+
+## During the talk, after the talk, or via email?
+- **Before the talk**: be mindful and respectful of the types of feedback requested by speakers (e.g., if they explicitly say they still need to practice delivery, don't point out that their delivery needs work)
+- **Take notes during** the talk (that you will email to the speaker afterwards)
+- **Before emailing them**, edit your notes to adjust them based on what already was covered verbally after the talk, removing anything that's redundant or not particularly helpful given what was said or *re-wording* comments to be as constructive as possible
+- **Think before giving feedback verbally**; could your feedback be better delivered via email? Verbal feedback should be as relevant as possible (e.g., if it's related to something someone else said)
+
+
+## Feedback tips:
+- "sandwich"-ing positive and negative feedback (again, people are much more receptive when they don't feel defensive)<sup>1</sup>
+- a mix of high/low level comments (e.g., story structure to specific wordings on slides)
+- Remain constructive:
+  - Keep advice actionable; be mindful of when the talk should be ready, and only give advice that can be implemented
+  - If you want to make a suggestion that's more high-level, try to list at least one concrete change that could help fix it
+  - Instead of saying  "*I don't think it is \_\_\_ enough*," try making a suggestions instead "*I wonder if you could change it to be more \_\_\_*"
+- Think about the feedback you received for your talks; what helped, and can you pay it forward? 
+- Avoid repeating feedback:
+  - that someone already gave the speaker
+  - that you already gave, and avoid talking at length about what you would do; the goal is to provide comments to the speaker, not for you to give the presentation yourself.
+- Read the speaker's mental state:
+  - if they are nervous, I don't think it's really helpful to point it out
+  - if there is a specific thing they can change about the delivery (stop up-speaking, slow down, use more intonation, etc) putting that in an email helps, and try to keep it very positive
+  
+<sup>1</sup>Yes, compliment sandwiches are technically not sandwiches, [see this rant](https://medium.com/words-for-life/dear-people-who-use-the-phrase-compliment-sandwich-635824e5d2c)
+
+      </div>
+    </div>
+    <python addFooter> 
+  </div>
+    
+</body>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>
