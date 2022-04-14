@@ -162,6 +162,36 @@ def addBio(**kwargs):
   bio = open("bio.html").read()
   return bio
 
+########################## news related ######################
+def loadNews():
+  news = [l.strip().split(",",2) for l in open("news.txt").read().split("\n")]
+  news = [[datetime.datetime.strptime(d, "%m/%Y"),e,n] for d,e,n in news]
+  return news  
+
+def formatNewsItem(t):
+  d,e,n = t
+  dd = d.strftime("%B %Y")
+  out = '<p style="margin-bottom: .5em;"><em><strong>'
+  out+= dd+"</em></strong> "+e+":\n"
+  out+= n
+  out+='</p>'
+
+  return out
+  
+def listAllNews(**kwargs):
+  news = loadNews()
+  out = "\n<br>\n".join(map(formatNewsItem,news))
+  
+  return out
+
+def listRecentNews(**kwargs):
+  news = loadNews()
+  recentNews = news[:5]
+  out = "\n".join(map(formatNewsItem,recentNews))
+  return out
+  
+
+
 def generateNotesFiles():
   notesFiles = glob("html/notes/*.html")
   for ffn in notesFiles:
