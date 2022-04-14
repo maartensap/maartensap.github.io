@@ -60,21 +60,25 @@ def generateHTMLpublications(**kwargs):
       out += f'</span><span class="project-url"> <a target="_blank" href="{p["projecturl"]}">[project website]</a>\n'
     out += f'</span></h5></div><div class="col-12">{p["venue"]} ({p["year"]})&nbsp;{generatePubTypeBadge(p)}</div>\n'
     out += '<div class="in-citation col-12">'
-    if os.path.exists(p["bibKey"]+".pdf"):
+    if os.path.exists("pdfs/"+p["bibKey"]+".pdf"):
       out += f'<a target="_blank" href="pdfs/{p["bibKey"]}.pdf">[pdf]</a>&nbsp;\n'
     if "url" in p:
       out += f'<a target="_blank" href="{p["url"]}">[url]</a>&nbsp;\n'
       
     out += prettifyAuthors(p)+"<br>\n"  
     # full citation link
-
+    out += f'<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#citation{i}">[full citation]</a>&nbsp'
     # bibtex link
     out+= f"<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#bibtex{i}\">[bibtex]</a>&nbsp;"
     
 
-    # bibtex     
+    # full citation link
+    out+= f'<div id="citation{i}" class="collapse citation-box">'
+    out+= fullCitation(p)
+    out+= "</div>\n"
+    # bibtex
     out+= f"<div id=\"bibtex{i}\" class=\"collapse bibtex citation-box\">\n"
-    out+= f"<code class=\"bibtex\">{beautifyBibtex(p)}</code>\n";
+    out+= f"<code class=\"bibtex\">{beautifyBibtex(p)}</code>\n"
     out+= "</div>\n"
 
     # awards
@@ -85,29 +89,41 @@ def generateHTMLpublications(**kwargs):
   # embed();exit()
   return out
 
+def generateBibtexPublications(**kwargs):
+  pubs = loadPubs()
+  out = ""
+  for i, p in enumerate(pubs):
+    type = getPubType(p)
+    out+= "<div>"
+    out+= f"<code>{beautifyBibtex(p)}</code>\n"
+    out+= "</div>\n"
+  return out
 
-def generateIndexFile():
-  loadAndReplaceFile("index.html")
-  # html = open("html/index.html").read()
-  # lastEditTime = str(datetime.date.fromtimestamp(os.path.getmtime("html/index.html")))
-  # for m in findPythonRE.findall(html):
-  #   res = eval(m+"(parentPath='',lastEditTime=lastEditTime)")
-  #   html= html.replace(f"<python {m}>",res)
-
-  # open("index.html","w+").write(html)
   
+def generateWordFriendlyPublications(**kwargs):
+  pubs = loadPubs()
+  typeToPubs = {}
+  for p in pubs:
+    type = getPubType(p)
+    typeToPubs[type] = typeToPubs.get(type,[])
+    typeToPubs[type].append(p)
+    
+  order = ["conference","journal","workshop","demo","other"]
+  out = ""
+  for t in order:
+    out+=f"<h2>{t.title()}</h2>\n"
+    for p in typeToPubs[t]:
+      out+="<p>"
+      out+=wordCitation(p)
+      out+="</p>\n"
 
-def generatePublicationsFile():
-  loadAndReplaceFile("publications.html")
+  return out
   
-  # html = open("html/publications.html").read()
-  # lastEditTime = str(datetime.date.fromtimestamp(os.path.getmtime("html/publications.html")))
+# def generateIndexFile():
+#   loadAndReplaceFile("index.html")
 
-  # for m in findPythonRE.findall(html):
-  #   res = eval(m+"(parentPath='',lastEditTime=lastEditTime)")
-  #   html= html.replace(f"<python {m}>",res)
-
-  # open("publications.html","w+").write(html)
+# def generatePublicationsFile():
+#   loadAndReplaceFile("publications.html")
 
 def grabTitleOfPage(f):
   if not f.endswith("html"):
@@ -148,32 +164,16 @@ def addBio(**kwargs):
 
 def generateNotesFiles():
   notesFiles = glob("html/notes/*.html")
-  # notesFiles = [os.path.basename(ffn) for ffn in notesFiles]
   for ffn in notesFiles:
     fn = os.path.basename(ffn)
     loadAndReplaceFile(fn,d="notes/",parentPath="../")
-    
-    # html = open(f"html/notes/{fn}").read()
-    # print(fn)
-
-    # lastEditTime = str(datetime.date.fromtimestamp(os.path.getmtime(ffn)))
-    
-    # for m in findPythonRE.findall(html):
-    #   res = eval(m+"(parentPath='../',lastEditTime=lastEditTime)")
-    #   html= html.replace(f"<python {m}>",res)
-    #   print(fn,m)
-
-    # open(f"notes/{fn}","w+").write(html)
 
 def generateMainFiles():
   notesFiles = glob("html/*.html")
-  # notesFiles = [os.path.basename(ffn) for ffn in notesFiles]
   for ffn in notesFiles:
     fn = os.path.basename(ffn)
     loadAndReplaceFile(fn)
   
 if __name__ == "__main__":
-  # generatePublicationsFile()
-  # generateIndexFile()
   generateNotesFiles()
   generateMainFiles()

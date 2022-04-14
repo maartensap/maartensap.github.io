@@ -53,9 +53,9 @@ def parseAuthors(bibD):
   authors = [a.split(", ") for a in authorList]
   return authors
 
-def prettifyAuthors(bibD):
+def prettifyAuthors(bibD,noBold=False):
   authorList = parseAuthors(bibD)
-  if "equalcontrib" in bibD.keys():
+  if "equalcontrib" in bibD.keys() and not noBold:
     ixs = bibD["equalcontrib"].split(",")
     ixs = [int(i) for i in ixs]
     for i in ixs:
@@ -65,9 +65,10 @@ def prettifyAuthors(bibD):
   out = " & ".join([fn+" "+ln for ln, fn in authorList])
   if len(authorList) > 1:
     out = out.replace(" & ",", ",len(authorList)-2)
-
-  out = out.replace(mainAuthorFirst,"<strong>"+mainAuthorFirst+"</strong>")
-  out = out.replace(mainAuthorLast,"<strong>"+mainAuthorLast+"</strong>")
+  if not noBold:
+    out = out.replace(mainAuthorFirst,"<strong>"+mainAuthorFirst+"</strong>")
+    out = out.replace(mainAuthorLast,"<strong>"+mainAuthorLast+"</strong>")
+    
   return out
 
 def beautifyBibtex(bibD):
@@ -83,6 +84,53 @@ def beautifyBibtex(bibD):
   out += "}"
   return out
 
+def wordCitation(bibD):
+  out = prettifyAuthors(bibD)
+  out += " (" + bibD["year"] + ") "
+  out += "<em>"+bibD["title"]+"</em>."
+
+  out += f' '+bibD["venue"]
+  if "volume" in bibD:
+    out += " "+bibD["volume"]
+
+  if "number" in bibD:
+    out += "("+ bibD["number"] +")"
+    
+  out += '.'
+  
+  if "publisher" in bibD:
+    out += " "+bibD["publisher"]+"."
+  if "series" in bibD:
+    out += " "+bibD["series"]+"." 
+  if "pages" in bibD:
+    out += " "+bibD["pages"]+"."
+  
+  return out.replace("  "," ").replace("  "," ").replace(". .",".")
+
+def fullCitation(bibD):
+  out = prettifyAuthors(bibD,noBold=True)
+  out += " (" + bibD["year"] + ") "
+  out += "<strong>"+bibD["title"]+"</strong>."
+
+  out += f' <em>'+bibD["venue"]
+  if "volume" in bibD:
+    out += " "+bibD["volume"]
+
+  if "number" in bibD:
+    out += "("+ bibD["number"] +")"
+    
+  out += '</em>.'
+  
+  if "publisher" in bibD:
+    out += " "+bibD["publisher"]+"."
+  if "series" in bibD:
+    out += " "+bibD["series"]+"." 
+  if "pages" in bibD:
+    out += " "+bibD["pages"]+"."
+  
+  
+  return out.replace("  "," ").replace("  "," ").replace(". .",".")
+  
 def loadPubs():
   entries = ["@"+e.strip() for e in open("pubs.bib").read().split("\n@") if e]
 
