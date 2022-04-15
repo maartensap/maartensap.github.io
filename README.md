@@ -1,7 +1,8 @@
 # Repo for my homepage [maartensap.com](http://maartensap.com)
 
-run ```python
+to generate the website, run 
+```python
 python3 generateWebsite.py
 ```
 
-make changes to the HTML files under `html/`
+To make changes to website, edit the HTML files under `html/`
