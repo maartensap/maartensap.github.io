@@ -203,7 +203,19 @@ def generateMainFiles():
   for ffn in notesFiles:
     fn = os.path.basename(ffn)
     loadAndReplaceFile(fn)
+    
+def generateProjectFiles():
+  projectFiles = glob("html/*/*.html")
+  projectFiles = [f for f in projectFiles if "notes/" not in f]
+  
+  for ffn in projectFiles:
+    splitPath = os.path.normpath(ffn).split(os.path.sep)
+    d = os.sep.join(splitPath[1:-1])
+    fn = splitPath[-1]
+
+    loadAndReplaceFile(fn,d=d+"/",parentPath="../"*(len(splitPath)-2))
   
 if __name__ == "__main__":
   generateNotesFiles()
   generateMainFiles()
+  generateProjectFiles()

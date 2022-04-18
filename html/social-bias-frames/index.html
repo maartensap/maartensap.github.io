@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <python addHeader>
+    <link rel="stylesheet" type="text/css" href="tools/style.css">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <python addNavBar>
+   
+    <title>Social Bias Frames</title>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 10px;">
+      <div class="row">
+        <div class="col-12 mb-2 text-center">
+          <h1><small-caps>Social Bias Frames</small-caps></h1>
+          <h2 class="text-muted mb-4">Reasoning about Social and Power Implications of Language</h2>
+          <a type="button" class="btn btn-dark" href="websiteRoot/pdfs/sap2020socialbiasframes.pdf" target="_blank">Read the paper</a>
+          <a type="button" class="btn btn-success" href="https://slideslive.com/38928840" target="_blank">Watch ACL talk</a>
+          <a type="button" class="btn btn-primary" href="SBIC.v2.tgz">Download the data</a>
+          <a type="button" class="btn btn-secondary" href="DATASTATEMENT.MD" target="_blank">Data statement</a>
+          <a type="button" class="btn btn-light" href="annotationTask.html" target="_blank">MTurk Annotation Template</a>
+          <hr>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <h4 class="faq-q">What are <small-caps>Social Bias Frames</small-caps>?</h4>
+          <p>
+            <small-caps>Social Bias Frames</small-caps> is a new way of representing the biases and offensiveness that are implied in language.
+            For example, these frames are meant to distill the implication that "women (candidates) are less qualified" behind the statement "we shouldn’t lower our standards to hire more women."
+          </p>
+          <h4 class="faq-q">Why did you create <small-caps>Social Bias Frames</small-caps>?</h4>
+          <p>
+            Language has the power to reinforce stereotypes and project social biases onto others, yet most approaches today are limited in how they can detect such biases.
+            For example, the wealth of hate speech or toxic language detection tools today will output yes/no decisions without further explanation, and have been shown to <a href="websiteRoot/pdfs/sap2019risk.pdf">backfire against minority speech</a>.
+          </p>
+          <p>
+            <small-caps>Social Bias Frames</small-caps> makes an important step in distilling potential language biases in a much more holistic way, considering the offensiveness, intent of the speaker, as well as explanations of <em>why</em> the implication is biased, using knowledge about social dynamics and stereotypes.
+          </p>
+          <h4 class="faq-q">Is there data that I can download?</h4>
+          <p>
+            Yes! We collected the <strongish>S</strongish>ocial <strongish>B</strongish>ias <strongish>I</strongish>nference <strongish>C</strongish>orpus (SBIC) which contains 150k structured annotations of social media posts, covering over 34k implications about a thousand demographic groups. 
+            <p><a href="SBIC.v2.tgz">You can download the SBIC here</a>.</p>
+          </p>
+          <h4 class="faq-q">Can <small-caps>Social Bias Frames</small-caps> be predicted automatically?</h4>
+          <p>
+            Somewhat. State-of-the-art neural models can decently predict the offensiveness of a statement, but still struggle to generate the correct implied bias.
+            This is a complex task, since correctly predicting the frame requires making several categorical decisions and generating the correct targeted group and implication.
+            We hope that future work will consider structured modelling to tackle this challenge.
+          </p>
+          <h4 class="faq-q">Isn't this a little unethical/problematic?</h4>
+          <p>
+            Simply avoiding the issue of online toxicity does not make it go away; tackling the issue requires us to confront online content that may be offensive or disturbing.  
+            Of course, there are multiple ethical concerns with such research, all of which we discuss in detail in section 7 of the paper.
+          </p>
+          <p>
+            Assessing social media content through the lens of <small-caps>Social Bias Frames</small-caps> is important for automatic flagging or AI-augmented writing interfaces, where potentially harmful online content can be analyzed with detailed explanations for users or moderators to consider and verify.
+            In addition, the collective analysis over large corpora can also be insightful for educating people on reducing unconscious biases in their language.
+          </p>
+        </div>
+        <div class="col-4">
+          <figure class="figure">
+            <img class="figure-img img-fluid rounded" src="exampleFrames.png" style="width: 100%;">
+            <figcaption class="figure-caption">
+              Understanding and explaining why an arguably innocuous statement is potentially unjust requires reasoning about conversational implicatures and commonsense implications with respect to the underlying intent, offensiveness, and power differentials between different social groups. <small-caps>Social Bias Frames</small-caps> aim to represent the various pragmatic meanings related to social bias implications, by combining categorical and free-text annotations, e.g., that "women are less qualifed" is implied by the statement "we shouldn’t lower our standards to hire more women."
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <hr>
+          <p>
+            <strongish>Citation:</strongish><br>
+            Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith &amp; Yejin Choi (2020).<br>
+            <em>Social Bias Frames: Reasoning about Social and Power Implications of Language</em>. ACL
+          </p>
+          <strongish>Bibtex:</strongish><br>
+          <pre class="force-select">
+@inproceedings{sap2020socialbiasframes,
+   title={Social Bias Frames: Reasoning about Social and Power Implications of Language},
+   author={Sap, Maarten and Gabriel, Saadia and Qin, Lianhui and Jurafsky, Dan and Smith, Noah A and Choi, Yejin},
+   year={2020},
+   booktitle={ACL},
+}</pre>
+        </div>
+      </div>
+      <python addFooter>
+    </div>     
+  </body>
+</html>
+<style>
+  h1,h2,h3,h4 {
+    font-weight: 100;
+  }
+  p {
+    font-weight: 400;
+  }
+  strongish {
+    font-weight: 600;
+  }
+  .faq-q {
+    font-style: italic;
+  }
+  small-caps {
+    font-variant: small-caps;
+  }
+  .force-select {  
+    -webkit-user-select: all;  /* Chrome 49+ */
+    -moz-user-select: all;     /* Firefox 43+ */
+    -ms-user-select: all;      /* No support yet */
+    user-select: all;          /* Likely future */   
+  }
+</style>

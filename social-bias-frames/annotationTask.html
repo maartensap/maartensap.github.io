@@ -1,0 +1,1462 @@
+<script>
+//
+// This method Gets URL Parameters (GUP)
+//
+function getURLParams(){
+  var search = location.search;
+  if (location.hostname === "homes.cs.washington.edu" && location.hostname == "")
+    search = "?workerId=maarten";
+  
+  search = search.substring(1);
+  if (search == ""){
+    console.log("No search params"+location.href);
+    return {};
+  }
+  var params = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
+
+  params["HITId"] = params["hitId"];
+  params["HITType"] = "structAnnot";
+  console.log("No search params"+location.href);
+  console.log(params);
+  return params;
+}
+
+function decode(strToDecode)
+{
+  var encoded = strToDecode;
+  return unescape(encoded.replace(/\+/g,  " "));
+}
+
+window.onload = function() {
+  if (!window.jQuery) {  
+    // jQuery is not loaded
+    alert("Warning: it seems that jquery is disabled on your browser.  This HIT might not work properly without javascript and jquery code enabled (if you have extensions that block jquery or an old browser version, this may prevent the dynamic elements of the HIT from functioning).  Please ensure that you have jquery enabled by temporarily disabling extensions that interfere with jquery and/or trying a different browser version."); 
+  }
+  checkIfWorkerExists();
+}
+</script>
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--For autocomplete-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.js"></script>
+<!--link ref="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.css"-->
+<script src="https://homes.cs.washington.edu/~msap/debug/neural-detox/emoji.js"></script>
+
+
+<section class="container" id="preInstruction" style="margin-bottom:0px; padding: 0px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333;">
+<div class="card">
+<div class="card-header" style="color: #fff;background-color: #337ab7;border-color: #337ab7;"><strong>Instructions</strong></div>
+<div class="card-body">
+  Read a potentially toxic post from the internet and tell us why it's toxic (this should take approx. 5 minutes).
+  Note:  You can complete as many HIT's in this batch as you want! But if your responses tend to be very different from what we're looking for, we might put a quota on the number of HIT's you can do in future batches.
+  Also note: this is a pilot task, more HITs will be available in the future.
+  <br>
+  <em><strong>Participation restriction: </strong>providers/turkers for this task cannot currently be employed by or a student at the University of Washington.</em>
+</div>
+</div>
+</section>
+
+<!--END OF HIT HEADER; START OF HIT BODY-->
+<section class="container" style="font-family: Verdana, Geneva, sans-serif; color:#333333;">
+  <fieldset>
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title" style=""> 
+          Full Instructions &nbsp; &nbsp;
+          <a data-toggle="collapse" href="#instructions" role="button" aria-expanded="false" aria-controls="instructions" style="color:#0080ff;text-decoration: underline;">
+          (Expand/Collapse)
+          </a> 
+        </h4>
+      </div>
+      <div id="instructions" class="collapse show" style="margin:10px">
+        <div class="row">
+          <div class="col-12">
+            <p>
+              You will read a post taken from somewhere on the internet, and describe whether it could be considered toxic/disrespectful and what <strong>identity-based group of people</strong> (e.g., women, people with disabilities, black people, etc.) it's disrespecting.
+              We will then ask you what stereotype/aspect/characteristic of that group is referenced.
+            </p>
+            <p>
+              Please answer all questions from an American cultural perspective; try to think about what what other people in today's society would think about these.
+              When talking about stereoypes, think about the ones that are (unfortunately) culturally present in our society.
+              <em>Note</em>: we will assume that MTurk workers only have good intentions when annotating these posts.
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <h5>Short annotation instructions</h5>
+            <p style="margin-bottom: .5rem;"><span class="numbering">1)</span>Tell us if the post could be offensive to anyone, and whether it was intentional or not (e.g. aggressive insult vs. badly phrased question).</p>
+            <p style="margin-bottom: .5rem;"><span class="numbering">2)</span>If the post contains sexual content (explicitly or innuendo), explain which part.</p>
+            <p style="margin-bottom: .5rem;"><span class="numbering">3)</span>Explain who is targeted by the offensive post (individual or group), which minority or demographic group(s), and what aspects of the group(s) are referenced. Use (overly) simplistic "<em>GROUP is/does/can't ___</em>" phrasing (e.g. "<em>women can't drive</em>", "<em>gay men are feminine</em>", "<em>asians are good at math</em>").</p>
+            <p style="margin-bottom: .5rem;"><span class="numbering">4)</span>Tell us about yourself, and whether you identify as a minority.</p>
+            <p style="margin-top: 1rem;"><strong>Note</strong>: if the post is not understandable or only contains @-mentions or links, just select "I don't understand". You do not have to click on links to answer the question.</p>
+            <p>
+              <strong style="color: #b80000;">**Updated notes**</strong><br>
+              1.&nbsp;Please <strong>do not copy the text of the post</strong> as the aspect targeted; instead write about the <strong>implied</strong> stereotypes/aspects of identity-based groups.
+              <br>
+              2.&nbsp;Please focus on <strong>identity-related groups that are minorities</strong> (e.g., racial, ethnic, religious, sexual minorities) or groups that unfortunately hold less societal power (e.g., women, poor people, tragedy victims).
+              For example, people who watch a TV show or like a certain famous person are not an identity-based group.
+            </p>
+          </div>
+          <div class="col-6">
+            <h5>Background on our research project</h5>
+            <p>
+              At the University of Washington, we're passionate about understanding how potentially toxic or disrespectful language or stereotypes can be used against certain demographics/groups of people (e.g. racism, sexism, etc.).
+              Although there is no direct benefit to you for participating, we very much appreciate your help in identifying and explaining such language/stereotypes, since this is something computational models have no clue about. 
+              We do not agree with any of the content/stereotypes presented to you, but it's important that we gather these annotations for research purposes.
+            </p>
+            <p>
+              <strong>Data collection &amp; sharing</strong><br>
+              We will not ask you for your name, and the data collected in this study will be made unidentifiable to the best of our extent.
+              We will securely store the data on our servers and only share with qualified researchers (e.g. who want to further the study of hate speech detection).
+              If you later decide that you do not want your responses included in this study, please email so we can exclude your work.
+              <br><small>
+                If you have questions about your rights as a research participant, or wish to obtain information, ask questions or discuss any concerns about this study with someone other than the researcher(s), please contact the University of Washington Human Subjects Division at 206-543-0098 (for international calls include the US Calling Code: +1-206-543-0098).
+              </small>
+            </p>
+          </div>
+          <div class="col-12">
+            <p style="margin-top: 10px;">
+              <em><strong style="color: #b80000;">Content Warning</strong></em>: posts were found on the (uncensored) internet;
+              while it's crucial for us to annotate them, we do not endorse any of the stereotypes or offensive/immoral/rude material.
+              You may find some of the content upsetting.
+              <em>If you have concerns, questions, or strong negative reactions to some of the content</em>, please either email us (Maarten Sap at msap@cs.washington.edu, or Professor Yejin Choi at yejin@cs.washington.edu) or <a href="https://www.crisistextline.org/">reach out</a> if in crisis.
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 20px;">
+          <div class="col-11" id="table-container">
+            <h5>Examples <small><a href=".extra-rows" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" onclick="expExamples();">
+              [-] less examples
+            </a></small></h5>
+            <table class="table table-sm" id="examples-table">
+              <thead>
+                <th scope="col" style="width: 30%;">Sentence</th>
+                <th scope="col">Toxic</th>
+                <th scope="col">Intentional</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Group referenced</th>
+                <th scope="col" style="width: 25%;">Groups</th>
+                <th scope="col" style="width: 25%;">Patterns</th>
+                <th scope="col">Minority speaker</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>You only got the job because you're a woman.</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  
+                  <td>Yes</td>
+                  <td>
+                    <strong>women</strong> (gender/gender identity/sexuality)
+                  </td>
+                  <td>
+                    women aren't qualified;<br>
+                    women get hired just for their gender
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>The movie with the all-muslim cast was a box office bomb.</td>
+                  <td>Yes</td>
+                  <td>Probably</td>
+                  <td>No</td>
+                  <td>Yes</td>
+                  <td>
+                    <strong>muslim folks</strong> (culture/origin/religion)
+                  </td>
+                  <td>
+                    muslims bomb things;<br>muslims are terrorists.
+                  </td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Niggas be like "i'm broke" but spending all their money on weed :joy:</td>
+                  <td>Yes</td>
+                  <td>Probably</td>
+                  <td>No</td>
+                  <td>Yes</td>
+                  <td>
+                    <strong>black folks</strong> (race/ethnicity)
+                  </td>
+                  <td>black people are poor;<br>black people smoke weed</td>
+                  <td>Yes</td>
+                </tr>
+                <tr>
+                  <td>A white woman called police on black people barbecuing.</td>
+                  <td>No</td>
+                  <td>No (statement)</td>
+                  <td>No</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>You are a MORON.</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td rowspan="3">What do you tell a triggered feminist pansexual marine biologist to calm them down? I don't know, I don't speak whale.</td>
+                  <td rowspan="3">Yes</td>
+                  <td rowspan="3">Yes</td>
+                  <td rowspan="3">No</td>
+                  <td rowspan="3">Yes</td>
+                  <td>
+                    <strong>feminists/liberals</strong> (socio-economic/political/lifestyle)
+                  </td>
+                  <td>
+                    feminists are unattractive and fat;<br>liberals are (easily) triggered
+                  </td>
+                  <td rowspan="3">No</td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>pansexuals</strong> (gender/gender identity/sexuality)
+                  </td>
+                  <td>
+                    pansexuals are ugly and fat;<br>non-heterosexual women are ugly and fat
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>fat/overweight folks</strong> (age/body)
+                  </td>
+                  <td>
+                    fat people are whales;<br>fat people are ugly
+                  </td>
+                </tr>
+                <tr>
+                  <td>Before we go, we should make sure Laquisha knows how to swim.</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>Yes</td>
+                  <td>
+                    <strong>black folks</strong> (race/ethnicity)
+                  </td>
+                  <td>
+                    black folks can't swim
+                  </td>
+                  <td>No</td>
+                </tr> 
+                <tr class="collapse show extra-rows">
+                  <td>Well I don't need your fucking help and put your comment in your big fat ass you stupid asshole.</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td></td>
+                  <td></td>
+                  <td>No</td>
+                </tr>
+                <tr class="collapse show extra-rows">
+                  <td>Trans women are gay men in disguise.</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  
+                  <td>Yes</td>
+                  <td>
+                    <strong>trans women</strong> (gender/gender identity/sexuality)
+                  </td>
+                  <td>
+                    trans women aren't women
+                  </td>
+                  <td>No</td>
+                </tr>
+                <tr class="collapse show extra-rows">
+                  <td rowspan="2">A Muslim walks into a gay bar in Florida. The bartender asks "what will you have?" The Muslim replies "shots for everyone"</td>
+                  <td rowspan="2">Yes</td>
+                  <td rowspan="2">Yes</td>
+                  <td rowspan="2">No</td>
+                  
+                  <td rowspan="2">Yes</td>
+                  <td>
+                    <strong>muslim folks</strong> (culture/origin/religion)</td>
+                  <td>Muslims are terrorists</td>
+                  <td rowspan="2">No</td>
+                </tr>
+                <tr class="collapse show extra-rows">
+                  <td>
+                    <strong>mass shooting victims</strong> (crime/tragedy victims)</td>
+                  <td><em>trivializes harm to victims</em></td>
+                </tr>
+                <!--tr class="collapse show extra-rows">
+                  <td>Rap music isn't art.</td>
+                  <td>Yes</td>
+                  <td>Probably not</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>group</td>
+                  <td>
+                    <strong>black folks</strong> (race/ethnicity)
+                  </td>
+                  <td>
+                    black people can't make art
+                  </td>
+                </tr-->
+                <tr class="collapse show extra-rows">
+                  <td>She was being so bitchy when she called me out, it must be that time of the month.</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  
+                  <td>Yes</td>
+                  <td>
+                    <strong>women</strong> (gender/gender identity/sexuality)
+                  </td>
+                  <td>
+                    women can only be irritated when on their period;<br>
+                    women being assertive are bitchy
+                  </td>
+                  <td>No</td>
+                </tr>
+                <tr class="collapse show extra-rows">
+                  <td>Asians are so polite, you can say the rudest things to them and they will just sit there quiet and not do anything about it.</td>
+                  <td>Yes</td>
+                  <td>Probably not</td>
+                  <td>No</td>
+                  
+                  <td>Yes</td>
+                  <td>
+                    <strong>asian folks</strong> (race/ethnicity)
+                  </td>
+                  <td>
+                    asian folks are submissive
+                  </td>
+                  <td>No</td>
+                </tr>
+                <tr class="collapse show extra-rows">
+                  <td>Jamal will monkey up the whole situation.</td>
+                  <td>Yes</td>
+                  <td>Probably</td>
+                  <td>No</td>
+                  <td>Yes</td>
+                  <td>
+                    <strong>black folks</strong> (race/ethnicity)
+                  </td>
+                  <td>
+                    black folks are monkeys;<br>black folks aren't people
+                  </td>
+                  <td>No</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href=".extra-rows" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" onclick="expExamples();">
+              [-] less examples
+            </a>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 20px;">
+          <div class="col-12">
+            <h5>
+              Detailed annotation instructions
+              <a href=".extra-instructions" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample">
+              [expand/collapse]
+            </a>
+            </h5>
+            <div style="padding-left: 30px;font-size: .8rem;" id="detailed-instructions">
+              <p>
+                <span class="instrQuestion"><span class="numbering">1.a)</span>Could this post be considered offensive, disrespectful, or toxic to anyone/someone?</span><br>
+                <span class="instrDescription">Does this sound insulting, rude, toxic, disrespectful, abusive, inflammatory, hateful?</span>
+              </p>
+              <p class="extra-instructions collapse show">
+                Assume the author belongs to majority groups (white, male, straight, abled, etc.).
+                Try to answer this questions while considering a broad set of people from different backgrounds, not just your own. 
+                Our purpose is to understand how disrespect/offense can show up in language, we are not making statements about (dis)agreeing with the actual content of the posts.
+                Feel free to use the comment box to let us know if you have concerns about the content of the posts.
+              </p>
+              <p>
+                <span class="instrQuestion"><span class="numbering">1.b)</span>Was the intent of this post to be offensive/disrespectful to anyone?</span><br>
+                <span class="instrDescription">Say whether you think the author meant to offend, be rude, etc.</span><br>
+              </p>
+              <p class="extra-instructions collapse show">
+                Again, assume the author belongs to majority groups (white, male, straight, abled, etc.).
+                It can be hard to infer the intent behind a statement, but sometimes posts are clearly offensive jokes, insults, snobism, condescension, profanity, back-handed compliments, name calling, bullying, intimidation, or aggression.
+              </p>
+              <p>
+                <span class="instrQuestion"><span class="numbering">2)</span>Does this post contain or allude to sexual content/acts?</span><br>
+                <span class="instrDescription">Tell us which part of the post is about sex, and what does it mean.</span><br>
+              </p>
+              <p class="extra-instructions collapse show">
+                  Another aspect of disrespectful language deals with sexual content, either overtly or hidden.
+                  If answered yes, please use the first text box to describe which parts of the post contain euphemism, double entendre or explicit sexual content.
+                  Then, use the second text box to explain why you answered this; try to explain what the phrase means, what it refers to, what the double-entendre is about, etc.
+                </span>
+              </p>
+              <p>
+                <span class="instrQuestion"><span class="numbering">3.a)</span>Does the post imply offense/disrespect to an identity-related group of people</span><br>
+                <span class="instrDescription">Tell us whether the post contains or implies offense/disrespect to an group (not just an individual).</span><br>
+              </p>
+              <p class="extra-instructions collapse show">
+                  Here, distinguish whether the statement is targeting a group of people (e.g., "Black people are always late"), individuals ("you're a moron"), or both ("he's clearly a gay sissy").
+                </span>
+              </p>
+              <p>
+                <span class="instrQuestion"><span class="numbering">3.b)</span>Which group(s) is referred to/targeted in this post?</span><br>
+                <span class="instrDescription">Simply select all the groups that are referred to or targeted.</span><br>
+              </p>
+              <p class="extra-instructions collapse show">
+                  In this question, we're asking you to list all possible populations/groups/minorities that this posts references, targets, pokes fun at, etc.
+                  For ease of annotation, we categorized groups, but this is by far not an exhaustive list; use the other textboxes if the group isn't listed.
+                </span>
+              </p>
+              <p>
+                <span class="instrQuestion"><span class="numbering">3.c)</span>What (overly) simplistic stereotype/aspect/characteristic is referenced?</span><br>
+                <span class="instrDescription">Use simple "A does ___" phrases (e.g., <em>"women can't drive"</em>, <em>"old people are slow"</em>). <strong>Do not copy paste from the post</strong></span>
+                <p class="extra-instructions collapse show">
+                  Based on the group you selected, please describe which stereotypical characteristic/action/behavior is made light of/referenced/poked fun at/targeted by this post.
+                  Use simple phrases like <em>"gay men are promiscuous"</em>, <em>"asians are good at math"</em>, etc.
+                  Again, this answer could reflect the (often unfair) stereotypes in US culture about this group, not necessarily your personal opinion.
+                </p>
+              </p>
+              <p>
+                <span class="instrQuestion"><span class="numbering">3.d)</span>Does the author of the post sound like they belong to the same minority group that is referred to by this post?</span><br>
+                <span class="instrDescription">Try your best to guess whether the author belongs to the minority group(s) you marked as referred to/targeted by the post.</span><br>
+                <p class="extra-instructions collapse show">
+                  For example, words like "nigga" or "hoes" are associated with <a href="https://en.wikipedia.org/wiki/African-American_English" target="_blank">African American English</a>, usually used by black folks.
+                  Additionally, people sometimes poke fun at their own community (e.g., gay men making fun of gay culture, jewish folks making fun of jewish culture, etc.).
+                </p>
+                
+              </p>
+              <p>
+                <span class="instrQuestion"><span class="numbering">4)</span>If comfortable, please tell us about yourself (this will remain confidential).</span><br>
+                <span class="instrDescription">Tell us whether you identify as a minority, and if so, which.</span>
+                <p class="extra-instructions collapse show">
+                  Often times, your own personal background and experiences influence what you think of as disrespectful or offensive.
+                  Given the wide variability in MTurker backgrounds, we collect this information so we can account for it in our research experiments.
+                  If you answered this question once, you can skip it in subsequent HITs.
+                </p>
+              </p>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row" id="consent-div" style="margin: 30px 0;">
+      <div class="col-12">
+        <h6>Agree to the task</h6>
+        <div class="form-check">
+          <label class="form-check-label" for="consent">
+            <input class="form-check-input" type="checkbox" id="consent" name="consent" onclick="toggleConsent(this.checked)">
+            By ticking this box, you are agreeing to be part of this data collection study. Be sure that questions you have about the study have been answered and that you understand what you are being asked to do. You may contact us if you think of a question later. You are free to release/quit the HIT at any time, and refusing to be in the experiment or stopping participation will involve no penalty or loss of benefits to which you are otherwise entitled. To save a copy of the consent form and instructions, you can save/print this webpage (or find the instructions <a href="https://homes.cs.washington.edu/~msap/debug/neural-detox/structAnnot.html">here</a>).
+          </label>
+        </div>
+        <br>
+        <div class="alert alert-warning" id="consentMessage" style="max-width: 400px;margin: auto;">
+          You must check the box to continue the task!
+        </div>
+      </div>
+    </div>
+    <div id="actualTask" style="display: none;">
+      <div class="row justify-content-center">
+        <div class="col-10" style="margin-top: 30px;">
+        <h3> Task </h3>
+          <div class="story-excerpt">
+            <h4 style="margin-top: 5px;">Post</h4>
+            <p id="postText" style="padding-left: 20px; font-size: 12pt;max-width: 100%;">
+              ${post}
+            </p>
+            <!--input type="text" id="postText" style="margin-left: 20px; font-size: 12pt;" value="${post}" readonly="" /-->
+            <!--textarea id="postText" readonly="">${post}</textarea-->
+            <p style="padding-left: 20px; font-size: 10pt; text-align: right;">
+              - crawled from ${source}.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="allQuestions">
+        <div class="row">
+          <div class="col-6" id="introQuestion" style="display: inline-block;margin-top: 10px;">
+            <span class="numbering">1.a)</span>Could this post be considered <strong>offensive, disrespectful, or toxic to anyone/someone</strong>?<br><small></small>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQoffensive">
+              Please answer this question.
+            </div>
+            <div class="col-12">
+              <!--form-->
+              <label><input type="radio" name="offensiveYN" value="1" onclick="$('.mainQuestions').show();" required>&nbsp;
+                Yes, this could be offensive</label><br>
+              <label><input type="radio" name="offensiveYN" value=".5" onclick="$('.mainQuestions').show();">&nbsp;
+                Maybe, I'm not sure</label><br>
+              <label><input type="radio" name="offensiveYN" value="0" onclick="$('.mainQuestions').hide();$('#input').prop('required','');">&nbsp;
+                No, this is harmless</label><br>
+              <label style="margin-top: 10px;"><input type="radio" name="offensiveYN" value="nan" onclick="$('.mainQuestions').hide();">&nbsp;
+                I don't understand the post</label><br>
+              <!--/form-->
+            </div>  
+          </div>
+          <div class="col-6" id="intentQuestion" style="display: inline-block;margin-top: 10px;">
+            <span class="numbering">1.b)</span>Was the <strong>intent of this post</strong> to be offensive/disrespectful to anyone?<br>
+            <small>E.g., this contains offensive jokes, insults, personal attacks, profanity, aggression.</small>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQintent">
+              Please answer this question.
+            </div>
+            <div class="col-12">
+              <!--form-->
+              <label><input type="radio" name="intentYN" value="1" required>&nbsp;
+                Yes, definitely</label><br>
+              <label><input type="radio" name="intentYN" value=".66">&nbsp;
+                Yes, probably</label><br>
+              <label><input type="radio" name="intentYN" value=".33" >&nbsp;
+                No, probably not</label><br>
+              <label><input type="radio" name="intentYN" value="0" >&nbsp;
+                No, definitely not</label>
+              <!--/form-->
+            </div>  
+          </div>
+        </div>
+        <div class="row col-12" id="sexQuestions" style="display: inline-block;margin-bottom: 10px;">
+          <span class="numbering">2)</span>Does this post contain or allude to <strong>sexual content/acts</strong>?<br>
+          <small>This includes euphemism, double entendre, etc.</small>
+          <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQsexual">
+            Please answer this question.
+          </div>
+          <div class="col-12">
+            <!--form-->
+            <label><input type="radio" name="sexYN" value="1" onclick="$('#sexWhy').show();$('#sexWhy>input').prop('required','true');$('#alertQsexual').hide();" required="">
+            &nbsp;Yes</label><br>
+            <label><input type="radio" name="sexYN" value=".5" onclick="$('#sexWhy').show();$('#sexWhy>input').prop('required','true');$('#alertQsexual').hide();" required="">
+            &nbsp;Maybe</label><br>
+            <label><input type="radio" name="sexYN" value="0" onclick="$('#sexWhy').hide();$('#sexWhy>input').prop('required','');$('#alertQsexual').hide();" required="">
+            &nbsp;No</label><br>
+            <!--/form-->
+            <div class="col-12 " id="sexWhy" style="display: none; margin-bottom: 10px;">
+              What part of the post references sexual content, and why?<br>
+              <input type="text" style="margin: 5px;" name="sexPhrase" placeholder="phrase"><br>
+              <input type="text" style="margin: 5px;" name="sexReason" placeholder="explanation">
+            </div> 
+          </div>
+        </div>
+        <div class="row col-12 mainQuestions" id="minorityQuestions" style="display: inline-block;">
+          <span class="numbering">3)</span><strong>Who is referred to/targeted by</strong> this post?&nbsp;&mdash;&nbsp;<small>Select all identity-based groups that apply.</small>
+          <!--input id="dummyMinority" type="checkbox"-->
+          <div class="col-12" id="whoQuestion" style="display: inline-block;margin-top: 10px;">
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQwho">
+              Please answer this question.
+            </div>
+            <span class="numbering">3.a)</span>Does the post imply offense/disrespect to <strong>an identity-related group of people</strong>?<br>
+            <small>
+              E.g., is this just a insult to one person ("<em>Fuck you</em>", "<em>All y'all are morons</em>"),
+              or an offensive comment/insult about a whole identity-based group ("<em>Fuck muslims</em>", "<em>Fuck you, you stupid nigger</em>").</small>
+            <div class="col-12" style="margin: 10px 0 15px 0;">
+              <label><input type="radio" name="whoTarget" value="1" onclick="$('#accordion').show();$('#speakerMinorityQuestion').show();">&nbsp;
+                Yes, this could be offensive to a group (minority, identity-based, etc.)</label><br>
+              <label><input type="radio" name="whoTarget" value="0" onclick="$('#accordion').hide();$('#speakerMinorityQuestion').hide();">&nbsp;
+                No, this is just an insult to an individual or a non-identity-related group of people.</label>
+            </div>
+          </div>
+
+          <div class="alert alert-danger" role="alert" style="display: none;margin-top: 10px;" id="alertQminority">
+            Please select at least one of the groups below, or fill out an "other" box under a category that you think makes sense.
+          </div>
+          <div id="accordion" style="margin:10px;">
+            <div class="card">
+              <div class="card-header card-header-accordion" id="heading0">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapse0" aria-expanded="true" aria-controls="collapse0">
+                    race/ethnicity
+                  </button>
+                </h5>
+              </div>
+              <div id="collapse0" class="collapse collapse-checkbox show" aria-labelledby="heading0" data-parent="#accordion">
+                <div class="card-body row">
+                  <div class="col-5">
+                    <div class="row col">
+                      <span class="numbering">3.b)</span>Which identity group is referred to in this post?
+                    </div>
+                    <div class="row col btn-group-vertical ">
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityRace" id="min0a">black folks</label>
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityRace" id="min0b">asian folks</label>
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityRace" id="min0c">latino/latina folks</label>
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityRace" id="min0d">native american/first nation folks</label>
+                      <label class="btn btn-checkbox">
+                        <input type="checkbox" class="othercheckbox" name="minorityRace" id="min0other">
+                        <input type="text" class="otherbox" name="minorityRaceOther" id="min0o" placeholder="other" disabled="">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7 aspects" id="min0aspects">
+                    <span class="numbering">3.c)</span>
+                    What aspect/stereotype/characteristic of this group (often unfairly assumed) is referenced or implied by this post?&nbsp;&mdash;&nbsp;Use simple phrases and <strong>do not copy paste from the post</strong>.<br>
+                    <small>I.e., actions/characteristics that US society (usually wrongly) associates with the group</small> <br>
+                    <input style="margin: 5px;" type="text" name="targetRace">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetRace">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetRace" class="opt-target"><small>[optional]</small>
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetRace" class="opt-target"><small>[optional]</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header card-header-accordion" id="heading1">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                    gender/gender identity/sexuality
+                  </button>
+                </h5>
+              </div>
+              <div id="collapse1" class="collapse collapse-checkbox" aria-labelledby="heading1" data-parent="#accordion">
+                <div class="card-body row">
+                  <div class="col-5">
+                    <div class="row col">
+                      <span class="numbering">3.b)</span>Which identity group is referred to in this post?
+                    </div>
+                    <div class="row col btn-group-vertical ">
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityGender" id="min1a">women</label>
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityGender" id="min1b">lesbian women</label>
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityGender" id="min1c">gay men</label>
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityGender" id="min1d">trans women</label>
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityGender" id="min1e">trans men</label>
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityGender" id="min1f">bisexual women</label>
+                      <label class="btn btn-checkbox"><input type="checkbox" name="minorityGender" id="min1g">bisexual men</label>
+                      <label class="btn btn-checkbox">
+                        <input type="checkbox" class="othercheckbox" name="minorityGender" id="min1other">
+                        <input type="text" class="otherbox" name="minorityGenderOther" id="min1o" placeholder="other" disabled="">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7 aspects" id="min1aspects">
+                    <span class="numbering">3.c)</span>
+                    What aspect/stereotype/characteristic of this group (often unfairly assumed) is referenced or implied by this post?&nbsp;&mdash;&nbsp;Use simple phrases and <strong>do not copy paste from the post</strong>.<br>
+                    <small>I.e., actions/characteristics that US society (usually wrongly) associates with the group</small> <br>
+                    <input style="margin: 5px;" type="text" name="targetGender">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetGender">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetGender" class="opt-target"><small>[optional]</small>
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetGender" class="opt-target"><small>[optional]</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header card-header-accordion" id="heading2">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                    culture/origin/religion
+                  </button>
+                </h5>
+              </div>
+              <div id="collapse2" class="collapse collapse-checkbox" aria-labelledby="heading2" data-parent="#accordion">
+                <div class="card-body row">
+                  <div class="col-5">
+                    <div class="row col">
+                      <span class="numbering">3.b)</span>Which identity group is referred to in this post?
+                    </div>
+                    <div class="row col btn-group-vertical ">
+                      <label class="btn btn-checkbox" for="min2a"><input type="checkbox" name="minorityCulture" id="min2a">jewish folks</label>
+                      <label class="btn btn-checkbox" for="min2b"><input type="checkbox" name="minorityCulture" id="min2b">muslim folks</label>
+                      <label class="btn btn-checkbox" for="min2c"><input type="checkbox" name="minorityCulture" id="min2c">christian folks</label>
+                      <label class="btn btn-checkbox" for="min2d"><input type="checkbox" name="minorityCulture" id="min2d">arabic folks</label>
+                      <label class="btn btn-checkbox" for="min2e"><input type="checkbox" name="minorityCulture" id="min2e">immigrants</label>
+                      <label class="btn btn-checkbox">other/geographical origin or region: <br>
+                        <input type="checkbox" name="minorityCulture" class="othercheckbox" id="min2other">
+                        <input class="otherbox" type="text" name="minorityCultureOther" id="min2o" placeholder="country/region/..." disabled="">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7 aspects" id="min2aspects">
+                    <span class="numbering">3.c)</span>
+                    What aspect/stereotype/characteristic of this group (often unfairly assumed) is referenced or implied by this post?&nbsp;&mdash;&nbsp;Use simple phrases and <strong>do not copy paste from the post</strong>.<br>
+                    <small>I.e., actions/characteristics that US society (usually wrongly) associates with the group</small> <br>
+                    <input style="margin: 5px;" type="text" name="targetCulture">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetCulture">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetCulture" class="opt-target"><small>[optional]</small>
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetCulture" class="opt-target"><small>[optional]</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header card-header-accordion" id="heading3">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                    age/body
+                  </button>
+                </h5>
+              </div>
+              <div id="collapse3" class="collapse collapse-checkbox" aria-labelledby="heading3" data-parent="#accordion">
+                <div class="card-body row">
+                  <div class="col-5">
+                    <div class="row col">
+                      <span class="numbering">3.b)</span>Which identity group is referred to in this post?
+                    </div>
+                    <div class="row col btn-group-vertical">
+                      <label class="btn btn-checkbox" for="min3a"><input type="checkbox" name="minorityBody" id="min3a">old folks</label>
+                      <label class="btn btn-checkbox" for="min3b"><input type="checkbox" name="minorityBody" id="min3b">seniors</label>
+                      <label class="btn btn-checkbox" for="min3c"><input type="checkbox" name="minorityBody" id="min3c">overweight/fat folks</label>
+                      <label class="btn btn-checkbox" for="min3d"><input type="checkbox" name="minorityBody" id="min3d">shorts folks</label>
+                      <label class="btn btn-checkbox" for="min3e"><input type="checkbox" name="minorityBody" id="min3e">ugly folks</label>
+                      <label class="btn btn-checkbox" for="min3f"><input type="checkbox" name="minorityBody" id="min3f">pregnant folks</label>
+                      <label class="btn btn-checkbox">
+                        <input type="checkbox" class="othercheckbox" name="minorityBody" id="min3other">
+                        <input type="text" class="otherbox" name="minorityBodyOther" id="min3o" placeholder="other" disabled="">
+                      </label>
+                    </div>
+                   </div>
+                   <div class="col-7 aspects" id="min3aspects">
+                    <span class="numbering">3.c)</span>
+                    What aspect/stereotype/characteristic of this group (often unfairly assumed) is referenced or implied by this post?&nbsp;&mdash;&nbsp;Use simple phrases and <strong>do not copy paste from the post</strong>.<br>
+                    <small>I.e., actions/characteristics that US society (usually wrongly) associates with the group</small> <br>
+                    <input style="margin: 5px;" type="text" name="targetBody">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetBody">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetBody" class="opt-target"><small>[optional]</small>
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetBody" class="opt-target"><small>[optional]</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header card-header-accordion" id="heading4">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                    mental or physical disabilities/disorders
+                  </button>
+                </h5>
+              </div>
+              <div id="collapse4" class="collapse collapse-checkbox" aria-labelledby="heading4" data-parent="#accordion">
+                <div class="card-body row">
+                  <div class="col-5">
+                    <div class="row col">
+                      <span class="numbering">3.b)</span>Which identity group is referred to in this post?
+                    </div>
+                    <div class="row col btn-group-vertical">
+                      <label class="btn btn-checkbox" for="min4a"><input type="checkbox" name="minorityDisabled" id="min4a">physically disabled folks</label>
+                      <label class="btn btn-checkbox" for="min4b"><input type="checkbox" name="minorityDisabled" id="min4b">folks with physical illness/disorder </label>
+                      <label class="btn btn-checkbox" for="min4c"><input type="checkbox" name="minorityDisabled" id="min4c">folks with mental illness/disorder</label>
+                      <label class="btn btn-checkbox" for="min4d"><input type="checkbox" name="minorityDisabled" id="min4d">mentally disabled folks</label>
+                      <label class="btn btn-checkbox">
+                        <input type="checkbox" class="othercheckbox" name="minorityDisabled" id="min4other">
+                        <input type="text" class="otherbox" name="minorityDisabledOther" id="min4e" placeholder="other" disabled="">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7 aspects" id="min4aspects">
+                    <span class="numbering">3.c)</span>
+                    What aspect/stereotype/characteristic of this group (often unfairly assumed) is referenced or implied by this post?&nbsp;&mdash;&nbsp;Use simple phrases and <strong>do not copy paste from the post</strong>.<br>
+                    <small>I.e., actions/characteristics that US society (usually wrongly) associates with the group</small> <br>
+                    <input style="margin: 5px;" type="text" name="targetDisabled">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetDisabled">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetDisabled" class="opt-target"><small>[optional]</small>
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetDisabled" class="opt-target"><small>[optional]</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header card-header-accordion" id="heading5">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                    socio-economic/political/lifestyle
+                  </button>
+                </h5>
+              </div>
+              <div id="collapse5" class="collapse collapse-checkbox" aria-labelledby="heading5" data-parent="#accordion">
+                <div class="card-body row">
+                  <div class="col-5">
+                    <div class="row col">
+                      <span class="numbering">3.b)</span>Which identity group is referred to in this post?
+                    </div>
+                    <div class="row col btn-group-vertical ">
+                      <label class="btn btn-checkbox" for="min5a"><input type="checkbox" name="minoritySocial" id="min5a">poor folks</label>
+                      <label class="btn btn-checkbox" for="min5b"><input type="checkbox" name="minoritySocial" id="min5b">liberals</label>
+                      <label class="btn btn-checkbox" for="min5c"><input type="checkbox" name="minoritySocial" id="min5c">conservatives</label>
+                      <label class="btn btn-checkbox" for="min5d"><input type="checkbox" name="minoritySocial" id="min5d">independents/libertarians</label>
+                      <label class="btn btn-checkbox" for="min5e"><input type="checkbox" name="minoritySocial" id="min5e">veterans</label>
+                      <label class="btn btn-checkbox">
+                        <input type="checkbox" class="othercheckbox" name="minoritySocial" id="min5other">
+                        <input type="text" class="otherbox" name="minoritySocialOther" id="min5o" placeholder="other" disabled="">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7 aspects" id="min5aspects">
+                    <span class="numbering">3.c)</span>
+                    What aspect/stereotype/characteristic of this group (often unfairly assumed) is referenced or implied by this post?&nbsp;&mdash;&nbsp;Use simple phrases and <strong>do not copy paste from the post</strong>.<br>
+                    <small>I.e., actions/characteristics that US society (usually wrongly) associates with the group</small> <br>
+                    <input style="margin: 5px;" type="text" name="targetSocial">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetSocial">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetSocial" class="opt-target"><small>[optional]</small>
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetSocial" class="opt-target"><small>[optional]</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header card-header-accordion" id="heading6">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                    crime/violence/tragedy victims
+                  </button>
+                </h5>
+              </div>
+              <div id="collapse6" class="collapse collapse-checkbox" aria-labelledby="heading6" data-parent="#accordion">
+                <div class="card-body row">
+                  <div class="col-5">
+                    <div class="row col">
+                      <span class="numbering">3.b)</span>Which identity group is referred to in this post?
+                    </div>
+                    <div class="row col btn-group-vertical ">
+                      <label class="btn btn-checkbox" for="min6a"><input type="checkbox" name="minorityVictim" id="min6a">climate disaster victims</label>
+                      <label class="btn btn-checkbox" for="min6b"><input type="checkbox" name="minorityVictim" id="min6b">mass shooting victims</label>
+                      <label class="btn btn-checkbox" for="min6c"><input type="checkbox" name="minorityVictim" id="min6c">terrorism victims</label>
+                      <label class="btn btn-checkbox" for="min6d"><input type="checkbox" name="minorityVictim" id="min6d">assault victims</label>
+                      <label class="btn btn-checkbox" for="min6e"><input type="checkbox" name="minorityVictim" id="min6e">harassment victims</label>
+                       <label class="btn btn-checkbox">
+                        <input type="checkbox" class="othercheckbox" name="minorityVictim" id="min6other">
+                        <input type="text" class="otherbox" name="minorityVictimOther" id="min6o" placeholder="other" disabled="">
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-7 aspects" id="min6aspects">
+                    <span class="numbering">3.c)</span>
+                    What aspect/stereotype/characteristic of this group (often unfairly assumed) is referenced or implied by this post?&nbsp;&mdash;&nbsp;Use simple phrases and <strong>do not copy paste from the post</strong>.<br>
+                    
+                    <small>I.e., actions/characteristics that US society (usually wrongly) associates with the group<br>
+                    If the post simply makes fun of or trivializes tragedies or violence, write <em>trivializes harm to victims</em>.
+                    </small> <br>
+                    <input style="margin: 5px;" type="text" name="targetVictim">
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetVictim" class="opt-target"><small>[optional]</small>
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetVictim" class="opt-target"><small>[optional]</small>
+                    <br>
+                    <input style="margin: 5px;" type="text" name="targetVictim" class="opt-target"><small>[optional]</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--END OF ACCORDION-->
+          </div>
+          <div class="col-12" id="speakerMinorityQuestion" style="display: inline-block;margin-top: 10px;">
+            <span class="numbering">3.d)</span>
+            Does the author of the post sound like they <strong>belong to the same minority group</strong> that is referred to by this post?<br>
+            <small>
+              Try your best to guess. For example, posts with "nigga" in them usually come from black authors. Additionally, members sometimes make fun of their own community.
+            </small>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQspeakerMinority">
+              Please answer this question.
+            </div>
+            <div class="col-12" id="speakerMinorityQuestionForm">
+              <label><input type="radio" name="speakerMinorityYN" value="1">&nbsp;Yes</label>
+              <br>
+              <label><input type="radio" name="speakerMinorityYN" value=".5">&nbsp;Maybe</label>
+              <br>
+              <label><input type="radio" name="speakerMinorityYN" value="0">&nbsp;No</label>
+            </div>  
+          </div> 
+        </div>
+
+        <div class="row-12" id="demogQuestions" style="display: inline-block;">
+          <span class="numbering">4)</span>If comfortable, please tell us about yourself (this will remain confidential).<br>
+          <small>How people perceive offensiveness/inequality is influenced by their own societal experience.</small>
+          
+          <form style="margin-top: 20px;">
+            <div class="form-group row">
+              <label for="gender" class="col-sm-2 col-form-label">Gender identity</label>
+              <div class="col-sm-4">
+                <!--input type="text" id="gender" name="annotatorGender" placeholder="" class="form-control"-->
+                <select id="annotatorGender" name="annotatorGender" class="form-control" style="font-size: .85rem;" required>
+                  <option disabled selected value="">-- please select --</option>
+                  <option value="man">Man/Male</option>
+                  <option value="woman">Woman/Female</option>
+                  <option value="transman">Trans man</option>
+                  <option value="transwoman">Trans woman</option>
+                  <option value="nonBinary">Non-binary</option>
+                  <option value="other">Other</option>
+                  <option value="na">Prefer not to disclose</option>
+                </select>
+              </div>
+              <div class="col-sm-5 alert alert-secondary" id="demog-prefilled-message" style="padding: 3px; margin-bottom:0;" style="display: none;">
+                To save you time, we've pre-filled these boxes based on your previous answers in our HITs!
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="annotatorAge" class="col-sm-2 col-form-label">Age</label>
+              <div class="col-sm-2">
+                <input type="number" id="annotatorAge" name="annotatorAge" placeholder="" class="form-control" min="18" style="font-size: .85rem;" max="100" required>
+              </div>
+              <div class="col-sm-4"><small>Write 100 if you don't want to disclose your age.</small></div>
+            </div>
+            <div class="form-group row" >
+              <label for="race" class="col-sm-2 col-form-label">Race/ethnicity</label>
+              <div class="col-sm-4">
+                <!--input type="text" id="race" name="annotatorRace" placeholder="" class="form-control"-->
+                <select id="annotatorRace" name="annotatorRace" class="form-control" style="font-size: .85rem;" required>
+                  <option disabled selected value="">-- please select --</option>
+                  <option value="asian">Asian/Asian American</option>
+                  <option value="indian">South Asian/Indian American</option>
+                  <option value="black">Black/African American</option>
+                  <option value="hisp">Hispanic/Latinx</option>
+                  <option value="white">White/Caucasian</option>
+                  <option value="middleEastern">Middle Eastern</option>
+                  <option value="islander">Native Hawaiian/Pacific Islander</option>
+                  <option value="native">Native American/First Nations</option>
+                  <option value="other">Mixed/other</option>
+                  <option value="na">Prefer not to disclose</option>
+                </select>
+              </div>
+              <div class="col-sm-3"><small>Please select the racial/ethnic identity you most identify with currently.</small></div>
+            </div>
+            <div class="form-group row">
+              <label for="annotatorPolitics" class="col-sm-2 col-form-label">Political leaning</label>
+              <div class="col-sm-4">
+                <!--input type="text" id="race" name="annotatorRace" placeholder="" class="form-control"-->
+                <select id="annotatorPolitics" name="annotatorPolitics" class="form-control" style="font-size: .85rem;" required>
+                  <option disabled selected value="">-- please select --</option>
+                  <option value="cons">Conservative</option>
+                  <option value="mod-cons">Moderate conservative</option>
+                  <option value="mod-liberal">Moderate liberal</option>
+                  <option value="liberal">Liberal/progressive</option>
+                  <option value="libert">Libertarian</option>
+                  <option value="other">Other/independent</option>
+                  <option value="na">Prefer not to disclose</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="annotatorMinority" class="col-sm-12 col-form-label">
+                Do you identify with any minority, disadvantaged, demographic, or other specific groups? If so, which one(s)?<br>
+                <small>(E.g., racial, gender identity, sexuality, disability, immigrant, veteran, etc.); use commas to separate groups.</small>
+              </label>
+              <div class="col-sm-6">
+                <input type="text" name="annotatorMinority" placeholder="" class="form-control" id="annotatorMinority" style="font-size: .85rem;">
+              </div>
+            </div>
+          </form>
+          <!--div class="col row-xs-12">
+            <table class="demographics">
+              <tbody>
+                <tr>
+                  <td>Your gender:</td>
+                  <td><input style="margin: 5px;width: 200px;" type="text" name="annotatorGender" placeholder="" id="gender"></td>
+                </tr>
+                <tr>
+                  <td>Your age: </td>
+                  <td><input style="margin: 5px;" type="number" name="annotatorAge" min="18" max="99" placeholder=""></td>
+                </tr>
+                <tr>
+                  <td>Your race/ethnicity: </td>
+                  <td><input style="margin: 5px;width: 200px;" type="text" name="annotatorRace" id="race" placeholder=""></td>
+                </tr>
+              </tbody>
+            </table>
+            Do you identify with any (other) minority, disadvantaged, demographic, or specific groups<span class="mainQuestions"> mentioned in question 2</span>? If so, which one(s)?<br>
+            <small>Use commas to separate groups.</small><br>
+            <input style="margin: 5px;" id="minority" type="text" name="annotatorMinority" placeholder="" />
+          </div-->
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-9" id="commentSection" style="display: inline-block;text-align: center;">
+          <p style="font-size:10pt;margin-top: 50px;">
+            Optional Feedback: Thanks for filling out the questions above!
+            If something about the hit was unclear, please either leave a comment in the box below!
+            We would like to make this HIT easier for future workers, so we really appreciate feedback though it is optional.
+            <br>
+            If you have concerns or questions, please email us!
+          </p>
+          <textarea style="margin-left:10px;margin-top:10px;width: 95%;" rows="2" name="commentbox"></textarea>
+          <br><br>
+          <center>
+            <div class="alert alert-danger" id="submitAlert" style="display: none;">
+              Whoops you missed some questions!
+              <br>
+              Note: if the submit button is disabled and you're confident this is an error, please screenshot your answers and the console output (Ctrl+Shift+J or Cmd+Shift+J).
+            </div>
+            <input type="submit" id="submitButton" class="btn btn-primary" value="Submit Hit!">       
+          </center>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</section>
+<script>
+  var targ, btngroup, event, selectedText, aspectDiv;
+  var ee;
+  $("td").each(function (i,e){
+    ee = e;
+    e.innerText = renderEmoji(e.innerText);
+  });
+  $("#postText").each(function (i,e){
+    ee = e;
+    e.innerText = renderEmoji(e.innerText);
+  });
+  /*var genderSuggestions = [
+    {value: "man", data:"m"},
+    {value: "woman", data:"w"},
+    {value: "non-binary", data:"nb"},
+    {value: "other", data:"other"}
+  ];
+  var raceSuggestions = [
+    {value: "white", data:"white"},
+    {value: "Black", data:"black"},
+    {value: "African-American", data:"black"},
+    {value: "Asian", data:"asian"},
+    {value: "Latinx", data:"latin"},
+    {value: "Hispanic", data:"latin"},
+    {value: "Native Hawaiian/Other Pacific Islander", data:"latin"},
+    {value: "Asian-American", data:"asian"},
+    {value: "Mixed", data:"mixed"},
+    {value: "other", data:"other"},
+    {value: "Middle-eastern", data:"middle-eastern"}
+  ];
+  $("#gender").autocomplete({
+    lookup: genderSuggestions,
+  });
+  $("#race").autocomplete({
+    lookup: raceSuggestions,
+  });
+  */
+  $("label.btn-checkbox>input[type='checkbox']").each(function(ix,e){
+    var value = $(e).parent().prop("innerText").trim();
+    e.value = value == "" ? "_other_" : value;
+  });
+  $("input[type='text']").each(function(ix,e){
+    if (e.name.startsWith("target") && !e.classList.contains("opt-target")){
+      //console.log(e);
+      e.placeholder = "GROUP does ___"
+      //e.placeholder = Math.random() < .5? "GROUP does ___": "GROUP has ___";
+    }
+  });
+  $("#postText").select(function(e) {
+    event = e;
+    targ = e.target;
+    selectedText = targ.value.substring(targ.selectionStart,targ.selectionEnd);
+    console.log("selected: '"+selectedText+"'");
+    if($("input[name='sexYN'][value='yes']:checked").length > 0)
+      $("input[name='sexPhrase']").prop("value",selectedText);
+  });
+
+  $(".btn-checkbox").on("click",function(e){
+    targ = e.target;
+    aspectDiv = $(targ).closest(".card-body").find(".aspects");
+
+    /* Highlight button if checkbox is clicked */
+    if(e.target.tagName == "INPUT"){
+      if (targ.checked)
+        $(targ).parent().addClass("active");
+      else 
+        $(targ).parent().removeClass("active");
+    }
+    
+    /* Make textboxes required if any checkbox is checked */
+    if ($(targ).closest(".btn-group-vertical").find("input:checkbox:checked").length > 0) {
+      aspectDiv.show();
+      aspectDiv.find("input[type='text']").each(function (i,e){
+        if (i<2 && !e.classList.contains("opt-target")){
+          $(e).prop("required","true");
+        }
+      });
+    } else {
+      aspectDiv.hide();
+      aspectDiv.find("input[type='text']").each(function (i,e){
+        $(e).prop("value","");
+        if (i>1)
+          return;
+        $(e).prop("required","");
+      });
+    }
+    alertMinorityQs("yes");
+  });
+  $('.collapse-checkbox').on('hide.bs.collapse', function (e) {
+  /* If any checkboxes are checked, this makes sure the buttons don't disappear */
+  btngroup = e.target;
+  if ($(btngroup).find("input:checkbox:checked").length > 0)
+    e.preventDefault();
+  })
+  $(".othercheckbox").on("click",function(e){
+    var checked = $(e.target).prop("checked")
+    $(e.target).next().prop("disabled",!checked);
+    $(e.target).next().prop("required",checked? "true": "");
+  });
+  $("input[type='text']").prop("pattern",".{0}|.{3,}").prop("title","Minimum 3 characters");
+
+  
+  $("button.btn-link").on("click",function(e){
+    //Not sure why I need this, but otherwise accordion submits immediately
+    e.preventDefault();
+    event = e;
+    //console.log(e.target);
+  });
+  $("#submitButton").on("click",function(e){
+    var val = validate();
+    if (!val) {
+      e.preventDefault();
+      event = e;
+      $("#submitAlert").show();
+      setTimeout(function(){
+        $("#submitAlert").hide(300);
+      }, 10000);
+    } else {
+      sendWorkerInfo();
+      console.log("Submitted");
+    }
+  });
+  function prepSQLparamsCheck(urlParams){
+    var out="";
+    out += "workerId="+urlParams["workerId"];
+    out += "&HITType="+urlParams["HITType"];
+    out += "&assignmentId="+urlParams["assignmentId"];
+    out += "&HITId="+urlParams["HITId"];
+    return out;
+  }
+  function prepSQLparamsStore(){
+    var out="";
+    out += "gender="+$("#annotatorGender").val();
+    out += "&age="+$("#annotatorAge").val();
+    out += "&race="+$("#annotatorRace").val();
+    out += "&politics="+$("#annotatorPolitics").val();
+    out += "&otherMinority="+encodeURIComponent($("#annotatorMinority").val());
+    return out;
+  }
+  function dealWithWorkerInfo(sqlResponse){
+    if (sqlResponse == ""){
+      /* we don't have this worker in our DB*/
+      console.log("New worker!");
+      $("#demog-prefilled-message").hide();
+    } else {
+      var workerInfo = JSON.parse(sqlResponse);
+      console.log(workerInfo);
+      // Bypass consent? Only on UW servers
+      if (location.hostname == "homes.cs.washington.edu"){
+        $("#consent").prop("checked",true);
+        toggleConsent(true);
+      }
+      $("#demog-prefilled-message").show();
+      $("#annotatorGender").val(workerInfo["gender"]);
+      $("#annotatorAge").val(workerInfo["age"]);
+      $("#annotatorRace").val(workerInfo["race"]);
+      $("#annotatorPolitics").val(workerInfo["politics"]);
+      $("#annotatorMinority").val(workerInfo["otherMinority"]);
+    }
+  }
+  function checkIfWorkerExists(){
+    var urlParams = getURLParams();
+    var requestParams = "?"+prepSQLparamsCheck(urlParams)+"&action=check";//location.search+"&action=check";
+    var requestURL = "https://homes.cs.washington.edu/~msap/debug/neural-detox/checkStoreWorkerDemographics.php";
+    var xhttp = new XMLHttpRequest();
+    console.log(requestURL);
+    xhttp.open("POST", requestURL+requestParams, true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //var responseRaw = this.responseText;
+        dealWithWorkerInfo(this.responseText);
+        //console.log("Received an answer!"+this.responseText);
+      }
+    };
+    xhttp.send(requestParams);
+  }
+  function sendWorkerInfo(){
+    var urlParams = getURLParams();
+    var requestParams = "?"+prepSQLparamsCheck(urlParams)+"&action=store&"+prepSQLparamsStore();
+    var requestURL = "https://homes.cs.washington.edu/~msap/debug/neural-detox/checkStoreWorkerDemographics.php";
+    var xhttp = new XMLHttpRequest();
+    //console.log(requestURL);
+    xhttp.open("POST", requestURL+requestParams, true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //var responseRaw = this.responseText;
+        //dealWithWorkerInfo(this.responseText);
+        console.log("Received an answer: '"+this.responseText+"'");
+      }
+    };
+    xhttp.send(requestParams);
+  }
+  function toggleConsent(checked){
+    if (checked){
+      $("#actualTask").show();
+      $("#consentMessage").hide();
+    } else {
+      $("#actualTask").hide();
+      $("#consentMessage").show();
+    }
+  }
+
+  function validate(){
+    var valid, offensive, groupTargeted;
+
+    valid = ($("input[name='offensiveYN']:checked").length > 0);
+    if (!valid){
+      $("#alertQoffensive").show();
+      window.location.hash = "#alertQoffensive"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q1a");
+      return valid;
+    } else {
+      $("#alertQoffensive").hide();
+      offensive = ["1",".5"].includes($("input[name='offensiveYN']:checked").prop("value"));
+      console.log("Offensive "+offensive);
+    }
+
+    valid = valid && ($("input[name='intentYN']:checked").length > 0);
+    if (!valid){
+      $("#alertQintent").show();
+      window.location.hash = "#alertQintent"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q1b");
+      return valid;
+    } else {
+      console.log("intentYN okay");
+      $("#alertQintent").hide();
+    }
+
+
+    valid = valid && $("input[name='sexYN']:checked").length > 0;
+    if (!valid){
+      $("#alertQsexual").show();
+      window.location.hash = "#alertQsexual"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q2");
+      return valid;
+    } else {
+      console.log("SexYN okay");
+      $("#alertQsexual").hide();
+    }
+    if (offensive){
+      valid = valid && ($("input[name='whoTarget']:checked").length > 0);
+      if (!valid){
+        $("#alertQwho").show();
+        window.location.hash = "#alertQwho"; window.scrollBy(0, -30);
+        console.log("Missing answer to Q3a");
+        return valid;
+      } else {
+        $("#alertQwho").hide();
+      }
+      groupTargeted = ($("input[name='whoTarget']:checked").val() > 0);
+
+      valid = valid && (!offensive || (offensive && !groupTargeted) || (
+        offensive && groupTargeted && $(".btn-checkbox>input:checked").length > 0));
+      if (!valid){
+        $("#alertQminority").show();
+        window.location.hash = "#alertQminority"; window.scrollBy(0, -30);
+        console.log("Missing answer to minority questions");
+        return valid;
+      } else
+        $("#alertQminority").hide();
+        
+      if (groupTargeted){
+        valid = valid && groupTargeted && ($("input[name='speakerMinorityYN']:checked").length > 0);
+        if (!valid){
+          $("#alertQspeakerMinority").show();
+          window.location.hash = "#alertQspeakerMinority"; window.scrollBy(0, -30);
+          console.log("Missing answer to Q3d");
+          return valid;
+        } else {
+          $("#alertQspeakerMinority").hide();
+        }
+      }
+    }
+
+    valid = valid && ($(":invalid").length == 0);
+    console.log("########## VALIDATING #########\nvalid? "+valid);
+    $(":invalid").each(function (i,e){
+      console.log(e);
+    });
+    return valid;
+  }
+  function alertMinorityQs(val){
+    if (val == "yes" && $(".btn-checkbox>input:checked").length == 0) {
+      //$("#dummyMinority").prop("required","true");
+      $("#alertQminority").show();
+    } else {
+      //$("#dummyMinority").prop("required","");
+      $("#alertQminority").hide();
+    }
+  }
+  var rows;
+  function expExamples(){
+    rows = $("tr.extra-rows");
+    $("a:contains('examples')").each(function(ix,link){
+      if (rows.hasClass("show"))
+        link.innerText = "[+] more examples";
+      else 
+        link.innerText = "[-] less examples";
+      console.log(link);
+    })
+  }
+
+</script>
+<style type="text/css">
+#examples-table {
+  border-style: none solid solid solid;
+  border-width: 1px;
+  border-color: #dee2e6;
+  border-radius: 5px;
+}
+
+.card-header-accordion{
+  padding: 0px 10px;
+}
+body, td, .btn { 
+  font-size:0.85rem;
+}
+label {
+  margin-bottom: 0px;
+}
+.story-excerpt {
+  margin: 40px auto;
+  min-width: 500px;
+  border:2px #333333;
+  background-color: #f2f2f2;
+  border-style: solid;
+  padding-right:10px;
+  padding-left:10px;
+  display:table;
+  border-radius:15px;
+}
+.story-excerpt-example {
+  border: 1px solid #666666;
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  padding: 3px;
+  display: inline-block;
+  margin: 10px;
+}
+span.numbering {
+  font-weight: bold;
+  margin-right: .5em;
+}
+#introQuestion>div>label>input,
+#sexQuestions>div>label>input,
+#intentQuestion>div>label>input {
+  vertical-align: middle;
+}
+
+#detailed-instructions>p {
+  margin-bottom: 0px;
+}
+span.instrQuestion {
+  background-color: #f2f2f2;
+  font-style: italic;
+  font-size: .9rem;
+  margin: 5px 0 3px -15px;
+  padding: 0 .3rem 0 .3rem;
+  display: inline-block;
+}
+span.instrDescription {
+  font-size: .9rem;
+  margin-left: -15px;
+}
+label > input[type='text'] {
+  width: 90%;
+}
+input[type='text'] {
+  width: 300px;
+}
+input[type='text'].opt-target {
+  background-color: #f8f8f8;
+}
+
+input[type="text"]:invalid {
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+textarea#postText {
+  margin-left: 20px;
+  font-size: 12pt;
+  width: auto;
+  background-color: transparent;
+  overflow: auto;
+  resize: none;
+}
+
+.btn-checkbox, .btn-checkbox-two {
+  .btn-light;
+  color: black;
+  text-align: left;
+  margin: 0px;
+  background-color: #e9ecef;
+  border-color: #d1d4d7;
+}
+
+.btn-checkbox.active,
+.btn-checkbox:active,
+.btn-checkbox:hover {
+  background-color: #babcbf;
+  border-color: #8b8d8f;
+}
+
+.btn-checkbox-two.active,
+.btn-checkbox-two:active,
+.btn-checkbox-two:hover {
+  background-color: #babcbf;
+  border-color: #8b8d8f;
+}
+
+.btn-group-vertical {
+  max-width: 400px;
+  /*margin-right: 10px;*/
+}
+#introQuestion, 
+#sexQuestions,
+#minorityQuestions,
+#demogQuestions {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.autocomplete-suggestions { 
+  border: 1px solid #999;
+  background: #FFF; 
+  overflow: auto;
+}
+#dummyMinority {
+  /*opacity:0;*/
+  width: 0px;
+}
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+input[type='checkbox'] {
+  /* All <input> elements that are immediate children of a class="btn-checkbox" */
+  margin-right: 5px;
+}
+ul {
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+fieldset {
+  padding: 10px;
+  background:#fbfbfb;
+  border-radius:5px; 
+  margin-bottom:5px;
+}
+</style>

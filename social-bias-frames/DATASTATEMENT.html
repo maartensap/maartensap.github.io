@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <?php
+     include("../tools/header_bs4.php");
+     ?>
+  <title>Social Bias Inference Corpus (v2) - Data Statement</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <?php
+     $callingFile=basename(getcwd(),"");
+     include_once("../analyticstracking.php");
+     include("../tools/nav_bs4.php");
+     ?>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <a type="button" class="btn btn-light" href="./index.html" style="margin: 5px;">&larr; Back to Social Bias Frames page</a>
+      </div>
+      <div class="col-10" style="margin-top: 10px;margin-bottom: 20px;" id="content">
+        
+        <?php
+        include("DATASTATEMENT.MD");
+        ?>
+      </div>
+    </div>
+    <?php
+     include("../tools/footer.php");
+     ?>  
+  </div>
+    
+</body>
+<script>
+  document.getElementById('content').innerHTML =
+    marked(document.getElementById('content').innerHTML);
+</script>
+<style>
+h1,h2,h3,h4, .col {
+  font-style: italic;
+}
+html * {
+   font-weight: 200;
+}
+emm{
+  font-weight: 400;
+}
+
+</style>

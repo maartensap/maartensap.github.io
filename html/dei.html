@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <python addHeader>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
+  <title>Maarten Sap - DEI &amp; Service</title>
+</head>
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <python addNavBar>
+   
+  <div class="row justify-content-center" style="background-color:  #F0F8FF; min-height: 140px;margin: 0;">
+    
+    <div class="col-6" style="font-weight: 100; max-width: 660px; vertical-align: text-bottom; position: relative;">
+      <h1 style="  position: absolute;   top: 50%;   -ms-transform: translateY(-50%);  transform: translateY(-50%);">Service, Leadership, DEI</h1>
+      <!--em>Based on my own experience with Amazon Mechanical Turk and valuable advice from my lab members.</em-->
+    </div>
+    <div class="col-3" style="text-align: center; position: relative;">
+      <img style="max-width: 100%; max-height: 100%; margin: auto; left: 0; bottom: 0; right: 0; position: absolute;"src="websiteRoot/images/DEI-hands.png">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-11" style="margin-top: 10px;margin-bottom: 20px;" id="content">
+Working with a diverse set of collaborators has confirmed my belief that <emm>anyone has the potential to become a great computer scientist</emm>, and that there is <emm>great strength in bringing together people from different backgrounds and cultures or with different identities</emm>. 
+For this reason, it is <emm>crucial to dismantle barriers to diversity in computer science</emm> (e.g., lack of role models, stereotypical culture),
+which I have made a priority during my graduate studies at the University of Washington's (UW) Allen School of Computer Science &amp; Engineering. 
+As a professor, I plan to continue my efforts to increase diversity and belonging in computer science in three different directions, drawing on my past experience:
+- <emm>Broadening Participation Through Advising and Outreach</emm> – mentorship and outreach to
+support and recruit women, students of color, and LGBTQ+ students
+- <emm>Positive Societal Impact Through Research</emm> – research and workshop organization to promote
+fairness, justice, and ethics in artificial intelligence
+- <emm>Supportive and Inclusive Environment Through Structural Change</emm> – departmental service,
+research community leadership, and community organization 
+
+In all my efforts, I strive to use evidence-based practices and center experiences from historically
+underrepresented groups (including, when relevant, my own as an out LGBTQ+ person).
+
+For more detailed information, please see my [diversity statement](websiteRoot/files/2020jobsearch/maarten_diversity_statement.pdf).
+      </div>
+    </div>
+  <python addFooter>
+
+  </div>
+    
+</body>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>
+<style>
+h1,h2,h3,h4, .col {
+  font-style: italic;
+}
+html * {
+   font-weight: 200;
+}
+emm{
+  font-weight: 400;
+  font-style: italic;
+}
+</style>
