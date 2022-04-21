@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="websiteRoot/tools/style.css">
+    <python addHeader>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <python addNavBar>
+    <title>Controllable Debiasing - PowerTransformer</title>
+    <!-- Primary Meta Tags -->
+    <title>Controllable Debiasing</title>
+    <meta name="title" content="Controllable Debiasing">
+    <meta name="description" content="PowerTransformer: text debiasing with an unsupervised controllable revision model">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://maartensap.com/controllable-debiasing/">
+    <meta property="og:title" content="Controllable Debiasing">
+    <meta property="og:description" content="PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction">
+    <meta property="og:image" content="https://homes.cs.washington.edu/~msap/controllable-debiasing/IntroFig%20v5%20%28CR%29.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://maartensap.com/controllable-debiasing/">
+    <meta property="twitter:title" content="Controllable Debiasing">
+    <meta property="twitter:description" content="PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction">
+    <meta property="twitter:image" content="https://homes.cs.washington.edu/~msap/controllable-debiasing/IntroFig%20v5%20%28CR%29.png">
+  </head>
+  <body>
+    <div class="row justify-content-center" style="background-color: #CBBEDD; padding-top: 2em;">
+      
+      <div class="col-1">
+        <img src="rosieTheRiveter2.png" style="width: 100%;">
+      </div>
+      <div class="col-8 mb-4">
+        <h1><small-caps>PowerTransformer</small-caps></h1>
+        <h2 class="mb-4" >Unsupervised Controllable Revision for Biased Language Correction</h2>
+        <a type="button" class="btn btn-purple" href="websiteRoot/pdfs/ma2020powerTransformer.pdf" target="_blank">Read the paper</a>
+        <a type="button" class="btn btn-purple" href="powerTransformer.preprocessedData.tgz">Download the processed data</a>
+        <a type="button" class="btn btn-purple" href="https://github.com/michellesima/powerTransformer.git">Run the code</a>
+        <a type="button" class="btn btn-secondary" href="https://slideslive.com/38939042" target="_blank">Watch EMNLP talk</a>
+        <!--a type="button" class="btn btn-secondary" href="DATASTATEMENT.html" target="_blank">Data statement</a-->
+      </div>
+    </div>
+    <div class="container" style="margin-top: 1em;">
+      <div class="row">
+        <div class="col-8">
+          <p>
+            
+          </p>
+          <h4 class="faq-q">What is controllable debiasing?</h4>
+          <p>
+            Controllable debiasing is a new formulation of stylistic rewriting that aims to rewrite a given text and correct the implicit and potentially undesirable biases in character portrayals.
+          </p>
+          <h4 class="faq-q">What types of portrayal biases?</h4>
+          <p>
+            In our work, we analyze gender bias in portrayal through the lens of <em>connotation frames of power and agency</em>, which capture knowledge about the implied power dynamics with respect to verbs. In <a href="../movie-bias" target="_blank">our previous work</a>, we showed that authors attribute significantly less power and less agency to female characters compared to male characters. Therefore, here, we create <small-caps>PowerTransformer</small-caps> to rewrite text with a new level of agency.
+          </p>
+          <h4 class="faq-q">How does <small-caps>PowerTransformer</small-caps> work?</h4>
+          <p>
+            Our model is an encoder-decoder based on a pretrained language model. We train it to reconstruct story sentences from which we've remove agency markers (i.e., verbs). 
+            Additionally, we also jointly train it on an out-of-domain paraphrasing task, which teaches the model to rewrite more than just one word. 
+            Then, at test time, we also incorporate agency information by boosting the probability of words with the desired level of agency.
+            In our paper, we explore how important different components of this model are, and show that both the joint reconstruction-paraphrasing and the vocab boosting yield significant benefits in performance.
+          </p>
+          <h4 class="faq-q">Does <small-caps>PowerTransformer</small-caps> actually mitigate gender biases?</h4>
+          <p>
+            As a case study for our model, we re-visit the movie scripts from <a href="../movie-bias" target="_blank">our original analyses</a> and attempt to rewrite the sentences that describe female characters to give them higher agency.
+            We show that, with  <small-caps>PowerTransformer</small-caps>, we can reverse the gender bias and give female characters substantially more agency than male characters, reversing the effect in the original movie scripts.
+            Of course, this is only a pilot study, and automatically rewriting an entire movie should not be done without human supervision.
+          </p>
+          <h4 class="faq-q">What are the implications of Controllable Debiasing?</h4>
+          <p>
+            We believe that this task has the potential to help authors when writing stories or movies, by providing alternative portrayals of characters with different connotations or framings. 
+            Specifically, a machine-in-the-loop writing system could help authors measure and address biases in their writing using <small-caps>PowerTransformer</small-caps>.
+            This, in turn, could mitigate the negative effects of stereotypical portrayals and could help debunk gender roles.
+          </p>
+        </div>
+        <div class="col-4">
+          <figure class="figure">
+            <img class="figure-img img-fluid rounded" src="IntroFig v5 (CR).png" style="width: 100%;">
+            <figcaption class="figure-caption">
+              Examples of using connotation frames (Sap et al., 2017) for controllable revisions to portray characters with more agency and power.
+              In the first example, automatically rewriting "Mey daydreamed about being a doctor" as "Mey pursued her dream to be a doctor" portrays Mey with more authority and decisiveness.
+              In the second example, "Ana strutted" implies that she is more active and decisive, compared to "Ana wandered" which portrays her as aimless and passive.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <hr>
+          <p>
+            <strongish>Citation:</strongish><br>
+            Xinyao (Michelle) Ma, Maarten Sap, Hannah Rashkin & Yejin Choi (2020). <br>
+            <em>PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction</em>. EMNLP
+          </p>
+          <strongish>Bibtex:</strongish><br>
+          <pre class="force-select">
+@inproceedings{ma2020powertransformer,
+   title={PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction},
+   author={Ma, Xinyao and Sap, Maarten and Rashkin, Hannah and Choi, Yejin},
+   year={2020},
+   booktitle={EMNLP},
+}</pre>
+        </div>
+      </div>
+      <python addFooter>
+    </div>     
+  </body>
+</html>
+<style>
+  h1,h2,h3,h4 {
+    font-weight: 100;
+  }
+  p {
+    font-weight: 400;
+  }
+  strongish {
+    font-weight: 600;
+  }
+  .faq-q {
+    font-style: italic;
+  }
+  small-caps {
+    font-variant: small-caps;
+  }
+  .force-select {  
+    -webkit-user-select: all;  /* Chrome 49+ */
+    -moz-user-select: all;     /* Firefox 43+ */
+    -ms-user-select: all;      /* No support yet */
+    user-select: all;          /* Likely future */   
+  }
+  .btn-purple{
+    color: white;
+    background-color: #6a51a3;
+    border-color: #6a51a3;
+  }
+</style>
