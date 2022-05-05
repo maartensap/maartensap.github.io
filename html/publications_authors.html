@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
+  <python addHeader>
+  
+  <title>Maarten Sap - Publications</title>
+</head>
+
+<body style="padding-top: 0px;">
+  <python addNavBar>
+
+  <!-- Page Content -->
+  <div class="container" style="padding-top: 10px;">
+    
+    <python generateAuthors>
+   
+    <!-- Footer -->
+     <python addFooter>
+  </div>
+  <!-- /.container -->
+  
+  <!-- jQuery >
+  <script src="tools/bootstrap/js/jquery.js"></script>
+  
+  <!- Bootstrap Core JavaScript ->
+  <script src="tools/bootstrap/js/bootstrap.min.js"></script-->
+  <style>
+    .in-citation {
+      margin-left: 20px;
+    }
+    .citation-toggle {
+      
+    }
+    .year {
+      font-weight: 100;
+      font-style: italic;
+      text-align: center;
+      margin: .5em 0 0 0;
+    }
+    a.badge.active {
+      border: 1px solid red;
+    }
+    .awards {
+      margin-top: .5em;
+      display: block;
+      font-style: italic;
+      font-weight: 600;
+      color: ForestGreen;
+    }
+    .highlighted {
+      background-color: #d8ebff;
+      box-shadow: 0px 0px 1.5px 1.5px #d8ebff;
+      border-radius: 10px;
+    }
+    .badge-conference {
+      background-color: #decbe4;
+    }
+    .badge-workshop {
+      background-color: #b3cde3;
+    }
+    .badge-demo {
+      background-color: #ffffcc;
+    }
+    .badge-journal {
+      background-color: #ccebc5;
+    }
+    .badge-other {
+      background-color: #fed9a6;
+    }
+    .badge-preprint {
+      background-color: #fbb4ae;
+    }
+  </style>
+  <script>
+    var targ, d;
+    function jumpAndHighlight(){
+      targ = window.location.hash;
+      if (targ == "")
+        return ;
+      
+      d = $(targ);
+      d.addClass("highlighted");
+      setTimeout(function(){ d.removeClass("highlighted") }, 5000);
+    }
+    
+    var t;
+    $("label.badge>input[type='radio']").on("change", function(e){
+      //e.preventDefault();
+      t = e.target;
+      var type = e.target.value;
+      console.log(e.target.value);
+      if (type==="all"){
+        $("div.jumptarget").show();
+      } else {
+        $("div.jumptarget").not("."+type).hide();
+        $("div.jumptarget."+type).show();
+      }
+    });
+    window.onload = jumpAndHighlight;
+  </script>
+</body>
+</html>

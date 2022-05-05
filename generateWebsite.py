@@ -5,7 +5,8 @@ from IPython import embed
 import re, os
 import datetime
 from glob import glob
-
+import pandas as pd
+  
 findPythonRE = re.compile(r"<python ([^>]+)>")
 findTitleRE = re.compile(r"<title>(.+)</title>")
 def loadAndReplaceFile(fn,d="",parentPath=""):
@@ -118,7 +119,36 @@ def generateWordFriendlyPublications(**kwargs):
       out+="</p>\n"
 
   return out
+
+def loadAffiliations():
+
+  df = pd.read_csv("affiliations.csv",sep=";")
+  return df.set_index("author")["affiliation"].to_dict()
   
+def generateAuthors(**kwargs):
+  pubs = loadPubs()
+  affils = loadAffiliations()
+  for p in pubs:
+    p["year"] = int(p["year"])
+  year = datetime.date.today().year
+  nYears = 2
+  
+  pubsSinceN = [p for p in pubs if p["year"] >= year-nYears]
+  authors = [
+    [", ".join(a)
+     for a in parseAuthors(p)
+     if a != ["Sap", "Maarten"]]
+    for p in pubsSinceN]
+  from collections import Counter
+  allAuthors = Counter([a for aa in authors for a in aa])
+  out = "<table>"
+  out += "\n".join([
+    "<tr><td>"+a+"</td><td>"+ affils[a]+"</td></tr>"
+    for a in allAuthors.keys() if a in affils])
+  out += "</table>"
+  return out
+
+
 # def generateIndexFile():
 #   loadAndReplaceFile("index.html")
 
