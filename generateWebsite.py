@@ -109,7 +109,7 @@ def generateWordFriendlyPublications(**kwargs):
     typeToPubs[type] = typeToPubs.get(type,[])
     typeToPubs[type].append(p)
     
-  order = ["conference","journal","workshop","demo","other"]
+  order = ["conference","journal","workshop","demo","other","preprint"]
   out = ""
   for t in order:
     out+=f"<h2>{t.title()}</h2>\n"
