@@ -74,14 +74,18 @@ def prettifyAuthors(bibD,noBold=False):
 def beautifyBibtex(bibD):
   keysToSkip = ["projecturl","equalcontrib","awards","entryType",
                 "title","author","bibKey","venue"]
+  entryType = bibD["entryType"]
+  if entryType == "preprint":
+    entryType = "article"
   
-  out = "@"+bibD["entryType"]+"{"+bibD["bibKey"]+",</br>"
+  out = "@"+entryType+"{"+bibD["bibKey"]+",</br>"
   out += "&nbsp;&nbsp;title={"+bibD["title"]+"},</br>"
   out += "&nbsp;&nbsp;author={"+bibD["author"]+"},</br>"
   for k, v in bibD.items():
     if k in keysToSkip: continue
     out += "&nbsp;&nbsp;"+k+"={"+v+"},</br>"
   out += "}"
+  out = re.sub(r",</br>}","</br>}",out)
   return out
 
 def wordCitation(bibD):

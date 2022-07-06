@@ -94,7 +94,8 @@ def generateBibtexPublications(**kwargs):
   pubs = loadPubs()
   out = ""
   for i, p in enumerate(pubs):
-    type = getPubType(p)
+    # type = getPubType(p)
+    
     out+= "<div>"
     out+= f"<code>{beautifyBibtex(p)}</code>\n"
     out+= "</div>\n"
