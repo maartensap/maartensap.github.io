@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <?php
+      include("../tools/header_bs4.php");
+    ?>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <?php
+      $callingFile=basename(getcwd(),"");
+      include_once("../analyticstracking.php");
+      include("../tools/nav_bs4.php");
+    ?>
+    <title>HippoCorpus</title>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 10px;">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>Recollection versus Imagination</h1>
+          <h3 class="text-muted">Exploring Human Memory and Cognition via Neural Language Models</h3>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          Welcome to index of pages for the Hippocorpus dataset and project.
+          Please find useful links below:
+          <ul>
+            <li>Our <a target="_blank" href="../pdfs/sap2020recollectionImagination.pdf">ACL 2020 paper</a></li>
+            <li>The <a target="_blank" href="http://aka.ms/hippocorpus">Hippocorpus dataset</a>, hosted by Microsoft Research Open Data (<em>or hosted by us: <a href="hippocorpusV3.tgz">V3</a> or <a href="hippocorpusV2.tgz">V2</a></em>)</li>
+            <li>The <a target="_blank" href="https://www.microsoft.com/en-us/research/project/neural-models-for-studies-of-human-cognition/">project page</a>, hosted by Microsoft Research</li>
+            <li>MTurk templates for collecting: <ul>
+              <li><a href="eventRecall.html">recalled stories</a></li>
+              <li><a href="eventImagine.html">imagined stories</a></li>
+              <li><a href="eventRetold.html">retold stories</a></li>
+              <li><a href="eventSegmentation.html">(<strong>V3</strong>) event segmentation task</a></li>
+            </ul></li>
+          </ul>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <hr>
+          <p>Cite our ACL 2020 paper:</p>
+          <pre class="force-select">@inproceedings{sap2020recollectionImagination,
+  title={Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models},
+  author={Sap, Maarten and Horvitz, Eric and Choi, Yejin and Smith, Noah A and Pennebaker, James W},
+  year={2020},
+  booktitle={ACL}
+}</pre>
+        </div>
+      </div>
+      <?php
+        include("../tools/footer.php");
+      ?> 
+    </div>     
+  </body>
+</html>
+<style>
+  h1,h2,h3,h4,h5 {
+    font-weight: 100;
+  }
+  p {
+    font-weight: 400;
+  }
+  strongish {
+    font-weight: 600;
+  }
+  .faq-q {
+    font-style: italic;
+  }
+  small-caps {
+    font-variant: small-caps;
+  }
+  .force-select {  
+    -webkit-user-select: all;  /* Chrome 49+ */
+    -moz-user-select: all;     /* Firefox 43+ */
+    -ms-user-select: all;      /* No support yet */
+    user-select: all;          /* Likely future */   
+  }
+</style>
