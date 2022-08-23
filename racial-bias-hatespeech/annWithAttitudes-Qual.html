@@ -1,0 +1,289 @@
+<script>
+//
+// This method Gets URL Parameters (GUP)
+//
+function gup( name )
+{
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var tmpURL = window.location.href;
+  var results = regex.exec( tmpURL );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+function decode(strToDecode)
+{
+  var encoded = strToDecode;
+  return unescape(encoded.replace(/\+/g,  " "));
+}
+
+window.onload = function() {
+    if (!window.jQuery) {  
+        // jQuery is not loaded
+        alert("Warning: it seems that jquery is disabled on your browser.  This HIT might not work properly without javascript and jquery code enabled (if you have extensions that block jquery or an old browser version, this may prevent the dynamic elements of the HIT from functioning).  Please ensure that you have jquery enabled by temporarily disabling extensions that interfere with jquery and/or trying a different browser version."); 
+    }
+}
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--For autocomplete-->
+<!--link ref="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.css"-->
+
+<section class="container" id="preInstruction" style="margin-bottom:0px; padding: 0px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333;">
+<div class="card">
+<div class="card-header" style="color: #fff;background-color: #337ab7;border-color: #337ab7;"><strong>Instructions</strong></div>
+<div class="card-body">
+  <p>
+    <strong>Prequalifier task:</strong> Please tell us which race you identify as, and what your political leaning is.
+    <br>
+    Note: this is a preliminary task, we will qualify workers to do a longer HIT in the coming weeks.
+  </p>
+  <p style="margin-bottom: 0px;"><em><strong>Participation restriction: </strong>providers/turkers for this task cannot currently be employed by or a student at the University of Washington.</em></p>
+</div>
+</div>
+</div>
+</section>
+
+<!--END OF HIT HEADER; START OF HIT BODY-->
+<section class="container" style="font-family: Verdana, Geneva, sans-serif; color:#333333;">
+  <fieldset>
+    <div id="actualTask">
+      
+      <div class="container mt-3" id="allQuestions">
+        <div class="row">
+          <div class="col-6">
+            <div class="form-group">
+              <h4>Please tell us your race</h4>
+              <label for="race" class="col-form-label">Race/ethnicity</label>
+              <!--input type="text" id="race" name="annotatorRace" placeholder="" class="form-control"-->
+              <select id="annotatorRace" name="annotatorRace" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="asian">Asian/Asian American</option>
+                <option value="indian">South Asian/Indian American</option>
+                <option value="black">Black/African American</option>
+                <option value="hisp">Hispanic/Latinx</option>
+                <option value="white">White/Caucasian</option>
+                <option value="middleEastern">Middle Eastern</option>
+                <option value="islander">Native Hawaiian/Pacific Islander</option>
+                <option value="native">Native American/First Nations</option>
+                <option value="other">Mixed/other</option>
+                <!--option value="na">Prefer not to disclose</option-->
+              </select>
+              <label for="attentionCheck" class="col-form-label">
+                Please also write out your racial/ethnic identity in the text box below:
+              </label>
+              <input type="text" name="attentionCheck" placeholder="" minlength="5" class="form-control" id="attentionCheck" style="font-size: .85rem;" required>
+            </div>
+            <div class="form-group">
+              <h4>Please tell us your political leaning</h4>
+              <!--input type="text" id="race" name="annotatorRace" placeholder="" class="form-control"-->
+              <form class="mt-4">
+                <label class="radio-inline" for="stronglyLiberal"><em>Strongly liberal</em>&nbsp;</label>
+                <input type="radio" id="stronglyLiberal" name="annotatorPolitics" value=1 required>&nbsp;&nbsp;
+                <label class="radio-inline">&nbsp;&nbsp;<input type="radio" value=2 name="annotatorPolitics">&nbsp;&nbsp;</label>
+                <label class="radio-inline">&nbsp;&nbsp;<input type="radio" value=3 name="annotatorPolitics">&nbsp;&nbsp;</label>
+                <label class="radio-inline">&nbsp;&nbsp;<input type="radio" value=4 name="annotatorPolitics">&nbsp;&nbsp;</label>
+                <label class="radio-inline">&nbsp;&nbsp;<input type="radio" value=5 name="annotatorPolitics">&nbsp;<em>Strongly conservative</em></label>
+                <!--option value="na">Prefer not to disclose</option-->
+              </form>
+              
+            </div>
+          </div>
+          <div class="col-6">
+            <h5>Background on our research project</h5>
+            <small><p>
+              At the University of Washington, we're passionate about understanding how potentially toxic or disrespectful language or stereotypes can be used against certain demographics/groups of people (e.g. racism, sexism, etc.).
+              This requires studying the effect of political leaning and race/ethnicity in how people perceive offensiveness and biases, which is why we are collecting this information from you.
+            </p>
+            <p>
+              <strong>Data collection &amp; sharing</strong><br>
+              We will not ask you for your name, and the data collected in this study will be made unidentifiable to the best of our extent.
+              We will securely store the data on our servers and only share with qualified researchers.
+              If you later decide that you do not want your responses included in this study, please email us so we can exclude your work (Maarten Sap at msap@cs.washington.edu, or Professor Yejin Choi at yejin@cs.washington.edu).
+              <br>
+                If you have questions about your rights as a research participant, or wish to obtain information, ask questions or discuss any concerns about this study with someone other than the researcher(s), please contact the University of Washington Human Subjects Division at 206-543-0098 (for international calls include the US Calling Code: +1-206-543-0098).
+              </small>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-9" id="commentSection" style="display: inline-block;text-align: center;">
+          <p style="font-size:10pt;margin-top: 50px;">
+            Optional Feedback: Thanks for filling out the questions above!
+            If something about the hit was unclear, please either leave a comment in the box below!
+            We would like to make this HIT easier for future workers, so we really appreciate feedback though it is optional.
+            <br>
+            If you have concerns or questions, please email us!
+          </p>
+          <textarea style="margin-left:10px;margin-top:10px;width: 95%;" rows="2" name="commentbox"></textarea>
+          <br><br>
+          <center>
+            <div class="alert alert-danger" id="submitAlert" style="display: none;">
+              Whoops you missed some questions!
+              <br>
+              Note: if the submit button is disabled and you're confident this is an error, please screenshot your answers and the console output (Ctrl+Shift+J or Cmd+Shift+J).
+            </div>
+            <input type="submit" id="submitButton" class="btn btn-primary" value="Submit Hit!">       
+          </center>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</section>
+
+<style type="text/css">
+#examples-table {
+  border-style: none solid solid solid;
+  border-width: 1px;
+  border-color: #dee2e6;
+  border-radius: 5px;
+}
+
+.card-header-accordion{
+  padding: 0px 10px;
+}
+body, td, .btn { 
+  font-size:0.85rem;
+}
+label {
+  margin-bottom: 0px;
+}
+.story-excerpt {
+  margin: 40px auto;
+  min-width: 500px;
+  border:2px #333333;
+  background-color: #f2f2f2;
+  border-style: solid;
+  padding-right:10px;
+  padding-left:10px;
+  display:table;
+  border-radius:15px;
+}
+.story-excerpt-example {
+  border: 1px solid #666666;
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  padding: 3px;
+  display: inline-block;
+  margin: 10px;
+}
+span.numbering {
+  font-weight: bold;
+  margin-right: .5em;
+}
+#introQuestion>div>label>input,
+#sexQuestions>div>label>input,
+#intentQuestion>div>label>input {
+  vertical-align: middle;
+}
+
+#detailed-instructions>p {
+  margin-bottom: 0px;
+}
+span.instrQuestion {
+  background-color: #f2f2f2;
+  font-style: italic;
+  font-size: .9rem;
+  margin: 5px 0 3px -15px;
+  padding: 0 .3rem 0 .3rem;
+  display: inline-block;
+}
+span.instrDescription {
+  font-size: .9rem;
+  margin-left: -15px;
+}
+label > input[type='text'] {
+  width: 90%;
+}
+input[type='text'] {
+  width: 300px;
+}
+input[type='text'].opt-target {
+  background-color: #f8f8f8;
+}
+
+input[type="text"]:invalid {
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+textarea#postText {
+  margin-left: 20px;
+  font-size: 12pt;
+  width: auto;
+  background-color: transparent;
+  overflow: auto;
+  resize: none;
+}
+
+.btn-checkbox, .btn-checkbox-two {
+  .btn-light;
+  color: black;
+  text-align: left;
+  margin: 0px;
+  background-color: #e9ecef;
+  border-color: #d1d4d7;
+}
+
+.btn-checkbox.active,
+.btn-checkbox:active,
+.btn-checkbox:hover {
+  background-color: #babcbf;
+  border-color: #8b8d8f;
+}
+
+.btn-checkbox-two.active,
+.btn-checkbox-two:active,
+.btn-checkbox-two:hover {
+  background-color: #babcbf;
+  border-color: #8b8d8f;
+}
+
+.btn-group-vertical {
+  max-width: 400px;
+  /*margin-right: 10px;*/
+}
+#introQuestion, 
+#sexQuestions,
+#minorityQuestions,
+#demogQuestions {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.autocomplete-suggestions { 
+  border: 1px solid #999;
+  background: #FFF; 
+  overflow: auto;
+}
+#dummyMinority {
+  /*opacity:0;*/
+  width: 0px;
+}
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+input[type='checkbox'] {
+  /* All <input> elements that are immediate children of a class="btn-checkbox" */
+  margin-right: 5px;
+}
+ul {
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+fieldset {
+  padding: 10px;
+  background:#fbfbfb;
+  border-radius:5px; 
+  margin-bottom:5px;
+}
+</style>

@@ -1,0 +1,383 @@
+
+<style>
+.revision{
+  font-style:italic;
+  font-size:10pt;
+  color:blue;
+}
+</style>
+
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary">
+<div class="panel-heading">
+<strong>Instructions</strong></div>
+
+<div class="panel-body">
+<p>
+  Rank pairs of sentences based on the amount of agency the main character has.
+</p>
+<p>
+  <strong>Note</strong>: this is a quals task, please do at least 2 or 3 of this HIT.
+  We will run these quals tasks many times, don't worry if you missed this one.
+  The full batches will be posted sometime later this week (or in the coming weeks).
+</p>
+<p>
+  <em><strong>Participation restriction</strong>: providers/turkers for this task cannot currently be employed by or a student at the University of Washington.</em>
+</p>
+</div>
+</div>
+<!-- End Instructions --><!-- Content Body -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<section>
+<fieldset>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+
+        <h4 class="panel-title"> 
+          Full Instructions &nbsp; &nbsp; <a data-toggle="collapse" href="#collapse0" style="color:#0080ff;font-weight:normal;text-decoration: underline;">(Expand/Collapse)</a> 
+        </h4>
+      </div>
+<div id="collapse0" class="panel-collapse collapse in" style="margin:10px">
+<div class="container-fluid" style="padding:15px;margin:10px">
+<div class="row">
+  <div class="col-sm-8">
+  <h4>Instructions</h4>
+  <p>
+    Thanks for participating in this qual task!
+    Your job is to:
+    <ul>
+      <li>Read a pair of sentences</li>
+      <li>Select which ones portray the <strong><em>main character</em></strong> with the highest agency vs. the lowest agency.</li>
+    </ul>
+  </p>
+  <h4>What is agency</h4>
+  <b>Agency</b>: The agency level is how active, decisive, or powerful the main person in the sentence is.  For example, someone with <b>high</b> agency is:
+  <ul> 
+    <li> actively participating in events</li>
+    <li> has a lot of power or ability to shape their own future</li>
+    <li> pro-active in making their own decisions</li>
+  </ul>
+
+  </div>
+  <div class="col-sm-4">
+    <p>
+      <h4>Background</h4> We are trying to test out a few automatic systems for automatically generating sentences, and want to see how they portray characters / people in sentences. Machines are not as good at understanding nuanced concepts like <em>agency</em>, so your help is crucial and very much appreciated!
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+  <h4>Examples</h4>
+
+  <table style="font-size:10pt">
+  <tr><th style="min-width:300px">Sentence</th> <th></th><th style="min-width:150px">Agency Level</th><th></th> <th style="min-width:250px">Explanation</th> </tr>
+  <tr><td>Alex answered a phone call.</td><td></td><td> low agency</td><td></td><td> Alex picked up the phone but did not actively initiate the conversation.</td></tr>
+  <tr><td>Alex waited around all day while the TV played.</td><td></td><td> low agency</td><td></td><td> Alex was not actively participating in actions.</td></tr>
+  <tr><td>Alex received a book from their friend.</td><td></td><td> low agency</td><td></td><td> Alex is portrayed passively receiving things not actively asking for the book.</td></tr>
+  <tr><td>Alex calls their friend.</td><td></td><td> high agency</td><td></td><td> Alex initiated a conversation.</td></tr>
+  <tr><td>Alex did most of the work by themselves.</td><td></td><td> high agency</td><td></td><td> Alex is taking charge of the situation.</td></tr>
+  <tr><td>Alex took a book from the friend.</td><td></td><td> high agency</td><td></td><td> Alex is actively participating in borrowing the book.</td></tr>
+  <tr></tr>
+  <tr></tr>
+  </table>
+
+
+<!--br>
+Notes/FAQ:
+<ul>
+<li> You are welcome to complete more than one HIT!  As long as you take your time and read each HIT carefully, you may complete as many as you want.</li>
+<li> We estimate that each of these HIT's may take around 1-2 minutes. Please read carefully. (Of course, it's ok if you take slightly more or less time. We know that everyone has different reading speeds). </li>
+</ul-->
+</div>
+</div>
+<br>
+</div>
+</div>
+</div>
+</div>
+
+<hr>
+<h2> Task </h2>
+
+<div class="pair">
+<h3>Pair 1</h3>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-11">
+<div class="story-excerpt" style="min-width:600;background:#ffffff">
+<p style="font-size:12pt;"><b>Sentence A:</b> <span id="original" style="font-size:12pt;">${sent1a}</span></p>
+<p style="font-size:12pt;"><b>Sentence B:</b> <span id="original" style="font-size:12pt;">${sent1b}</span></p>
+</div>
+</div>
+
+</div>
+</div>
+
+<span style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em"> 1) First, let's rate how understandible each of these sentences are:</span>
+<div id="div1" style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em">
+  Q1: Which of these sentences are too <strong>ungrammatical/difficult to understand</strong>?
+<br>
+<div style="margin:10px">
+<table style="font-size:14px">
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="checkbox" class="Qunderstandable r11" name="Qunderstandable1" id="r11a" value="a">&nbsp; Sentence A </label></td><td>${sent1a}</td></tr>
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="checkbox" class="Qunderstandable r11" name="Qunderstandable1" id="r11b" value="b">&nbsp; Sentence B </label></td><td>${sent1b}</td></tr>
+</table>
+</div>
+</div>
+
+<br>
+
+<span style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em"> 2) Now, let's rank them in terms of agency level:</span>
+
+<div id="div2" style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em">
+  Q2: Which of these portrays the main person so they have the <strong>highest agency</strong>?
+<br>
+<div style="margin:10px">
+<table style="font-size:14px">
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="radio" required class="QhighAgency r12" name="QhighAgency1" id="r12a" value="a">&nbsp; Sentence A </label></td><td>${sent1a}</td></tr>
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="radio" required class="QhighAgency r12" name="QhighAgency1" id="r12b" value="b">&nbsp; Sentence B </label></td><td>${sent1b}</td></tr>
+</table>
+<small class="text-muted" style="display: none;" id="r12-disabled">You may skip this question, since you marked one (or more) sentences as not understandable.</small>
+</div>
+</div>
+<br>
+</div>
+
+<div class="pair">
+<h3>Pair 2</h3>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-11">
+<div class="story-excerpt" style="min-width:600;background:#ffffff">
+<p style="font-size:12pt;"><b>Sentence A:</b> <span id="original" style="font-size:12pt;">${sent2a}</span></p>
+<p style="font-size:12pt;"><b>Sentence B:</b> <span id="original" style="font-size:12pt;">${sent2b}</span></p>
+</div>
+</div>
+
+</div>
+</div>
+
+<br>
+<span style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em"> 1) First, let's rate how understandible each of these sentences are:</span>
+<div id="div1" style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em">
+  Q1: Which of these sentences are too <strong>ungrammatical/difficult to understand</strong>?
+<br>
+<div style="margin:10px">
+<table style="font-size:14px">
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="checkbox" class="Qunderstandable r21" name="Qunderstandable2" id="r21a" value="a">&nbsp; Sentence A </label></td><td>${sent2a}</td></tr>
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="checkbox" class="Qunderstandable r21" name="Qunderstandable2" id="r21b" value="b">&nbsp; Sentence B </label></td><td>${sent2b}</td></tr>
+</table>
+</div>
+</div>
+
+<br>
+
+<span style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em"> 2) Now, let's rank them in terms of agency level:</span>
+
+<div id="div2" style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em">
+  Q2: Which of these portrays the main person so they have the <strong>highest agency</strong>?
+<br>
+<div style="margin:10px">
+<table style="font-size:14px">
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="radio" required class="QhighAgency r22" name="QhighAgency2" id="r22a" value="a">&nbsp; Sentence A </label></td><td>${sent2a}</td></tr>
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="radio" required class="QhighAgency r22" name="QhighAgency2" id="r22b" value="b">&nbsp; Sentence B </label></td><td>${sent2b}</td></tr>
+</table>
+<small class="text-muted" style="display: none;" id="r22-disabled">You may skip this question, since you marked one (or more) sentences as not understandable.</small>
+
+</div>
+</div>
+</div>
+
+<div class="pair">
+<h3>Pair 3</h3>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-11">
+<div class="story-excerpt" style="min-width:600;background:#ffffff">
+<p style="font-size:12pt;"><b>Sentence A:</b> <span id="original" style="font-size:12pt;">${sent3a}</span></p>
+<p style="font-size:12pt;"><b>Sentence B:</b> <span id="original" style="font-size:12pt;">${sent3b}</span></p>
+</div>
+</div>
+
+</div>
+</div>
+
+<span style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em"> 1) First, let's rate how understandible each of these sentences are:</span>
+<div id="div1" style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em">
+  Q1: Which of these sentences are too <strong>ungrammatical/difficult to understand</strong>?
+<br>
+<div style="margin:10px">
+<table style="font-size:14px">
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="checkbox" class="Qunderstandable r31" name="Qunderstandable3" id="r31a" value="a">&nbsp; Sentence A </label></td><td>${sent3a}</td></tr>
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="checkbox" class="Qunderstandable r31" name="Qunderstandable3" id="r31b" value="b">&nbsp; Sentence B </label></td><td>${sent3b}</td></tr>
+</table>
+</div>
+</div>
+
+<br>
+<span style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em"> 2) Now, let's rank them in terms of agency level:</span>
+
+<div id="div2" style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em">
+  Q2: Which of these portrays the main person so they have the <strong>highest agency</strong>?
+<br>
+<div style="margin:10px">
+<table style="font-size:14px">
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="radio" required class="QhighAgency r32" name="QhighAgency3" id="r32a" value="a">&nbsp; Sentence A </label></td><td>${sent3a}</td></tr> 
+  <tr style="margin-top:1em"><td style="padding:5pt;"><label><input type="radio" required class="QhighAgency r32" name="QhighAgency3" id="r32b" value="b">&nbsp; Sentence B </label></td><td>${sent3b}</td></tr>
+</table>
+<small class="text-muted" style="display: none;" id="r32-disabled">You may skip this question, since you marked one (or more) sentences as not understandable.</small>
+
+</div>
+</div>
+
+
+</div>
+
+<br><br><br>
+<p>  Optional Feedback: Thanks for filling out the questions above!  If something about the hit was unclear or you had a problem filling it out, please leave a comment below.</p>
+<textarea rows="2" cols="125" name="commentbox"></textarea>
+<br>
+<br>
+<br>
+<center>
+   <input type="submit" id="submitButton" class="btn btn-primary" value="Submit">
+</center>
+
+</div>
+
+<script>
+window.onload = function() {
+    if (!window.jQuery) {  
+        // jQuery is not loaded
+        alert("Warning: it seems that jquery is disabled on your browser.  This HIT might not work properly without javascript and jquery code enabled (if you have extensions that block jquery or an old browser version, this may prevent the dynamic elements of the HIT from functioning).  Please ensure that you have jquery enabled by temporarily disabling extensions that interfere with jquery and/or trying a different browser version."); 
+    }
+}
+var e, pairIx, anyChecked, questionClass;
+$(".Qunderstandable").change(function(event) {
+  // any time one of the options is not understandable, disable the corresponding high agency question
+  e = event;
+  questionClass = e.currentTarget.classList[1];
+  anyChecked = $("."+questionClass+":checked").length > 0;
+  pairIx = e.currentTarget.id.substr(1,1);
+  console.log(questionClass+"; "+anyChecked+"; "+pairIx)
+  $(".r"+pairIx+"2").prop("required",!anyChecked);
+  $(".r"+pairIx+"2").prop("disabled",anyChecked);
+  if (anyChecked) {
+    $("#r"+pairIx+"2-disabled").show();
+    $(".r"+pairIx+"2").parent().addClass("text-muted");
+  } else  {
+    $("#r"+pairIx+"2-disabled").hide();
+    $(".r"+pairIx+"2").parent().removeClass("text-muted");
+  }
+});
+
+</script>
+
+
+<!-- End Content Body --><!-- close container -->
+<style type="text/css">
+
+fieldset { padding: 10px; background:#fbfbfb; border-radius:5px; margin-bottom:5px; }
+.columns{
+    list-style-type: none;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+    list-style-position: inside;//this is important addition
+}
+.unbulleted{
+    list-style-type: none;
+    padding:7px;
+    margin:0px;
+}
+input[type=checkbox]:disabled:checked{filter:brightness(0%); } 
+.vcenter {
+    display: flex;
+    align-items: center;
+}
+
+.pair {
+  border-bottom: 1.5px solid #ddd;
+}
+
+.convo-context{
+   background-color: #f8eed2;
+   padding:5px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+}
+.convo-replies{
+   background-color:#fddce1;
+   padding:3px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+
+}
+.story-excerpt {
+   margin:10pt auto;
+   min-width: 400px;
+   border:2px #333333;
+   background-color: #f6d9cd;
+   border-style: solid;
+   padding-right:10px;
+   padding-left:10px;
+   display:table;
+   border-radius:15px;
+   padding:10px;
+}
+#par1{
+   background-color:#eeeeee;
+   padding:3px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+
+}
+#par2{
+   background-color:#ffffff;
+   padding:3px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+
+}
+#r2text{
+   background-color:#fef4f6;
+   padding:3px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+
+}
+table{
+      border: 0px none black;
+      padding:2pt;
+}
+textarea{
+   padding-right:10px;
+   padding-left:10px;
+   display:table;
+
+}
+label,input{
+  margin-top:0;
+  margin-bottom:0;
+}
+</style>

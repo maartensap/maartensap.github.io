@@ -1,0 +1,671 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ifvisible/1.0.6/ifvisible.js"></script>
+<!--script src="https://cdn.jsdelivr.net/npm/timeme@1.0.0/timeme.min.js"></script-->
+<script src="https://homes.cs.washington.edu/~msap/debug/storytelling/timeme.v2.0.0.min.js"></script>
+<script type="text/javascript">
+// Initialize library and start tracking time
+TimeMe.initialize({
+  currentPageName: "mturk_hit", // current page
+  idleTimeoutInSeconds: 15 // seconds
+});
+</script>
+
+<script src="//uniqueturker.myleott.com/lib.js" type="text/javascript"></script>
+<script type="text/javascript">
+(function(){
+    var ut_id = "4a3c2d3491569f40ae8dff13d14b2f6b";
+    if (UTWorkerLimitReached(ut_id)) {
+        document.getElementById('mturk_form').style.display = 'none';
+        document.getElementsByTagName('body')[0].innerHTML = "You have already completed the maximum number of HITs allowed by this requester. Please click 'Return HIT' to avoid any impact on your approval rating.";
+    }
+})();
+</script>
+
+
+<div class="container">
+  <div class="card">
+    <h5 class="card-header bg-primary text-white">Instructions</h5>
+    <div class="card-body">
+      <p class="card-text">
+        Read a short story and answer some questions about it. This should take less than 5 minutes.
+        <br>
+        This is a pilot task, please leave comments in the comment box!
+        <br>
+        <em><strong>Participation restriction</strong>: providers/turkers for this task cannot currently be employed by or a student at the University of Washington.</em>
+      </p>
+    </div>
+  </div>
+  <div class="p-3">
+    <div class="card">
+      <h5 class="card-header" style="background: #e9ecef;">
+        Full instructions
+        <a data-toggle="collapse" href="#fullInstructions" role="button" aria-expanded="false" aria-controls="fullInstructions">[expand/collapse]</a>
+      </h5>
+      <div class="card-body  collapse show bg-light" id="fullInstructions">
+        <div class="card-text">
+          <div class="row">
+            <div class="col-7">
+              <h4>How to do this task</h4>
+              <p>
+                In this task, you will read a short story.
+                After reading, you will answer five questions about the story.
+                You will also be asked to leave short feedback to the author, to improve the story overall.
+                Finally we will ask some questions about yourself.
+              </p>
+              
+              <h5>Question description</h5>
+              <p>We'll ask you 6 questions about the story, described below:</p>
+              <ol>
+                <li><em style="color: #377eb8">I like the story</em>.
+                  <br>Overall, how much did you like the story?</li>                
+                <li><em style="color: #ff7f00">How creative is the story</em>?
+                  <br>A creative story has a clear, original, and interesting story premise.</li>
+                <li><em style="color: #984ea3">How entertaining is the story</em>?
+                  <br>An entertaining story is amusing and enjoyable.</li>
+                <li><em style="color: #e41a1c">How coherent is the story</em>?
+                  <br>A coherent story has details that are consistent. The story makes sense and doesn’t meander or jump around without explanation.</li>
+                <li><em style="color: #4daf4a">How grammatical is the story</em>?
+                  <br>A grammatical story has less grammar and spelling mistakes.</li>
+                <li><em style="color: #a65628">How confusing is the story</em>?
+                  <br>A confusing story is hard to follow, nonsensical, or hard to summarize.</li>
+              </ol>
+              <p>
+                <strong>Additional notes on the task</strong>:
+              </p>
+              <ul>
+                <li>If the story is jibberish (or not English), please select "strongly disagree" for all questions.</li>
+                <li>The stories you will read were written based on one of four comic strips.</li>
+              </ul>
+            </div>
+            <div class="col-5">
+              <h5>Background on our research project</h5>
+              <p>
+                At the University of Washington, we seek to study how different people write and read stories.
+                Although there is no direct benefit to you for participating, we very much appreciate your help in rating stories. 
+              </p>
+              <p>
+                <small>
+                  <strong>Purpose</strong>: This study aims to build tools to help individuals improve their writing. As part of the process, we hope to collect real data on how people write and edit their writings.<br>
+                  <strong>Risk</strong>: The provided suggestions may contain language or themes not suitable for a general audience. If you have concerns about any suggestions you receive, please note them in the feedback portion of the end of the task and/or contact the researchers directly.<br>
+                  <strong>Data collection &amp; sharing</strong>:
+                  We will only collect texts in the process of interactive writing anonymously.
+                  We will securely store the data on our servers and only share with qualified researchers (e.g. who want to further the study of story writing).
+                  If you later decide that you do not want your responses included in this study, please email so we can exclude your work.<br>
+                  <strong>Funding</strong>: The study team is receiving financial support from DARPA. <br>
+                  If you have questions about your rights as a research participant, or wish to obtain information, ask questions or discuss any concerns about this study with someone other than the researcher(s), please contact the University of Washington Human Subjects Division at 206-543-0098 (for international calls include the US Calling Code: +1-206-543-0098).
+                </small>
+              </p>
+            </div>
+            <div class="col-12">
+              <p>
+                <em>If you have concerns, questions, or strong negative reactions to some of the content</em>, please either email us (Maarten Sap at msap@cs.washington.edu, or Professor Noah Smith at nasmith@cs.washington.edu) or leave feedback in the comment box below.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center" id="consent-div">
+      <div class="col-12 mt-4">
+        <h5>Agree to the task</h5>
+        <div class="form-check">
+          <label class="form-check-label" for="consent">
+            <input class="form-check-input" type="checkbox" id="consent" name="consent" onclick="toggleConsent(this.checked)" required>
+            By ticking this box, you are agreeing to be part of this data collection study. Be sure that questions you have about the study have been answered and that you understand what you are being asked to do. You may contact us if you think of a question later. You are free to release/quit the HIT at any time, and refusing to be in the experiment or stopping participation will involve no penalty or loss of benefits to which you are otherwise entitled. To save a copy of the consent form and instructions, you can save/print this webpage (or find the instructions <a href="https://homes.cs.washington.edu/~msap/debug/storytelling/rateStories.html">here</a>).
+          </label>
+        </div>
+        <br>
+        <div class="alert alert-warning" id="consent-message" style="max-width: 400px;margin: auto;">
+          You must check the box to continue the task!
+        </div>
+      </div>
+    </div>
+    <div id="main-task" style="display: none;">
+      <div class="row justify-content-center mt-4">
+        <div class="col-6" id="story-section">
+          <h4>Part 1: Story Reading</h4>
+          <div id="story-block">
+            ${story}
+          </div>
+        </div>
+        <div class="col-6" id="question-section">
+          <h4>Part 2: Questions about the story <br>
+          <small>Please mark your level of agreement with the following statements.</small></h4>
+
+          <div id="likeForm" class="likert">
+            <p class="likert-question" style="color: #377eb8">I like this story.</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Strongly disagree<input type="radio" value="1" name="like" required=""></td>
+                  <td><input type="radio" value="2" name="like"></td>
+                  <td><input type="radio" value="3" name="like"></td>
+                  <td>Neither agree nor disagree<input type="radio" value="4" name="like"></td>
+                  <td><input type="radio" value="5" name="like"></td>
+                  <td><input type="radio" value="6" name="like"></td>
+                  <td>Strongly agree<input type="radio" value="7" name="like"></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="mt-4" style="text-align: right;">
+              1/6
+            </p>
+          </div>
+          <div id="creativeForm" class="likert">
+            <p class="likert-question" style="color: #ff7f00">This story is creative.</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Strongly disagree<br><input type="radio"  value="1" name="creative" required=""></td>
+                  <td><input type="radio"  value="2" name="creative"></td>
+                  <td><input type="radio"  value="3" name="creative"></td>
+                  <td>Neither agree nor disagree<input type="radio" value="4" name="creative"></td>
+                  <td><input type="radio" value="5" name="creative"></td>
+                  <td><input type="radio" value="6" name="creative"></td>
+                  <td>Strongly agree<input type="radio" value="7" name="creative"></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="mt-4" style="text-align: right;">
+              2/6
+            </p>
+          </div>
+          <div id="entertainingForm" class="likert">
+            <p class="likert-question" style="color: #984ea3">This story is entertaining.</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Strongly disagree<input type="radio" value="1" name="entertaining" required=""></td>
+                  <td><input type="radio" value="2" name="entertaining"></td>
+                  <td><input type="radio" value="3" name="entertaining"></td>
+                  <td>Neither agree nor disagree<input type="radio" value="4" name="entertaining"></td>
+                  <td><input type="radio" value="5" name="entertaining"></td>
+                  <td><input type="radio" value="6" name="entertaining"></td>
+                  <td>Strongly agree<input type="radio" value="7" name="entertaining"></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="mt-4" style="text-align: right;">
+              3/6
+            </p>
+          </div>
+          <div id="coherentForm" class="likert">
+            <p class="likert-question" style="color: #e41a1c">This story is coherent.</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Strongly disagree<input type="radio" value="1" name="coherent" required=""></td>
+                  <td><input type="radio" value="2" name="coherent"></td>
+                  <td><input type="radio" value="3" name="coherent"></td>
+                  <td>Neither agree nor disagree<input type="radio" value="4" name="coherent"></td>
+                  <td><input type="radio" value="5" name="coherent"></td>
+                  <td><input type="radio" value="6" name="coherent"></td>
+                  <td>Strongly agree<input type="radio" value="7" name="coherent"></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="mt-4" style="text-align: right;">
+              4/6
+            </p>
+          </div>
+          <div id="grammaticalForm" class="likert">
+            <p class="likert-question" style="color: #4daf4a">This story is grammatical.</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Strongly disagree<input type="radio" value="1" name="grammatical" required=""></td>
+                  <td><input type="radio" value="2" name="grammatical"></td>
+                  <td><input type="radio" value="3" name="grammatical"></td>
+                  <td>Neither agree nor disagree<input type="radio" value="4" name="grammatical"></td>
+                  <td><input type="radio" value="5" name="grammatical"></td>
+                  <td><input type="radio" value="6" name="grammatical"></td>
+                  <td>Strongly agree<input type="radio" value="7" name="grammatical"></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="mt-4" style="text-align: right;">
+              5/6
+            </p>
+          </div>
+          <div id="confusingForm" name="confusing" class="likert">
+            <p class="likert-question" style="color: #a65628">This story is confusing.</p>
+            <table>
+              <tbody>
+                <tr>
+                  <td>Strongly disagree<input type="radio" value="1" name="confusing" required=""></td>
+                  <td><input type="radio" value="2" name="confusing"></td>
+                  <td><input type="radio" value="3" name="confusing"></td>
+                  <td>Neither agree nor disagree<input type="radio" value="4" name="confusing"></td>
+                  <td><input type="radio" value="5" name="confusing"></td>
+                  <td><input type="radio" value="6" name="confusing"></td>
+                  <td>Strongly agree<input type="radio" value="7" name="confusing"></td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="mt-4" style="text-align: right;">
+              6/6
+            </p>
+          </div>
+
+          <input class="btn btn-primary" type="button" id="prevQuestionButton" style="visibility: visible;" value="Prev. Question" onclick="prevQuestion();" disabled="">  
+          <input class="btn btn-primary" type="button" id="nextQuestionButton" style="visibility: visible;" value="Next Question" onclick="nextQuestion();" disabled="">
+
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-12 section mt-4">
+        <h4><label for="feedback">Part 3: Comment on the story</label></h4>
+          <div class="form-group row">
+            <div class="col-8">
+              Give one suggestion to improve the story.<br>
+              <input type="text" class="form-control" id="feedback" name="feedback" aria-describedby="feedback" placeholder="Feedback" minlength="15" required>
+            </div>
+            <small class="col-4">
+              Examples of good (&#x2714;) and bad (&#x2717;) feedback:
+              <ul>
+                <li><em>Try using less complicated words.</em> &#x2714;</li>
+                <li><em>Plot could be tied up better.</em> &#x2714;</li>
+                <li><em><s>Good.</s></em> &#x2717;</li>
+                <li><em><s>Nothing happens.</s></em> &#x2717;</li>
+              </ul>
+            </small>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      <div class="row justify-content-center">
+        <div class="col-12 section">
+          <h4>Part 4: Tell us about yourself</h4>
+
+          <h5 class="mt-4">To what extent do you agree with the following statements?</h5>
+          <span style="display: block;font-style: italic;">I have a vivid imagination</span>
+          <div class="form-check form-check-inline ml-3 likert2">
+            <label class="form-check-label" for="ope_vividImagination1">Strongly disagree &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_vividImagination" id="ope_vividImagination1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_vividImagination2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_vividImagination" id="ope_vividImagination2" value="2">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_vividImagination3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_vividImagination" id="ope_vividImagination3" value="3">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_vividImagination4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_vividImagination" id="ope_vividImagination4" value="4">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_vividImagination5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="ope_vividImagination" id="ope_vividImagination5" value="5">
+            <label class="form-check-label" for="ope_vividImagination5">&nbsp; Strongly agree </label>
+          </div>
+          
+          <span style="display: block;font-style: italic;" class="mt-3">I have difficulty understanding abstract ideas</span>
+          <div class="form-check form-check-inline ml-3 likert2">
+            <label class="form-check-label" for="ope_hardAbstract1">Strongly disagree&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_hardAbstract" id="ope_hardAbstract1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_hardAbstract2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_hardAbstract" id="ope_hardAbstract2" value="2">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_hardAbstract3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_hardAbstract" id="ope_hardAbstract3" value="3">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_hardAbstract4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_hardAbstract" id="ope_hardAbstract4" value="4">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_hardAbstract5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="ope_hardAbstract" id="ope_hardAbstract5" value="5">
+            <label class="form-check-label" for="ope_hardAbstract5">&nbsp; Strongly agree </label>
+          </div>
+          
+          <span style="display: block;font-style: italic;" class="mt-3">I do not have a good imagination.</span>
+          <div class="form-check form-check-inline ml-3 likert2">
+            <label class="form-check-label" for="ope_badImagination1">Strongly disagree &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_badImagination" id="ope_badImagination1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_badImagination2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_badImagination" id="ope_badImagination2" value="2">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_badImagination3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_badImagination" id="ope_badImagination3" value="3">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_badImagination4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_badImagination" id="ope_badImagination4" value="4">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_badImagination5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="ope_badImagination" id="ope_badImagination5" value="5">
+            <label class="form-check-label" for="ope_badImagination5">&nbsp; Strongly agree </label>
+          </div>
+
+          <span style="display: block;font-style: italic;" class="mt-3">Am not interested in abstract ideas.</span>
+          <div class="form-check form-check-inline ml-3 likert2">
+            <label class="form-check-label" for="ope_notAbstract1">Strongly disagree &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_notAbstract" id="ope_notAbstract1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_notAbstract2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_notAbstract" id="ope_notAbstract2" value="2">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_notAbstract3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_notAbstract" id="ope_notAbstract3" value="3">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_notAbstract4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_notAbstract" id="ope_notAbstract4" value="4">
+          </div>
+          <div class="form-check form-check-inline likert2">
+            <label class="form-check-label" for="ope_notAbstract5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="ope_notAbstract" id="ope_notAbstract5" value="5">
+            <label class="form-check-label" for="ope_notAbstract5">&nbsp; Strongly agree </label>
+          </div>
+          
+
+          <!--p><small>Select "prefer not to disclose" if needed.</small></p-->
+          <h5 class="mt-4">How do you identify?</h5>
+          <div class="form-group row mt-3">
+            <label for="annotatorGender" class="col-sm-3 col-form-label">Gender identity</label>
+            <div class="col-sm-3">
+              <select id="annotatorGender" name="annotatorGender" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="man">Man</option>
+                <option value="woman">Woman</option>
+                <!--option value="nonBinary">Non-binary</option-->
+                <option value="other">Other</option>
+                <option value="na">- prefer not to disclose -</option>
+              </select>
+            </div>
+            <div class="col-sm-4"><small>Please select the gender identity you most identify with currently.</small></div>
+          </div>
+          <div class="form-group row">
+            <label for="annotatorAge" class="col-sm-3 col-form-label">Age range</label>
+            <div class="col-sm-3">
+              <select id="annotatorAge" name="annotatorAge" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="18">18-24</option>
+                <option value="25">25-29</option>
+                <option value="30">30-34</option>
+                <option value="35">35-39</option>
+                <option value="40">40-44</option>
+                <option value="45">45-49</option>
+                <option value="50">50-54</option>
+                <option value="55">55-59</option>
+                <option value="60">60+</option>
+                <option value="na">- prefer not to disclose -</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="form-group row" >
+            <label for="annotatorRace" class="col-sm-3 col-form-label">Race/ethnicity</label>
+            <div class="col-sm-3">
+              <select id="annotatorRace" name="annotatorRace" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="American Indian">Native American or American Indian</option>
+                <option value="Alaska Native">Alaska Native</option>
+                <option value="Asian">Asian</option>
+                <option value="African American">African American</option>
+                <option value="African">African</option>
+                <option value="Hispanic">Hispanic</option>
+                <option value="Latin American">Latin American</option>
+                <option value="Native Hawaiian or Other Pacific Islander">Native Hawaiian or Other Pacific Islander</option>
+                <option value="White">White</option>
+                <option value="Other">Other</option>
+                <option value="NA">- prefer not to disclose -</option>
+              </select>
+            </div>
+            <div class="col-sm-4"><small>Please select the racial/ethnic identity you most identify with currently.</small></div>
+          </div>
+          <div class="form-group row">
+            <label for="annotatorEducation" class="col-sm-3 col-form-label">
+              Years of education completed starting from primary school
+            </label>
+            <div class="col-sm-3">
+              <input type="number" name="annotatorEducation" class="form-control" id="annotatorEducation" style="font-size: .85rem;">
+            </div>
+            <div class="col-sm-4"><small>Please enter the number of years of education you have completed starting from primary school.</small></div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8 mt-5 text-center section" style="font-size: 10pt;">
+          Optional Feedback: Thanks for filling out hit above!
+          If something about the hit was unclear, please either leave a comment in the box below!
+          We would like to make this HIT easier for future workers, so we really appreciate feedback though it is optional.
+          If you have concerns or questions, please email us!
+          <textarea id="commentbox" name="commentbox" class="form-control" style="width: 100%;margin-top:10px"></textarea><br>
+          <input type="submit" id="submitButton" class="btn btn-primary" value="Submit Hit!">
+          <input id="timeOnPageInSeconds" name="timeOnPageInSeconds" type="number" value=0 style="display: none;" step="0.01" min=0>
+        </div>
+        <div class="col-6 mt-2 alert alert-danger" id="cantSubmit" style="display: none;" >
+          You're missing some questions! Please verify that you've filled out:
+          <ul>
+            <li>All <strong>questions</strong> in part 2</li>
+            <li>The text input field in part 3 (min num characters: 5)</li>
+            <li>All <strong>questions</strong> in part 4</li>
+          </ul>
+        </div>
+      </div>
+    </div>      
+  </div>
+</div>
+<script>
+  var e;
+  //var characters = "QWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+  var forms = ["likeForm","creativeForm", "entertainingForm", "coherentForm", "grammaticalForm", "confusingForm"];
+  var currentForm = 0;
+
+  var sampleStory = `Little Ben was excited to be at the park, his owner hadn't taken him out of the house for a few days.<br>
+  Finding an excellent fetching stick Ben quickly raced back to his owner to present his findings.<br>
+  Though Ben's favorite thing about going to the park was watching the ducks glide along the river, he thought that their wings caught the sun so beautifully. <br>
+  Sometimes he would watch the ducks from the bridge, standing on the edge he felt like he was flying right above them. Maybe one day he will swim with the ducks. <br>
+  Alas his owner must take him back home now, but he can't wait for his next park adventure. <br>
+  `;
+  $(document).ready(function(){
+    $("div.likert").hide();
+    $("div.likert#"+forms[0]).show();
+    TimeMe.callWhenUserLeaves(function(){
+      console.log("The user is not currently viewing the page! "+new Date());
+    }, 5);
+    TimeMe.callWhenUserReturns(function(){
+      console.log("The user has come back! "+new Date());
+    });
+    if (location.host == "homes.cs.washington.edu"){
+      toggleConsent(true);
+      $("#consent").prop("checked",true);
+      $(".debug").show();
+      $("#story-block").html(sampleStory);
+    }
+  });
+
+  $("td>input").on("click",function(e){
+    if (currentForm < forms.length-1)
+      $("#nextQuestionButton").prop("disabled","");
+  });
+  
+  function toggleConsent(checked){
+    if (checked){
+      $("#main-task").show();
+      $("#consent-message").hide();
+    } else {
+      $("#main-task").hide();
+      $("#consent-message").show();
+    }
+  }
+
+  function prevQuestion(){
+    $("#"+forms[currentForm]).hide();
+    currentForm -= 1;
+    $("#"+forms[currentForm]).show();
+
+    $("#nextQuestionButton").prop("disabled","");
+
+    if (currentForm == 0)
+      $("#prevQuestionButton").prop("disabled",true);
+    else 
+      $("#prevQuestionButton").prop("disabled","");
+  }
+  function nextQuestion(){
+    $("#"+forms[currentForm]).hide();
+    currentForm += 1;
+    $("#"+forms[currentForm]).show();
+
+    $("#prevQuestionButton").prop("disabled","");
+
+    if ($("#"+forms[currentForm]+":invalid").length > 0)
+      $("#nextQuestionButton").prop("disabled",true);
+
+    if (currentForm >= forms.length-1)
+      $("#nextQuestionButton").prop("disabled",true);
+    
+  }  
+
+  //(\r\n|\n|\r)
+  $("#submitButton").on("click",function(e){
+    $("#timeOnPageInSeconds").val(TimeMe.getTimeOnCurrentPageInSeconds().toFixed(2));
+
+    var ok = ($(":invalid").length == 0);
+    console.log("All fields valid? "+ok);
+    $(":valid").removeClass("invalid");
+    $(".likert>input:valid").parents().removeClass("invalid");
+    $(".form-check>input:valid").parents().removeClass("invalid");
+    if (!ok) {
+      $("#cantSubmit").show();
+      $(":invalid").addClass("invalid");
+      $(".likert>input:invalid").parents().addClass("invalid");
+      $(".form-check>input:invalid").parents().addClass("invalid");
+      e.preventDefault();
+    } else{
+      $("#cantSubmit").hide();
+    }
+  });
+</script>
+<style type="text/css">
+  h3, h4, h5, h6 {
+    font-weight: 400;
+  }
+  #high-cog-instructions {
+    border-radius: .5em; 
+    border: .75px solid black;
+    padding: .5em;
+    background-color: white;
+  }
+  .section {
+    border-top: solid darkgrey .75px;
+    padding-top: 15px;
+  }
+  textarea[data-state="open"] {
+    background-color: white; 
+    border-color: #ced4da;
+    color: #495057;
+  }
+  textarea[data-state="invalid"],
+  textarea[data-state="invalid"]:active,
+  textarea[data-state="invalid"]:focus,
+  textarea[data-state="invalid"]:focus-within {
+    background-color: #f5c6cb; 
+    border-color: #D22437;
+    color: #721c24;
+  }
+  
+  input.form-check-input {
+    padding-right: 10px;
+  }
+  input.form-check-input.right:after {
+    /*
+    position: absolute;
+    bottom: 0;
+    left: .5em;
+    right: 0;
+    content: "";
+    height: 0.75em;
+    border-top: 1px solid black;*/
+  }
+  #story-block {
+    display: table;
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid #A3A5A7;
+    padding: 5px;
+    background-color: #f8f9fa;
+  }
+  .likert>label{
+    font-size: smaller;
+  }
+  ul>li:before{
+    margin-left: -1em;
+    margin-right: .25em;
+  }
+  ul>li.corr:before {
+    content: "\2713";
+  }
+  ul>li.inco:before {
+    content: "\2717";
+  }
+
+  td  {   /*For the survey*/
+    text-align: center;
+    vertical-align:bottom;
+    table-layout: fixed;
+    width : 80px;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+    font-size: 13px;
+    padding: 5px 0px;
+  }
+
+  td input {
+    display:block;
+    width:100%;
+    margin-top: 5px ;
+    margin-bottom: 2px;
+    margin: auto;
+  }
+
+  .likert {
+    margin-top: 2rem;
+    /*margin: 20px;*/
+  }
+  .likert-question{
+    font-style: italic;
+    font-weight: bold;
+  }
+
+  .form-check.invalid,
+  .likert.invalid,
+  input.invalid, 
+  select.invalid {
+    border: .1em solid #D22437;
+    border-radius: .1em;
+    background-color: #f5c6cb;
+    padding: .1em;
+  }
+  .form-check>label {
+    font-size: small;
+  }
+
+</style>
+
+
+
+
+

@@ -1,0 +1,385 @@
+
+<style>
+.revision{
+  font-style:italic;
+  font-size:10pt;
+  color:blue;
+}
+</style>
+
+<link href="https://s3.amazonaws.com/mturk-public/bs30/css/bootstrap.min.css" rel="stylesheet" />
+<section class="container" id="Other" style="margin-bottom:15px; padding: 10px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333; font-size:0.9em;">
+<div class="row col-xs-12 col-md-12"><!-- Instructions -->
+<div class="panel panel-primary" style="border-color: #cc6600;">
+<div class="panel-heading" style="border-color: #cc6600;background-color: #cc6600">
+<strong>Instructions</strong></div>
+
+<div class="panel-body" >
+<p>Decide which of two automatically revised sentences is closer in meaning to the original, and which gives higher agency to its characters.</p>
+<p>
+  <em><strong>Participation restriction</strong>: providers/turkers for this task cannot currently be employed by or a student at the University of Washington.</em>
+</p>
+</div>
+</div>
+<!-- End Instructions --><!-- Content Body -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<section>
+<fieldset>
+
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading" >
+      <h4 class="panel-title"> 
+        Full Instructions &nbsp; &nbsp; <a data-toggle="collapse" href="#collapse0" style="color:#0080ff;font-weight:normal;text-decoration: underline;">(Expand/Collapse)</a> 
+      </h4>
+    </div>
+    <div id="collapse0" class="panel-collapse collapse in" style="margin:10px">
+      <div class="container-fluid" style="padding:15px;margin:10px">
+        <div class="row">
+          <div class="col-sm-8">
+            <h4>Instructions</h4> 
+            Thanks for participating in this new task!
+            We are trying to test out a few automatic systems for rephrasing sentences so that characters portrayed have higher agency.
+            <br>
+            Given an sentence from a story and two automatically revised versions, please answer the following three questions about the revised sentences:
+            <ul>
+              <li><strong>Agency overall</strong><br>Which of the revised sentences portrays the main person so they have the <em>highest agency</em> overall (regardless of meaning preservation)?</li>
+              <li><strong>Meaning</strong><br>Which do you think is <em>closer in meaning to the original</em> sentence (regardless of agency change)?</li>
+              <li><strong>Agency and meaning similarity</strong><br>Which sentence best portrays the main person with <em>highest agency while preserving the general content</em> of the sentence?</li>
+            </ul>            
+            Some notes:
+            <ul>
+              <li>What is <b>agency</b>?<br>The agency level is how active, decisive, or powerful the main person in the sentence is. For example, someone with <em>high</em> agency is actively participating in events, has a lot of power or ability to shape their own future, or pro-active in making their own decisions.</li>
+              <li>What is <b>meaning similarity</b>?<br>Two sentences are similar in meaning or overall content if they describe <em>roughly the same event</em> and have roughly the same interpretation. But, it's okay if a few details in the sentence get changed a bit.</li>
+              <li>
+                What is the revised sentence is <b>hard to understand</b>?<br>If you cannot answer the revisions, let us know by selecting <em>impossible to understand</em>.
+                If the sentence has some errors but is possible to understand, select <em>some grammar errors</em>.
+              </li>
+            </ul>
+          </div>
+          <div class="col-sm-4">
+            <p>
+              <h4>Background</h4>
+              We are trying to test out a few automatic systems for automatically generating sentences, and want to see how they portray characters / people in sentences.
+              Machines are not as good at understanding nuanced concepts like <em>agency</em>, so your help is crucial and very much appreciated!
+            </p>
+          </div>
+  
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <h4>Examples</h4>
+            <table style="font-size:10pt">
+            <tr>
+              <th style="min-width:200px">Original</th><th style="min-width:250px">Revisions</th><th style="width:80px">Agency</th>
+              <th style="width:80px">Meaning</th><th style="width:90px">Agency &amp; Meaning</th><th><em>Notes</em></th>
+            </tr>
+            <tr>
+              <td rowspan="2" class="original"> Alex answered a phone call.</td>
+              <td> Alex called up a friend.</td><td></td><td>&#10004;</td><td>&#10004;</td><td rowspan="2" class="notes">Here, both revisions give Alex more agency, yet calling a friend is closer in meaning to answering a phone call.</td>
+            </tr>
+            <tr class="second">
+              <td> Alex visited their friend's house.</td><td>&#10004;</td><td></td><td></td>
+            </tr>
+            
+            <tr>
+              <td rowspan="2" class="original"> Alex loves football.</td>
+              <td> Alex loves watching football.</td><td></td><td>&#10004;</td><td></td><td rowspan="2" class="notes">Even though loving football and loving to watching are closer in meaning, <em>Alex loves to play football</em> portrays Alex with more agency without much overall meaning change.</td>
+            </tr>
+            <tr class="second">
+              <td> Alex loves to play football.</td><td>&#10004;</td><td></td><td>&#10004;</td>
+            </tr>
+             
+            <tr>
+              <td rowspan="2" class="original"> Alex won a pie-eating contest.</td>
+              <td> Alex lost a pie-eating contest.</td><td></td><td></td><td></td><td rowspan="2" class="notes">Winning is the same as taking home a trophy.</td>
+            </tr>
+            <tr class="second">
+              <td> Alex took home the first-place trophy.</td><td>&#10004;</td><td>&#10004;</td><td>&#10004;</td>
+            </tr>
+            
+            <tr>
+              <td rowspan="2" class="original"> In class, Alex often participated.</td>
+              <td> In class, Alex often listened.</td><td></td><td>&#10004;</td><td></td><td rowspan="2" class="notes">Even though Alex participating and listening is closer in meaning, interjecting gives Alex more agency and doesn't drastically change the events.</td>
+            </tr>
+            <tr class="second">
+              <td> In class, Alex often interjected.</td><td>&#10004;</td><td></td><td>&#10004;</td>
+            </tr>
+            
+            <tr>
+              <td rowspan="2" class="original"> Alex went for a walk.</td>
+              <td> They decided to go swimming.</td><td>&#10004;</td><td></td><td></td><td rowspan="2" class="notes">Deciding to go swim implies more agency, but strolling is closer to the original sentence.</td>
+            </tr>
+            <tr class="second">
+              <td> They strolled in the park.</td><td></td><td>&#10004;</td><td>&#10004;</td>
+            </tr>
+            </table>
+
+            <br>
+            Notes/FAQ:
+            <ul>
+            <li> You are welcome to complete more than one HIT!  As long as you take your time and read each HIT carefully, you may complete as many as you want.</li>
+            <li> We estimate that each of these HIT's may take around 1-2 minutes. Please read carefully. (Of course, it's ok if you take slightly more or less time. We know that everyone has different reading speeds). </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+<h3> Task </h3>
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-11">
+<div class="story-excerpt" style="min-width:600;background:#fdf6f2">
+<p style="font-size:12pt;"><b>Original Sentence:</b></p>
+<p><span id="original" style="font-size:12pt;">${original}</span></p>
+</div>
+<h4>Revisions:</h4>
+</div>
+
+</div>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="story-excerpt">
+      <!--div class="convo-context"-->
+      <p style="font-size:12pt;"><b>Revision A:</b></p>
+      <div id="reva" style="font-size:12pt;">${reva}</div>
+      <!--/div-->
+      <div class="understandable" style="text-align:right;font-size: smaller;">
+        <label>Easy to understand<input type="radio" class="Qunderstandable" name="Qunderstandable_a" value="grammatical" required checked></label><br>
+        <label>Some grammar errors<input type="radio" class="Qunderstandable" name="Qunderstandable_a" value="somewhatGrammatical" required></label><br>
+        <label>Impossible to understand<input type="radio" class="Qunderstandable" name="Qunderstandable_a" value="gibberish" required></label>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="story-excerpt">
+      <!--div class="convo-context"-->
+      <p style="font-size:12pt;"><b>Revision B:</b></p> 
+      <div id="revb" style="font-size:12pt;">${revb}</div>
+      <!--/div-->
+      <div class="understandable" style="text-align:right;font-size: smaller;">
+        <label>Easy to understand<input type="radio" class="Qunderstandable" name="Qunderstandable_b" value="grammatical" required checked></label><br>
+        <label>Some grammar errors<input type="radio" class="Qunderstandable" name="Qunderstandable_b" value="somewhatGrammatical" required></label><br>
+        <label>Impossible to understand<input type="radio" class="Qunderstandable" name="Qunderstandable_b" value="gibberish" required></label>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<br>
+
+<div id="div3" style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em">
+  Q1: Which of these portrays the main person so they have the <b>highest agency</b> (regardless of meaning preservation)?
+  <br>
+  <small>If there are multiple characters in the sentence, usually the ones referred to by pronouns (he, she, etc.) are the main characters.</small>
+  <br>
+  <div style="margin:10px">
+    <table style="font-size:14px">
+      <tr style="margin-top:1em">
+      <td style="padding:5pt;"><input type="radio" required name="qAgency" id="r3a" value="a"><label for="r3a">&nbsp; Revision A </label></td><td>${reva}</td></tr>
+      <tr><td style="padding:5pt;"><input type="radio" required name="qAgency" id="r3b" value="b"><label for="r3b">&nbsp; Revision B</label></td><td>${revb}</td></tr>
+    </table>
+  </div>
+</div>
+<br>
+<div id="div1" style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em">
+  Q2: Which do you think is <strong>closer in meaning</strong> to the original sentence (regardless of agency change)?
+  <br>
+  <small>Pick the sentence that has the general events and measing closest to the original.</small>
+  <br>
+  <div style="margin:10px">
+    <table style="font-size:14px">
+      <tr style="margin-top:1em">
+      <td style="padding:5pt;"><input type="radio" required name="qMeaning" id="r2a" value="a"><label for="r2a">&nbsp; Revision A </label></td><td>${reva}</td></tr>
+      <tr><td style="padding:5pt;"><input type="radio" required name="qMeaning" id="r2b" value="b"><label for="r2b">&nbsp; Revision B</label></td><td>${revb}</td></tr>
+    </table>
+  </div>
+</div>
+
+<br>
+
+<div id="div2" style="margin-left:10px;margin-top:5px;font-size:12pt;line-height:1.5em">
+  Q3: Which sentence best portrays the main person with <strong>higher agency</strong> while <strong>preserving the general content</strong> of the sentence?
+  <br>
+  <small>Try to pick the revision that has the best tradeoff between meaning and higher agency.</small>
+  <br>
+  <div style="margin:10px">
+    <table style="font-size:14px">
+      <tr style="margin-top:1em">
+      <td style="padding:5pt;"><input type="radio" required name="qAgencyMeaning" id="r1a" value="a"><label for="r1a">&nbsp; Revision A </label></td><td>${reva}</td></tr>
+      <tr><td style="padding:5pt;"><input type="radio" required name="qAgencyMeaning" id="r1b" value="b"><label for="r1b">&nbsp; Revision B</label></td><td>${revb}</td></tr>
+    </table>
+  </div>
+</div>
+
+
+<br><br><br>
+<p>  Optional Feedback: Thanks for filling out the questions above!  If something about the hit was unclear or you had a problem filling it out, please leave a comment below.</p>
+<textarea rows="2" cols="125" name="commentbox"></textarea>
+<br>
+<br>
+<br>
+<center>
+   <input type="submit" id="submitButton" class="btn btn-primary" value="Submit">
+</center>
+
+</div>
+
+<script>
+window.onload = function() {
+    if (!window.jQuery) {  
+        // jQuery is not loaded
+        alert("Warning: it seems that jquery is disabled on your browser.  This HIT might not work properly without javascript and jquery code enabled (if you have extensions that block jquery or an old browser version, this may prevent the dynamic elements of the HIT from functioning).  Please ensure that you have jquery enabled by temporarily disabling extensions that interfere with jquery and/or trying a different browser version."); 
+    }
+}
+var ev, a, w, o, qunds, checked, opts = ["a","b"];
+$(".Qunderstandable").on("change",function(e){
+  a = e.target;
+  
+  qunds = $(".Qunderstandable[value='gibberish']");
+  checked = $(".Qunderstandable[value='gibberish']:checked");
+  if (checked.length == 2){
+    $("input[type='radio'][value='a']").prop("disabled",true);
+    $("input[type='radio'][value='b']").prop("disabled",true);
+    $("input[type='radio'][value='a']").prop("checked",false);
+    $("input[type='radio'][value='b']").prop("checked",false);
+  } else if (checked.length == 1) {
+    a = checked[0];
+    w = a.name.slice(-1);
+    o = opts[(opts.indexOf(w)+1) % opts.length];
+    $("input[type='radio'][value='a']").prop("disabled",false);
+    $("input[type='radio'][value='b']").prop("disabled",false);
+    if (a.value == "gibberish"){
+      // disable and unrequire all questions, and automatically select the other
+      $("input[value='"+o+"']").prop("checked",true);
+    } else {
+      console.log("Here")
+    }
+  }
+});
+
+</script>
+
+
+<!-- End Content Body --><!-- close container -->
+<style type="text/css">
+fieldset { padding: 10px; background:#fbfbfb; border-radius:5px; margin-bottom:5px; }
+th, .second>td, .original, .notes {
+  border-bottom: solid black 1px;
+}
+.notes {
+  font-size: smaller;
+  max-width: 200px;
+}
+.columns{
+    list-style-type: none;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+    list-style-position: inside;//this is important addition
+}
+.unbulleted{
+    list-style-type: none;
+    padding:7px;
+    margin:0px;
+}
+input[type=checkbox]:disabled:checked{filter:brightness(0%); } 
+.vcenter {
+    display: flex;
+    align-items: center;
+}
+
+
+.convo-context{
+   background-color: #f8eed2;
+   padding:5px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+}
+.convo-replies{
+   background-color:#fddce1;
+   padding:3px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+
+}
+.story-excerpt {
+   margin:10pt auto;
+   min-width: 400px;
+   border:2px #333333;
+   background-color: #f6d9cd;
+   border-style: solid;
+   padding-right:10px;
+   padding-left:10px;
+   display:table;
+   border-radius:15px;
+   padding:10px;
+}
+#par1{
+   background-color:#eeeeee;
+   padding:3px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+
+}
+#par2{
+   background-color:#ffffff;
+   padding:3px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+
+}
+#r2text{
+   background-color:#fef4f6;
+   padding:3px;
+   margin:10px;
+   border:1px #333333;
+   border-radius:5px;
+   border-style: solid;
+
+}
+table{
+      border: 0px none black;
+      padding:2pt;
+}
+textarea{
+   padding-right:10px;
+   padding-left:10px;
+   display:table;
+
+}
+label,input{
+  margin-top:0;
+  margin-bottom:0;
+}
+div.understandable {
+margin-top: 1em;
+}
+div.understandable>label {
+  font-weight: 300;
+  font-style: italic;
+  padding-right: 3px;
+}
+div.understandable>label>input{
+  margin-left: 4px;
+}
+</style>

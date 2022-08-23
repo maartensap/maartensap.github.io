@@ -1,0 +1,1161 @@
+<script>
+//
+// This method Gets URL Parameters (GUP)
+//
+function gup( name )
+{
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var tmpURL = window.location.href;
+  var results = regex.exec( tmpURL );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+function decode(strToDecode)
+{
+  var encoded = strToDecode;
+  return unescape(encoded.replace(/\+/g,  " "));
+}
+
+window.onload = function() {
+    if (!window.jQuery) {  
+        // jQuery is not loaded
+        alert("Warning: it seems that jquery is disabled on your browser.  This HIT might not work properly without javascript and jquery code enabled (if you have extensions that block jquery or an old browser version, this may prevent the dynamic elements of the HIT from functioning).  Please ensure that you have jquery enabled by temporarily disabling extensions that interfere with jquery and/or trying a different browser version."); 
+    }
+    checkIfWorkerExists();
+    layout();
+}
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--For autocomplete-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.js"></script>
+<!--link ref="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.css"-->
+
+<script src="https://homes.cs.washington.edu/~msap/debug/neural-detox/emoji.json" ></script>
+
+<script src="https://homes.cs.washington.edu/~msap/debug/neural-detox/emojiv2.js"></script>
+
+
+<section class="container" id="preInstruction" style="margin-bottom:0px; padding: 0px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333;">
+<div class="card">
+<div class="card-header" style="color: #fff;background-color: #337ab7;border-color: #337ab7;"><strong>Instructions</strong></div>
+<div class="card-body">
+  Read a potentially toxic post from the internet and tell us why it's toxic (this should take less than 3 minutes).
+  Note: this is a pilot task, more HITs will be available in the future.
+  <br>
+  <em><strong>Participation restriction: </strong>providers/turkers for this task cannot currently be employed by or a student at the University of Washington.</em>
+</div>
+</div>
+</section>
+
+<!--END OF HIT HEADER; START OF HIT BODY-->
+<section class="container" style="font-family: Verdana, Geneva, sans-serif; color:#333333;">
+  <fieldset>
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title" style=""> 
+          Full Instructions &nbsp; &nbsp;
+          <a data-toggle="collapse" href="#instructions" role="button" aria-expanded="false" aria-controls="instructions" style="color:#0080ff;text-decoration: underline;">
+          (Expand/Collapse)
+          </a> 
+        </h4>
+      </div>
+      <div id="instructions" class="collapse show" style="margin:10px">
+        <div class="row">
+          <div class="col-12 mb-4">
+            <p style="font-size: 1.05rem; text-align: left">
+              You will <strong>read a tweet</strong>, and determine whether it's <strong>toxic/offensive, intended to be toxic, and/or racist</strong>.
+            </p>
+            <ul>
+              <li>Please answer with <strong>your opinion</strong>, there is no right or wrong answer, and we will not judge you for your answers.</li>
+              <li>If you do not understand a tweet, please indicate so using the given checkbox, but still answer the questions to the best of your abilities.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+            <h5>Detailed instructions</h5>
+           
+            
+            <p style="margin-bottom: .5rem;">
+              <em class="toyou"><span class="numbering">1.a)</span>How toxic/hateful/disrespectful or offensive does this post seem <strong>to you</strong>?</em><br>
+              Our purpose is to understand how disrespect/offense can show up in language, we are not making statements about the actual content of the posts.
+            </p>
+            <p style="margin-bottom: .5rem;">
+              <em class="toany"><span class="numbering">1.b)</span>How much could this post be seen as toxic/hateful/disrespectful or offensive <strong>to anyone</strong>?</em><br>
+              Try to answer this questions while considering a broad set of people from different backgrounds, not just your own.
+            </p>
+            <p style="margin-bottom: .5rem;">
+              <em class="intent"><span class="numbering">1.c)</span>In your opinion, how much did the author of this post <strong>intend</strong> to be toxic/hateful/disrespectful or offensive?</em><br>
+              It can be hard to infer the intent behind a statement, but sometimes posts are clearly offensive jokes, insults, snobism, condescension, profanity, back-handed compliments, name calling, bullying, intimidation, or aggression.
+            </p>
+            <p style="margin-bottom: .5rem;">
+              <em class="racist"><span class="numbering">1.d)</span>In your opinion, how <strong>racist</strong> is this post?</em><br>
+              Again, here, we are interested in your opinion; there is no right or wrong.
+            </p>
+            <p style="margin-bottom: .5rem;">
+              <em><span class="numbering">2)</span>Tell us about your perceptions, opinions, and beliefs (this will remain confidential).</em><br>
+              Answer a series of questions about your own opinions, perceptions and beliefs. 
+              Don't worry, there is no right or wrong!
+              <em>If you answered this question once, your answers should pre-load in subsequent HITs.</em>
+            </p>
+            <p style="margin-bottom: .5rem;">
+              <em><span class="numbering">3)</span>Indicate your gender, age, race, political leaning, and whether you identify as a minority (this will remain confidential).</em><br>
+              Your own personal background and experiences influence what you think of as disrespectful or offensive.
+              We collect this information to account for all types of backgrounds that MTurkers come from in our research.
+              <em>If you answered this question once, your answers should pre-load in subsequent HITs.</em>
+            </p>
+          </div>
+          <div class="col-4">
+          <small>
+            <h5>Background on our research project</h5>
+            <p>
+              At the University of Washington, we're passionate about understanding how potentially toxic or disrespectful language or stereotypes can be used against certain demographics/groups of people (e.g. racism, sexism, etc.).
+              Although there is no direct benefit to you for participating, we very much appreciate your help in identifying and explaining such language/stereotypes, since this is something computational models have no clue about. 
+              We do not agree with any of the content/stereotypes presented to you, but it's important that we gather these annotations for research purposes.
+            </p>
+            <p>
+              <strong>Data collection &amp; sharing</strong><br>
+              We will not ask you for your name, and the data collected in this study will be made unidentifiable to the best of our extent.
+              We will securely store the data on our servers and only share with qualified researchers (e.g. who want to further the study of hate speech detection).
+              If you later decide that you do not want your responses included in this study, please email so we can exclude your work.
+              <br>
+              If you have questions about your rights as a research participant, or wish to obtain information, ask questions or discuss any concerns about this study with someone other than the researcher(s), please contact the University of Washington Human Subjects Division at 206-543-0098 (for international calls include the US Calling Code: +1-206-543-0098).
+            </p>
+          </small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <p class="mt-4">
+              <em><strong style="color: #e60000;">Content Warning</strong></em>: posts were found on the (uncensored) internet;
+              while it's crucial for us to annotate them, we do not endorse any of the stereotypes or offensive/immoral/rude material.
+              You may find some of the content upsetting.
+              <em>If you have concerns, questions, or strong negative reactions to some of the content</em>, please either email us (Maarten Sap at msap@cs.washington.edu, or Professor Yejin Choi at yejin@cs.washington.edu) or <a href="https://www.crisistextline.org/">reach out</a> if in crisis.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row" id="consent" style="margin: 30px 0;">
+      <div class="col-12">
+        <h6>You have read and understood the instructions and agree to do the task</h6>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" id="consent" name="consent" onclick="toggleConsent(this.checked)">
+            By ticking this box, you are agreeing to be part of this data collection study. Be sure that questions you have about the study have been answered and that you understand what you are being asked to do. You may contact us if you think of a question later. You are free to release/quit the HIT at any time, and refusing to be in the experiment or stopping participation will involve no penalty or loss of benefits to which you are otherwise entitled. To save a copy of the consent form and instructions, you can save/print this webpage (or find the instructions <a href="https://homes.cs.washington.edu/~msap/debug/neural-detox/psychOffensivenessLargeScale.html">here</a>).
+          </label>
+        </div>
+        <br>
+        <div class="alert alert-warning" id="consentMessage" style="max-width: 400px;margin: auto;">
+          You must check the box to continue the task!
+        </div>
+        <div style="display: none;">
+          <input name="clickedConsentTime" id="clickedConsentTime" type="text" placeholder="">
+          <input name="clickedSubmitTime" id="clickedSubmitTime" type="text" placeholder="">
+        </div>
+      </div>
+    </div>
+    <div id="actualTask" style="display: none;">
+      <div class="row justify-content-center">
+        <div class="col-10" style="margin-top: 30px;">
+        <h3> Task </h3>
+          <div class="story-excerpt">   
+            <h5 style="margin: 10px;">Post:</h5>
+            <p id="postText" style="padding-left: 25px; font-size: 14pt;max-width: 100%;">
+              ${tweet} 
+            </p>
+            
+            <label class="mt-3 mb-2" style="text-align: right; float: right;">
+              <input id="dontUnderstand" name="dontUnderstand" type="checkbox" onclick="toggleDontUnderstandAck(this.checked)">I'm having a lot of trouble understanding this tweet.
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="allQuestions">
+        <div class="row justify-content-center">
+          <div class="col-6 alert alert-warning" id="dontUnderstandAck" style="display: none;">
+            Thanks for letting us know that this tweet is hard to understand! Please still try your best to answer the questions below!
+          </div>
+          <div class="col-12 mt-5">
+            <h4 style="font-style: italic;">1. Answer questions about the tweet.</h4>
+          </div>
+          <div class="col-12" id="offToYouQ" style="display: inline-block;margin-top: 10px;">
+            <h6 class="toyou"><span class="numbering">1.a)</span>How toxic/hateful/disrespectful or offensive does this post seem <strong>to you</strong>?</h6>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQoffensive2you">
+              Please answer this question.
+            </div>
+            <div class="form-check form-check-inline ml-3 lickert">
+              <label class="form-check-label" for="toyou1">Not at all &nbsp;</label>
+              <input class="form-check-input right" type="radio" name="toyou" id="toyou1" value="1" required>
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="toyou2">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="toyou" id="toyou2" value="2">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="toyou3">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="toyou" id="toyou3" value="3">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="toyou4">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="toyou" id="toyou4" value="4">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="toyou5">&nbsp;</label>
+              <input class="form-check-input" type="radio" name="toyou" id="toyou5" value="5">
+              <label class="form-check-label" for="toyou5">&nbsp; Very much so</label>
+            </div>  
+          </div>
+          <div class="col-12" id="offToAnyQ" style="display: inline-block;margin-top: 10px;">
+            <h6 class="toany"><span class="numbering">1.b)</span>How much could this post be seen as toxic/hateful/disrespectful or offensive <strong>to anyone</strong>?</h6>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQoffensive">
+              Please answer this question.
+            </div>
+            <div class="form-check form-check-inline ml-3 lickert">
+              <label class="form-check-label" for="toany1">Not at all &nbsp;</label>
+              <input class="form-check-input right" type="radio" name="toany" id="toany1" value="1" required>
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="toany2">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="toany" id="toany2" value="2">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="toany3">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="toany" id="toany3" value="3">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="toany4">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="toany" id="toany4" value="4">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="toany5">&nbsp;</label>
+              <input class="form-check-input" type="radio" name="toany" id="toany5" value="5">
+              <label class="form-check-label" for="toany5">&nbsp; Very much so</label>
+            </div>  
+          </div>
+          
+          <div class="col-12" id="attentionCheckQuestion" style="display: inline-block;margin-top: 10px;">
+              <h6><span class="numbering">---</span>Please select the <span id="attentionCheckInstr">third</span> option from the left, to double check you're doing this task attentively.</h6>
+              <div style="display: none;">
+                <input name="attentionCheckCorrect" id="attentionCheckCorrect" placeholder=3 type="number">
+              </div>
+              <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQattentionCheck">
+                Please answer this question.
+              </div>
+              <div class="form-check form-check-inline ml-3 lickert">
+                <label class="form-check-label" for="attentionCheck1">1&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="attentionCheck" id="attentionCheck1" value="1" required>
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="attentionCheck2">2&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="attentionCheck" id="attentionCheck2" value="2">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="attentionCheck3">3&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="attentionCheck" id="attentionCheck3" value="3">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="attentionCheck4">4&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="attentionCheck" id="attentionCheck4" value="4">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="attentionCheck5">5&nbsp;</label>
+                <input class="form-check-input" type="radio" name="attentionCheck" id="attentionCheck5" value="5">
+              </div>  
+            </div>
+          
+          <div class="col-12" id="intentQuestion" style="display: inline-block;margin-top: 10px;">
+            <h6 class="intent"><span class="numbering">1.c)</span>In your opinion, how much did the author of this post <strong>intend</strong> to be toxic/hateful/disrespectful or offensive?</h6>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQintent">
+              Please answer this question.
+            </div>
+            <div class="form-check form-check-inline ml-3 lickert">
+              <label class="form-check-label" for="intent1">Not at all &nbsp;</label>
+              <input class="form-check-input right" type="radio" name="intent" id="intent1" value="1" required>
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="intent2">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="intent" id="intent2" value="2">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="intent3">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="intent" id="intent3" value="3">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="intent4">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="intent" id="intent4" value="4">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="intent5">&nbsp;</label>
+              <input class="form-check-input" type="radio" name="intent" id="intent5" value="5">
+              <label class="form-check-label" for="intent5">&nbsp; Very much so</label>
+            </div>  
+          </div>
+          
+          <div class="col-12" id="racistQuestion" style="display: inline-block;margin-top: 10px;">
+            <h6 class="racist"><span class="numbering">1.d)</span>In your opinion, how <strong>racist</strong> is this post?</h6>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQracist">
+              Please answer this question.
+            </div>
+            <div class="form-check form-check-inline ml-3 lickert">
+              <label class="form-check-label" for="racist1">Not at all &nbsp;</label>
+              <input class="form-check-input right" type="radio" name="racist" id="racist1" value="1" required>
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="racist2">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="racist" id="racist2" value="2">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="racist3">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="racist" id="racist3" value="3">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="racist4">&nbsp;</label>
+              <input class="form-check-input right" type="radio" name="racist" id="racist4" value="4">
+            </div>
+            <div class="form-check form-check-inline lickert">
+              <label class="form-check-label" for="racist5">&nbsp;</label>
+              <input class="form-check-input" type="radio" name="racist" id="racist5" value="5">
+              <label class="form-check-label" for="racist5">&nbsp; Very much so</label>
+            </div>  
+          </div>
+          
+        
+        
+          <div class="col-12 mt-5" id="attitudeQuestions" style="display: inline-block;">
+            <h4 style="font-style: italic;">2. Rate your agreement with these statements <small>(this will remain confidential)</small></h4>
+            These questions are not related to the post or tweet you just read. 
+            There are no right or wrong answers, just your opinion and how you feel or identify with these statements.
+            
+            <div class="alert alert-secondary mt-3 prefilled-message" id="attitudes-prefilled-message" style="padding: 3px; margin-bottom:0;" style="display: none;">
+              To save you time, we've pre-filled these boxes based on your previous answers in our HITs! Feel free to change your answers if you want.
+            </div>
+                
+            <h5 class="mt-4" style="font-style: italic;">How much do you identify or agree with the following:</h5> 
+            <div class="col-12" id="empathyQuestion" style="display: inline-block;margin-top: 10px;">
+              <h6><span class="numbering">2.a)</span>I have tender, concerned feelings for people or groups of people less fortunate than me.</h6>
+              <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQempathy">
+                Please answer this question.
+              </div>
+              <div class="form-check form-check-inline ml-3 lickert">
+                <label class="form-check-label" for="empathy1">Not at all &nbsp;</label>
+                <input class="form-check-input right" type="radio" name="empathy" id="empathy1" value="1" required>
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="empathy2">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="empathy" id="empathy2" value="2">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="empathy3">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="empathy" id="empathy3" value="3">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="empathy4">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="empathy" id="empathy4" value="4">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="empathy5">&nbsp;</label>
+                <input class="form-check-input" type="radio" name="empathy" id="empathy5" value="5">
+                <label class="form-check-label" for="empathy5">&nbsp; Very much so</label>
+              </div>  
+            </div>
+            
+            <div class="col-12" id="racismQuestion" style="display: inline-block;margin-top: 10px;">
+              <h6><span class="numbering">2.b)</span>Discrimination against racial minorities is no longer a problem in the United States.</h6>
+              <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQracism">
+                Please answer this question.
+              </div>
+              <div class="form-check form-check-inline ml-3 lickert">
+                <label class="form-check-label" for="racism1">Not at all &nbsp;</label>
+                <input class="form-check-input right" type="radio" name="racism" id="racism1" value="1" required>
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="racism2">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="racism" id="racism2" value="2">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="racism3">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="racism" id="racism3" value="3">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="racism4">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="racism" id="racism4" value="4">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="racism5">&nbsp;</label>
+                <input class="form-check-input" type="radio" name="racism" id="racism5" value="5">
+                <label class="form-check-label" for="racism5">&nbsp; Very much so</label>
+              </div>  
+            </div>
+            
+            
+            <div class="col-12" id="harmHateSpeechQuestion" style="display: inline-block;margin-top: 10px;">
+              <h6><span class="numbering">2.c)</span>Offensive language encourages discrimination against minorities.</h6>
+              <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQharmHateSpeech">
+                Please answer this question.
+              </div>
+              <div class="form-check form-check-inline ml-3 lickert">
+                <label class="form-check-label" for="harmHateSpeech1">Not at all &nbsp;</label>
+                <input class="form-check-input right" type="radio" name="harmHateSpeech" id="harmHateSpeech1" value="1" required>
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="harmHateSpeech2">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="harmHateSpeech" id="harmHateSpeech2" value="2">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="harmHateSpeech3">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="harmHateSpeech" id="harmHateSpeech3" value="3">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="harmHateSpeech4">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="harmHateSpeech" id="harmHateSpeech4" value="4">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="harmHateSpeech5">&nbsp;</label>
+                <input class="form-check-input" type="radio" name="harmHateSpeech" id="harmHateSpeech5" value="5">
+                <label class="form-check-label" for="harmHateSpeech5">&nbsp; Very much so</label>
+              </div>  
+            </div>
+            
+            
+            
+            <div class="col-12" id="lingPurismQuestion" style="display: inline-block;margin-top: 10px;">
+              <h6><span class="numbering">2.d)</span>There exists such a thing as good proper English.</h6>
+              <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQlingPurism">
+                Please answer this question.
+              </div>
+              <div class="form-check form-check-inline ml-3 lickert">
+                <label class="form-check-label" for="lingPurism1">Not at all &nbsp;</label>
+                <input class="form-check-input right" type="radio" name="lingPurism" id="lingPurism1" value="1" required>
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="lingPurism2">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="lingPurism" id="lingPurism2" value="2">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="lingPurism3">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="lingPurism" id="lingPurism3" value="3">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="lingPurism4">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="lingPurism" id="lingPurism4" value="4">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="lingPurism5">&nbsp;</label>
+                <input class="form-check-input" type="radio" name="lingPurism" id="lingPurism5" value="5">
+                <label class="form-check-label" for="lingPurism5">&nbsp; Very much so</label>
+              </div>  
+            </div>
+            
+            <div class="col-12" id="freeSpeechQuestion" style="display: inline-block;margin-top: 10px;">
+              <h6><span class="numbering">2.e)</span>There is no such a thing as hate speech, only "speech".</h6>
+              <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQfreeSpeech">
+                Please answer this question.
+              </div>
+              <div class="form-check form-check-inline ml-3 lickert">
+                <label class="form-check-label" for="freeSpeech1">Not at all &nbsp;</label>
+                <input class="form-check-input right" type="radio" name="freeSpeech" id="freeSpeech1" value="1" required>
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="freeSpeech2">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="freeSpeech" id="freeSpeech2" value="2">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="freeSpeech3">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="freeSpeech" id="freeSpeech3" value="3">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="freeSpeech4">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="freeSpeech" id="freeSpeech4" value="4">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="freeSpeech5">&nbsp;</label>
+                <input class="form-check-input" type="radio" name="freeSpeech" id="freeSpeech5" value="5">
+                <label class="form-check-label" for="freeSpeech5">&nbsp; Very much so</label>
+              </div>  
+            </div>
+            
+            <h5 class="mt-4" style="font-style: italic;">How important is each of the following, as a guiding principle of your life:</h5>
+            
+            <div class="col-12" id="traditionalismQuestion" style="display: inline-block;margin-top: 10px;">
+              <h6><span class="numbering">2.f)</span>Honoring parents and elders, showing respect.</h6>
+              <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQtraditionalism">
+                Please answer this question.
+              </div>
+              <div class="form-check form-check-inline ml-3 lickert">
+                <label class="form-check-label" for="traditionalism1">Not at all important to me &nbsp;</label>
+                <input class="form-check-input right" type="radio" name="traditionalism" id="traditionalism1" value="1" required>
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="traditionalism2">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="traditionalism" id="traditionalism2" value="2">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="traditionalism3">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="traditionalism" id="traditionalism3" value="3">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="traditionalism4">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="traditionalism" id="traditionalism4" value="4">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="traditionalism5">&nbsp;</label>
+                <input class="form-check-input" type="radio" name="traditionalism" id="traditionalism5" value="5">
+                <label class="form-check-label" for="traditionalism5">&nbsp; Very important to me</label>
+              </div>  
+            </div>
+            
+            <div class="col-12" id="altruismQuestion" style="display: inline-block;margin-top: 10px;">
+              <h6><span class="numbering">2.g)</span>Social justice, correcting injustice, caring for the weak.</h6>
+              <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQaltruism">
+                Please answer this question.
+              </div>
+              <div class="form-check form-check-inline ml-3 lickert">
+                <label class="form-check-label" for="altruism1">Not at all important to me &nbsp;</label>
+                <input class="form-check-input right" type="radio" name="altruism" id="altruism1" value="1" required>
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="altruism2">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="altruism" id="altruism2" value="2">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="altruism3">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="altruism" id="altruism3" value="3">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="altruism4">&nbsp;</label>
+                <input class="form-check-input right" type="radio" name="altruism" id="altruism4" value="4">
+              </div>
+              <div class="form-check form-check-inline lickert">
+                <label class="form-check-label" for="altruism5">&nbsp;</label>
+                <input class="form-check-input" type="radio" name="altruism" id="altruism5" value="5">
+                <label class="form-check-label" for="altruism5">&nbsp; Very important to me</label>
+              </div>  
+            </div>
+            
+          </div>
+        
+          <div class="col-12 mt-5" id="demogQuestions" style="display: inline-block;">
+            <h4 style="font-style: italic;">3. Please tell us about yourself <small>(this will remain confidential)</small></h4>
+            How people perceive offensiveness/inequality is influenced by their own societal experience.
+            <form style="margin-top: 20px;">
+              <div class="form-group row">
+                <h6 class="col-12">What is your gender?</h6>
+                <label for="gender" class="col-sm-2 col-form-label">Gender identity</label>
+                <div class="col-sm-4">
+                  <!--input type="text" id="gender" name="annotatorGender" placeholder="" class="form-control"-->
+                  <select id="annotatorGender" name="annotatorGender" class="form-control" style="font-size: .85rem;" required>
+                    <option disabled selected value="">-- please select --</option>
+                    <option value="man">Man/Male</option>
+                    <option value="woman">Woman/Female</option>
+                    <option value="nonBinary">Non-binary</option>
+                    <option value="other">Other</option>
+                    <option value="na">Prefer not to disclose</option>
+                  </select>
+                </div>
+                <div class="col-sm-5 alert alert-secondary prefilled-message" id="demog-prefilled-message" style="padding: 3px; margin-bottom:0;" style="display: none;">
+                  To save you time, we've pre-filled these boxes based on your previous answers in our HITs!  Feel free to change your answers if you want.
+                </div>
+              </div>
+              <div class="form-group row">
+                <h6 class="col-12">How old are you?</h6>
+                <label for="annotatorAge" class="col-sm-2 col-form-label">Age ranges</label>
+                <div class="col-sm-4">
+                  <select id="annotatorAge" name="annotatorAge" class="form-control" style="font-size: .85rem;" required>
+                    <option disabled selected value="">-- please select --</option>
+                    <option value="18">18-24</option>
+                    <option value="25">25-29</option>
+                    <option value="30">30-34</option>
+                    <option value="35">35-39</option>
+                    <option value="40">40-44</option>
+                    <option value="45">45-49</option>
+                    <option value="50">50-54</option>
+                    <option value="55">55-59</option>
+                    <option value="60">60-64</option>
+                    <option value="65">65+</option>
+                    <option value="na">- prefer not to disclose -</option>
+                  </select>
+                </div>
+                
+              </div>
+              <div class="form-group row">
+                <h6 class="col-12">What best describes your race/ethnicity?</h6>
+                <label for="race" class="col-sm-2 col-form-label">Race/ethnicity</label>
+                <div class="col-sm-4">
+                  <select id="annotatorRace" name="annotatorRace" class="form-control" style="font-size: .85rem;" required>
+                    <option disabled selected value="">-- please select --</option>
+                    <option value="asian">Asian/Asian American</option>
+                    <option value="indian">South Asian/Indian American</option>
+                    <option value="black">Black/African American</option>
+                    <option value="hisp">Hispanic/Latinx</option>
+                    <option value="white">White/Caucasian</option>
+                    <option value="middleEastern">Middle Eastern</option>
+                    <option value="islander">Native Hawaiian/Pacific Islander</option>
+                    <option value="native">Native American/First Nations</option>
+                    <option value="other">Mixed/other</option>
+                    <option value="na">Prefer not to disclose</option>
+                  </select>
+                </div>
+                <div class="col-sm-3"><small>Please select the racial/ethnic identity you most identify with currently.</small></div>
+              </div>
+              <div class="form-group row">
+                <div class="col-12">
+                  <h6>What best describes your political orientation?</h6>
+                  <!--input type="text" id="race" name="annotatorRace" placeholder="" class="form-control"-->
+                  <!--select id="annotatorPolitics" name="annotatorPolitics" class="form-control" style="font-size: .85rem;" required>
+                    <option disabled selected value="">-- please select --</option>
+                    <option value="cons">Conservative</option>
+                    <option value="mod-cons">Moderate conservative</option>
+                    <option value="mod-liberal">Moderate liberal</option>
+                    <option value="liberal">Liberal/progressive</option>
+                    <option value="libert">Libertarian</option>
+                    <option value="other">Other/independent</option>
+                    <option value="na">Prefer not to disclose</option>
+                  </select-->
+                  <div class="form-check form-check-inline ml-3 lickert">
+                    <label class="form-check-label" for="annotatorPolitics1">Strongly liberal &nbsp;</label>
+                    <input class="form-check-input right" type="radio" name="annotatorPolitics" id="annotatorPolitics1" value="1" required>
+                  </div>
+                  <div class="form-check form-check-inline lickert">
+                    <label class="form-check-label" for="annotatorPolitics2">&nbsp;</label>
+                    <input class="form-check-input right" type="radio" name="annotatorPolitics" id="annotatorPolitics2" value="2">
+                  </div>
+                  <div class="form-check form-check-inline lickert">
+                    <label class="form-check-label" for="annotatorPolitics3">&nbsp;</label>
+                    <input class="form-check-input right" type="radio" name="annotatorPolitics" id="annotatorPolitics3" value="3">
+                  </div>
+                  <div class="form-check form-check-inline lickert">
+                    <label class="form-check-label" for="annotatorPolitics4">&nbsp;</label>
+                    <input class="form-check-input right" type="radio" name="annotatorPolitics" id="annotatorPolitics4" value="4">
+                  </div>
+                  <div class="form-check form-check-inline lickert">
+                    <label class="form-check-label" for="annotatorPolitics5">&nbsp;</label>
+                    <input class="form-check-input" type="radio" name="annotatorPolitics" id="annotatorPolitics5" value="5">
+                    <label class="form-check-label" for="annotatorPolitics5">&nbsp; Strongly conservative</label>
+                  </div>  
+                </div>
+              </div>
+              <div class="form-group row">
+                <h6>Any other minority identity?</h6>
+                <label for="annotatorMinority" class="col-sm-12 col-form-label">
+                  Do you identify with any minority, disadvantaged, demographic, or other specific groups? If so, which one(s)?<br>
+                  <small>(E.g., racial, gender identity, sexuality, disability, immigrant, veteran, etc.); use commas to separate groups.</small>
+                </label>
+                <div class="col-sm-6">
+                  <input type="text" name="annotatorMinority" placeholder="" class="form-control" id="annotatorMinority" style="font-size: .85rem;">
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-9" id="commentSection" style="display: inline-block;text-align: center;">
+          <p style="font-size:10pt;margin-top: 50px;">
+            Optional Feedback: Thanks for filling out the questions above!
+            If something about the hit was unclear, please either leave a comment in the box below!
+            We would like to make this HIT easier for future workers, so we really appreciate feedback though it is optional.
+            <br>
+            If you have concerns or questions, please email us!
+          </p>
+          <textarea style="margin-left:10px;margin-top:10px;width: 95%;" rows="2" name="commentbox"></textarea>
+          <br><br>
+          <center>
+            <div class="alert alert-danger" id="submitAlert" style="display: none;">
+              Whoops you missed some questions!
+              <br>
+              Note: if the submit button is disabled and you're confident this is an error, please screenshot your answers and the console output (Ctrl+Shift+J or Cmd+Shift+J).
+            </div>
+            <input type="submit" id="submitButton" class="btn btn-primary" value="Submit Hit!">       
+          </center>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</section>
+<script>
+  var targ, btngroup, event, selectedText, aspectDiv, workerInfo;
+  var attitudeQuestions = ["empathy","racism","harmHateSpeech", "lingPurism","freeSpeech","traditionalism","altruism"];
+  var attentionChecks = ["first","second", "third", "fourth", "fifth"];
+  
+  $("label.btn-checkbox>input[type='checkbox']").each(function(ix,e){
+    var value = $(e).parent().prop("innerText").trim();
+    e.value = value == "" ? "_other_" : value;
+  });
+
+
+  $(".btn-checkbox").on("click",function(e){
+    targ = e.target;
+    aspectDiv = $(targ).closest(".card-body").find(".aspects");
+
+    /* Highlight button if checkbox is clicked */
+    if(e.target.tagName == "INPUT"){
+      if (targ.checked)
+        $(targ).parent().addClass("active");
+      else 
+        $(targ).parent().removeClass("active");
+    }
+    
+    /* Make textboxes required if any checkbox is checked */
+    if ($(targ).closest(".btn-group-vertical").find("input:checkbox:checked").length > 0) {
+      aspectDiv.show();
+      aspectDiv.find("input[type='text']").each(function (i,e){
+        if (i>1)
+          return;
+        $(e).prop("required","true");
+      });
+    } else {
+      aspectDiv.hide();
+      aspectDiv.find("input[type='text']").each(function (i,e){
+        $(e).prop("value","");
+        if (i>1)
+          return;
+        $(e).prop("required","");
+      });
+    }
+    alertMinorityQs("yes");
+  });
+  $('.collapse-checkbox').on('hide.bs.collapse', function (e) {
+  /* If any checkboxes are checked, this makes sure the buttons don't disappear */
+  btngroup = e.target;
+  if ($(btngroup).find("input:checkbox:checked").length > 0)
+    e.preventDefault();
+  })
+  $(".othercheckbox").on("click",function(e){
+    var checked = $(e.target).prop("checked")
+    $(e.target).next().prop("disabled",!checked);
+    $(e.target).next().prop("required",checked? "true": "");
+  });
+  $("input[type='text']").prop("pattern",".{0}|.{3,}").prop("title","Minimum 3 characters");
+
+  
+  $("button.btn-link").on("click",function(e){
+    //Not sure why I need this, but otherwise accordion submits immediately
+    e.preventDefault();
+    event = e;
+    //console.log(e.target);
+  });
+  $("#submitButton").on("click",function(e){
+    var val = validate();
+    if (!val) {
+      e.preventDefault();
+      event = e;
+      $("#submitAlert").show();
+      setTimeout(function(){
+        $("#submitAlert").hide(300);
+      }, 10000);
+    } else {
+      sendWorkerInfo();
+      $("#clickedSubmitTime").val((new Date()).getTime());
+      console.log("Submitted");
+    }
+  });
+  function layout(){
+    $("#postText").each(function (i,e){
+      ee = e;
+      e.innerText = renderEmoji(e.innerText);
+    });
+    var attnIx = Math.floor(Math.random()*attentionChecks.length);
+    console.log("Attention check "+(attnIx+1)+" "+attentionChecks[attnIx])
+    $("#attentionCheckInstr").text(attentionChecks[attnIx]);
+    $("#attentionCheckCorrect").val(attnIx+1);
+  }
+  function getURLParams(){
+    var search = location.search;
+    if (location.hostname === "homes.cs.washington.edu"){
+      search = "?workerId=A1TW2IIFTWJIB2&hitId=Testing";
+      console.log(search)
+    }
+    
+    search = search.substring(1);
+    if (search == ""){
+      console.log("No search params "+location.href);
+      return {};
+    }
+    var params = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
+
+    params["HITId"] = params["hitId"];
+    params["HITType"] = "psychOffensiveness";
+    console.log(params);
+    return params;
+  }
+  function toggleConsent(checked){
+    if (checked){
+      $("#actualTask").show();
+      $("#consentMessage").hide();
+      $("#clickedConsentTime").val((new Date()).getTime());
+    } else {
+      $("#actualTask").hide();
+      $("#consentMessage").show();
+    }
+  }
+  function toggleDontUnderstandAck(checked){
+    if(checked)
+      $("#dontUnderstandAck").show()
+    else
+      $("#dontUnderstandAck").hide()
+  }
+  function prepSQLparamsCheck(urlParams){
+    var out="";
+    out += "tableName="+"workerDemographicsPsychOffensiveness";
+    out += "&workerId="+urlParams["workerId"];
+    out += "&HITType="+urlParams["HITType"];
+    out += "&assignmentId="+urlParams["assignmentId"];
+    out += "&HITId="+urlParams["HITId"];
+    return out;
+  }
+  function prepSQLparamsStore(){
+    var out="";
+    out += "tableName="+"workerDemographicsPsychOffensiveness";
+    out += "&gender="+$("#annotatorGender").val();
+    out += "&age="+$("#annotatorAge").val();
+    out += "&race="+$("#annotatorRace").val();
+    out += "&politics="+$('input[name="annotatorPolitics"]:checked').val();
+    out += "&otherMinority="+encodeURIComponent($("#annotatorMinority").val());
+    attitudeQuestions.forEach(function(e){
+      out+= "&"+e+"="+$('input[name="'+e+'"]:checked').val();
+    });
+    
+    return out;
+  }
+  function dealWithWorkerInfo(sqlResponse){
+    if (sqlResponse == ""){
+      /* we don't have this worker in our DB*/
+      console.log("New worker!");
+      $(".prefilled-message").hide();
+      if (location.hostname == "homes.cs.washington.edu"){
+        $("#consent").prop("checked",true);
+        toggleConsent(true);
+      }
+    } else {
+      workerInfo = JSON.parse(sqlResponse);
+      console.log(workerInfo);
+      // Bypass consent? Only on UW servers
+      if (location.hostname == "homes.cs.washington.edu"){
+        $("#consent").prop("checked",true);
+        toggleConsent(true);
+      }
+      $(".prefilled-message").show();
+      $("#annotatorGender").val(workerInfo["gender"]);
+      $("#annotatorAge").val(workerInfo["age"]);
+      $("#annotatorRace").val(workerInfo["race"]);
+      //$("#annotatorPolitics").val(workerInfo["politics"]);
+      $('#annotatorPolitics'+workerInfo["politics"]).prop("checked",true)
+      $("#annotatorMinority").val(workerInfo["otherMinority"]);
+      attitudeQuestions.forEach(function(e){
+        $("#"+e+workerInfo[e]).prop("checked",true);
+      });
+    
+    }
+  }
+  function checkIfWorkerExists(){
+    var urlParams = getURLParams();
+    var requestParams = "?"+prepSQLparamsCheck(urlParams)+"&action=check";//location.search+"&action=check";
+    var requestURL = "https://homes.cs.washington.edu/~msap/debug/neural-detox/checkStoreWorkerDemographicsMore.php";
+    var xhttp = new XMLHttpRequest();
+    console.log(requestURL+requestParams);
+    xhttp.open("POST", requestURL+requestParams, true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //var responseRaw = this.responseText;
+        dealWithWorkerInfo(this.responseText);
+        //console.log("Received an answer!"+this.responseText);
+      }
+    };
+    xhttp.send(requestParams);
+  }
+  function sendWorkerInfo(){
+    var urlParams = getURLParams();
+    var requestParams = "?"+prepSQLparamsCheck(urlParams)+"&action=store&"+prepSQLparamsStore();
+    var requestURL = "https://homes.cs.washington.edu/~msap/debug/neural-detox/checkStoreWorkerDemographicsMore.php";
+    var xhttp = new XMLHttpRequest();
+    console.log(requestURL+requestParams);
+    xhttp.open("POST", requestURL+requestParams, true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //var responseRaw = this.responseText;
+        //dealWithWorkerInfo(this.responseText);
+        console.log("Received an answer: '"+this.responseText+"'");
+      }
+    };
+    xhttp.send(requestParams);
+  }
+  function validate(){
+    var valid, offensive, groupTargeted; //alertQoffensive2you
+
+    valid = ($("input[name='toyou']:checked").length > 0);
+    if (!valid){
+      $("#alertQoffensive2you").show();
+      window.location.hash = "#alertQoffensive2you"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q1a");
+      return valid;
+    } else {
+      $("#alertQoffensive2you").hide();
+    }
+    
+    valid = valid && ($("input[name='toany']:checked").length > 0);
+    if (!valid){
+      $("#alertQoffensive").show();
+      window.location.hash = "#alertQoffensive"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q1b");
+      return valid;
+    } else {
+      $("#alertQoffensive").hide();
+      offensive = ["yes","maybe"].includes($("input[name='toany']:checked").prop("value"));
+    }
+    
+    valid = valid && ($("input[name='attentionCheck']:checked").length > 0);
+    if (!valid){
+      $("#alertQattentionCheck").show();
+      window.location.hash = "#alertQattentionCheck"; window.scrollBy(0, -30);
+      console.log("Missing answer to attention check");
+      return valid;
+    } else {
+      $("#alertQattentionCheck").hide();
+    }
+    
+    valid = valid && ($("input[name='intent']:checked").length > 0);
+    if (!valid){
+      $("#alertQintent").show();
+      window.location.hash = "#alertQintent"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q1c");
+      return valid;
+    } else {
+      $("#alertQintent").hide();
+    }
+
+    valid = valid && $("input[name='racist']:checked").length > 0;
+    if (!valid){
+      $("#alertQracist").show();
+      window.location.hash = "#alertQracist"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q1d");
+      return valid;
+    } else {
+      $("#alertQracist").hide();
+    }
+    
+    // $("#annotatorGender").prop("value") != "please select";
+    
+    attitudeQuestions.forEach(function(e,i){
+      if (!valid)
+        return valid;
+      valid = valid && ($("#"+e+"Question>div>input:checked").length > 0);
+      if (!valid){
+        $("#alertQ"+e).show();
+        window.location.hash = "#alertQ"+e; window.scrollBy(0, -30);
+        console.log("Missing answer to question "+e);
+        return valid;
+      } else {
+        $("#alertQ"+e).hide();
+      } 
+    });
+
+    
+    valid = valid && ($("input:invalid").length == 0);
+    console.log("########## VALIDATING #########\nvalid? "+valid);
+    $("input:invalid").each(function (i,e){
+      console.log(e);
+    });
+    return valid;
+  }
+  function alertMinorityQs(val){
+    if (val == "yes" && $(".btn-checkbox>input:checked").length == 0) {
+      //$("#dummyMinority").prop("required","true");
+      $("#alertQminority").show();
+    } else {
+      //$("#dummyMinority").prop("required","");
+      $("#alertQminority").hide();
+    }
+  }
+  var rows;
+  function expExamples(){
+    rows = $("tr.extra-rows");
+    $("a:contains('examples')").each(function(ix,link){
+      if (rows.hasClass("show"))
+        link.innerText = "[+] more examples";
+      else 
+        link.innerText = "[-] less examples";
+      console.log(link);
+    })
+  }
+
+</script>
+<style type="text/css">
+#examples-table {
+  border-style: none solid solid solid;
+  border-width: 1px;
+  border-color: #dee2e6;
+  border-radius: 5px;
+}
+
+.card-header-accordion{
+  padding: 0px 10px;
+}
+body, td, .btn { 
+  font-size:0.85rem;
+}
+label {
+  margin-bottom: 0px;
+}
+.story-excerpt {
+  margin: 40px auto;
+  min-width: 500px;
+  border:2px #333333;
+  background-color: #f2f2f2;
+  border-style: solid;
+  padding-right:10px;
+  padding-left:10px;
+  display:table;
+  border-radius:15px;
+}
+.story-excerpt-example {
+  border: 1px solid #666666;
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  padding: 3px;
+  display: inline-block;
+  margin: 10px;
+}
+span.numbering {
+  font-weight: bold;
+  margin-right: .5em;
+}
+#introQuestion>div>label>input,
+#intentQuestion>div>label>input {
+  vertical-align: middle;
+}
+.prefilled-message{
+  font-style: italic;
+}
+
+#detailed-instructions>p {
+  margin-bottom: 0px;
+}
+span.instrQuestion {
+  background-color: #f2f2f2;
+  font-style: italic;
+  font-size: .9rem;
+  margin: 5px 0 3px -15px;
+  padding: 0 .3rem 0 .3rem;
+  display: inline-block;
+}
+span.instrDescription {
+  font-size: .9rem;
+  margin-left: -15px;
+}
+label > input[type='text'] {
+  width: 90%;
+}
+input[type='text'] {
+  width: 300px;
+}
+input[type='text'].opt-target {
+  background-color: #f8f8f8;
+}
+
+input[type="text"]:invalid {
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+textarea#postText {
+  margin-left: 20px;
+  font-size: 12pt;
+  width: auto;
+  background-color: transparent;
+  overflow: auto;
+  resize: none;
+}
+
+.btn-checkbox, .btn-checkbox-two {
+  .btn-light;
+  color: black;
+  text-align: left;
+  margin: 0px;
+  background-color: #e9ecef;
+  border-color: #d1d4d7;
+}
+
+.btn-checkbox.active,
+.btn-checkbox:active,
+.btn-checkbox:hover {
+  background-color: #babcbf;
+  border-color: #8b8d8f;
+}
+
+.btn-checkbox-two.active,
+.btn-checkbox-two:active,
+.btn-checkbox-two:hover {
+  background-color: #babcbf;
+  border-color: #8b8d8f;
+}
+
+.btn-group-vertical {
+  max-width: 400px;
+  /*margin-right: 10px;*/
+}
+#introQuestion, 
+#minorityQuestions,
+#demogQuestions {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.autocomplete-suggestions { 
+  border: 1px solid #999;
+  background: #FFF; 
+  overflow: auto;
+}
+#dummyMinority {
+  /*opacity:0;*/
+  width: 0px;
+}
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+input[type='checkbox'] {
+  /* All <input> elements that are immediate children of a class="btn-checkbox" */
+  margin-right: 5px;
+}
+ul {
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+fieldset {
+  padding: 10px;
+  background:#fbfbfb;
+  border-radius:5px; 
+  margin-bottom:5px;
+}
+.lickert>label{
+    font-style: italic;
+  }
+  
+.toyou {
+  color: #b61416;
+}
+.toany {
+  color: #377eb8;
+}
+.intent {
+  color: #3d8c3b;
+}
+.racist {
+  color: #984ea3;
+}
+
+</style>

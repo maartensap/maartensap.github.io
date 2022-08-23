@@ -12,7 +12,7 @@ There are three files:
 
 ## Mturk re-annotations with no/dialect/race priming:
 
-[`sap2019risk_mTurkExperiment.csv`](sap2019risk_mTurkExperiment.csv) contains the annotations from our pilot study, with the following columns:
+Collected with this [MTurk template](racialBias-dialectPriming.html),  [`sap2019risk_mTurkExperiment.csv`](sap2019risk_mTurkExperiment.csv) contains the annotations from our pilot study, with the following columns:
 
 - annotator demographic information: annotatorAge, annotatorGender, annotatorMinority, annotatorPolitics, annotatorRace
   - since they had to enter it every time, they might not have entered the exact same data every time -- I recommend taking the most frequent value
@@ -40,7 +40,11 @@ Antigoni-Maria Founta, Constantinos Djouvas, Despoina Chatzakou, Ilias Leontiadi
 
 # Annotators with Attitudes
 
-Download annotated data: [annWithAttitudes.tgz](annWithAttitudes.tgz).
+Download annotated data: [annWithAttitudes.tgz](annWithAttitudes.tgz)
+
+Qual file: [annWithAttitudes-Qual.html](annWithAttitudes-Qual.html)
+
+Large-scale question: [annWithAttitudes-LargeScale.html](annWithAttitudes-LargeScale.html)
 
 ## Citation
 

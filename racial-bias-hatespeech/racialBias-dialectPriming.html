@@ -1,0 +1,955 @@
+<script>
+//
+// This method Gets URL Parameters (GUP)
+//
+function gup( name )
+{
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var tmpURL = window.location.href;
+  var results = regex.exec( tmpURL );
+  if( results == null )
+    return "";
+  else
+    return results[1];
+}
+function decode(strToDecode)
+{
+  var encoded = strToDecode;
+  return unescape(encoded.replace(/\+/g,  " "));
+}
+
+window.onload = function() {
+    if (!window.jQuery) {  
+        // jQuery is not loaded
+        alert("Warning: it seems that jquery is disabled on your browser.  This HIT might not work properly without javascript and jquery code enabled (if you have extensions that block jquery or an old browser version, this may prevent the dynamic elements of the HIT from functioning).  Please ensure that you have jquery enabled by temporarily disabling extensions that interfere with jquery and/or trying a different browser version."); 
+    }
+    checkIfWorkerExists();
+    layout();
+}
+</script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<!--For autocomplete-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.devbridge-autocomplete/1.4.7/jquery.autocomplete.js"></script>
+<!--link ref="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.css"-->
+
+<section class="container" id="preInstruction" style="margin-bottom:0px; padding: 0px 10px; font-family: Verdana, Geneva, sans-serif; color:#333333;">
+<div class="card">
+<div class="card-header" style="color: #fff;background-color: #337ab7;border-color: #337ab7;"><strong>Instructions</strong></div>
+<div class="card-body">
+  Read a potentially toxic post from the internet and tell us why it's toxic (this should take approx. 5 minutes).
+  Note:  You can complete as many HIT's in this batch as you want! But if your responses tend to be very different from what we're looking for, we might put a quota on the number of HIT's you can do in future batches.
+  Also note: this is a pilot task, more HITs will be available in the future.
+  <br>
+  <em><strong>Participation restriction: </strong>providers/turkers for this task cannot currently be employed by or a student at the University of Washington.</em>
+</div>
+</div>
+</section>
+
+<!--END OF HIT HEADER; START OF HIT BODY-->
+<section class="container" style="font-family: Verdana, Geneva, sans-serif; color:#333333;">
+  <fieldset>
+    <div class="card">
+      <div class="card-header">
+        <h4 class="card-title" style=""> 
+          Full Instructions &nbsp; &nbsp;
+          <a data-toggle="collapse" href="#instructions" role="button" aria-expanded="false" aria-controls="instructions" style="color:#0080ff;text-decoration: underline;">
+          (Expand/Collapse)
+          </a> 
+        </h4>
+      </div>
+      <div id="instructions" class="collapse show" style="margin:10px">
+        <div class="row">
+          <div class="col-12">
+            <p>
+              You will <strong>read a tweet</strong>, and describe whether it could be considered toxic/disrespectful, to you or to anyone.
+              <br>
+              <em>Note</em>: we will assume that MTurk workers only have good intentions when annotating these posts.
+            </p>
+            <p class="yesRace">
+              <strong style="color: #e60000;"><em>A note on race/ethnicity of the tweet author</em></strong><br>
+              We also provide an estimate of the Twitter user's race or ethnicity, as inferred by our AI system.
+              Note that <u>certain words are usually less toxic when used by a minority</u> (e.g., the word "n*gga" or the suffix "-ass" are considered harmless when spoken by Black folks), therefore it's useful to know the identity of a Tweeter before labelling it for toxic content.
+            </p>
+            <p class="yesDialect">
+              <strong style="color: #e60000;"><em>A note on dialect and race/ethnicity of the tweet's author</em></strong><br>
+              We also provide an estimate of the <em>tweet dialect</em>, as determined by an AI system.
+              Previous research has showed that dialects of English are strongly associated to a speaker's racial or ethnic identity.
+              Additionally, <u>certain words are usually less toxic when used by a minority</u> (e.g., the word "n*gga" or the suffix "-ass" are considered harmless in African American English), therefore it's useful to know the dialect a tweet is in before labelling it for toxic content.
+              
+              Our AI system detects the following dialects:
+            </p>
+            <ul class="yesDialect">
+              <li><a href="https://en.wikipedia.org/wiki/General_American" target="_blank">General American English</a> (gen Eng): associated with generic newscaster English.</li>
+              <li><a href="https://en.wikipedia.org/wiki/African-American_English" target="_blank">African-American English</a> (Afr-Am Eng): dialect spoken usually by African-American or Black folks.</li>
+              <li>Latino American English (Lat Eng): dialect spoken usually by Latino/a folks both in 
+              <a href="https://en.wikipedia.org/wiki/New_York_Latino_English" target="_blank">New York</a> and <a href="https://en.wikipedia.org/wiki/Chicano_English" target="_blank">California, Texas, Chicago</a>, etc.</li>
+            </ul>
+            <p class="noDialect">
+              Please answer all questions from your perspective and from an American cultural perspective; try to think about what what other people in today's society would think about these.
+            </p>
+            
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <h5>Annotation instructions</h5>
+            <p style="margin-bottom: .5rem;">
+              <em><span class="numbering">1.a)</span>Tell us whether this tweet seems toxic/hateful/disrespectful <strong>to you</strong>.</em><br>
+              Our purpose is to understand how disrespect/offense can show up in language, we are not making statements about the actual content of the posts.
+            </p>
+            <p style="margin-bottom: .5rem;">
+              <em><span class="numbering">1.b)</span>Considering a wide set of perspectives, tell us whether this could be considered toxic/hateful/disrespectful <strong>to others</strong>.</em><br>
+              Try to answer this questions while considering a broad set of people from different backgrounds, not just your own.
+            </p>
+            <p style="margin-bottom: .5rem;">
+              <em><span class="numbering">1.c)</span>Tell us whether the tweet was intentionally offensive or not.</em><br>
+              It can be hard to infer the intent behind a statement, but sometimes posts are clearly offensive jokes, insults, snobism, condescension, profanity, back-handed compliments, name calling, bullying, intimidation, or aggression.
+            </p>
+            <p style="margin-bottom: .5rem;">
+              <em><span class="numbering">2)</span>If the post contains sexual content (explicitly or innuendo), explain which part.</em><br>
+              Sexual content can be used in disrespectful language, either overtly or hidden.
+              Use the first text box to describe which parts of the post contain euphemism, double entendre or explicit sexual content.
+              Then, use the second text box to explain why you answered this; try to explain what the phrase means, what it refers to, what the double-entendre is about, etc.
+            </p>
+            <p style="margin-bottom: .5rem;">
+              <em><span class="numbering">3)</span>Indicate your gender, age, race, political leaning, and whether you identify as a minority (this will remain confidential).</em><br>
+              Your own personal background and experiences influence what you think of as disrespectful or offensive.
+              We collect this information to account for all types of backgrounds that MTurkers come from in our research.
+              <em>If you answered this question once, you can skip it in subsequent HITs.</em>
+            </p>
+          </div>
+          <div class="col-6">
+            <h5>Background on our research project</h5>
+            <p>
+              At the University of Washington, we're passionate about understanding how potentially toxic or disrespectful language or stereotypes can be used against certain demographics/groups of people (e.g. racism, sexism, etc.).
+              Although there is no direct benefit to you for participating, we very much appreciate your help in identifying and explaining such language/stereotypes, since this is something computational models have no clue about. 
+              We do not agree with any of the content/stereotypes presented to you, but it's important that we gather these annotations for research purposes.
+            </p>
+            <p>
+              <strong>Data collection &amp; sharing</strong><br>
+              We will not ask you for your name, and the data collected in this study will be made unidentifiable to the best of our extent.
+              We will securely store the data on our servers and only share with qualified researchers (e.g. who want to further the study of hate speech detection).
+              If you later decide that you do not want your responses included in this study, please email so we can exclude your work.
+              <br><small>
+                If you have questions about your rights as a research participant, or wish to obtain information, ask questions or discuss any concerns about this study with someone other than the researcher(s), please contact the University of Washington Human Subjects Division at 206-543-0098 (for international calls include the US Calling Code: +1-206-543-0098).
+              </small>
+            </p>
+            <p>
+              <em><strong style="color: #e60000;">Content Warning</strong></em>: posts were found on the (uncensored) internet;
+              while it's crucial for us to annotate them, we do not endorse any of the stereotypes or offensive/immoral/rude material.
+              You may find some of the content upsetting.
+              <em>If you have concerns, questions, or strong negative reactions to some of the content</em>, please either email us (Maarten Sap at msap@cs.washington.edu, or Professor Yejin Choi at yejin@cs.washington.edu) or <a href="https://www.crisistextline.org/">reach out</a> if in crisis.
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center" style="margin-top: 20px;">
+          <div class="col-11" id="table-container">
+            <h5>Examples <small><a href=".extra-rows" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" onclick="expExamples();">
+              [-] less examples
+            </a></small></h5>
+            <table class="table table-sm" id="examples-table">
+              <thead>
+                <th scope="col" style="width: 40%;">Sentence</th>
+                <th scope="col" style="width: 10%;" class="yesDialect">Dialect</th>
+                <th scope="col" style="width: 10%;" class="yesRace">Race/Ethnicity</th>                 
+                <th scope="col">Toxic</th>
+                <th scope="col">Intentional</th>
+                <th scope="col">Sex</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>You only got the job because you're a woman.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>The movie with the all-muslim cast was a box office bomb.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Probably</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>I got my black ass handed to me during this basketball game.</td>
+                  <td class="yesDialect">Afr-Am Eng</td>
+                  <td class="yesRace">Black</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>A white woman called police on black people barbecuing.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>No</td>
+                  <td>No (statement)</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>This nigga tried to call me three times during my shift smh</td>
+                  <td class="yesDialect">Afr-Am Eng</td>
+                  <td class="yesRace">Black</td>
+                  <td>No</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>You are a MORON.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>Cause of dem stupid traffic lights I almost miss the beginning of my shift lololol</td>
+                  <td class="yesDialect">Lat Eng</td>
+                  <td class="yesRace">Latino/Latina</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                </tr>
+                <tr>
+                  <td>What do you tell a triggered feminist pansexual marine biologist to calm them down? I don't know, I don't speak whale.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  
+                </tr>
+                <tr>
+                  <td>Before we go, we should make sure Laquisha knows how to swim.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  <td>No</td>
+                </tr> 
+                <tr class="collapse show extra-rows">
+                  <td>Well I don't need your fucking help and put your comment in your big fat ass you stupid asshole.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+      
+                </tr>
+                <tr class="collapse show extra-rows">
+                  <td>Trans women are gay men in disguise.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+
+                </tr>
+                <tr class="collapse show extra-rows">
+                  <td>A Muslim walks into a gay bar in Florida. The bartender asks "what will you have?" The Muslim replies "shots for everyone"</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                  
+                </tr>
+        
+                <tr class="collapse show extra-rows">
+                  <td>She was being so bitchy when she called me out, it must be that time of the month.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Yes</td>
+                  <td>No</td>
+                 
+                </tr>
+                <tr class="collapse show extra-rows">
+                  <td>Asians are so polite, you can say the rudest things to them and they will just sit there quiet and not do anything about it.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Probably not</td>
+                  <td>No</td>
+                  
+                </tr>
+                <tr class="collapse show extra-rows">
+                  <td>Jamal will monkey up the whole situation.</td>
+                  <td class="yesDialect">gen Eng</td>
+                  <td class="yesRace">White</td>
+                  <td>Yes</td>
+                  <td>Probably</td>
+                  <td>No</td>
+                </tr>
+              </tbody>
+            </table>
+            <a href=".extra-rows" class="collapsed" data-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" onclick="expExamples();">
+              [-] less examples
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" id="consent" style="margin: 30px 0;">
+      <div class="col-12">
+        <h6>Agree to the task</h6>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input class="form-check-input" type="checkbox" id="consent" name="consent" onclick="toggleConsent(this.checked)">
+            By ticking this box, you are agreeing to be part of this data collection study. Be sure that questions you have about the study have been answered and that you understand what you are being asked to do. You may contact us if you think of a question later. You are free to release/quit the HIT at any time, and refusing to be in the experiment or stopping participation will involve no penalty or loss of benefits to which you are otherwise entitled. To save a copy of the consent form and instructions, you can save/print this webpage (or find the instructions <a href="https://homes.cs.washington.edu/~msap/debug/neural-detox/twitterHateV3.html">here</a>).
+          </label>
+        </div>
+        <br>
+        <div class="alert alert-warning" id="consentMessage" style="max-width: 400px;margin: auto;">
+          You must check the box to continue the task!
+        </div>
+      </div>
+    </div>
+    <div id="actualTask" style="display: none;">
+      <div class="row justify-content-center">
+        <div class="col-10" style="margin-top: 30px;">
+        <h3> Task </h3>
+          <div class="story-excerpt">   
+            <h5 style="margin: 10px;">${username} tweeted:</h5>
+            <p id="postText" style="padding-left: 25px; font-size: 14pt;max-width: 100%;">
+              ${tweet}
+            </p>
+            
+            <p id="dialect" class="yesDialect" style="text-align: right;font-size: 12px; margin-bottom: 5px;">
+              which our AI system thinks is in <em>${dialect} </em>English.
+            </p>
+            <div class="form-check yesDialect" style="text-align: right;font-style: italic;font-size:11px;">
+              <input type="checkbox" class="form-check-input" name="dialectIsWrong" id="dialectIsWrong">
+              <label class="form-check-label" for="dialectIsWrong">
+                The AI prediction seems wrong.
+              </label>
+            </div>
+            <div class="form-check yesRace" style="text-align: right;font-style: italic;font-size:11px;">
+              <input type="checkbox" class="form-check-input" name="raceIsWrong" id="raceIsWrong">
+              <label class="form-check-label" for="raceIsWrong">
+                The AI prediction for the user's race/ethnicity seems wrong.
+              </label>
+            </div>
+            <span id="treatmentCondition" style="display: none">${condition}</span>
+            <p></p>
+
+            <!--p style="padding-left: 20px; font-size: 10pt; text-align: right;">
+              - written by source.
+            </p-->
+          </div>
+        </div>
+      </div>
+
+      <div class="container" id="allQuestions">
+        <div class="row">
+          <div class="col-4" id="offToYouQ" style="display: inline-block;margin-top: 10px;">
+            <span class="numbering">1.a)</span>Does this post seem offensive/disrespectful <strong>to you</strong>?<br><small></small>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQoffensive2you">
+              Please answer this question.
+            </div>
+            <div class="col-12">
+              <!--form-->
+              <label><input type="radio" name="offensive2youYN" value="yes" required>&nbsp;
+                Yes</label><br>
+              <label><input type="radio" name="offensive2youYN" value="maybe">&nbsp;
+                Maybe</label><br>
+              <label><input type="radio" name="offensive2youYN" value="no">&nbsp;
+                No</label><br>
+              <label style="margin-top: 10px;"><input type="radio" name="offensive2youYN" value="dontunderstand">&nbsp;
+                Post doesn't make sense/is just a link</label><br>
+              <!--/form-->
+            </div>  
+          </div>
+          <div class="col-4" id="introQuestion" style="display: inline-block;margin-top: 10px;">
+            <span class="numbering">1.b)</span>Could this post be considered offensive/disrespectful <strong>to anyone</strong>?<br><small></small>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQoffensive">
+              Please answer this question.
+            </div>
+            <div class="col-12">
+              <!--form-->
+              <label><input type="radio" name="offensive2anyoneYN" value="yes" required>&nbsp;
+                Yes</label><br>
+              <label><input type="radio" name="offensive2anyoneYN" value="maybe">&nbsp;
+                Maybe</label><br>
+              <label><input type="radio" name="offensive2anyoneYN" value="no">&nbsp;
+                No</label><br>
+              <!--/form-->
+            </div>  
+          </div>
+          <div class="col-4" id="intentQuestion" style="display: inline-block;margin-top: 10px;">
+            <span class="numbering">1.c)</span>Was the intent of this post to be offensive/disrespectful to anyone?<br>
+            <small>E.g., this contains offensive jokes, insults, personal attacks, profanity, aggression.</small>
+            <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQintent">
+              Please answer this question.
+            </div>
+            <div class="col-12">
+              <!--form-->
+              <label><input type="radio" name="intentYN" value="defsYes" required>&nbsp;
+                Yes, definitely</label><br>
+              <label><input type="radio" name="intentYN" value="probYes">&nbsp;
+                Probably yes</label><br>
+              <label><input type="radio" name="intentYN" value="probNo" >&nbsp;
+                Probably no</label><br>
+              <label><input type="radio" name="intentYN" value="defsNo" >&nbsp;
+                No, definitely not</label>
+              <!--/form-->
+            </div>  
+          </div>
+        </div>
+        <div class="row col-12" id="sexQuestions" style="display: inline-block;margin-bottom: 10px;">
+          <span class="numbering">2)</span>Does this post contain or allude to sexual content/acts?<br>
+          <small>This includes euphemism, double entendre, etc.</small>
+          <div class="col-12 alert alert-danger" role="alert" style="display: none;" id="alertQsexual">
+            Please answer this question.
+          </div>
+          <div class="col-12">
+            <!--form-->
+            <label><input type="radio" name="sexYN" value="yes" onclick="$('#sexWhy').show();$('#sexWhy>input').prop('required','true');$('#alertQsexual').hide();" required="">&nbsp;Yes (or potentially)</label><br>
+            <label><input type="radio" name="sexYN" value="no" onclick="$('#sexWhy').hide();$('#sexWhy>input').prop('required','');$('#alertQsexual').hide();" required="">&nbsp;No</label><br>
+            <!--/form-->
+            <div class="col-12 " id="sexWhy" style="display: none; margin-bottom: 10px;">
+              What part of the post references sexual content, and why?<br>
+              <input type="text" style="margin: 5px;" name="sexPhrase" placeholder="phrase"><br>
+              <input type="text" style="margin: 5px;" name="sexReason" placeholder="explanation">
+            </div> 
+          </div>
+        </div>
+        <div class="row-12" id="demogQuestions" style="display: inline-block;">
+          <span class="numbering">3)</span>If comfortable, please tell us about yourself (this will remain confidential).<br>
+          <small>How people perceive offensiveness/inequality is influenced by their own societal experience.</small>
+                    <form style="margin-top: 20px;">
+            <div class="form-group row">
+              <label for="gender" class="col-sm-2 col-form-label">Gender identity</label>
+              <div class="col-sm-4">
+                <!--input type="text" id="gender" name="annotatorGender" placeholder="" class="form-control"-->
+                <select id="annotatorGender" name="annotatorGender" class="form-control" style="font-size: .85rem;" required>
+                  <option disabled selected value="">-- please select --</option>
+                  <option value="man">Man/Male</option>
+                  <option value="woman">Woman/Female</option>
+                  <option value="transman">Trans man</option>
+                  <option value="transwoman">Trans woman</option>
+                  <option value="nonBinary">Non-binary</option>
+                  <option value="other">Other</option>
+                  <option value="na">Prefer not to disclose</option>
+                </select>
+              </div>
+              <div class="col-sm-5 alert alert-secondary" id="demog-prefilled-message" style="padding: 3px; margin-bottom:0;" style="display: none;">
+                To save you time, we've pre-filled these boxes based on your previous answers in our HITs!
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="annotatorAge" class="col-sm-2 col-form-label">Age</label>
+              <div class="col-sm-2">
+                <input type="number" id="annotatorAge" name="annotatorAge" placeholder="" class="form-control" min="18" style="font-size: .85rem;" max="100" required>
+              </div>
+              <div class="col-sm-4"><small>Write 100 if you don't want to disclose your age.</small></div>
+            </div>
+            <div class="form-group row" >
+              <label for="race" class="col-sm-2 col-form-label">Race/ethnicity</label>
+              <div class="col-sm-4">
+                <!--input type="text" id="race" name="annotatorRace" placeholder="" class="form-control"-->
+                <select id="annotatorRace" name="annotatorRace" class="form-control" style="font-size: .85rem;" required>
+                  <option disabled selected value="">-- please select --</option>
+                  <option value="asian">Asian/Asian American</option>
+                  <option value="indian">South Asian/Indian American</option>
+                  <option value="black">Black/African American</option>
+                  <option value="hisp">Hispanic/Latinx</option>
+                  <option value="white">White/Caucasian</option>
+                  <option value="middleEastern">Middle Eastern</option>
+                  <option value="islander">Native Hawaiian/Pacific Islander</option>
+                  <option value="native">Native American/First Nations</option>
+                  <option value="other">Mixed/other</option>
+                  <option value="na">Prefer not to disclose</option>
+                </select>
+              </div>
+              <div class="col-sm-3"><small>Please select the racial/ethnic identity you most identify with currently.</small></div>
+            </div>
+            <div class="form-group row">
+              <label for="annotatorPolitics" class="col-sm-2 col-form-label">Political leaning</label>
+              <div class="col-sm-4">
+                <!--input type="text" id="race" name="annotatorRace" placeholder="" class="form-control"-->
+                <select id="annotatorPolitics" name="annotatorPolitics" class="form-control" style="font-size: .85rem;" required>
+                  <option disabled selected value="">-- please select --</option>
+                  <option value="cons">Conservative</option>
+                  <option value="mod-cons">Moderate conservative</option>
+                  <option value="mod-liberal">Moderate liberal</option>
+                  <option value="liberal">Liberal/progressive</option>
+                  <option value="libert">Libertarian</option>
+                  <option value="other">Other/independent</option>
+                  <option value="na">Prefer not to disclose</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="annotatorMinority" class="col-sm-12 col-form-label">
+                Do you identify with any minority, disadvantaged, demographic, or other specific groups? If so, which one(s)?<br>
+                <small>(E.g., racial, gender identity, sexuality, disability, immigrant, veteran, etc.); use commas to separate groups.</small>
+              </label>
+              <div class="col-sm-6">
+                <input type="text" name="annotatorMinority" placeholder="" class="form-control" id="annotatorMinority" style="font-size: .85rem;">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-9" id="commentSection" style="display: inline-block;text-align: center;">
+          <p style="font-size:10pt;margin-top: 50px;">
+            Optional Feedback: Thanks for filling out the questions above!
+            If something about the hit was unclear, please either leave a comment in the box below!
+            We would like to make this HIT easier for future workers, so we really appreciate feedback though it is optional.
+            <br>
+            If you have concerns or questions, please email us!
+          </p>
+          <textarea style="margin-left:10px;margin-top:10px;width: 95%;" rows="2" name="commentbox"></textarea>
+          <br><br>
+          <center>
+            <div class="alert alert-danger" id="submitAlert" style="display: none;">
+              Whoops you missed some questions!
+              <br>
+              Note: if the submit button is disabled and you're confident this is an error, please screenshot your answers and the console output (Ctrl+Shift+J or Cmd+Shift+J).
+            </div>
+            <input type="submit" id="submitButton" class="btn btn-primary" value="Submit Hit!">       
+          </center>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</section>
+<script>
+  var targ, btngroup, event, selectedText, aspectDiv;
+
+  $("label.btn-checkbox>input[type='checkbox']").each(function(ix,e){
+    var value = $(e).parent().prop("innerText").trim();
+    e.value = value == "" ? "_other_" : value;
+  });
+  $("input[type='text']").each(function(ix,e){
+    if (e.name.startsWith("target") && !e.classList.contains("opt-target")){
+      //console.log(e);
+      e.placeholder = "GROUP does ___"
+      //e.placeholder = Math.random() < .5? "GROUP does ___": "GROUP has ___";
+    }
+  });
+  $("#postText").select(function(e) {
+    event = e;
+    targ = e.target;
+    selectedText = targ.value.substring(targ.selectionStart,targ.selectionEnd);
+    console.log("selected: '"+selectedText+"'");
+    if($("input[name='sexYN'][value='yes']:checked").length > 0)
+      $("input[name='sexPhrase']").prop("value",selectedText);
+  });
+
+  $(".btn-checkbox").on("click",function(e){
+    targ = e.target;
+    aspectDiv = $(targ).closest(".card-body").find(".aspects");
+
+    /* Highlight button if checkbox is clicked */
+    if(e.target.tagName == "INPUT"){
+      if (targ.checked)
+        $(targ).parent().addClass("active");
+      else 
+        $(targ).parent().removeClass("active");
+    }
+    
+    /* Make textboxes required if any checkbox is checked */
+    if ($(targ).closest(".btn-group-vertical").find("input:checkbox:checked").length > 0) {
+      aspectDiv.show();
+      aspectDiv.find("input[type='text']").each(function (i,e){
+        if (i>1)
+          return;
+        $(e).prop("required","true");
+      });
+    } else {
+      aspectDiv.hide();
+      aspectDiv.find("input[type='text']").each(function (i,e){
+        $(e).prop("value","");
+        if (i>1)
+          return;
+        $(e).prop("required","");
+      });
+    }
+    alertMinorityQs("yes");
+  });
+  $('.collapse-checkbox').on('hide.bs.collapse', function (e) {
+  /* If any checkboxes are checked, this makes sure the buttons don't disappear */
+  btngroup = e.target;
+  if ($(btngroup).find("input:checkbox:checked").length > 0)
+    e.preventDefault();
+  })
+  $(".othercheckbox").on("click",function(e){
+    var checked = $(e.target).prop("checked")
+    $(e.target).next().prop("disabled",!checked);
+    $(e.target).next().prop("required",checked? "true": "");
+  });
+  $("input[type='text']").prop("pattern",".{0}|.{3,}").prop("title","Minimum 3 characters");
+
+  
+  $("button.btn-link").on("click",function(e){
+    //Not sure why I need this, but otherwise accordion submits immediately
+    e.preventDefault();
+    event = e;
+    //console.log(e.target);
+  });
+  $("#submitButton").on("click",function(e){
+    var val = validate();
+    if (!val) {
+      e.preventDefault();
+      event = e;
+      $("#submitAlert").show();
+      setTimeout(function(){
+        $("#submitAlert").hide(300);
+      }, 10000);
+    } else {
+      sendWorkerInfo();
+      console.log("Submitted");
+    }
+  });
+  function layout(){
+    var cond = $("#treatmentCondition").text();
+    console.log(cond);
+    if (cond === "yesDial"){
+      $(".yesDialect").show();
+      $(".noDialect").hide();
+      $(".yesRace").hide();
+    } else if (cond === "noDial"){
+      $(".yesDialect").hide();
+      $(".noDialect").show();
+      $(".yesRace").hide();
+    } if (cond === "yesRace"){
+      $(".yesDialect").hide();
+      $(".noDialect").hide();
+      $(".yesRace").show();
+    }
+     
+  }
+  function getURLParams(){
+    var search = location.search;
+    if (location.hostname === "homes.cs.washington.edu")
+      search = "?workerId=A1TW2IIFTWJIB2";
+    
+    search = search.substring(1);
+    if (search == ""){
+      console.log("No search params "+location.href);
+      return {};
+    }
+    var params = JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}', function(key, value) { return key===""?value:decodeURIComponent(value) });
+
+    params["HITId"] = params["hitId"];
+    params["HITType"] = "twitterHate";
+    console.log(params);
+    return params;
+  }
+  function toggleConsent(checked){
+    if (checked){
+      $("#actualTask").show();
+      $("#consentMessage").hide();
+    } else {
+      $("#actualTask").hide();
+      $("#consentMessage").show();
+    }
+  }
+  function prepSQLparamsCheck(urlParams){
+    var out="";
+    out += "workerId="+urlParams["workerId"];
+    out += "&HITType="+urlParams["HITType"];
+    out += "&assignmentId="+urlParams["assignmentId"];
+    out += "&HITId="+urlParams["HITId"];
+    return out;
+  }
+  function prepSQLparamsStore(){
+    var out="";
+    out += "gender="+$("#annotatorGender").val();
+    out += "&age="+$("#annotatorAge").val();
+    out += "&race="+$("#annotatorRace").val();
+    out += "&politics="+$("#annotatorPolitics").val();
+    out += "&otherMinority="+encodeURIComponent($("#annotatorMinority").val());
+    return out;
+  }
+  function dealWithWorkerInfo(sqlResponse){
+    if (sqlResponse == ""){
+      /* we don't have this worker in our DB*/
+      console.log("New worker!");
+      $("#demog-prefilled-message").hide();
+    } else {
+      var workerInfo = JSON.parse(sqlResponse);
+      console.log(workerInfo);
+      // Bypass consent? Only on UW servers
+      if (location.hostname == "homes.cs.washington.edu"){
+        $("#consent").prop("checked",true);
+        toggleConsent(true);
+      }
+      $("#demog-prefilled-message").show();
+      $("#annotatorGender").val(workerInfo["gender"]);
+      $("#annotatorAge").val(workerInfo["age"]);
+      $("#annotatorRace").val(workerInfo["race"]);
+      $("#annotatorPolitics").val(workerInfo["politics"]);
+      $("#annotatorMinority").val(workerInfo["otherMinority"]);
+    }
+  }
+  function checkIfWorkerExists(){
+    var urlParams = getURLParams();
+    var requestParams = "?"+prepSQLparamsCheck(urlParams)+"&action=check";//location.search+"&action=check";
+    var requestURL = "https://homes.cs.washington.edu/~msap/debug/neural-detox/checkStoreWorkerDemographics.php";
+    var xhttp = new XMLHttpRequest();
+    console.log(requestURL+requestParams);
+    xhttp.open("POST", requestURL+requestParams, true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //var responseRaw = this.responseText;
+        dealWithWorkerInfo(this.responseText);
+        //console.log("Received an answer!"+this.responseText);
+      }
+    };
+    xhttp.send(requestParams);
+  }
+  function sendWorkerInfo(){
+    var urlParams = getURLParams();
+    var requestParams = "?"+prepSQLparamsCheck(urlParams)+"&action=store&"+prepSQLparamsStore();
+    var requestURL = "https://homes.cs.washington.edu/~msap/debug/neural-detox/checkStoreWorkerDemographics.php";
+    var xhttp = new XMLHttpRequest();
+    console.log(requestURL+requestParams);
+    xhttp.open("POST", requestURL+requestParams, true);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        //var responseRaw = this.responseText;
+        //dealWithWorkerInfo(this.responseText);
+        console.log("Received an answer: '"+this.responseText+"'");
+      }
+    };
+    xhttp.send(requestParams);
+  }
+  function validate(){
+    var valid, offensive, groupTargeted; //alertQoffensive2you
+
+    valid = ($("input[name='offensive2youYN']:checked").length > 0);
+    if (!valid){
+      $("#alertQoffensive2you").show();
+      window.location.hash = "#alertQintent"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q1a");
+      return valid;
+    } else {
+      $("#alertQoffensive2you").hide();
+    }
+    
+    valid = valid && ($("input[name='offensive2anyoneYN']:checked").length > 0);
+    if (!valid){
+      $("#alertQoffensive").show();
+      window.location.hash = "#alertQoffensive"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q1b");
+      return valid;
+    } else {
+      $("#alertQoffensive").hide();
+      offensive = ["yes","maybe"].includes($("input[name='offensive2anyoneYN']:checked").prop("value"));
+    }
+
+    valid = valid && ($("input[name='intentYN']:checked").length > 0);
+    if (!valid){
+      $("#alertQintent").show();
+      window.location.hash = "#alertQintent"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q1c");
+      return valid;
+    } else {
+      $("#alertQintent").hide();
+    }
+
+    valid = valid && $("input[name='sexYN']:checked").length > 0;
+    if (!valid){
+      $("#alertQsexual").show();
+      window.location.hash = "#alertQsexual"; window.scrollBy(0, -30);
+      console.log("Missing answer to Q2");
+      return valid;
+    } else {
+      $("#alertQsexual").hide();
+    }
+    
+    $("#annotatorGender").prop("value") != "please select";
+    
+    valid = valid && ($("input:invalid").length == 0);
+    console.log("########## VALIDATING #########\nvalid? "+valid);
+    $("input:invalid").each(function (i,e){
+      console.log(e);
+    });
+    return valid;
+  }
+  function alertMinorityQs(val){
+    if (val == "yes" && $(".btn-checkbox>input:checked").length == 0) {
+      //$("#dummyMinority").prop("required","true");
+      $("#alertQminority").show();
+    } else {
+      //$("#dummyMinority").prop("required","");
+      $("#alertQminority").hide();
+    }
+  }
+  var rows;
+  function expExamples(){
+    rows = $("tr.extra-rows");
+    $("a:contains('examples')").each(function(ix,link){
+      if (rows.hasClass("show"))
+        link.innerText = "[+] more examples";
+      else 
+        link.innerText = "[-] less examples";
+      console.log(link);
+    })
+  }
+
+</script>
+<style type="text/css">
+#examples-table {
+  border-style: none solid solid solid;
+  border-width: 1px;
+  border-color: #dee2e6;
+  border-radius: 5px;
+}
+
+.card-header-accordion{
+  padding: 0px 10px;
+}
+body, td, .btn { 
+  font-size:0.85rem;
+}
+label {
+  margin-bottom: 0px;
+}
+.story-excerpt {
+  margin: 40px auto;
+  min-width: 500px;
+  border:2px #333333;
+  background-color: #f2f2f2;
+  border-style: solid;
+  padding-right:10px;
+  padding-left:10px;
+  display:table;
+  border-radius:15px;
+}
+.story-excerpt-example {
+  border: 1px solid #666666;
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  padding: 3px;
+  display: inline-block;
+  margin: 10px;
+}
+span.numbering {
+  font-weight: bold;
+  margin-right: .5em;
+}
+#introQuestion>div>label>input,
+#sexQuestions>div>label>input,
+#intentQuestion>div>label>input {
+  vertical-align: middle;
+}
+
+#detailed-instructions>p {
+  margin-bottom: 0px;
+}
+span.instrQuestion {
+  background-color: #f2f2f2;
+  font-style: italic;
+  font-size: .9rem;
+  margin: 5px 0 3px -15px;
+  padding: 0 .3rem 0 .3rem;
+  display: inline-block;
+}
+span.instrDescription {
+  font-size: .9rem;
+  margin-left: -15px;
+}
+label > input[type='text'] {
+  width: 90%;
+}
+input[type='text'] {
+  width: 300px;
+}
+input[type='text'].opt-target {
+  background-color: #f8f8f8;
+}
+
+input[type="text"]:invalid {
+  color: #a94442;
+  background-color: #f2dede;
+}
+
+textarea#postText {
+  margin-left: 20px;
+  font-size: 12pt;
+  width: auto;
+  background-color: transparent;
+  overflow: auto;
+  resize: none;
+}
+
+.btn-checkbox, .btn-checkbox-two {
+  .btn-light;
+  color: black;
+  text-align: left;
+  margin: 0px;
+  background-color: #e9ecef;
+  border-color: #d1d4d7;
+}
+
+.btn-checkbox.active,
+.btn-checkbox:active,
+.btn-checkbox:hover {
+  background-color: #babcbf;
+  border-color: #8b8d8f;
+}
+
+.btn-checkbox-two.active,
+.btn-checkbox-two:active,
+.btn-checkbox-two:hover {
+  background-color: #babcbf;
+  border-color: #8b8d8f;
+}
+
+.btn-group-vertical {
+  max-width: 400px;
+  /*margin-right: 10px;*/
+}
+#introQuestion, 
+#sexQuestions,
+#minorityQuestions,
+#demogQuestions {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.autocomplete-suggestions { 
+  border: 1px solid #999;
+  background: #FFF; 
+  overflow: auto;
+}
+#dummyMinority {
+  /*opacity:0;*/
+  width: 0px;
+}
+.autocomplete-suggestion { padding: 2px 5px; white-space: nowrap; overflow: hidden; }
+.autocomplete-selected { background: #F0F0F0; }
+.autocomplete-suggestions strong { font-weight: normal; color: #3399FF; }
+.autocomplete-group { padding: 2px 5px; }
+.autocomplete-group strong { display: block; border-bottom: 1px solid #000; }
+
+input[type='checkbox'] {
+  /* All <input> elements that are immediate children of a class="btn-checkbox" */
+  margin-right: 5px;
+}
+ul {
+  padding-left: 30px;
+  margin-bottom: 10px;
+}
+fieldset {
+  padding: 10px;
+  background:#fbfbfb;
+  border-radius:5px; 
+  margin-bottom:5px;
+}
+</style>
