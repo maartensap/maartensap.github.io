@@ -8,6 +8,11 @@ titleRE = re.compile(r"title=\{([^\}]+)},?")
 authorRE = re.compile(r"author=\{([^\}]+)},?")
 fieldRE = re.compile(r"(\w+)=\{([^\}]+)},?")
 
+bibtexSpecialChars = {
+  "ö": r'\"{o}',
+  "ä": r'\"{a}',
+}
+
 def parseBibtex(bib):
   out = {}
   try:
@@ -27,7 +32,7 @@ mainAuthor = "Maarten Sap"
 mainAuthorFirst = "Maarten";
 mainAuthorLast = "Sap";
 listOfConferences = ["ACL","NAACL","EMNLP","EACL","CoNLL","AAAI","Findings of EMNLP",
-                     "Findings of ACL", "Findings of NAACL"]
+                     "Findings of ACL", "Findings of NAACL", "NeurIPS"]
 listOfJournals = ["Psychological Science", "Psychological Methods"]
 
 def getPubType(bibD):
@@ -86,6 +91,8 @@ def beautifyBibtex(bibD):
     out += "&nbsp;&nbsp;"+k+"={"+v+"},</br>"
   out += "}"
   out = re.sub(r",</br>}","</br>}",out)
+  for c, repl in bibtexSpecialChars.items():
+    out = out.replace(c,repl)
   return out
 
 def wordCitation(bibD):
