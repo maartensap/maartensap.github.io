@@ -6,20 +6,25 @@ import re, os
 import datetime
 from glob import glob
 import pandas as pd
+
+import argparse
+
   
 findPythonRE = re.compile(r"<python ([^>]+)>")
 findTitleRE = re.compile(r"<title>(.+)</title>")
-def loadAndReplaceFile(fn,d="",parentPath=""):
+def loadAndReplaceFile(fn,d="",parentPath="",silent=False):
   ffn = f"html/{d}{fn}"
   html = open(f"html/{d}{fn}").read()
-  print(fn)
+  if not silent:
+    print(fn)
 
   lastEditTime = str(datetime.date.fromtimestamp(os.path.getmtime(ffn)))
   
   for m in findPythonRE.findall(html):
     res = eval(m+f"(parentPath='{parentPath}',lastEditTime=lastEditTime)")
     html= html.replace(f"<python {m}>",res)
-    print(fn,m)
+    if not silent:
+      print(fn,m)
     
   html = html.replace("lastEditTime",lastEditTime)
   html = html.replace("websiteRoot/", parentPath)
@@ -165,7 +170,6 @@ def grabTitleOfPage(f):
   return m
 
 def generateNotesList(**kwargs):
-  print("notes list")
   notesFiles = glob("html/notes/*.*")
   notesFiles = {os.path.basename(f):grabTitleOfPage(f)
                 for f in notesFiles if "index" not in f}
@@ -176,7 +180,6 @@ def generateNotesList(**kwargs):
   return out
 
 def generateNotesNavBar(**kwargs):
-  print("notes navbar list")
   notesFiles = glob("html/notes/*.*")
   notesFiles = {os.path.basename(f):grabTitleOfPage(f)
                 for f in notesFiles if "index" not in f}
@@ -223,19 +226,19 @@ def listRecentNews(**kwargs):
   
 
 
-def generateNotesFiles():
+def generateNotesFiles(silent=False):
   notesFiles = glob("html/notes/*.html")
   for ffn in notesFiles:
     fn = os.path.basename(ffn)
-    loadAndReplaceFile(fn,d="notes/",parentPath="../")
+    loadAndReplaceFile(fn,d="notes/",parentPath="../",silent=silent)
 
-def generateMainFiles():
+def generateMainFiles(silent=False):
   notesFiles = glob("html/*.html")
   for ffn in notesFiles:
     fn = os.path.basename(ffn)
-    loadAndReplaceFile(fn)
+    loadAndReplaceFile(fn,silent=silent)
     
-def generateProjectFiles():
+def generateProjectFiles(silent=False):
   projectFiles = glob("html/*/*.html")
   projectFiles = [f for f in projectFiles if "notes/" not in f]
   
@@ -244,9 +247,13 @@ def generateProjectFiles():
     d = os.sep.join(splitPath[1:-1])
     fn = splitPath[-1]
 
-    loadAndReplaceFile(fn,d=d+"/",parentPath="../"*(len(splitPath)-2))
+    loadAndReplaceFile(fn,d=d+"/",parentPath="../"*(len(splitPath)-2),silent=silent)
   
 if __name__ == "__main__":
-  generateNotesFiles()
-  generateMainFiles()
-  generateProjectFiles()
+  p = argparse.ArgumentParser()
+  p.add_argument("-s","--silent",action="store_true")
+  args = p.parse_args()
+  #exit()
+  generateNotesFiles(silent=args.silent)
+  generateMainFiles(silent=args.silent)
+  generateProjectFiles(silent=args.silent)
