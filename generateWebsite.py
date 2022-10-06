@@ -209,7 +209,7 @@ def formatNewsItem(t):
   out+= dd+"</em></strong> "+e+":\n"
   out+= n
   out+='</p>'
-
+  out = out.replace("<a",'<a target="_blank"')
   return out
   
 def listAllNews(**kwargs):
