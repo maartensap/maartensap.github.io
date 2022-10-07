@@ -115,15 +115,20 @@ def generateWordFriendlyPublications(**kwargs):
     typeToPubs[type] = typeToPubs.get(type,[])
     typeToPubs[type].append(p)
     
-  order = ["conference","journal","workshop","demo","other","preprint"]
+  order = ["journal","conference","workshop","demo","other","preprint"]
   out = ""
+  index = 1
   for t in order:
-    out+=f"<h2>{t.title()}</h2>\n"
+    out+=f'<h4 style="margin-left: 1em;">{t.title()}</h4>\n'
+    out+=f'<ol start="{index}">'
     for p in typeToPubs[t]:
-      out+="<p>"
+      # out+=f"<p><small><em>{index}.</em></small>&nbsp;"
+      out+=f'<li class="pretty">'
       out+=wordCitation(p)
-      out+="</p>\n"
-
+      # out+="</p>\n"
+      out+="</li>\n"
+      index += 1
+    out+="</ol>"
   return out
 
 def loadAffiliations():
@@ -224,8 +229,23 @@ def listRecentNews(**kwargs):
   out = "\n".join(map(formatNewsItem,recentNews))
   return out
   
+######################## CV related #############################
 
+def generateFullCV(silent=False,**kwargs):
+  return "CV will go here"
 
+def generateStudentsList(silent=False,**kwargs):
+  students = pd.read_csv("cv-files/students.csv")
+  students["pronouns"] = '<span class="pronouns">'+students["pronouns"]+"</span>"
+  students["startYear"] += "&nbsp;&ndash;&nbsp;"
+  myPhDstudents = students[students["isMyStudent"] == "yes"].fillna("")# [students.columns.drop("isMyStudent")]DDD
+  out = myPhDstudents.to_html(index=False,escape=False,render_links=True,
+                              border=0,classes="students-table",header=False)
+  return out
+
+# embed();exit()
+
+#################################################################
 def generateNotesFiles(silent=False):
   notesFiles = glob("html/notes/*.html")
   for ffn in notesFiles:
@@ -248,6 +268,9 @@ def generateProjectFiles(silent=False):
     fn = splitPath[-1]
 
     loadAndReplaceFile(fn,d=d+"/",parentPath="../"*(len(splitPath)-2),silent=silent)
+
+
+
   
 if __name__ == "__main__":
   p = argparse.ArgumentParser()

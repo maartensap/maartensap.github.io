@@ -101,3 +101,20 @@ table th.tg-sort-header:after {  content:'';  float:right;  margin-top:7px;  bor
 table th.tg-sort-header:hover:after {  visibility:visible;  }
 table th.tg-sort-desc:after,table th.tg-sort-asc:after,table th.tg-sort-asc:hover:after {  visibility:visible;  opacity:0.4;  }
 table th.tg-sort-desc:after {  border-bottom:none;  border-width:4px 4px 0;  }
+
+li.pretty::marker {
+  font-style: italic;
+  font-size: .8em;
+  color: #575757;
+  margin-right: 1em;
+}
+.pronouns{
+  font-size: .6em;
+  color: #575757;
+}
+.students-table{
+  border: none;
+}
+.students-table>tr>td {
+  min-width: 3em;
+}
