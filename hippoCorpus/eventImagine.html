@@ -1,0 +1,701 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<script src="//uniqueturker.myleott.com/lib.js" type="text/javascript"></script>
+<script type="text/javascript">
+(function(){
+    var ut_id = "00b4af4ff4a723782d066e41b452faa5";
+    if (UTWorkerLimitReached(ut_id)) {
+        document.getElementById('mturk_form').style.display = 'none';
+        document.getElementsByTagName('body')[0].innerHTML = "You have already completed the maximum number of HITs allowed by this requester. Please click 'Return HIT' to avoid any impact on your approval rating.";
+    }
+})();
+</script>
+
+
+<div class="container">
+  <div class="card">
+    <h5 class="card-header bg-primary text-white">Instructions</h5>
+    <div class="card-body">
+      <p class="card-text">
+        Write a short essay about an event based on a prompt. This should take about 30 minutes.
+        <br>
+        This is a pilot task, please leave comments in the comment box!
+        <br>
+        <em><strong>Participation restriction</strong>: providers/turkers for this task cannot currently be employed by or a student at the University of Washington or Microsoft.</em>
+      </p>
+    </div>
+  </div>
+  <div class="p-3">
+    <div class="card">
+      <h5 class="card-header" style="background: #e9ecef;">
+        Full instructions
+        <a data-toggle="collapse" href="#fullInstructions" role="button" aria-expanded="false" aria-controls="fullInstructions">[expand/collapse]</a>
+      </h5>
+      <div class="card-body  collapse show bg-light" id="fullInstructions">
+        <p class="card-text">
+          <div class="row">
+            <div class="col-7">
+              <p>
+                Given a short prompt summary, write an <strong><em>imagined journal or diary entry</em></strong> about an event. After writing, answer a few questions.
+              </p>
+              <h5>Writing instructions</h5>
+              <ul>
+                <li>The story must <strong>correspond to the summary</strong>.</li>
+                <li>Pretend the event happened to you, but <strong>do not write about something that actually happened to you</strong>.</li>
+                <li>Write using <strong>first person perspective</strong>.</li>
+                <li>Use the timeline of when the event happened (e.g., "<em>3 weeks ago</em>", "<em>6 months ago</em>").</li>
+              </ul>
+              And then tell us about the story (from your own perspective):
+              <ul>
+                <li>tell us what <strong>type of event</strong> the story is about.<!-- (e.g., "<em>my cousin's wedding</em>", "<em>my child leaving for college</em>", "<em>getting a promotion</em>", "<em>losing a competition</em>").--></li>
+                <li>tell us what the <strong>most memorable/surprising</strong> event of the story was.<!-- (e.g., "<em>when wine spilled on the bride's dress</em>", "<em>when I fell on my face</em>", "<em>when I unexpectedly fell in love</em>", "<em>when I realized I was being lied to</em>").--></li>
+                <li>answer a few questions about the main event described in the story and its <strong>similarity and significance to your life</strong>.</li>
+                <li>answer a few questions about yourself and <strong>your experience during the writing task.</strong>
+                </li>
+                <li>let us know if you'd like to write about this event sometime in the next couple of months (this is the first stage of a two-stage study).</li>
+              </ul>
+            </div>
+            <div class="col-5">
+              <h4>Purpose of this research</h4>
+              <p>
+                At Microsoft Research, we're interested in understanding differences in how people write stories about imagined events.
+              </p>
+              <p>
+                <small>
+                  <h5>Data collection &amp; sharing <!--span style="color: red;">(to be updated based on consent form)</span--></h5>
+                  <p>
+                    During the project we will collect your Mechanical Turk ID, and may collect personal information about you such as age, gender, and race/ethnicity. We will not ask you for your name, or any other identifiable information. The personal information and other data collected during this project will be used primarily to perform research for purposes described in the introduction above.  Such information and data, or the results of the research may eventually be used to develop and improve our commercial products, services or technologies. By clicking "I agree" below, you are attesting that you've had time to read and consider this consent form and are comfortable with what is being asked of you as a participant. 
+                    We will securely store the data on our servers. We will not share your MTurk IDs outside of the research team.
+                  </p>
+                  <p>
+                    If you wish to review or copy any information you provided during the study, or if you want us to delete or correct any such data, email your request to the research team at: mem-lang-research@microsoft.com.  
+                    For additional information on how Microsoft handles your personal information, please see the <a href="https://privacy.microsoft.com/en-us/privacystatement">Microsoft Privacy Statement</a>.
+                  </p>
+                </small>
+              </p>
+            </div>
+            <div class="col-12">
+              <em>Note</em>: writing these stories might remind you of painful events in your life. If you are in crisis, please <a href="https://www.crisistextline.org/">reach out</a>  or take a break from writing. 
+            </div>
+          </div>
+        </p>
+      </div>
+    </div>
+    
+    <div class="row justify-content-center" id="consent-div">
+      <div class="col-12 mt-4">
+        <h5>Agree to the task</h5>
+        <div class="form-check">
+          <label class="form-check-label" for="consent">
+            <input class="form-check-input" type="checkbox" id="consent" name="consent" onclick="toggleConsent(this.checked)" required>
+            By ticking this box, you certify that you have <strong>read</strong> and <strong>agree</strong> with <a href="https://homes.cs.washington.edu/~msap/debug/memoryAndLanguage/MemoryLanguage_ConsentForm.pdf" target="_blank">the terms of this study</a>.
+          </label>
+        </div>
+        <br>
+        <div class="alert alert-warning" id="consent-message" style="max-width: 400px;margin: auto;">
+          You must check the box to continue the task!
+        </div>
+      </div>
+    </div>
+    <div id="main-task" style="display: none;">
+      <div class="row justify-content-center mt-4">
+        <div class="col-11" id="storywriting-section">
+          <h4><label for="story">Step 1: Write the diary entry</label></h4>
+          <h5 id="summary-block"><strong>Summary</strong>:<br> <span id="summary">${summary}</span><br><br><small style="float: right;"> - happened <em>${recency}</em> ago</small></h5>
+          <p class="mt-3">
+            <strong style="color:ce0000;">**Reminder** </strong>Please make sure to write a story that <strong>corresponds to the summary</strong> written above.
+            <br>Don't write a story about something that actually happened to you.<br>
+		  <small>Story must be <em>15-25 sentences</em> and <em>600-3000 characters</em> including spaces.</small>
+          </p>
+          <div class="form-group">
+            <textarea class="form-control" name="story" id="story" rows="15" oninput="updateCounter(this,15,25,600,3000);" placeholder="write your diary entry here (15-25 sentences)" required></textarea>
+            <span id="story-sentence-counter">0 sentences (0 characters) detected</span>
+          </div>
+          <div class="col-6 alert alert-danger" id="story-length-warning" style="display: none;">
+            Text must be 15-25 sentences and 600-3000 characters (including spaces).
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="certify-no-pii-story" name="certify-no-pii-story" required>
+              <label class="form-check-label" for="certify-no-pii-story">
+              I certify that my story contains no personally identifiable information (name, address, SSN, etc) about you or anyone else.
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-11 section mb-4">
+          <h4>Step 2: Answer some questions about the story and the event described</h4>
+        
+          <h5 class="mt-4">          
+            A. What is the main event being described in the story?
+          </h5>
+          <div class="row">
+            <div class="col-8">
+              <p>Enter a short phrase describing what happened</p>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">This story is about</span>
+                </div>
+                <input type="text" class="form-control" name="mainEvent" id="mainEvent" placeholder="..." style="width: 60%;" maxlength="60" required>
+              </div>
+              <div id="mainEvent-duplicate-warning" class="alert alert-danger" style="display: none;">
+                This cannot be the same as a part of your story/summary.
+              </div>
+            </div>
+            <div class="col-4">
+              <small>Good/bad examples include:
+              <ul style="padding-inline-start: 1.25em; list-style: none;">
+                <li class="corr"><em>about my cousin's wedding</em></li>
+                <li class="corr"><em>about my child leaving for college</em></li>
+                <li class="corr"><em>about getting a promotion</em></li>
+                <li class="corr"><em>about failing to win a competition</em></li>
+                <li class="corr"><em>about a first date with someone met online</em></li>
+                <li class="inco"><em><s>international travel</s></em> &rarr; <em>about travelling to Japan</em></li>
+                <li class="inco"><em><s>a former coworker and I</s></em> &rarr; too vague</li>
+              </ul>
+              </small>
+            </div>
+          </div>
+          
+          <h5 class="mt-4">
+            B. What is the most surprising/unexpected event in the story?<br>
+          </h5>
+          <div class="row">
+            <div class="col-8">
+            <p>Enter a short phrase that describes a <strong>specific</strong> event that you found unexpected or surprising.</p>
+              <div class="form-group input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3">It was surprising when</span>
+                </div>
+                <input type="text" class="form-control" name="mostSurprising" id="mostSurprising" placeholder="..." style="width: 60%;" maxlength="70" required>
+              </div>
+              <div id="mostSurprising-duplicate-warning" class="alert alert-danger" style="display: none;">
+                This cannot be the same as a part of your story/summary.
+              </div>
+            </div>
+            <div class="col-4">
+              <small>Good/bad examples include:
+              <ul style="padding-inline-start: 1.25em; list-style: none;">
+                <li class="corr"><em>when wine spilled on the bride's dress</em></li>
+                <li class="corr"><em>when I fell on my face</em></li>
+                <li class="corr"><em>when I unexpectedly fell in love</em></li>
+                <li class="corr"><em>when I realized I was being lied to</em></li>
+                <li class="inco"><em><s>how beautiful it is</s></em> &rarr; too vague</li>
+                <li class="inco"><em><s>when it exceeded my expectations</s></em> &rarr; what exceeded expectations?</li>
+              </ul>
+              </small>
+            </div>
+          </div>
+          
+          <h5>C. How impactful, important, or personal is this story/this event to you?</h5>
+          <div class="form-check form-check-inline ml-3 lickert">
+            <label class="form-check-label" for="importance1">Not at all &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="importance" id="importance1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="importance2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="importance" id="importance2" value="2">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="importance3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="importance" id="importance3" value="3">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="importance4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="importance" id="importance4" value="4">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="importance5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="importance" id="importance5" value="5">
+            <label class="form-check-label" for="importance5">&nbsp; Very</label>
+          </div>
+          
+          <h5 class="mt-4">D. How similar to your life does this event/story feel to you?</h5>
+          <p>I.e., how much do you think you could have experienced this?</p>
+          <div class="form-check form-check-inline ml-3 lickert">
+            <label class="form-check-label" for="similarity1">Not at all&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="similarity" id="similarity1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="similarity2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="similarity" id="similarity2" value="2">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="similarity3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="similarity" id="similarity3" value="3">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="similarity4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="similarity" id="similarity4" value="4">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="similarity5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="similarity" id="similarity5" value="5">
+            <label class="form-check-label" for="similarity5">&nbsp; Very.</label>
+          </div>
+
+          <h6 class="mt-3 ml-3"><label for="similarityReason">Tell us more about how closely you identified with this story:</label></h6>
+          <div class="form-group ml-3 input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon3"></span>
+            </div>
+            <input type="text" class="form-control" id="similarityReason" name="similarityReason" placeholder="...">
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-11 section">
+        <h4><label for="summary">Step 3: Tell us about yourself and this writing task</label></h4>
+          <h5 class="mt-4">A. How stressful was this writing task?</h5>
+          <div class="form-check form-check-inline ml-3 lickert">
+            <label class="form-check-label" for="stressful1">Not at all &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="stressful" id="stressful1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="stressful2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="stressful" id="stressful2" value="2">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="stressful3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="stressful" id="stressful3" value="3">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="stressful4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="stressful" id="stressful4" value="4">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="stressful5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="stressful" id="stressful5" value="5">
+            <label class="form-check-label" for="stressful5">&nbsp; Very</label>
+          </div>
+          
+          <h5 class="mt-4">B. How distracted were you while writing your story?</h5>
+          <div class="form-check form-check-inline ml-3 lickert">
+            <label class="form-check-label" for="distracted1">Not at all &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="distracted" id="distracted1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="distracted2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="distracted" id="distracted2" value="2">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="distracted3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="distracted" id="distracted3" value="3">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="distracted4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="distracted" id="distracted4" value="4">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="distracted5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="distracted" id="distracted5" value="5">
+            <label class="form-check-label" for="distracted5">&nbsp; Very</label>
+          </div>
+          
+          <h5 class="mt-4">C. How taxing/draining was writing for you emotionally?</h5>
+          <div class="form-check form-check-inline ml-3 lickert">
+            <label class="form-check-label" for="draining1">Not at all &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="draining" id="draining1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="draining2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="draining" id="draining2" value="2">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="draining3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="draining" id="draining3" value="3">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="draining4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="draining" id="draining4" value="4">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="draining5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="draining" id="draining5" value="5">
+            <label class="form-check-label" for="draining5">&nbsp; Very</label>
+          </div>
+        
+          <h5 class="mt-4">D. To what extent do you agree with the following statements?</h5>
+          <span style="display: block;">I have a vivid imagination</span>
+          <div class="form-check form-check-inline ml-3 lickert">
+            <label class="form-check-label" for="ope_vividImagination1">Not at all &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_vividImagination" id="ope_vividImagination1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_vividImagination2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_vividImagination" id="ope_vividImagination2" value="2">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_vividImagination3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_vividImagination" id="ope_vividImagination3" value="3">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_vividImagination4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_vividImagination" id="ope_vividImagination4" value="4">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_vividImagination5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="ope_vividImagination" id="ope_vividImagination5" value="5">
+            <label class="form-check-label" for="ope_vividImagination5">&nbsp; Completely</label>
+          </div>
+          
+          <span style="display: block;" class="mt-3">I have difficulty understanding abstract ideas</span>
+          <div class="form-check form-check-inline ml-3 lickert">
+            <label class="form-check-label" for="ope_hardAbstract1">Not at all &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_hardAbstract" id="ope_hardAbstract1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_hardAbstract2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_hardAbstract" id="ope_hardAbstract2" value="2">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_hardAbstract3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_hardAbstract" id="ope_hardAbstract3" value="3">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_hardAbstract4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_hardAbstract" id="ope_hardAbstract4" value="4">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_hardAbstract5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="ope_hardAbstract" id="ope_hardAbstract5" value="5">
+            <label class="form-check-label" for="ope_hardAbstract5">&nbsp; Completely</label>
+          </div>
+          
+          <span style="display: block;" class="mt-3">Am not interested in abstract ideas.</span>
+          <div class="form-check form-check-inline ml-3 lickert">
+            <label class="form-check-label" for="ope_notAbstract1">Not at all &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_notAbstract" id="ope_notAbstract1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_notAbstract2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_notAbstract" id="ope_notAbstract2" value="2">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_notAbstract3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_notAbstract" id="ope_notAbstract3" value="3">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_notAbstract4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_notAbstract" id="ope_notAbstract4" value="4">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_notAbstract5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="ope_notAbstract" id="ope_notAbstract5" value="5">
+            <label class="form-check-label" for="ope_notAbstract5">&nbsp; Completely</label>
+          </div>
+          
+          <span style="display: block;" class="mt-3">I do not have a good imagination.</span>
+          <div class="form-check form-check-inline ml-3 lickert">
+            <label class="form-check-label" for="ope_badImagination1">Not at all &nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_badImagination" id="ope_badImagination1" value="1" required>
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_badImagination2">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_badImagination" id="ope_badImagination2" value="2">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_badImagination3">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_badImagination" id="ope_badImagination3" value="3">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_badImagination4">&nbsp;</label>
+            <input class="form-check-input right" type="radio" name="ope_badImagination" id="ope_badImagination4" value="4">
+          </div>
+          <div class="form-check form-check-inline lickert">
+            <label class="form-check-label" for="ope_badImagination5">&nbsp;</label>
+            <input class="form-check-input" type="radio" name="ope_badImagination" id="ope_badImagination5" value="5">
+            <label class="form-check-label" for="ope_badImagination5">&nbsp; Completely</label>
+          </div>
+          
+          <h5 class="mt-4">How do you identify?<br><small>Select "prefer not to answer" if needed.</small></h5>
+          <div class="form-group row mt-3">
+            <label for="gender" class="col-sm-2 col-form-label">Gender identity</label>
+            <div class="col-sm-4">
+              <select id="annotatorGender" name="annotatorGender" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="man">Man/Male</option>
+                <option value="woman">Woman/Female</option>
+                <option value="transman">Trans man</option>
+                <option value="transwoman">Trans woman</option>
+                <option value="nonBinary">Non-binary</option>
+                <option value="other">Other</option>
+                <option value="na">- prefer not to disclose -</option>
+              </select>
+            </div>
+            <div class="col-sm-4"><small>Please select the gender identity you most identify with currently.</small></div>
+          </div>
+          <div class="form-group row">
+            <label for="annotatorAge" class="col-sm-2 col-form-label">Age range</label>
+            <div class="col-sm-4">
+              <select id="annotatorAge" name="annotatorAge" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="18">18-24</option>
+                <option value="25">25-29</option>
+                <option value="30">30-34</option>
+                <option value="35">35-39</option>
+                <option value="40">40-44</option>
+                <option value="45">45-49</option>
+                <option value="50">50-54</option>
+                <option value="55">55+</option>
+                <option value="na">- prefer not to disclose -</option>
+              </select>
+            </div>
+
+          </div>
+          <div class="form-group row" >
+            <label for="race" class="col-sm-2 col-form-label">Race/ethnicity</label>
+            <div class="col-sm-4">
+              <select id="annotatorRace" name="annotatorRace" class="form-control" style="font-size: .85rem;" required>
+                <option disabled selected value="">-- please select --</option>
+                <option value="asian">Asian/Asian American</option>
+                <option value="indian">South Asian/Indian American</option>
+                <option value="black">Black/African American</option>
+                <option value="hisp">Hispanic/Latinx</option>
+                <option value="white">White/Caucasian</option>
+                <option value="middleEastern">Middle Eastern</option>
+                <option value="islander">Native Hawaiian/Pacific Islander</option>
+                <option value="native">Native American/First Nations</option>
+                <option value="other">Mixed/other</option>
+                <option value="na">- prefer not to disclose -</option>
+              </select>
+            </div>
+            <div class="col-sm-4"><small>Please select the racial/ethnic identity you most identify with currently.</small></div>
+          </div>
+          <!--div class="form-group row">
+            <label for="annotatorMinority" class="col-sm-12 col-form-label">
+              Do you identify with any minority, disadvantaged, demographic, or other specific groups? If so, which one(s)?<br>
+              <small>(E.g., racial, gender identity, sexuality, disability, immigrant, veteran, etc.); use commas to separate groups.</small>
+            </label>
+            <div class="col-sm-6">
+              <input type="text" name="annotatorMinority" placeholder="" class="form-control" id="annotatorMinority" style="font-size: .85rem;">
+            </div>
+          </div-->
+          <div class="form-group mt-4">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="consent-recontact" name="consent-recontact"> 
+              <label class="form-check-label" for="consent-recontact">
+              I agree to being contacted in the next few months to write about this event again<br><small>(We will contact you via the notification feature on MTurk)</small>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-8 text-center section" style="font-size: 10pt;">
+          Optional Feedback: Thanks for filling out hit above!
+          If something about the hit was unclear, please either leave a comment in the box below!
+          We would like to make this HIT easier for future workers, so we really appreciate feedback though it is optional.
+          If you have concerns or questions, please email us!
+          <textarea id="commentbox" name="commentbox" class="form-control" style="width: 100%;margin-top:10px"></textarea><br>
+          <input type="submit" id="submitButton" class="btn btn-primary" value="Submit Hit!"> 
+        </div>
+        <div class="col-6 mt-2 alert alert-danger" id="cantSubmit" style="display: none;">
+          You're missing some questions! Please verify that you've filled out:
+          <ul>
+            <li>All <strong>text fields</strong> in sections 1, 2</li>
+            <li>All <strong>questions</strong> in sections 2, 3</li>
+            <li>All <strong>checkboxes</strong> in sections 1, 3</li>
+          </ul>
+        </div>
+      </div>
+    </div>      
+  </div>
+</div>
+<script>
+  var e;
+  //var characters = "QWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+  var condition;
+  
+  $(document).ready(function(){
+    if (location.host == "homes.cs.washington.edu"){
+      toggleConsent(true);
+      $("#consent").prop("checked",true);
+      $(".debug").show();
+    }
+  });
+  
+  
+  function toggleConsent(checked){
+    if (checked){
+      $("#main-task").show();
+      $("#consent-message").hide();
+    } else {
+      $("#main-task").hide();
+      $("#consent-message").show();
+    }
+  }
+  
+
+  
+  function countSentences(text){
+    var match = text.match(/[\w\)"][.?!](?:\s|$)/gm);
+    return match === null ? 0: match.length;
+  }
+  function updateCounter(el,minS,maxS,minC,maxC){
+    var name = el.id;
+    var counter = $("#"+name+"-sentence-counter");
+    var text = $(el).prop("value");
+    var nSents = countSentences(text);
+    var nChars = text.length;
+    var warnText = "";
+    counter.css('color', 'black');
+
+    if (nSents >= minS && nChars < maxC)
+      warnText = " &#x2713;";
+    
+    if (nSents > maxS || nChars > maxC) {
+      warnText = " (try shortening it)";
+      counter.css('color', '#721c24');
+    } 
+    counter.html(nSents+" sentences ("+nChars+" characters) detected"+warnText);
+  }
+  function checkMainEvent(){
+    var mainEvent = $("#mainEvent").prop("value");
+    var story = $("#story").prop("value");
+    var summary = $("#summary").text();
+    if (mainEvent.length > 0 && (story.indexOf(mainEvent) != -1 || summary.indexOf(mainEvent) != -1)) {
+      $("#mainEvent-duplicate-warning").show();
+      return false;
+    } else {
+      $("#mainEvent-duplicate-warning").hide();
+      return true;
+    }
+  }
+  function checkMostSurprising(){
+    var mostSurprising = $("#mostSurprising").prop("value");
+    var story = $("#story").prop("value");
+    var summary = $("#summary").text();
+    if (mostSurprising.length > 0 && (story.indexOf(mostSurprising) != -1 || summary.indexOf(mostSurprising) != -1)) {
+      $("#mostSurprising-duplicate-warning").show();
+      return false;
+    } else {
+      $("#mostSurprising-duplicate-warning").hide();
+      return true;
+    }
+  }
+  function checkStory(){
+    var story = $("#story").prop("value");
+    var nSents = countSentences(story);
+    // if (story.length > 600 && story.length < 2000 && story.match(/(\r\n|\n|\r)/g).length > 10){
+    if (nSents < 26 && nSents > 14 && story.length > 600 && story.length < 3000){
+      $("#story").attr("data-state","open");
+      $("#story-length-warning").hide();
+      return true;
+    } else {
+      $("#story").attr("data-state","invalid");
+      $("#story-length-warning").show();
+      return false;
+    }
+  }
+  //(\r\n|\n|\r)
+  $("#submitButton").on("click",function(e){
+    var ok = checkStory();
+    console.log("Story ok? "+ok);
+    
+    ok = ok && checkMainEvent();
+    console.log("main event ok? "+ok);
+    
+    ok = ok && checkMostSurprising();
+    console.log("most surprising ok? "+ok);
+    
+    ok = ok && ($(":invalid").length == 0);
+    console.log("All fields valid? "+ok);
+    $(":valid").removeClass("invalid");
+    $(".lickert>input:valid").parents().removeClass("invalid");
+    $(".form-check>input:valid").parents().removeClass("invalid");
+    if (!ok) {
+      $("#cantSubmit").show();
+      $(":invalid").addClass("invalid");
+      $(".lickert>input:invalid").parents().addClass("invalid");
+      $(".form-check>input:invalid").parents().addClass("invalid");
+      e.preventDefault();
+    } else{
+      $("#cantSubmit").hide();
+    }
+  });
+</script>
+<style type="text/css">
+  h3, h4, h5, h6 {
+    font-weight: 400;
+  }
+  #high-cog-instructions {
+    border-radius: .5em; 
+    border: .75px solid black;
+    padding: .5em;
+    background-color: white;
+  }
+  .section {
+    border-top: solid darkgrey .75px;
+    padding-top: 15px;
+  }
+  textarea[data-state="open"] {
+    background-color: white; 
+    border-color: #ced4da;
+    color: #495057;
+  }
+  textarea[data-state="invalid"],
+  textarea[data-state="invalid"]:active,
+  textarea[data-state="invalid"]:focus,
+  textarea[data-state="invalid"]:focus-within {
+    background-color: #f5c6cb; 
+    border-color: #D22437;
+    color: #721c24;
+  }
+  
+  input.form-check-input {
+    padding-right: 10px;
+  }
+  input.form-check-input.right:after {
+    /*
+    position: absolute;
+    bottom: 0;
+    left: .5em;
+    right: 0;
+    content: "";
+    height: 0.75em;
+    border-top: 1px solid black;*/
+  }
+  #summary-block {
+    display: table;
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid #A3A5A7;
+    padding: 5px;
+    background-color: #e9ecef;
+  }
+  .lickert>label{
+    font-size: smaller;
+  }
+  ul>li:before{
+    margin-left: -1em;
+    margin-right: .25em;
+  }
+  ul>li.corr:before {
+    content: "\2713";
+  }
+  ul>li.inco:before {
+    content: "\2717";
+  }
+  .form-check.invalid,
+  .lickert.invalid,
+  input.invalid, 
+  select.invalid {
+    border: .1em solid #D22437;
+    border-radius: .1em;
+    background-color: #f5c6cb;
+    padding: .1em;
+  }
+
+</style>
+
+
+
+
+
