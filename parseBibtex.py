@@ -138,7 +138,10 @@ def fullCitation(bibD):
     out += " "+bibD["series"]+"." 
   if "pages" in bibD:
     out += " "+bibD["pages"]+"."
-  
+
+  if "url" in bibD:
+    url = bibD["url"]
+    out += f' <a href="{url}">{url}</a>'
   
   return out.replace("  "," ").replace("  "," ").replace(". .",".")
   
