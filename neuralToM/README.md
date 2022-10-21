@@ -12,7 +12,7 @@ The dev examples only are at [socialIWa_v1.4_dev_wDims.jsonl](socialIWa_v1.4_dev
 - `reasoningDim`: reasoning dimension regardless of focus character
 - `promptDim`: reasoning dimension + focus character: ATOMIC 2019 dimension that was used to prompt the question. See Table 3 in the Appendix of our paper for dimension explanations.
 
-Note, the full Social IQa dataset from [http://maartensap.com/social-iqa/data/socialIQa_v1.4_withDims.tgz¨(http://maartensap.com/social-iqa/data/socialIQa_v1.4_withDims.tgz)].
+Note, the full Social IQa dataset from [http://maartensap.com/social-iqa/data/socialIQa_v1.4_withDims.tgz](http://maartensap.com/social-iqa/data/socialIQa_v1.4_withDims.tgz).
 
 ### ToMi
 
@@ -29,9 +29,9 @@ IMPORTANT: as noted in our paper, the code generates a set of story-question-ans
 
 -----
 
-Citation information
+### Citation information
 
-Our paper on neural theory of mind
+Our paper on Neural Theory of Mind:
 ```bibtex
 @inproceedings{sap2022neuralToM,
   title={Neural Theory-of-Mind? On the Limits of Social Intelligence in Large LMs},
