@@ -1,6 +1,6 @@
 # Neural Theory-of-Mind? On the Limits of Social Intelligence in Large LMs
 
-This page contains the preprocessed data for our EMNLP 2022 paper on Neural Theory of Mind.
+This page contains the preprocessed data for our [EMNLP 2022 paper on Neural Theory of Mind](../pdfs/sap2022neuralToM.pdf).
 
 ### Social IQa
 
