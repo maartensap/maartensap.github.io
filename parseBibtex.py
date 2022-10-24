@@ -77,7 +77,7 @@ def prettifyAuthors(bibD,noBold=False):
   return out
 
 def beautifyBibtex(bibD):
-  keysToSkip = ["projecturl","equalcontrib","awards","entryType",
+  keysToSkip = ["projecturl","dataurl","equalcontrib","awards","entryType",
                 "title","author","bibKey","venue"]
   entryType = bibD["entryType"]
   if entryType == "preprint":
