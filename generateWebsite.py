@@ -235,14 +235,56 @@ def listRecentNews(**kwargs):
 
 def generateFullCV(silent=False,**kwargs):
   return "CV will go here"
+def generateTalksList(silent=False,**kwargs):
+  data = open("cv-files/talks.md").read().strip()
+  talks = data.split("\n-")
+
+  out = '<table style="width: 100%;">'
+  for tt in talks:
+    out += '<tr style="border-top: 1em solid transparent;">'
+    
+    title, events = tt.lstrip("- ").split("\n",1)
+    events = events.strip().split("\n   ")
+    
+    out += '<td style="width: 80%;"><strong>'+title+'</td></tr>'
+
+    for e in events:
+      date, where = e.split(" ",1)
+      out += '<tr><td style="padding-left: 1em;">'+where+'</td>'
+      out += '<td>'+date+'</td></tr>'
+      
+  out += "</table>"
+  return out
 
 def generateStudentsList(silent=False,**kwargs):
+  columns = {"name": '<th width=300>Name</th>', "program": '<th style="">Program</th>',
+             'startYear' : '<th style="">Dates</th>', 'endYear': '<th>end</th>', 'where' : '<th>University</th>',
+             'coAdvisor': '<th width="200">Co-advisor</th>'}
+  colsToDisplay = ["name","where","program","coAdvisor","startYear"]
+  
   students = pd.read_csv("cv-files/students.csv")
   students["pronouns"] = '<span class="pronouns">'+students["pronouns"]+"</span>"
-  students["startYear"] += "&nbsp;&ndash;&nbsp;"
-  myPhDstudents = students[students["isMyStudent"] == "yes"].fillna("")# [students.columns.drop("isMyStudent")]DDD
-  out = myPhDstudents.to_html(index=False,escape=False,render_links=True,
+  students["name"] += " "+students["pronouns"]
+  students["startYear"] += "&nbsp;&ndash;&nbsp;"+students["endYear"]
+
+  students["name"] = students[["name","website"]].fillna("").apply(lambda x: ('<a href="'+x[1]+'">'+x[0]+"</a>") if x[1] else x[0], axis=1)
+  
+  myPhDstudents = students[students["isMyStudent"] == "yes"].fillna("")[colsToDisplay]
+  
+  out  = "<h3>PhD Students</h3>\n"
+  out += myPhDstudents.to_html(index=False,escape=False,render_links=True,
                               border=0,classes="students-table",header=False)
+  
+  out += "\n<h3>Undergraduate &amp; Master Students</h3>\n"
+  ugradsMasters = students[students["isMyStudent"] != "yes"].fillna("")[colsToDisplay]
+  out += ugradsMasters.to_html(index=False,escape=False,render_links=True,
+                               border=0,classes="students-table",header=False)
+
+  columnHeader = '<thead style="text-align: left;"><tr>'+"".join([columns[c] for c in colsToDisplay])+"</tr></thead>"
+  out = out.replace("<tbody>",columnHeader+"<tbody>")
+  out =out.replace("<table ",'<table style="width: 100%;"')
+  
+  
   return out
 
 # embed();exit()
