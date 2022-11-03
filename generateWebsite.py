@@ -227,7 +227,7 @@ def listAllNews(**kwargs):
 
 def listRecentNews(**kwargs):
   news = loadNews()
-  recentNews = news[:5]
+  recentNews = news[:7]
   out = "\n".join(map(formatNewsItem,recentNews))
   return out
   
