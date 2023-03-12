@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T8EHFV852B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T8EHFV852B');
+</script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Maarten Sap">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="imagesfavicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="imagesfavicon-16x16.png">
+<link rel="manifest" href="tools/site.webmanifest">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  
+  <title>Maarten Sap - CV</title>
+</head>
+
+<body style="padding-top: 0px;">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container" style="max-width: 80%;">
+    <a class="navbar-brand" href="index.html">Maarten Sap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="publications.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutme.html">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="files/CVMaartenSap.pdf" target="_blank"> <img src="images/pdf_icon_white.png" style="height: 1em;"> CV</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Notes/Blogposts
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  <a class="dropdown-item" href="notes/apply-grad-school.html">Applying to grad school</a>
+  <a class="dropdown-item" href="notes/giving-talk-feedback.html">Giving feedback for talks</a>
+  <a class="dropdown-item" href="notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+  <a class="dropdown-item" href="notes/NLGDecoding.pptx">NLGDecoding [pptx]</a>
+  <a class="dropdown-item" href="notes/presenting-your-research.html">Presenting your research</a>
+  <a class="dropdown-item" href="notes/rebuttals.html">Writing rebuttals</a>
+  <a class="dropdown-item" href="notes/turking-tips.html">Turking tips</a>
+</div>
+
+          <!--div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="notes/presenting-your-research.html">Presenting Your Research</a>
+            <a class="dropdown-item" href="notes/apply-grad-school.html">How to Apply to Grad School</a>
+            <a class="dropdown-item" href="notes/seq2seq-tricks.html">Seq2Seq Magic Tips</a>
+            <a class="dropdown-item" href="notes/NLGDecoding.pptx">Tutorial on beam search and NLG decoding [pptx]</a>
+            <a class="dropdown-item" href="notes/turking-tips.html">Tips for Turking</a>
+            <a class="dropdown-item" href="notes/rebuttals.html">Writing rebuttals</a>
+            <a class="dropdown-item"  href="notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+          </div-->
+        </li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+
+  <!-- Page Content -->
+  <div class="container" style="padding-top: 10px;font-weight: 200;">
+    <h2>Positions</h2>
+      <table style="width: 100%;">
+        <tr>
+          <td style="width: 80%;"><strong>Carnegie Mellon University</strong>: Language Technologies Institute</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Assistant Professor</td>
+          <td>2022 &ndash; present</td>
+        </tr>
+        <tr style="border-top: 1em solid transparent;">
+          <td style="width: 80%;"><strong>Allen Institute for AI</strong></td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Visiting Research Scientist</td>
+          <td>2022 &ndash; present</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Postdoctoral Researcher / Young Investigator</td>
+          <td>2021 &ndash; 2022</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Research Intern</td>
+          <td>2018 &ndash; 2019</td>
+        </tr>
+        <tr style="border-top: 1em solid transparent;">
+          <td style="width: 80%;"><strong>Microsoft Research</strong></td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Research Intern</td>
+          <td>2019</td>
+        </tr>
+      </table>
+    <h2>Education</h2>
+      <table style="width: 100%;">
+        <tr>
+          <td style="width: 80%;"><strong>University of Washington</strong>: Paul G. Allen School of Computer Science &amp; Engineering</td>
+          <td>2015 &ndash; 2022</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">PhD in Computer Science &amp; Engineering, research focus on Natural Language Processing</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">advised by Yejin Choi &amp; Noah Smith</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">
+            Thesis: <a href="pdfs/sap2021positiveAIwithSocialCommonsenseModels.pdf">Positive AI with Social Commonsense Models</a>
+          </td>
+        </tr>
+        <tr style="border-top: 1em solid transparent;">
+          <td style="width: 80%;"><strong>École Polytechnique Fédérale de Lausanne</strong>: School of Computer and Communication Sciences</td>
+          <td>2010 &ndash; 2014</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">BS in Communications and Information Systems</td>
+        </tr>
+      </table>
+    <h2 class="" data-toggle="collapse" href="#advising" role="button" aria-expanded="true" aria-controls="advising">Advising</h2>
+    
+    <div class="markdown show" id="advising">
+### PhD students
+|                                                              |         |                       |
+| ------------------------------------------------------------ | ------- | --------------------: |
+| Ji Min Mun <span class="pronouns">she/her</span>             | LTI PhD | 09/2022&ndash;present |
+| [Akhila Yerukola](https://akhila-yerukola.github.io/) <span class="pronouns">she/her</span> | LTI PhD | 09/2022&ndash;present |
+| [Xuhui Zhou](https://xuhuizhou.github.io/) <span class="pronouns">he/him</span> | LTI PhD | 09/2022&ndash;present |
+
+### Research Interns & Research Masters
+|                                                              |                     |                       |
+| ------------------------------------------------------------ | ------------------- | --------------------: |
+| [Athiya Deviyani](https://www.athiyadeviyani.com/) <span class="pronouns">she/her</span> | LTI MSAII           | 09/2022&ndash;present |
+| Jocelyn Chen <span class="pronouns">she/her</span> (*<small>primarily advised by Cynthia Breazeal</small>*) | MIT Media Lab       | 09/2023&ndash;present |
+| Yiming Zhang <span class="pronouns">he/him</span> (*<small>co-advised with [Sherry Tongshuang Wu]()</small>*) | UChicago MS         | 09/2022&ndash;present |
+| [Julia Mendelsohn](https://juliamendelsohn.github.io/) <span class="pronouns">she/her</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
+| [Sebastin Santy](http://sebastinsanty.com/) <span class="pronouns">he/him</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
+
+
+
+### Undergraduates &amp; Professional Masters
+|                                                              |                     |                       |
+| ------------------------------------------------------------ | ------------------- | --------------------: |
+| Sravani Nanduri <span class="pronouns">she/her</span> (*<small>co-advised with Liwei Jiang</small>*) | UW CSE BS           | 09/2021&ndash;10/2022 |
+| [Skyler Hallinan](https://skylerhallinan.com/) <span class="pronouns">he/him</span> | UW CSE BS           | 01/2021&ndash;08/2022 |
+| Zhilin Wang <span class="pronouns">he/him</span>             | UW CLMS             | 01/2021&ndash;09/2021 |
+| Michelle Ma <span class="pronouns">she/her</span> (*<small>co-advised with Hannah Rashkin</small>*) | UW CSE BS           | 09/2019&ndash;12/2020 |
+| Sam Gehman <span class="pronouns">he/him</span>              | UW CSE MS           | 09/2019&ndash;07/2020 |
+| Aishwarya Nirmal <span class="pronouns">she/her</span>       | UW CSE MS           | 01/2018&ndash;06/2019 |
+| Kenta Takatsu <span class="pronouns">he/him</span>           | Cornell BS          | 07/2018&ndash;03/2019 |
+| [Zachary Horvitz](https://zacharyhorvitz.github.io/) <span class="pronouns">he/him</span> (*<small>co-advised with Antoine Bosselut</small>*) | AI2 Research Intern | 07/2018&ndash;03/2019 |
+| Sarah Yu <span class="pronouns">she/her</span>               | UW CSE BS           | 03/2018&ndash;06/2018 |
+| Lanhao Wu <span class="pronouns">he/him</span> (*<small>co-advised with Saadia Gabriel</small>*) | UW CSE BS           | 03/2018&ndash;06/2018 |
+| Boyan Li <span class="pronouns">he/him</span> (*<small>co-advised with Saadia Gabriel</small>*) | UW CSE BS           | 01/2018&ndash;06/2018 |
+| Amy Shah <span class="pronouns">she/her</span> (*<small>co-advised with Elizabeth Clark</small>*) | UW CSE BS           | 09/2017&ndash;06/2018 |
+| [Emily Allaway](https://emilyallaway.github.io/) <span class="pronouns">she/her</span> (*<small>co-advised with Hannah Rashkin</small>*) | UW CSE BS           | 07/2017&ndash;06/2018 |
+| Marcela Cindy Prasetio <span class="pronouns">she/her</span> (*<small>co-advised with Hannah Rashkin</small>*) | UW CSE BS           | 01/2016&ndash;06/2017 |
+
+    </div>
+    
+      <!--python generateStudentsList-->
+    
+    <h2 data-toggle="collapse" href="#publications" role="button" aria-expanded="true" aria-controls="publications">Publications</h2>
+    <div class="show" id="publications">
+    <h4 style="margin-left: 1em;">Journal</h4>
+<ol start="1"><li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Anna Jafarpour, Yejin Choi, Noah A. Smith, James W. Pennebaker & Eric Horvitz (2022) <em>Quantifying the narrative flow of imagined versus autobiographical stories</em>. PNAS.</li>
+<li class="pretty">Gregory Park, H Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Margaret L Kern, Evan Weingarten, Johannes C Eichstaedt, Jonah Berger, David J Stillwell, Michal Kosinski, Lyle H Ungar & Martin E P Seligman (2017) <em>Living in the Past, Present, and Future: Measuring Temporal Orientation with Language</em>. Journal of Personality.</li>
+<li class="pretty">Margaret L Kern, Gregory Park, Johannes C Eichstaedt, H Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Laura K, Smith & Lyle H Ungar (2016) <em>Gaining Insights From Social Media Language: Methodologies and Challenges</em>. Psychological Methods.</li>
+<li class="pretty">Johannes C Eichstaedt, H Andrew Schwartz, Margaret L Kern, Gregory Park, Darwin R Labarthe, Raina M Merchant, Sneha Jha, Megha Agrawal, Lukasz A Dziurzynski, <strong>Maarten</strong> <strong>Sap</strong>, Christopher Weeg, Emily Larson, Lyle H Ungar & Martin E P Seligman (2015) <em>Psychological Language on Twitter Predicts County-level Heart Disease Mortality</em>. Psychological Science 26(2). SAGE Publications. 159--169.</li>
+<li class="pretty">Charlene A Wong, <strong>Maarten</strong> <strong>Sap</strong>, Hansen Andrew Schwartz, Robert Town, Tom Baker, Lyle Ungar & Raina M Merchant (2015) <em>Twitter Sentiment Predicts Affordable Care Act Marketplace Enrollment</em>. Journal of Medical Internet Research 17(2). JMIR Publications Inc..</li>
+<li class="pretty">Raina M. Merchant, Yoonhee P. Ha, Charlene A. Wong, H. Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Lyle H. Ungar & David A. Asch (2014) <em>The 2013 US Government Shutdown (#Shutdown) and Health: An Emerging Role for Social Media</em>. American Journal of Public Health 2014. e1--e3.</li>
+</ol><h4 style="margin-left: 1em;">Conference</h4>
+<ol start="7"><li class="pretty">Hyunwoo Kim, Youngjae Yu, Liwei Jiang, Ximing Lu, Daniel Khashabi, Gunhee Kim, Yejin Choi & <strong>Maarten</strong> <strong>Sap</strong> (2022) <em>ProsocialDialog: A Prosocial Backbone for Conversational Agents</em>. EMNLP.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Ronan LeBras, Daniel Fried & Yejin Choi (2022) <em>Neural Theory-of-Mind? On the Limits of Social Intelligence in Large LMs</em>. EMNLP.</li>
+<li class="pretty">Zhijing Jin, Sydney Levine, Fernando Gonzalez Adauto, Ojasv Kamal, <strong>Maarten</strong> <strong>Sap</strong>, Mrinmaya Sachan, Rada Mihalcea, Joshua B. Tenenbaum & Bernhard Schölkopf (2022) <em>When to Make Exceptions: Exploring Language Models as Accounts of Human Moral Judgment</em>. NeurIPS.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Swabha Swayamdipta, Laura Vianna, Xuhui Zhou, Yejin Choi & Noah A. Smith (2022) <em>Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection</em>. NAACL.</li>
+<li class="pretty">Prithviraj Ammanabrolu, Liwei Jiang, <strong>Maarten</strong> <strong>Sap</strong>, Hanna Hajishirzi, Yejin Choi & Noah A. Smith (2022) <em>Aligning to Social Norms and Values in Interactive Narratives</em>. NAACL.</li>
+<li class="pretty">Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, <strong>Maarten</strong> <strong>Sap</strong>, Dipankar Ray & Ece Kamar (2022) <em>ToxiGen: Controlling Language Models to Generate Implied and Adversarial Toxicity</em>. ACL.</li>
+<li class="pretty">Saadia Gabriel, Skyler Hallinan, <strong>Maarten</strong> <strong>Sap</strong>, Pemi Nguyen, Franziska Roesner, Eunsol Choi & Yejin Choi (2022) <em>Misinfo Reaction Frames: Reasoning about Readers' Reactions to News Headlines</em>. ACL.</li>
+<li class="pretty">Jesse Dodge, <strong>Maarten</strong> <strong>Sap</strong>, Ana Marasović, William Agnew, Gabriel Ilharco, Dirk Groeneveld, Margaret Mitchell & Matt Gardner (2021) <em>Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus</em>. EMNLP.</li>
+<li class="pretty">Ashutosh Baheti, <strong>Maarten</strong> <strong>Sap</strong>, Alan Ritter & Mark Riedl (2021) <em>Just Say No: Analyzing the Stance of Neural Dialogue Generation in Offensive Contexts</em>. EMNLP.</li>
+<li class="pretty">Alisa Liu, <strong>Maarten</strong> <strong>Sap</strong>, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A. Smith & Yejin Choi (2021) <em>DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts</em>. ACL.</li>
+<li class="pretty">Albert Xu, Eshaan Pathak, Eric Wallace, Suchin, Gururangan, <strong>Maarten</strong> <strong>Sap</strong> & Dan Klein (2021) <em>Detoxifying Language Models Risks Marginalizing Minority Voices</em>. NAACL.</li>
+<li class="pretty">Xuhui Zhou, <strong>Maarten</strong> <strong>Sap</strong>, Swabha Swayamdipta, Yejin Choi & Noah A. Smith (2021) <em>Challenges in Automated Debiasing for Toxic Language Detection</em>. EACL.</li>
+<li class="pretty">Xinyao Ma<sup>*</sup>, <strong>Maarten</strong> <strong>Sap</strong><sup>*</sup>, Hannah Rashkin & Yejin Choi (2020) <em>PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction</em>. EMNLP.</li>
+<li class="pretty">Sam Gehman, Suchin Gururangan, <strong>Maarten</strong> <strong>Sap</strong>, Yejin Choi & Noah A Smith (2020) <em>RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models</em>. Findings of EMNLP.</li>
+<li class="pretty">Maxwell Forbes, Jena D. Hwang, Vered Shwartz, <strong>Maarten</strong> <strong>Sap</strong> & Yejin Choi (2020) <em>Social Chemistry 101: Learning to Reason about Social and Moral Norms</em>. EMNLP.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Eric Horvitz, Yejin Choi, Noah A Smith & James W. Pennebaker (2020) <em>Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models</em>. ACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith & Yejin Choi (2020) <em>Social Bias Frames: Reasoning about Social and Power Implications of Language</em>. ACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong><sup>*</sup>, Hannah, Rashkin<sup>*</sup>, Derek Chen, Ronan LeBras & Yejin Choi (2019) <em>Social IQa: Commonsense Reasoning about Social Interactions</em>. EMNLP.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Dallas Card, Saadia Gabriel, Yejin Choi & Noah A Smith (2019) <em>The Risk of Racial Bias in Hate Speech Detection</em>. ACL.</li>
+<li class="pretty">Antoine Bosselut, Hannah Rashkin, <strong>Maarten</strong> <strong>Sap</strong>, Chaitanya Malaviya, Asli Celikyilmaz & Yejin Choi (2019) <em>COMET: Commonsense Transformers for Automatic Knowledge Graph Construction</em>. ACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Ronan LeBras, Emily Allaway, Chandra Bhagavatula, Nicholas Lourie, Hannah Rashkin, Brendan Roof, Noah A Smith & Yejin Choi (2019) <em>ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning</em>. AAAI.</li>
+<li class="pretty">Hannah Rashkin, Antoine Bosselut, <strong>Maarten</strong> <strong>Sap</strong>, Kevin Knight & Yejin Choi (2018) <em>Modeling Naive Psychology of Characters in Simple Commonsense Stories</em>. ACL.</li>
+<li class="pretty">Hannah Rashkin<sup>*</sup>, <strong>Maarten</strong> <strong>Sap</strong><sup>*</sup>, Emily Allaway, Noah A. Smith & Yejin Choi (2018) <em>Event2Mind: Commonsense Inference on Events, Intents, and Reactions</em>. ACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Marcella Cindy Prasetio, Ari Holtzman, Hannah Rashkin & Yejin Choi (2017) <em>Connotation Frames of Power and Agency in Modern Films</em>. EMNLP.</li>
+<li class="pretty">Roy Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Ioannis Konstas, Li Zilles, Yejin Choi & Noah A Smith (2017) <em>The Effect of Different Writing Tasks on Linguistic Style: A Case Study of the ROC Story Cloze Task</em>. CoNLL.</li>
+<li class="pretty">H. Andrew Schwartz, Gregory Park, <strong>Maarten</strong> <strong>Sap</strong>, Evan Weingarten, Johannes Eichstaedt, Margaret Kern, David Stillwell, Michal Kosinski, Jonah Berger, Martin Seligman & Lyle Ungar (2015) <em>Extracting Human Temporal Orientation from Facebook Language</em>. NAACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Gregory Park, Johannes C. Eichstaedt, Margaret L. Kern, David J. Stillwell, Michal Kosinski, Lyle H. Ungar & Hansen Andrew Schwartz (2014) <em>Developing Age and Gender Predictive Lexica over Social Media</em>. EMNLP.</li>
+</ol><h4 style="margin-left: 1em;">Workshop</h4>
+<ol start="34"><li class="pretty">Zhilin Wang, Anna Jafarpour & <strong>Maarten</strong> <strong>Sap</strong> (2022) <em>Uncovering Surprising Event Boundaries in Narratives</em>. Workshop on Narrative Understanding.</li>
+<li class="pretty">Tal August, <strong>Maarten</strong> <strong>Sap</strong>, Elizabeth Clark, Katharina Reinecke & Noah A. Smith (2020) <em>Exploring the Effect of Author and Reader Identity in Online Story Writing: the StoriesInTheWild Corpus</em>. Workshop on Narrative Understanding, Storylines, and Events (NUSE)@ ACL.</li>
+<li class="pretty">Roy Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Ioannis Konstas, Li Zilles, Yejin Choi & Noah A Smith (2017) <em>Story Cloze task: UW NLP System</em>. EACL Workshop LSD Sem. 52--55.</li>
+<li class="pretty">Daniel Preotiuc-Pietro, <strong>Maarten</strong> <strong>Sap</strong>, H Andrew Schwartz & Lyle Ungar (2015) <em>Mental Illness Detection at the World Well-Being Project for the CLPsych 2015 Shared Task</em>. NAACL Workshop on CLPsych.</li>
+<li class="pretty">Daniel Preotiuc-Pietro, Johannes Eichstaedt, Gregory Park, <strong>Maarten</strong> <strong>Sap</strong>, Laura Smith, Victoria Tobolsky, H Andrew Schwartz & Lyle Ungar (2015) <em>The Role of Personality, Age and Gender in Tweeting about Mental Illnesses</em>. NAACL Workshop on CLPsych.</li>
+<li class="pretty">H Andrew Schwartz, Johannes Eichstaedt, Margaret L Kern, Gregory Park, <strong>Maarten</strong> <strong>Sap</strong>, David Stillwell, Michal Kosinski & Lyle Ungar (2014) <em>Towards Assessing Changes in Degree of Depression through Facebook</em>. ACL Workshop on CLPsych. 118--125.</li>
+</ol><h4 style="margin-left: 1em;">Demo</h4>
+<ol start="40"><li class="pretty">Hao Fang, Hao Cheng, <strong>Maarten</strong> <strong>Sap</strong>, Elizabeth Clark, Ariel Holtzman, Yejin Choi, Noah A Smith & Mari Ostendorf (2018) <em>Sounding Board: A User-Centric and Content-Driven Social Chatbot</em>. NAACL System Demonstrations.</li>
+<li class="pretty">H Andrew Schwartz, Salvatore Giorgi, <strong>Maarten</strong> <strong>Sap</strong>, Patrick Crutchley, Lyle Ungar & Johannes Eichstaedt (2017) <em>DLATK: Differential Language Analysis ToolKit</em>. EMNLP System Demonstrations. 55--60.</li>
+</ol><h4 style="margin-left: 1em;">Other</h4>
+<ol start="42"><li class="pretty"><strong>Maarten</strong> <strong>Sap</strong> (2021) <em>Positive AI with Social Commonsense Models</em>.</li>
+<li class="pretty">Hao Fang, Hao Cheng, Elizabeth Clark, Ariel Holtzman, <strong>Maarten</strong> <strong>Sap</strong>, Mari Ostendorf, Yejin Choi & Noah A Smith (2017) <em>Sounding Board - University of Washington’s Alexa Prize Submission</em>. Alexa Prize Proceedings.</li>
+<li class="pretty">H Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Margaret L Kern, Johannes C Eichstaedt, Adam Kapelner, Megha Agrawal, Eduardo Blanco, Lukasz Dziurzynski, Gregory Park, David Stillwell, Michal Kosinski, Martin E P Seligman & Lyle H Ungar (2016) <em>Predicting individual well-being through the language of social media</em>. Biocomputing 2016: Proceedings of the Pacific Symposium. 516--527.</li>
+</ol><h4 style="margin-left: 1em;">Preprint</h4>
+<ol start="45"><li class="pretty">Hyunwoo Kim, Jack Hessel, Liwei Jiang, Ximing Lu, Youngjae Yu, Pei Zhou, Ronan Le Bras, Malihe Alikhani, Gunhee Kim, <strong>Maarten</strong> <strong>Sap</strong> & Yejin Choi (2022) <em>SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization</em>. arXiv.</li>
+<li class="pretty">Skyler Hallinan, Alisa Liu, Yejin Choi & <strong>Maarten</strong> <strong>Sap</strong> (2022) <em>Detoxifying Text with MaRCo: Controllable Revision with Experts and Anti-Experts</em>. arXiv.</li>
+<li class="pretty">Liwei Jiang, Jena D. Hwang, Chandra Bhagavatula, Le Bras Ronan, Maxwell Forbes, Jon Borchardt, Jenny Liang, Oren Etzioni, <strong>Maarten</strong> <strong>Sap</strong> & Yejin Choi (2021) <em>Delphi: Towards Machine Ethics and Norms</em>. arXiv.</li>
+</ol>
+    </div>
+    
+    <h2 data-toggle="collapse" href="#theses" role="button" aria-expanded="true" aria-controls="theses">Thesis Committees</h2>
+      <div class="markdown show" id="theses">
+|      |                 |                       |      |
+| ---- | --------------- | --------------------- | ---: |
+| PhD  | Prakhar Gupta   | Jeff Bingham, CMU     | 2023 |
+| Ms   | Jocelyn Chen    | Cytnhia Breazeal, MIT | 2023 |
+| PhD  | Chan Young Park | Yulia Tsvetkov, UW    | 2023 |
+| PhD  | Paul Röttger    | Scott Hale, University of Oxford | 2023 |
+
+
+      </div>
+
+    <h2 data-toggle="collapse" href="#teaching" role="button" aria-expanded="true" aria-controls="teaching">Teaching</h2>
+      <div class="markdown show" id="teaching">
+### Courses
+||||
+|-|-|-:|
+| [11-830 Computational Ethics](http://maartensap.com/11-830-Spring2023/) | | Spring 2023 |
+
+### Guest lectures & Tutorials
+|                                                        |                      |             |
+| ------------------------------------------------------ | -------------------- | ----------: |
+| Bias in Natural Language Processing                    | 05-899 Guest Lecture | Spring 2023 |
+| Bias in Natural Language Processing                    | 15-884 Guest Lecture |   Fall 2022 |
+| "Crowdsourcing Beyond Annotation"                      | Tutorial             |  EMNLP 2021 |
+| "Commonsense Reasoning in Natural Language Processing" | Tutorial             |    ACL 2020 |
+
+      </div> 
+      
+    <h2 data-toggle="collapse" href="#service" role="button" aria-expanded="true" aria-controls="service">Service</h2>
+    <div class="markdown show" id="service">
+### Workshops
+
+|                                  |                    |            |
+| -------------------------------- | ------------------ | ---------: |
+| Content Moderation Workshop      | co-organizer       |  CVPR 2023 |
+| NLP for Positive Impact Workshop | steering committee | EMNLP 2022 |
+| NLP for Positive Impact Workshop | co-organizer       |   ACL 2021 |
+
+### Committees
+
+|                                                  |         |                 |
+| ------------------------------------------------ | ------- | --------------: |
+| Diversity, Equity, and Inclusion committee       | CMU LTI |    2022-present |
+| PhD & MLT admissions committee                   | CMU LTI |    2022-present |
+| Socio-cultural diversity and inclusion committee | ACL     |            2020 |
+| Diversity committee                              | UW CSE  |       2016–2020 |
+| Graduate student advisory council (G5PAC)        | UW CSE  | 01/2018–12/2020 |
+
+#### Senior program committees
+
+|                    |              |
+| ------------------ | -----------: |
+| ACL rolling review | 2020–present |
+| AAAI               |         2021 |
+
+#### Reviewing
+
+
+|                                                          |              |
+| -------------------------------------------------------- | -----------: |
+| ***Journals & conferences***                             |              |
+| ACL rolling review                                       | 2020–present |
+| ACL                                                      | 2019–present |
+| Transactions of ACL                                      |  2020,  2022 |
+| EMNLP                                                    |    2018–2022 |
+| AAAI                                                     |         2020 |
+| ICWSM                                                    |         2021 |
+| Dementia and Geriatric Cognitive Disorders Journal       |         2020 |
+| Computational Linguistic                                 |   2019, 2020 |
+| Humanities and Social Sciences Communications            |         2019 |
+| Journal of Artificial Intelligence Research              |         2019 |
+| IEEE Transactions on Cognitive and Developmental Systems |         2019 |
+| Social Psychological and Personality Science             |         2018 |
+| ***Workshops***                                          |              |
+| Workshop on NLP for Positive Impact                      |         2022 |
+| Workshop on NLP for Causal Inference                     |         2021 |
+| NAACL Student Research Workshop                          |         2019 |
+| CLPsych workshop                                         |    2016–2018 |
+| Stylistic Variation workshop                             |         2018 |
+
+
+    </div>
+
+    <h2 data-toggle="collapse" href="#talks" role="button" aria-expanded="true" aria-controls="talks"> Talks</h2>
+ 
+    <div class="markdown show" id="talks">
+|                                                              |         |
+| ------------------------------------------------------------ | ------: |
+| <strong style="margin-top: 1em; display: block;">Toward Prosocial NLP: Reasoning About And Responding to Toxicity in Language</strong> |         |
+| MIT Media Lab Breazeal Group Meeting                         | 11/2022 |
+| CMU S3D Computational Social Science Seminar                 | 11/2022 |
+| Amazon Alexa Trust & Privacy                                 | 11/2022 |
+| University of Minnesota NLP seminar                          | 10/2022 |
+| <strong style="margin-top: 1em; display: block;">Detecting and Rewriting Social Biases in Language</strong>        |         |
+| Pinterest NLP seminar                                        | 09/2022 |
+| UIUC Responsible Data Science Seminar Series                 | 02/2022 |
+| MilaNLP seminar at Università Bocconi                        | 10/2021 |
+| PAN workshop at CLEF                                         | 09/2021 |
+| <strong style="margin-top: 1em; display: block;">Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection</strong> |         |
+| NAACL main conference                                        | 07/2022 |
+| Text As Data (TADA)                                          | 10/2021 |
+| <strong style="margin-top: 1em; display: block;">Positive AI with Social Commonsense Models</strong>               |         |
+| AKBC Workshop on Commonsense Reasoning                       | 10/2021 |
+| University of Toronto Computer Science                       | 04/2021 |
+| MIT EECS                                                     | 03/2021 |
+| CMU LTI/MLD                                                  | 03/2021 |
+| UChicago CS                                                  | 03/2021 |
+| TTIC                                                         | 02/2021 |
+| Emory CS                                                     | 02/2021 |
+| Vanderbilt CS                                                | 02/2021 |
+| EPFL I&C                                                     | 01/2021 |
+| Yale Data Science & Statistics seminar                       | 01/2021 |
+| <strong style="margin-top: 1em; display: block;">PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction</strong> |         |
+| EMNLP conference                                             | 11/2020 |
+| <strong style="margin-top: 1em; display: block;">Social Bias Frames: Reasoning About Social and Power Dynamics</strong> |         |
+| WeCNLP Summit                                                | 10/2020 |
+| ACL Conference                                               | 07/2020 |
+| <strong style="margin-top: 1em; display: block;">Reasoning about Social Dynamics and Social Bias in Language</strong> |         |
+| SRI seminar                                                  | 01/2021 |
+| Georgia Tech NLP seminar                                     | 10/2020 |
+| Berkeley NLP seminar                                         | 02/2020 |
+| Stanford NLP seminar                                         | 02/2020 |
+| <strong style="margin-top: 1em; display: block;">Social and Ethical Considerations in English Toxic Language Detection</strong> |         |
+| NLP with Friends                                             | 08/2020 |
+| <strong style="margin-top: 1em; display: block;">Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models</strong> |         |
+| ACL Conference                                               | 07/2020 |
+| <strong style="margin-top: 1em; display: block;">COMET: Commonsense Transformers for Automatic Knowledge Graph Construction</strong> |         |
+| DARPA Communicating with Computers grant meeting             | 11/2019 |
+| <strong style="margin-top: 1em; display: block;">Social IQa: Commonsense Reasoning about Social Interactions</strong> |         |
+| EMNLP conference                                             | 11/2019 |
+| <strong style="margin-top: 1em; display: block;">The Risk of Racial Bias in Hate Speech Detection</strong>         |         |
+| ACL Conference                                               | 07/2019 |
+| ICML Queer in AI workshop                                    | 06/2019 |
+| <strong style="margin-top: 1em; display: block;">ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning</strong> |         |
+| AAAI conference                                              | 01/2019 |
+| AI2 seminar                                                  | 01/2019 |
+| <strong style="margin-top: 1em; display: block;">Event2Mind: Commonsense Inference on Events, Intents, and Reactions</strong> |         |
+| DARPA Communicating with Computers grant meeting             | 07/2018 |
+| <strong style="margin-top: 1em; display: block;">Detecting Implicit Bias in Text through Connotative Language</strong> |         |
+| UW Social Psychology seminar                                 | 04/2018 |
+    </div>
+
+    <!--python generateTalksList-->
+    <!-- Footer -->
+     
+  <footer class="footer">
+    <hr>
+    <div style="width:99%">
+    <!--div class="wraptocenter"-->    
+    <!--div class="col-sm-12">
+        <img src="files/AllenSchool.png" style="width:200px;">
+      </div-->
+      <div class="row">
+        <div class="col-2">
+          
+        </div>
+        <div class="col-8 text-center">
+          <img src="images/LTI-logo.png" style="width:300px; margin-bottom: 20px;">
+        </div>
+        <div class="col-2 mb-1">
+          <div class="text-muted small" style="font-style: italic; text-align: right;">
+          Last updated: <br>
+          2023-03-11
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  </div>
+  <!-- /.container -->
+  
+  <!-- jQuery >
+  <script src="tools/bootstrap/js/jquery.js"></script>
+  
+  <!- Bootstrap Core JavaScript ->
+  <script src="tools/bootstrap/js/bootstrap.min.js"></script-->
+
+  <script>
+    var targ, d;
+    function jumpAndHighlight(){
+      targ = window.location.hash;
+      if (targ == "")
+        return ;
+      
+      d = $(targ);
+      d.addClass("highlighted");
+      setTimeout(function(){ d.removeClass("highlighted") }, 5000);
+    }
+    
+    var t;
+    $("label.badge>input[type='radio']").on("change", function(e){
+      //e.preventDefault();
+      t = e.target;
+      var type = e.target.value;
+      console.log(e.target.value);
+      if (type==="all"){
+        $("div.jumptarget").show();
+      } else {
+        $("div.jumptarget").not("."+type).hide();
+        $("div.jumptarget."+type).show();
+      }
+    });
+    window.onload = jumpAndHighlight;
+  </script>
+</body>
+</html>
+
+<script>
+   //document.getElementById('content').innerHTML =
+    // marked.parse(document.getElementById('content').innerHTML);
+   //$("#content").html(marked.parse($("#content").html()));
+   $(".markdown").each(function (i,e){e.innerHTML = marked.parse(e.innerHTML)})
+
+</script>
+
+<style>
+  h1,h2,h3,h4,h5 {
+    font-weight: 200;
+    margin-top: 1em;
+    font-style: italic;
+  }
+  h2 {
+    border-left: solid grey .1em;
+    padding: .1em;
+  }
+  small {
+    font-weight: 200;
+  }
+  .in-citation {
+    margin-left: 20px;
+  }
+  .citation-toggle {
+    
+  }
+  table {
+    width:100%;
+  }
+
+  .year {
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    margin: .5em 0 0 0;
+  }
+  a.badge.active {
+    border: 1px solid red;
+  }
+  .awards {
+    margin-top: .5em;
+    display: block;
+    font-style: italic;
+    font-weight: 600;
+    color: ForestGreen;
+  }
+  .highlighted {
+    background-color: #d8ebff;
+    box-shadow: 0px 0px 1.5px 1.5px #d8ebff;
+    border-radius: 10px;
+  }
+  .badge-conference {
+    background-color: #decbe4;
+  }
+  .badge-workshop {
+    background-color: #b3cde3;
+  }
+  .badge-demo {
+    background-color: #ffffcc;
+  }
+  .badge-journal {
+    background-color: #ccebc5;
+  }
+  .badge-other {
+    background-color: #fed9a6;
+  }
+  .badge-preprint {
+    background-color: #fbb4ae;
+  }
+</style>

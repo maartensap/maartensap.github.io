@@ -9,9 +9,13 @@ import pandas as pd
 
 import argparse
 
-  
 findPythonRE = re.compile(r"<python ([^>]+)>")
 findTitleRE = re.compile(r"<title>(.+)</title>")
+
+def includeMarkdownFile(path):
+  md = open(path).read()
+  return md
+
 def loadAndReplaceFile(fn,d="",parentPath="",silent=False):
   ffn = f"html/{d}{fn}"
   html = open(f"html/{d}{fn}").read()
@@ -21,7 +25,11 @@ def loadAndReplaceFile(fn,d="",parentPath="",silent=False):
   lastEditTime = str(datetime.date.fromtimestamp(os.path.getmtime(ffn)))
   
   for m in findPythonRE.findall(html):
-    res = eval(m+f"(parentPath='{parentPath}',lastEditTime=lastEditTime)")
+    if "includeMarkdownFile" in m:
+      # embed();exit()
+      res = eval(m)
+    else:
+      res = eval(m+f"(parentPath='{parentPath}',lastEditTime=lastEditTime)")
     html= html.replace(f"<python {m}>",res)
     if not silent:
       print(fn,m)
@@ -235,6 +243,8 @@ def listRecentNews(**kwargs):
 
 def generateFullCV(silent=False,**kwargs):
   return "CV will go here"
+
+
 def generateTalksList(silent=False,**kwargs):
   data = open("cv-files/talks.md").read().strip()
   talks = data.split("\n-")
@@ -272,6 +282,7 @@ def generateStudentsList(silent=False,**kwargs):
   myPhDstudents = students[students["isMyStudent"] == "yes"].fillna("")[colsToDisplay]
   
   out  = "<h3>PhD Students</h3>\n"
+  
   out += myPhDstudents.to_html(index=False,escape=False,render_links=True,
                               border=0,classes="students-table",header=False)
   
@@ -282,10 +293,11 @@ def generateStudentsList(silent=False,**kwargs):
 
   columnHeader = '<thead style="text-align: left;"><tr>'+"".join([columns[c] for c in colsToDisplay])+"</tr></thead>"
   out = out.replace("<tbody>",columnHeader+"<tbody>")
-  out =out.replace("<table ",'<table style="width: 100%;"')
+  out = out.replace("<table ",'<table style="width: 100%;"')
   
-  
+
   return out
+
 
 # embed();exit()
 

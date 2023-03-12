@@ -1,0 +1,12 @@
+### Courses
+||||
+|-|-|-:|
+| [11-830 Computational Ethics](http://maartensap.com/11-830-Spring2023/) | | Spring 2023 |
+
+### Guest lectures & Tutorials
+|                                                        |                      |             |
+| ------------------------------------------------------ | -------------------- | ----------: |
+| Bias in Natural Language Processing                    | 05-899 Guest Lecture | Spring 2023 |
+| Bias in Natural Language Processing                    | 15-884 Guest Lecture |   Fall 2022 |
+| "Crowdsourcing Beyond Annotation"                      | Tutorial             |  EMNLP 2021 |
+| "Commonsense Reasoning in Natural Language Processing" | Tutorial             |    ACL 2020 |
