@@ -1,10 +1,10 @@
 ### Workshops
 
-|                                  |                    |            |
-| -------------------------------- | ------------------ | ---------: |
-| Content Moderation Workshop      | co-organizer       |  CVPR 2023 |
-| NLP for Positive Impact Workshop | steering committee | EMNLP 2022 |
-| NLP for Positive Impact Workshop | co-organizer       |   ACL 2021 |
+|                                                              |                    |            |
+| ------------------------------------------------------------ | ------------------ | ---------: |
+| [Multimodal Content Moderation Workshop](https://multimodal-content-moderation.github.io/) | co-organizer       |  CVPR 2023 |
+| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact) | steering committee | EMNLP 2022 |
+| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact/previous-workshops/acl-2021-workshop) | co-organizer       |   ACL 2021 |
 
 ### Committees
 
