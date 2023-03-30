@@ -62,34 +62,46 @@ def generateHTMLpublications(**kwargs):
   year = datetime.date.today().year+1
   for i, p in enumerate(pubs):
     type = getPubType(p)
-
+    
     # setting the year
     if p["year"] != year:
       year = p["year"]
       out += f'<div class="row"><div class="col-12"><h4 class="year">{year}</h4></div></div>\n'
     
     out += f'<div class="row {type} jumptarget" id={p["bibKey"]} style="margin-bottom: 10px;">\n'
-    out += f'<div class="col-12"><h5 style="margin: 15px 0px 5px 0px"><span class="title">{p["title"]}\n'
-    if "projecturl" in p:
-      out += f'</span><span class="project-url"> <a target="_blank" href="{p["projecturl"]}">[project website]</a>\n'
-    if "dataurl" in p:
-      out += f'</span><span class="project-url"> <a target="_blank" href="{p["dataurl"]}">[data]</a>\n'
-    out += f'</span></h5></div><div class="col-12">{p["venue"]} ({p["year"]})&nbsp;{generatePubTypeBadge(p)}</div>\n'
-    out += '<div class="in-citation col-12">'
-    if os.path.exists("pdfs/"+p["bibKey"]+".pdf"):
-      out += f'<a target="_blank" href="pdfs/{p["bibKey"]}.pdf">[pdf]</a>&nbsp;\n'
-    if "url" in p:
-      out += f'<a target="_blank" href="{p["url"]}">[url]</a>&nbsp;\n'
-      
-    out += prettifyAuthors(p)+"<br>\n"  
-    # full citation link
-    out += f'<a href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#citation{i}">[full citation]</a>&nbsp'
-    # bibtex link
-    out+= f"<a href=\"#\" target=\"_blank\" class=\"citation-toggle\" data-toggle=\"collapse\" data-target=\"#bibtex{i}\">[bibtex]</a>&nbsp;"
+    out += f'<div class="col-12"><h5 style="margin: 15px 0px 5px 0px">{p["title"]}</h5>\n'
+    # if "neural theory-of-mind" in p["title"].lower():
+    #   embed();exit()
+    out += f'{p["venue"]} ({p["year"]})&nbsp;{generatePubTypeBadge(p)}<br>\n'
+
+    out += prettifyAuthors(p)+"</div>"
     
+    out += '<div class="col-12" style="font-size: .85em;"><em>Links:</em> '
+    if os.path.exists("pdfs/"+p["bibKey"]+".pdf"):
+      out += f'<a class="bracket-link" target="_blank" href="pdfs/{p["bibKey"]}.pdf">[pdf]</a>\n'
+    if "url" in p:
+      out += f'<a class="bracket-link" target="_blank" href="{p["url"]}">[url]</a>\n'
+      
+    # out += prettifyAuthors(p)+"<br>\n"
+    # link, website, data, etc.
+    if "updatedurl" in p:
+      out += f'<a class="bracket-link" target="_blank" href="{p["updatedurl"]}">[updated version ({p["updateddate"]})]</a>\n'
+    if "projecturl" in p:
+      out += f'<a class="bracket-link" target="_blank" href="{p["projecturl"]}">[project website]</a>\n'
+    if "dataurl" in p:
+      out += f'<a class="bracket-link" target="_blank" href="{p["dataurl"]}">[data]</a>\n'
+
+
 
     # full citation link
-    out+= f'<div id="citation{i}" class="collapse citation-box">'
+    out += "<br><em>Citations:</em> "
+    out += f'<a class="bracket-link" href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#citation{i}">[full citation]</a>'
+    # bibtex link
+    out+= f'<a class="bracket-link" href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex{i}">[bibtex]</a>'
+    out+="</div>"
+
+    # full citation link
+    out+= f'<div class="col-12"><div id="citation{i}" class="collapse citation-box">'
     out+= fullCitation(p)
     out+= "</div>\n"
     # bibtex
