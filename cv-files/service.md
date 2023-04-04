@@ -31,6 +31,7 @@
 | <strong style="margin-top: 1em; display: block;">*Journals & conferences*</strong> |              |
 | ACL rolling review                                           | 2020–present |
 | ACL                                                          | 2019–present |
+| Computing Survey                                             |         2023 |
 | Transactions of ACL                                          |  2020,  2022 |
 | EMNLP                                                        |    2018–2022 |
 | AAAI                                                         |         2020 |
@@ -52,5 +53,6 @@
 
 |                                                              |                       |
 | ------------------------------------------------------------ | --------------------: |
+| [Responsible AI](https://www.cmu.edu/block-center/responsible-ai/index.html) salon on generative AI at CMU |               03/2023 |
 | Presentation to U.S. congressional appropriations committee about risks and implications of AI and LLMs |               03/2023 |
 | [Red-teaming GPT-4](https://cdn.openai.com/papers/gpt-4-system-card.pdf) for OpenAI | 09/2022&ndash;12/2022 |
