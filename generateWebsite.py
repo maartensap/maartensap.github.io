@@ -92,7 +92,6 @@ def generateHTMLpublications(**kwargs):
       out += f'<a class="bracket-link" target="_blank" href="{p["dataurl"]}">[data]</a>\n'
 
 
-
     # full citation link
     out += "<br><em>Citations:</em> "
     out += f'<a class="bracket-link" href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#citation{i}">[full citation]</a>'
@@ -100,6 +99,8 @@ def generateHTMLpublications(**kwargs):
     out+= f'<a class="bracket-link" href="#" target="_blank" class="citation-toggle" data-toggle="collapse" data-target="#bibtex{i}">[bibtex]</a>'
     out+="</div>"
 
+
+    
     # full citation link
     out+= f'<div class="col-12"><div id="citation{i}" class="collapse citation-box">'
     out+= fullCitation(p)
@@ -109,6 +110,14 @@ def generateHTMLpublications(**kwargs):
     out+= f"<code class=\"bibtex\">{beautifyBibtex(p)}</code>\n"
     out+= "</div>\n"
 
+    # news
+    if "news" in p:
+      out += '<span style="font-style: italic;"><strong style="color: #b88a00;">News: </strong>'
+      for name, link in p["news"]:
+        out += f'<a class="bracket-link" target="_blank" href="{link}">[{name}]</a>\n'
+      out += "</span>"
+
+    
     # awards
     if "awards" in p:
       out += "<span class=\"awards\">"+p["awards"]+"</span>\n"

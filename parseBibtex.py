@@ -2,6 +2,7 @@
 
 from IPython import embed
 import re
+from urllib.parse import urlparse
 
 entryTypeBibKeyRE = re.compile(r"@(\w+)\{(\w+),?")
 titleRE = re.compile(r"title=\{([^\}]+)},?")
@@ -26,6 +27,14 @@ def parseBibtex(bib):
 
   out["entryType"] = entryType
   out["bibKey"] = bibKey
+  if "news" in out:
+    news = out["news"].strip().split(",")
+    newsDomains = [n.split("/",5)[-1] if n.startswith("https://web.archive.org") else n for n in news ]
+    domains = [urlparse(n).netloc.split(".",1)[1] for n in newsDomains]
+    out["news"] = list(zip(domains, news))
+    forMarkdown = "\n - "+"\n - ".join([f"[{d}]({u})" for d,u in out["news"]])
+    # print("### ["+out["title"]+"](websiteRoot/publications.html#"+bibKey+")")
+    # print(forMarkdown)
   return out
 
 mainAuthor = "Maarten Sap"
@@ -78,7 +87,8 @@ def prettifyAuthors(bibD,noBold=False):
 
 def beautifyBibtex(bibD):
   keysToSkip = ["projecturl","dataurl","equalcontrib","awards","entryType",
-                "title","author","bibKey","venue","updatedurl","updateddate"]
+                "title","author","bibKey","venue","updatedurl","updateddate",
+                "news"]
   entryType = bibD["entryType"]
   if entryType == "preprint":
     entryType = "article"
