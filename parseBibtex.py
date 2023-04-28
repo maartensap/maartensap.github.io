@@ -52,7 +52,7 @@ def getPubType(bibD):
     return "workshop"
   if "journal" in bibD.keys() and bibD["journal"].lower() != "arxiv":
     return "journal"
-  if "demonstration" in venue.lower():
+  if "demonstration" in venue.lower() or bibD["entryType"]== "demo":
     return "demo"
   if "arxiv" in venue.lower():
     return "preprint"
@@ -88,9 +88,9 @@ def prettifyAuthors(bibD,noBold=False):
 def beautifyBibtex(bibD):
   keysToSkip = ["projecturl","dataurl","equalcontrib","awards","entryType",
                 "title","author","bibKey","venue","updatedurl","updateddate",
-                "news"]
+                "news", "codeurl"]
   entryType = bibD["entryType"]
-  if entryType == "preprint":
+  if entryType in ["preprint", "demo"]:
     entryType = "article"
   
   out = "@"+entryType+"{"+bibD["bibKey"]+",</br>"

@@ -90,6 +90,8 @@ def generateHTMLpublications(**kwargs):
       out += f'<a class="bracket-link" target="_blank" href="{p["projecturl"]}">[project website]</a>\n'
     if "dataurl" in p:
       out += f'<a class="bracket-link" target="_blank" href="{p["dataurl"]}">[data]</a>\n'
+    if "codeurl" in p:
+      out += f'<a class="bracket-link" target="_blank" href="{p["codeurl"]}">[code]</a>\n'
 
 
     # full citation link
