@@ -349,6 +349,18 @@ def generateProjectFiles(silent=False):
     loadAndReplaceFile(fn,d=d+"/",parentPath="../"*(len(splitPath)-2),silent=silent)
 
 
+def generateInSubmissionList(silent=False):
+  d = "pdfs/insubmission"
+  fs = glob(f"{d}/*.pdf")
+  fns = [os.path.basename(f) for f in fs]
+  
+  html = "<h1>Papers in submission</h1>\n"
+  html+= '<h2 style="color: red;">do not distribute further</h2>\n'
+
+  html+= "<ul>"+"\n".join([f'<li><a href="{f}">{f}</a></li>' for f in fns])+"</ul>"
+  
+  with open(os.path.join(d,"index.html"),"w+") as f:
+    f.write(html)
 
   
 if __name__ == "__main__":
@@ -356,6 +368,10 @@ if __name__ == "__main__":
   p.add_argument("-s","--silent",action="store_true")
   args = p.parse_args()
   #exit()
+  generateInSubmissionList(silent=args.silent)
+  
   generateNotesFiles(silent=args.silent)
   generateMainFiles(silent=args.silent)
   generateProjectFiles(silent=args.silent)
+
+
