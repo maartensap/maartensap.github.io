@@ -351,10 +351,27 @@ def generateProjectFiles(silent=False):
 
 def generateInSubmissionList(silent=False):
   d = "pdfs/insubmission"
+  if not silent:
+    print(f"Generating {d}/index.html")
   fs = glob(f"{d}/*.pdf")
   fns = [os.path.basename(f) for f in fs]
   
   html = "<h1>Papers in submission</h1>\n"
+  html+= '<h2 style="color: red;">do not distribute further</h2>\n'
+
+  html+= "<ul>"+"\n".join([f'<li><a href="{f}">{f}</a></li>' for f in fns])+"</ul>"
+  
+  with open(os.path.join(d,"index.html"),"w+") as f:
+    f.write(html)
+
+def generateDataList(silent=False):
+  if not silent:
+    print("Generating data/index.html")
+  d = "data/"
+  fs = glob(f"{d}/*")
+  fns = [os.path.basename(f) for f in fs if "index.html" not in f]
+  
+  html = "<h1>Various datasets</h1>\n"
   html+= '<h2 style="color: red;">do not distribute further</h2>\n'
 
   html+= "<ul>"+"\n".join([f'<li><a href="{f}">{f}</a></li>' for f in fns])+"</ul>"
@@ -369,6 +386,7 @@ if __name__ == "__main__":
   args = p.parse_args()
   #exit()
   generateInSubmissionList(silent=args.silent)
+  generateDataList(silent=args.silent)
   
   generateNotesFiles(silent=args.silent)
   generateMainFiles(silent=args.silent)
