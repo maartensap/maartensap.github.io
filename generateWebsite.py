@@ -62,14 +62,14 @@ def generateHTMLpublications(**kwargs):
   year = datetime.date.today().year+1
   for i, p in enumerate(pubs):
     type = getPubType(p)
-    
+    title = prepTitleForNonBibTex(p["title"])
     # setting the year
     if p["year"] != year:
       year = p["year"]
       out += f'<div class="row"><div class="col-12"><h4 class="year">{year}</h4></div></div>\n'
     
     out += f'<div class="row {type} jumptarget" id={p["bibKey"]} style="margin-bottom: 10px;">\n'
-    out += f'<div class="col-12"><h5 style="margin: 15px 0px 5px 0px">{p["title"]}</h5>\n'
+    out += f'<div class="col-12"><h5 style="margin: 15px 0px 5px 0px">{title}</h5>\n'
     # if "neural theory-of-mind" in p["title"].lower():
     #   embed();exit()
     out += f'{p["venue"]} ({p["year"]})&nbsp;{generatePubTypeBadge(p)}<br>\n'

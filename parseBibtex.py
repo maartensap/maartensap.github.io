@@ -75,8 +75,10 @@ def prettifyAuthors(bibD,noBold=False):
     for i in ixs:
       authorList[i][0] = authorList[i][0]+"<sup>*</sup>"
 
-    
+
+  
   out = " & ".join([fn+" "+ln for ln, fn in authorList])
+  
   if len(authorList) > 1:
     out = out.replace(" & ",", ",len(authorList)-2)
   if not noBold:
@@ -85,6 +87,10 @@ def prettifyAuthors(bibD,noBold=False):
     
   return out
 
+def prepTitleForNonBibTex(title):
+  title = title.replace("``",'"').replace("''",'"')
+  return title
+  
 def beautifyBibtex(bibD):
   keysToSkip = ["projecturl","dataurl","equalcontrib","awards","entryType",
                 "title","author","bibKey","venue","updatedurl","updateddate",
@@ -131,7 +137,7 @@ def wordCitation(bibD):
 def fullCitation(bibD):
   out = prettifyAuthors(bibD,noBold=True)
   out += " (" + bibD["year"] + ") "
-  out += "<strong>"+bibD["title"]+"</strong>."
+  out += "<strong>"+prepTitleForNonBibTex(bibD["title"])+"</strong>."
 
   out += f' <em>'+bibD["venue"]
   if "volume" in bibD:
