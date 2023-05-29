@@ -7,6 +7,8 @@ import datetime
 from glob import glob
 import pandas as pd
 
+import markdown
+
 import argparse
 
 findPythonRE = re.compile(r"<python ([^>]+)>")
@@ -14,7 +16,7 @@ findTitleRE = re.compile(r"<title>(.+)</title>")
 
 def includeMarkdownFile(path):
   md = open(path).read()
-  return md
+  return md 
 
 def loadAndReplaceFile(fn,d="",parentPath="",silent=False):
   ffn = f"html/{d}{fn}"
@@ -242,12 +244,14 @@ def loadNews():
 
 def formatNewsItem(t):
   d,e,n = t
+  n = markdown.markdown(n).replace("<p>","").replace("</p>","")
   dd = d.strftime("%B %Y")
   out = '<p style="margin-bottom: .5em;"><em><strong>'
   out+= dd+"</em></strong> "+e+":\n"
   out+= n
   out+='</p>'
   out = out.replace("<a",'<a target="_blank"')
+
   return out
   
 def listAllNews(**kwargs):
