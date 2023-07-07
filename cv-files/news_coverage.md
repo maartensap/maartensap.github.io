@@ -61,12 +61,12 @@
  - [theverge.com](https://www.theverge.com/2018/6/13/17453994/amazon-alexa-prize-2018-competition-conversational-ai-chatbots)
  - [geekwire.com](https://www.geekwire.com/2018/secrets-500k-amazon-alexa-prize-winner-inside-univ-washingtons-socialbot/)
  - [wired.com](https://www.wired.com/story/inside-amazon-alexa-prize/)
- - [com](http://q13fox.com/2018/01/08/uw-students-create-conversational-amazon-alexa-device/)
+ - [q13fox.com](http://q13fox.com/2018/01/08/uw-students-create-conversational-amazon-alexa-device/)
  - [dailyuw.com](http://www.dailyuw.com/science/article_bc135d10-f0f7-11e7-a1ab-0be114c44429.html)
  - [seattletimes.com](https://www.seattletimes.com/seattle-news/education/uw-students-teach-alexa-to-have-a-little-chat-with-us/)
- - [com](http://komonews.com/news/local/uw-team-wins-500000-prize-from-amazon-for-conversational-bot)
+ - [komonews.com](http://komonews.com/news/local/uw-team-wins-500000-prize-from-amazon-for-conversational-bot)
  - [amazon.com](https://developer.amazon.com/blogs/alexa/post/1a6a19d8-e45d-4b3b-981d-776a378ba625/university-of-washington-students-win-inaugural-alexa-prize)
- - [com](http://komonews.com/news/local/uw-team-finalist-for-1-million-prize-to-hold-20-minute-conversation-amazons-alexa)
+ - [komonews.com](http://komonews.com/news/local/uw-team-finalist-for-1-million-prize-to-hold-20-minute-conversation-amazons-alexa)
  - [geekwire.com](https://www.geekwire.com/2017/amazon-reveals-3-university-finalists-2-5m-alexa-prize-including-one-uw/)
 
 ##### Miscellaneous
@@ -76,4 +76,5 @@
   - On AI social coaches: [techcrunch.com](https://web.archive.org/web/20230514190121/https://techcrunch.com/2023/05/13/ai-relationship-building-amorai/)
   - On GPT-4 red-teaming: [financialtimes.com](https://web.archive.org/web/20230414132856/https://www.ft.com/content/0876687a-f8b7-4b39-b513-5fee942831e8?accessToken=zwAAAYd_9J4skc8Idmh6-LdLOdO1E1_ulCgx6A.MEQCIFehPSHqO7vjyrQmUHmZGujI6tVxlndevV5vIQGnWzENAiBJg7ltMLzzeyNNXxQC36cpuLwYQ9BB26_O2upfGLGyyw&segmentId=e95a9ae7-622c-6235-5f87-51e412b47e97&shareType=enterprise)
   - On users falling in love with ChatGPT: [time.com](https://web.archive.org/web/20230224153642/https://www.time.com/6257790/ai-chatbots-love/)
+- 2022
   - On openness of large LMs: [spectrum.ieee.org](https://web.archive.org/web/20230321062817/https://spectrum.ieee.org/large-language-models-meta-openai)

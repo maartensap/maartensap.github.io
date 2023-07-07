@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <head>
   
@@ -103,7 +104,10 @@
       <div class="row text-left">
         <div class="col-12">
           <h1>About me</h1>
-          <p>During my years of graduate school and after, I have made it a priority to mentor undergraduate and master students, be engaged in service for both my academic and university-wide communities.
+          <!--p>During my years of graduate school and after, I have made it a priority to mentor undergraduate and master students, be engaged in service for both my academic and university-wide communities.
+          </p-->
+          <p>
+            For more information about me, please see my <a href="./cv.html">CV</a>.
           </p>
           <h3>Third person bio</h3>
           <p>
@@ -123,29 +127,115 @@ In the past, he has interned at the Allen Institute for AI working on social com
       </div>
       <div class="row text-left">
         <div class="col-12">
-          <h3>Advising</h3>
-          <table id="tg-9CgGi" class="table table-sm">
-            <tr><th class="tg-yw4l">Student</th><th class="tg-yw4l">When</th></tr>
-            <tr><td>Michelle Ma (co-advised with <a target="_blank" href="https://homes.cs.washington.edu/~hrashkin/">Hannah Rashkin</a>)</td><td>2019 Fall - now</td></tr>
-            <tr><td>  Xuhui Zhou (co-advised with <a href="https://swabhs.com/">Swabha Swayamdipta</a>)</td><td>  2019 Fall - now</td></tr>
-            <tr><td>  Sam Gehman (co-advised with <a href="https://suchin.io/">Suchin Gururangan</a>)</td><td>  2019 Fall - Summer 2020</td></tr>
-            <tr><td class="tg-031e col1"><a target="_blank" href="https://www.linkedin.com/in/lanhao-wu-bb9b5a149/">Lanhao Wu</a> (co-advised with <a target="_blank" href="https://homes.cs.washington.edu/~skgabrie/">Saadia Gabriel</a>)</td><td class="tg-031e col2">2018 Winter - 2018 Spring</td></tr>
-            <tr><td class="tg-031e col1"><a target="_blank" href="https://www.linkedin.com/in/kenta-takatsu">Kenta Takatsu</a></td><td class="tg-031e col2">2018 Summer - 2019 Winter</td></tr>
-            <tr><td class="tg-031e col1"><a target="_blank" href="https://www.linkedin.com/in/zachary-horvitz">Zachary Horvitz</a> (co-advised with <a target="_blank" href="https://atcbosselut.github.io/">Antoine Bosselut</a>) </td><td class="tg-031e col2">2018 Summer - 2019 Winter</td></tr>
-            <tr><td class="tg-031e col1"><a target="_blank" href="https://www.linkedin.com/in/sarahsyu">Sarah Yu</a> </td><td class="tg-031e col2">2018 Spring</td></tr>
-            <tr><td class="tg-031e col1"><a target="_blank" href="https://www.linkedin.com/in/boyan-li/">Boyan Li</a> (co-advised with <a target="_blank" href="https://homes.cs.washington.edu/~skgabrie/">Saadia Gabriel</a>)</td><td class="tg-031e col2">2018 Winter - 2018 Spring</td></tr>
-            <tr><td class="tg-031e col1"><a target="_blank" href="https://www.linkedin.com/in/aishwaryanirmal">Aishwarya Nirmal</a> (co-advised with <a target="_blank" href="https://homes.cs.washington.edu/~taugust/">Tal August</a>)</td><td class="tg-031e col2">2018 Winter - 2019 Spring</td></tr>
-            <tr><td class="tg-031e col1"><a target="_blank" href="https://www.linkedin.com/in/amy-shah-3005a3102">Amy Shah</a> (co-advised with <a target="_blank" href="https://homes.cs.washington.edu/~eaclark7/">Elizabeth Clark</a>)</td><td class="tg-031e col2">2017 Fall - 2018 Spring</td></tr>
-            <tr><td class="tg-031e col1"><a target="_blank" href="https://www.linkedin.com/in/emilylallaway">Emily Allaway</a> (co-advised with <a target="_blank" href="https://homes.cs.washington.edu/~hrashkin/">Hannah Rashkin</a>)</td><td class="tg-031e col2">2017 Summer - 2018 Spring</td></tr>
-            <tr><td class="tg-031e col1"><a target="_blank" href="http://mcindyprasetio.com/">Marcela Cindy Prasetio</a> (co-advised with <a target="_blank" href="https://homes.cs.washington.edu/~hrashkin/">Hannah Rashkin</a>)</td><td class="tg-031e col2">2016 Winter - 2017 Spring</td></tr>
+            <!--h2 class="" data-toggle="collapse" href="#advising" role="button" aria-expanded="true" aria-controls="advising">Advising</h2>
+      
+                <div class="markdown show" id="advising">
+### PhD students
+|                                                              |         |                       |
+| ------------------------------------------------------------ | ------- | --------------------: |
+| Ji Min Mun <span class="pronouns">she/her</span>             | LTI PhD | 09/2022&ndash;present |
+| [Akhila Yerukola](https://akhila-yerukola.github.io/) <span class="pronouns">she/her</span> | LTI PhD | 09/2022&ndash;present |
+| [Xuhui Zhou](https://xuhuizhou.github.io/) <span class="pronouns">he/him</span> | LTI PhD | 09/2022&ndash;present |
 
-          </table>
+### Research Interns & Research Masters
+|                                                              |                     |                       |
+| ------------------------------------------------------------ | ------------------- | --------------------: |
+| [Athiya Deviyani](https://www.athiyadeviyani.com/) <span class="pronouns">she/her</span> | LTI MSAII           | 09/2022&ndash;present |
+| Jocelyn Chen <span class="pronouns">she/her</span> (*<small>primarily advised by Cynthia Breazeal</small>*) | MIT Media Lab       | 09/2023&ndash;present |
+| Yiming Zhang <span class="pronouns">he/him</span> (*<small>co-advised with [Sherry Tongshuang Wu]()</small>*) | UChicago MS         | 09/2022&ndash;present |
+| [Julia Mendelsohn](https://juliamendelsohn.github.io/) <span class="pronouns">she/her</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
+| [Sebastin Santy](http://sebastinsanty.com/) <span class="pronouns">he/him</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
+
+
+
+### Undergraduates &amp; Professional Masters
+|                                                              |                     |                       |
+| ------------------------------------------------------------ | ------------------- | --------------------: |
+| Sravani Nanduri <span class="pronouns">she/her</span> (*<small>co-advised with Liwei Jiang</small>*) | UW CSE BS           | 09/2021&ndash;10/2022 |
+| [Skyler Hallinan](https://skylerhallinan.com/) <span class="pronouns">he/him</span> | UW CSE BS           | 01/2021&ndash;08/2022 |
+| Zhilin Wang <span class="pronouns">he/him</span>             | UW CLMS             | 01/2021&ndash;09/2021 |
+| Michelle Ma <span class="pronouns">she/her</span> (*<small>co-advised with Hannah Rashkin</small>*) | UW CSE BS           | 09/2019&ndash;12/2020 |
+| Sam Gehman <span class="pronouns">he/him</span>              | UW CSE MS           | 09/2019&ndash;07/2020 |
+| Aishwarya Nirmal <span class="pronouns">she/her</span>       | UW CSE MS           | 01/2018&ndash;06/2019 |
+| Kenta Takatsu <span class="pronouns">he/him</span>           | Cornell BS          | 07/2018&ndash;03/2019 |
+| [Zachary Horvitz](https://zacharyhorvitz.github.io/) <span class="pronouns">he/him</span> (*<small>co-advised with Antoine Bosselut</small>*) | AI2 Research Intern | 07/2018&ndash;03/2019 |
+| Sarah Yu <span class="pronouns">she/her</span>               | UW CSE BS           | 03/2018&ndash;06/2018 |
+| Lanhao Wu <span class="pronouns">he/him</span> (*<small>co-advised with Saadia Gabriel</small>*) | UW CSE BS           | 03/2018&ndash;06/2018 |
+| Boyan Li <span class="pronouns">he/him</span> (*<small>co-advised with Saadia Gabriel</small>*) | UW CSE BS           | 01/2018&ndash;06/2018 |
+| Amy Shah <span class="pronouns">she/her</span> (*<small>co-advised with Elizabeth Clark</small>*) | UW CSE BS           | 09/2017&ndash;06/2018 |
+| [Emily Allaway](https://emilyallaway.github.io/) <span class="pronouns">she/her</span> (*<small>co-advised with Hannah Rashkin</small>*) | UW CSE BS           | 07/2017&ndash;06/2018 |
+| Marcela Cindy Prasetio <span class="pronouns">she/her</span> (*<small>co-advised with Hannah Rashkin</small>*) | UW CSE BS           | 01/2016&ndash;06/2017 |
+
+                </div-->
           <!--script type="text/javascript" charset="utf-8">var TgTableSort=window.TgTableSort||function(n,t){"use strict";function r(n,t){for(var e=[],o=n.childNodes,i=0;i<o.length;++i){var u=o[i];if("."==t.substring(0,1)){var a=t.substring(1);f(u,a)&&e.push(u)}else u.nodeName.toLowerCase()==t&&e.push(u);var c=r(u,t);e=e.concat(c)}return e}function e(n,t){var e=[],o=r(n,"tr");return o.forEach(function(n){var o=r(n,"td");t>=0&&t<o.length&&e.push(o[t])}),e}function o(n){return n.textContent||n.innerText||""}function i(n){return n.innerHTML||""}function u(n,t){var r=e(n,t);return r.map(o)}function a(n,t){var r=e(n,t);return r.map(i)}function c(n){var t=n.className||"";return t.match(/\S+/g)||[]}function f(n,t){return-1!=c(n).indexOf(t)}function s(n,t){f(n,t)||(n.className+=" "+t)}function d(n,t){if(f(n,t)){var r=c(n),e=r.indexOf(t);r.splice(e,1),n.className=r.join(" ")}}function v(n){d(n,L),d(n,E)}function l(n,t,e){r(n,"."+E).map(v),r(n,"."+L).map(v),e==T?s(t,E):s(t,L)}function g(n){return function(t,r){var e=n*t.str.localeCompare(r.str);return 0==e&&(e=t.index-r.index),e}}function h(n){return function(t,r){var e=+t.str,o=+r.str;return e==o?t.index-r.index:n*(e-o)}}function m(n,t,r){var e=u(n,t),o=e.map(function(n,t){return{str:n,index:t}}),i=e&&-1==e.map(isNaN).indexOf(!0),a=i?h(r):g(r);return o.sort(a),o.map(function(n){return n.index})}function p(n,t,r,o){for(var i=f(o,E)?N:T,u=m(n,r,i),c=0;t>c;++c){var s=e(n,c),d=a(n,c);s.forEach(function(n,t){n.innerHTML=d[u[t]]})}l(n,o,i)}function x(n,t){var r=t.length;t.forEach(function(t,e){t.addEventListener("click",function(){p(n,r,e,t)}),s(t,"tg-sort-header")})}var T=1,N=-1,E="tg-sort-asc",L="tg-sort-desc";return function(t){var e=n.getElementById(t),o=r(e,"tr"),i=o.length>0?r(o[0],"td"):[];0==i.length&&(i=r(o[0],"th"));for(var u=1;u<o.length;++u){var a=r(o[u],"td");if(a.length!=i.length)return}x(e,i)}}(document);document.addEventListener("DOMContentLoaded",function(n){TgTableSort("tg-9CgGi")});</script-->
         </div>
       </div>
       <div class="row text-left">
         <div class="col-11">
-          <h3>Service</h3>
+          <!--h2 data-toggle="collapse" href="#service" role="button" aria-expanded="true" aria-controls="service">Service</h2>
+            <div class="markdown show" id="service">
+### Workshops
+
+|                                                              |                    |            |
+| ------------------------------------------------------------ | ------------------ | ---------: |
+| [Multimodal Content Moderation Workshop](https://multimodal-content-moderation.github.io/) | co-organizer       |  CVPR 2023 |
+| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact) | steering committee | EMNLP 2022 |
+| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact/previous-workshops/acl-2021-workshop) | co-organizer       |   ACL 2021 |
+
+### Committees
+
+|                                                  |         |                 |
+| ------------------------------------------------ | ------- | --------------: |
+| Diversity, Equity, and Inclusion committee       | CMU LTI |    2022-present |
+| PhD & MLT admissions committee                   | CMU LTI |    2022-present |
+| Socio-cultural diversity and inclusion committee | ACL     |            2020 |
+| Diversity committee                              | UW CSE  |       2016–2020 |
+| Graduate student advisory council (G5PAC)        | UW CSE  | 01/2018–12/2020 |
+
+#### Senior program committees
+
+|                    |              |
+| ------------------ | -----------: |
+| ACL rolling review | 2020–present |
+| AAAI               |         2021 |
+
+#### Reviewing
+
+
+|                                                              |              |
+| ------------------------------------------------------------ | -----------: |
+| <strong style="margin-top: 1em; display: block;">*Journals & conferences*</strong> |              |
+| ACL rolling review                                           | 2020–present |
+| ACL                                                          | 2019–present |
+| Computing Survey                                             |         2023 |
+| Transactions of ACL                                          |  2020,  2022 |
+| EMNLP                                                        |    2018–2022 |
+| AAAI                                                         |         2020 |
+| ICWSM                                                        |         2021 |
+| Dementia and Geriatric Cognitive Disorders Journal           |         2020 |
+| Computational Linguistic                                     |   2019, 2020 |
+| Humanities and Social Sciences Communications                |         2019 |
+| Journal of Artificial Intelligence Research                  |         2019 |
+| IEEE Transactions on Cognitive and Developmental Systems     |         2019 |
+| Social Psychological and Personality Science                 |         2018 |
+| <strong style="margin-top: 1em; display: block;">*Workshops*</strong> |              |
+| Workshop on NLP for Positive Impact                          |         2022 |
+| Workshop on NLP for Causal Inference                         |         2021 |
+| NAACL Student Research Workshop                              |         2019 |
+| CLPsych workshop                                             |    2016–2018 |
+| Stylistic Variation workshop                                 |         2018 |
+
+### Other service & outreach
+
+|                                                              |                       |
+| ------------------------------------------------------------ | --------------------: |
+| [Responsible AI](https://www.cmu.edu/block-center/responsible-ai/index.html) salon on generative AI at CMU |               03/2023 |
+| Presentation to U.S. congressional appropriations committee about risks and implications of AI and LLMs |               03/2023 |
+| [Red-teaming GPT-4](https://cdn.openai.com/papers/gpt-4-system-card.pdf) for OpenAI | 09/2022&ndash;12/2022 |
+
+
+            </div-->
+          <!--h3>Service</h3>
           <h4>Program Committee &amp; Reviewing</h4>
           I regularly review for our NLP conferences and workshops:
           <ul>
@@ -169,7 +259,6 @@ In the past, he has interned at the Allen Institute for AI working on social com
             <li><a href="https://www.nature.com/palcomms/">Humanities and Social Sciences Communications</a> 2019</li>
             <li><a href="https://jair.org/index.php/jair">Journal of Artificial Intelligence Research</a> 2019</li>
             <li><a href="https://cis.ieee.org/publications/t-cognitive-and-developmental-systems">IEEE Transactions on Cognitive and Developmental Systems</a> 2019</li>
-            <!--li><a href=""></a></li-->
             <li><a href="http://journals.sagepub.com/home/spp">Social Psychological and Personality Science</a> 2018</li>
           </ul>
           <h4>Community &amp; Service</h4>
@@ -180,10 +269,10 @@ In the past, he has interned at the Allen Institute for AI working on social com
             <li>Member of the <a href="https://acl2020.org/committees/diversity-inclusion">socio-cultural diversity and inclusion committee</a> at ACL 2020</li>
             <li>Workshop reviewer for the <a href="http://tapiaconference.org/">2018 Tapia conference</a></li>
             <li>Social Chair at UW CSE (2016-2017)</li>
-          </ul>
+          </ul-->
         </div>
       </div>
-      <div class="row text-left">
+      <!--div class="row text-left">
         <div class="col-11">
           <h3>Teaching</h3>
           I TA-ed the following courses at the University of Washington:
@@ -192,7 +281,7 @@ In the past, he has interned at the Allen Institute for AI working on social com
             <li>CSE 490U: Natural Language Processing, Spring 2016</li>
           </ul>
         </div>
-      </div>
+      </div-->
 
 
       <!-- /.row -->
@@ -201,7 +290,13 @@ In the past, he has interned at the Allen Institute for AI working on social com
   </div>
   <!-- /.container -->
 
-  
+<script>
+   //document.getElementById('content').innerHTML =
+    // marked.parse(document.getElementById('content').innerHTML);
+   //$("#content").html(marked.parse($("#content").html()));
+   $(".markdown").each(function (i,e){e.innerHTML = marked.parse(e.innerHTML)})
+
+</script>
   <script type="text/javascript" charset="utf-8">
   var de;
   var col1_re = /(\w*)\s*(\(.*)?$/;
@@ -381,7 +476,7 @@ document.addEventListener("DOMContentLoaded", function(n) {
         <div class="col-2 mb-1">
           <div class="text-muted small" style="font-style: italic; text-align: right;">
           Last updated: <br>
-          2022-04-14
+          2023-07-05
           </div>
         </div>
       </div>
