@@ -76,8 +76,10 @@ def prettifyAuthors(bibD,noBold=False):
       authorList[i][0] = authorList[i][0]+"<sup>*</sup>"
 
 
-  
-  out = " & ".join([fn+" "+ln for ln, fn in authorList])
+  try:
+    out = " & ".join([fn+" "+ln for ln, fn in authorList])
+  except:
+    embed();exit()
   
   if len(authorList) > 1:
     out = out.replace(" & ",", ",len(authorList)-2)
