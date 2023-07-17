@@ -1,3 +1,6 @@
+##### [NLPositionality: Characterizing Design Biases of Datasets and Models](websiteRoot/publications.html#santy2023NLPositionality) (2023)
+- [marktechpost.com](https://web.archive.org/web/20230717174128/https://www.marktechpost.com/2023/07/14/a-research-group-from-cmu-ai2-and-university-of-washington-introduces-nlpositionality-an-ai-framework-for-characterizing-design-biases-and-quantifying-the-positionality-of-nlp-datasets-and-models/)
+
 ##### [ProsocialDialog: A Prosocial Backbone for Conversational Agents](websiteRoot/publications.html#kim2022prosocialDialog) (2022)
 
  - [sciencefocus.com](https://web.archive.org/web/20230327201644/https://www.sciencefocus.com/news/chatgpt-ted-lasso-internet-hate-speech/)
@@ -12,7 +15,7 @@
  - [vox.com](https://web.archive.org/web/20221229172748/https://www.vox.com/future-perfect/2021/10/27/22747333/artificial-intelligence-ethics-delphi-ai)
  - [theguardian.com](https://web.archive.org/web/20230213231329/https://www.theguardian.com/technology/2021/nov/02/delphi-online-ai-bot-philosophy)
  - [wired.com](https://web.archive.org/web/20230329222042/https://www.wired.com/story/program-give-ai-ethics-sometimes/)
- - [geekwire.com](https://web.archive.org/web/20230310030100/https://www.geekwire.com/2021/teaching-artificial-intelligence-right-from-wrong-new-tool-from-ai2-aims-to-model-ethical-judgments/)
+ - [geekwire.com(https://web.archive.org/web/20230310030100/https://www.geekwire.com/2021/teaching-artificial-intelligence-right-from-wrong-new-tool-from-ai2-aims-to-model-ethical-judgments/)
  - [futurism.com](https://web.archive.org/web/20230325165850/https://www.futurism.com/delphi-ai-ethics-racist)
 
 ##### [Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus](websiteRoot/publications.html#dodge2021documentingC4) (2021)

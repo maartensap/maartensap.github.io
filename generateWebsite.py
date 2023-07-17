@@ -9,6 +9,8 @@ import pandas as pd
 
 import markdown
 
+import pdfgen
+
 import argparse
 
 findPythonRE = re.compile(r"<python ([^>]+)>")
@@ -383,6 +385,13 @@ def generateDataList(silent=False):
   with open(os.path.join(d,"index.html"),"w+") as f:
     f.write(html)
 
+# def generateCVpdf(silent=True):
+#   if not silent:
+#     print("Generating PDF version of CV")
+    
+#   with open("cv.html") as f:
+#     pdfgen.sync.pdfgen("cv2.pdf")
+  
   
 if __name__ == "__main__":
   p = argparse.ArgumentParser()
@@ -397,3 +406,4 @@ if __name__ == "__main__":
   generateProjectFiles(silent=args.silent)
 
 
+  # generateCVpdf(silent=args.silent)
