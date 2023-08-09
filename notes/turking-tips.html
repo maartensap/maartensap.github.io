@@ -119,23 +119,31 @@
 4. Using those times, find a price per HIT that amounts to like ~$12-15/h approximately (goal is to be above minimum wage)
 
 #### Launching the task and finding good workers
-1. Run a <emm>pilot task</emm> on a small amount of examples (between 100-500), with a slightly higher number of workers/HIT than what your final task will be, to ensure wide participation.
+1. Run a <emm>pilot task</emm> on a small amount of examples, with a higher number of workers/HIT than what your final task will be, to ensure wide participation.
    - For <emm>categorical</emm> tasks: consider selecting the examples that you know the answer to, for easier grading of workers.
+   - For <emm>free-text</emm> tasks: you can sample between 100-500 HITs.
 2. Assess the quality of each worker's responses:
    - For <emm>categorical</emm> tasks: you can set up an autograder based on the responses you expect (if you have your own answers).
    - For <emm>free-text</emm> tasks: download CSV of results and scan through HITs, <emm>sorted by workerID</emm>.
 3. While scanning, make two lists of workerIDs
-   - List of <emm class="good">good workers</emm>.
-   - List of <emm class="bad">bad workers</emm>.
+   - List of <emm class="good">qualified workers</emm>, i.e., workers who did well on your task.
+   - List of <emm class="bad">unqualified workers</emm>, i.e., workers who didn't do well, were spamming, etc.
 4. Create two MTurk qualifications on Mturk:
-   - For <emm class="good">good workers</emm>: call it "GreatAtMyTask"
-   - For <emm class="bad">bad workers</emm>: call it "PreviouslyDoneMyTask"; the idea is that we can avoid upsetting workers by avoiding saying that they're bad at something.
-5. Assign <emm class="bad">bad workers</emm> to bad qual and <emm class="good">good workers</emm> to good qual.
+   - For <emm class="good">qualified workers</emm>: call it "GreatAtMyTask"
+   - For <emm class="bad">unqualified workers</emm>: call it "PreviouslyDoneMyTask"; the idea is that we can avoid upsetting workers by avoiding saying that they're bad at something.
+5. Assign <emm class="bad">unqualified workers</emm> to "PreviouslyDoneMyTask" qual and <emm class="good">qualified workers</emm> to the "GreatAtMyTask" qual.
 6. Create a copy of your pilot task
-   - Set the requisites to be GoodAtMyTask (and other quals)
+   - Set the requisites to be "GoodAtMyTask" (and other quals)
    - Reduce the number of workers/HIT to what you intended originally
 7. If needed, re-run small "qualification" batch and do 1-6 again.  
 Make sure to disallow good and bad workers from doing this qualification task.
+
+### Some other notes:
+- **Avoid rejecting as much as you can**, and do NOT mass reject workers/HITs. A lot of Turkers are honestly doing their job and want to do good work, and can their livelihood can severely be hindered from mass rejections (as it causes their stats to go down and can prevents them from taking future HITs). If you truly suspect you are dealing with a spammer or bot, you can soft reject them and *maybe* reject one or two HITs as a warning sign. But chances are that the Turker was trying to do the task and just didn't understand it, but they should still be compensated for their time. This is why it's important to pilot and qual workers, so that you can avoid having to soft block or reject them.
+- **Avoiding ChatGPT-generated answers**. This recent issue emerged where some workers may be using ChatGPT for free-text answers. It's quite hard to detect this, but you can be very clear in your instructions that they should not be using AI systems to do the HITs, and can use the soft- or hard-blocking if the issues persist.
+- **Be responsive to emails**. People often do Turking as their full-time job, which means that the stakes are very high for them. If they cannot understand or submit a HIT, they might email you (sometimes in anger), but almost every time, responding with empathy and apologies will lead them to be super nice back. Don't forget to thank them, after all, they chose to take your HIT out of all the other HITs they could do!
+- **Filtering for English-speaking Turkers**. Restricting to turkers located in the U.S. as a filter for English-speaking is not very effective (not all US-based people speak English, and non-US people can use VPNs). Instead, friends over at TurkOpticon recommended using a qualification task to filter for English-speaking instead.
+
 
 ### Background
 I compiled this high-level recipe based on valuable advice I got from my current and former labmates who Turk (including [Emily Allaway](https://www.aclweb.org/anthology/people/e/emily-allaway/), [Hannah Rashkin](https://homes.cs.washington.edu/~hrashkin/)) and my own experience Turking (specifically, on the [ATOMIC](https://mosaickg.apps.allenai.org/kg_atomic), [SocialIQa](https://leaderboard.allenai.org/socialiqa/submissions/get-started), and [Social Bias Frames](https://homes.cs.washington.edu/~msap/social-bias-frames/) projects)
@@ -164,7 +172,7 @@ I compiled this high-level recipe based on valuable advice I got from my current
         <div class="col-2 mb-1">
           <div class="text-muted small" style="font-style: italic; text-align: right;">
           Last updated: <br>
-          2023-08-08
+          2023-08-09
           </div>
         </div>
       </div>
