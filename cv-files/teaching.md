@@ -1,6 +1,7 @@
 ### Courses
 ||||
 |-|-|-:|
+|[11-361 Data Science Seminar](https://mcds-cmu.github.io/11631/f23/)||Fall 2023|
 | [11-830 Computational Ethics](http://maartensap.com/11-830-Spring2023/) | | Spring 2023 |
 
 ### Guest lectures & Tutorials

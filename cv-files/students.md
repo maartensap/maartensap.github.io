@@ -1,6 +1,7 @@
-### PhD students
+### PhD & MLT students
 |                                                              |         |                       |
 | ------------------------------------------------------------ | ------- | --------------------: |
+| Joel Mire <span class="pronouns">he/him</span>               | LTI MLT | 09/2023&ndash;present |
 | Ji Min Mun <span class="pronouns">she/her</span>             | LTI PhD | 09/2022&ndash;present |
 | [Akhila Yerukola](https://akhila-yerukola.github.io/) <span class="pronouns">she/her</span> | LTI PhD | 09/2022&ndash;present |
 | [Xuhui Zhou](https://xuhuizhou.github.io/) <span class="pronouns">he/him</span> | LTI PhD | 09/2022&ndash;present |
@@ -10,9 +11,9 @@
 | ------------------------------------------------------------ | ------------------- | --------------------: |
 | [Kaitlyn Zhou](https://cs.stanford.edu/~katezhou/) <span class="pronouns">she/her</span> | AI2 Research Intern | 06/2023&ndash;present |
 | [Ashutosh Baheti](https://abaheti95.github.io/) <span class="pronouns">he/him</span> | AI2 Research Intern | 09/2022&ndash;present |
-| [Athiya Deviyani](https://www.athiyadeviyani.com/) <span class="pronouns">she/her</span> | LTI MSAII           | 09/2022&ndash;present |
-| Jocelyn Chen <span class="pronouns">she/her</span> (*<small>primarily advised by Cynthia Breazeal</small>*) | MIT Media Lab       | 09/2023&ndash;present |
+| Jocelyn Chen <span class="pronouns">she/her</span> (*<small>primarily advised by Cynthia Breazeal</small>*) | MIT Media Lab       | 09/2022&ndash;present |
 | Yiming Zhang <span class="pronouns">he/him</span> (*<small>co-advised with [Sherry Tongshuang Wu]()</small>*) | UChicago MS         | 09/2022&ndash;present |
+| [Athiya Deviyani](https://www.athiyadeviyani.com/) <span class="pronouns">she/her</span> | LTI MSAII           | 09/2022&ndash;09/2023 |
 | [Julia Mendelsohn](https://juliamendelsohn.github.io/) <span class="pronouns">she/her</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
 | [Sebastin Santy](http://sebastinsanty.com/) <span class="pronouns">he/him</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
 
