@@ -2,7 +2,7 @@
 |                                                              |         |                       |
 | ------------------------------------------------------------ | ------- | --------------------: |
 | Joel Mire <span class="pronouns">he/him</span>               | LTI MLT | 09/2023&ndash;present |
-| Ji Min Mun <span class="pronouns">she/her</span>             | LTI PhD | 09/2022&ndash;present |
+| Jimin Mun <span class="pronouns">she/her</span>              | LTI PhD | 09/2022&ndash;present |
 | [Akhila Yerukola](https://akhila-yerukola.github.io/) <span class="pronouns">she/her</span> | LTI PhD | 09/2022&ndash;present |
 | [Xuhui Zhou](https://xuhuizhou.github.io/) <span class="pronouns">he/him</span> | LTI PhD | 09/2022&ndash;present |
 
