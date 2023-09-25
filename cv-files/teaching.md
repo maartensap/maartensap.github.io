@@ -10,4 +10,4 @@
 | Bias in Natural Language Processing                          | 05-899 Guest Lecture | Spring 2023 |
 | Bias in Natural Language Processing                          | 15-884 Guest Lecture |   Fall 2022 |
 | "[Crowdsourcing Beyond Annotation](https://nlp-crowdsourcing.github.io/)" | Tutorial             |  EMNLP 2021 |
-| "[Commonsense Reasoning in Natural Language Processing](./acl2020-commonsense/)" | Tutorial             |    ACL 2020 |
+| "[Commonsense Reasoning in Natural Language Processing](./acl2020-commonsense/index.html)" | Tutorial             |    ACL 2020 |
