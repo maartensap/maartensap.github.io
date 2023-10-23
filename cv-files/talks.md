@@ -4,6 +4,7 @@
 | [ICML workshop on Theory of Mind](https://tomworkshop.github.io/) (*invited speaker*) | 07/2023 |
 | <strong style="margin-top: 1em; display: block;">The Pivotal Role of Social Context in Toxic Language Detection</strong> |         |
 | [ACL workshop on online abuse and harms](https://www.workshopononlineabuse.com/) (*invited speaker*) | 07/2023 |
+| [Dealing with meaning variation Workshop](https://sites.google.com/view/dealingwithmeaningvariation/demeva-2023-public-kickoff) (*invited speaker*) | 10/2023 |
 | <strong style="margin-top: 1em; display: block;">Toward Prosocial NLP: Reasoning About And Responding to Toxicity in Language</strong> |         |
 | MIT Media Lab Breazeal Group Meeting                         | 11/2022 |
 | CMU S3D Computational Social Science Seminar                 | 11/2022 |

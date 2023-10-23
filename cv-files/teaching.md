@@ -7,6 +7,7 @@
 ### Guest lectures & Tutorials
 |                                                              |                      |             |
 | ------------------------------------------------------------ | -------------------- | ----------: |
+| Bias in Natural Language Processing                          | 11-711 Guest lecture |   Fall 2023 |
 | Bias in Natural Language Processing                          | 05-899 Guest Lecture | Spring 2023 |
 | Bias in Natural Language Processing                          | 15-884 Guest Lecture |   Fall 2022 |
 | "[Crowdsourcing Beyond Annotation](https://nlp-crowdsourcing.github.io/)" | Tutorial             |  EMNLP 2021 |
