@@ -9,6 +9,8 @@ import pandas as pd
 
 import markdown
 
+from collections import Counter
+
 import pdfgen
 
 import argparse
@@ -60,6 +62,17 @@ def addFooter(lastEditTime="",parentPath="",**kwargs):
   # html = html.replace("websiteRoot/", parentPath)
   return html
 
+def generatePubYearRanges(**kwargs):
+  pubs = loadPubs()
+  tmp = """<label class="badge year-badge btn badge-light active"><input type="radio" value="{y}" checked>{y} <small><em>({n})</em></small></label>"""
+  years = [p["year"] for p in pubs]
+  cntYears = Counter(years)
+  out = ""
+  for y, n in sorted(cntYears.items(),reverse=True):
+    out += tmp.format(y=y,n=n)+"\n"
+  return out
+
+  
 def generateHTMLpublications(**kwargs):
   out = ""
   pubs = loadPubs()
@@ -72,7 +85,7 @@ def generateHTMLpublications(**kwargs):
       year = p["year"]
       out += f'<div class="row"><div class="col-12"><h4 class="year">{year}</h4></div></div>\n'
     
-    out += f'<div class="row {type} jumptarget" id={p["bibKey"]} style="margin-bottom: 10px;">\n'
+    out += f'<div class="row {type} {year} jumptarget" id={p["bibKey"]} style="margin-bottom: 10px;">\n'
     out += f'<div class="col-12"><h5 style="margin: 15px 0px 5px 0px">{title}</h5>\n'
     # if "neural theory-of-mind" in p["title"].lower():
     #   embed();exit()

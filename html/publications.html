@@ -21,16 +21,21 @@
       </small>
     </p>
     <div class="col-12"> 
-      Filter by:&nbsp;
+      Filter by category:&nbsp;
       <div class="btn-group btn-group-toggle" data-toggle="buttons">
-        <label class="badge btn badge-dark active"><input type="radio" value="all" checked>all</label>
-        <label class="badge btn badge-conference"><input type="radio" value="conference">conference</label>
-        <label class="badge btn badge-workshop"><input type="radio" value="workshop">workshop</label>
-        <label class="badge btn badge-journal"><input type="radio" value="journal">journal</label>
-        <label class="badge btn badge-demo"><input type="radio" value="demo">demo</label>
-        <label class="badge btn badge-preprint"><input type="radio" value="preprint">preprint</label>
-        <label class="badge btn badge-other"><input type="radio" value="other">other</label>
-      </div>
+        <label class="badge type-badge btn badge-dark active"><input type="radio" value="all" checked>all</label>
+        <label class="badge type-badge btn badge-conference"><input type="radio" value="conference">conference</label>
+        <label class="badge type-badge btn badge-workshop"><input type="radio" value="workshop">workshop</label>
+        <label class="badge type-badge btn badge-journal"><input type="radio" value="journal">journal</label>
+        <label class="badge type-badge btn badge-demo"><input type="radio" value="demo">demo</label>
+        <label class="badge type-badge btn badge-preprint"><input type="radio" value="preprint">preprint</label>
+        <label class="badge type-badge btn badge-other"><input type="radio" value="other">other</label>
+      </div> 
+      <!--br>
+      Filter by year:&nbsp;
+      <div class="btn-group btn-group-toggle"  data-toggle="buttons">
+        <python generatePubYearRanges>
+      </div-->
     </div>
     <hr>
     <python generateHTMLpublications>
@@ -109,7 +114,19 @@
     }
     
     var t;
-    $("label.badge>input[type='radio']").on("change", function(e){
+    $("label.type-badge>input[type='radio']").on("change", function(e){
+      //e.preventDefault();
+      t = e.target;
+      var type = e.target.value;
+      console.log(e.target.value);
+      if (type==="all"){
+        $("div.jumptarget").show();
+      } else {
+        $("div.jumptarget").not("."+type).hide();
+        $("div.jumptarget."+type).show();
+      }
+    });
+    $("label.year-badge>input[type='radio']").on("change", function(e){
       //e.preventDefault();
       t = e.target;
       var type = e.target.value;
