@@ -1,10 +1,12 @@
 ### PhD & MLT students
-|                                                              |         |                       |
-| ------------------------------------------------------------ | ------- | --------------------: |
-| Joel Mire <span class="pronouns">he/him</span>               | LTI MLT | 09/2023&ndash;present |
-| Jimin Mun <span class="pronouns">she/her</span>              | LTI PhD | 09/2022&ndash;present |
-| [Akhila Yerukola](https://akhila-yerukola.github.io/) <span class="pronouns">she/her</span> | LTI PhD | 09/2022&ndash;present |
-| [Xuhui Zhou](https://xuhuizhou.github.io/) <span class="pronouns">he/him</span> | LTI PhD | 09/2022&ndash;present |
+|                                                              |               |                       |
+| ------------------------------------------------------------ | ------------- | --------------------: |
+| [Jocelyn Shen](https://jocelynshen.com/) <span class="pronouns">she/her</span> <small>(*co-advised with Cynthia Breazeal*)</small> | MIT Media Lab | 11/2023&ndash;present |
+| Joel Mire <span class="pronouns">he/him</span>               | LTI MLT       | 09/2023&ndash;present |
+| [Karina Halevy](https://enscma2.github.io/) <span class="pronouns">she/her</span> <small>(*co-advised with [Mona Diab](https://lti.cs.cmu.edu/people/222228496/mona-diab)*)</small> | LTI PhD       | 09/2023&ndash;present |
+| Jimin Mun <span class="pronouns">she/her</span>              | LTI PhD       | 09/2022&ndash;present |
+| [Akhila Yerukola](https://akhila-yerukola.github.io/) <span class="pronouns">she/her</span> | LTI PhD       | 09/2022&ndash;present |
+| [Xuhui Zhou](https://xuhuizhou.github.io/) <span class="pronouns">he/him</span> | LTI PhD       | 09/2022&ndash;present |
 
 ### Research Interns & Research Masters
 |                                                              |                     |                       |
@@ -22,6 +24,12 @@
 ### Undergraduates &amp; Professional Masters
 |                                                              |                     |                       |
 | ------------------------------------------------------------ | ------------------- | --------------------: |
+| Sanketh Rangreji <span class="pronouns">he/him</span>        | CMU LTI MIIS        | 09/2023&ndash;present |
+| Anubha Kabra <span class="pronouns">she/her</span>           | CMU LTI MIIS        | 09/2023&ndash;present |
+| Devansh Jain <span class="pronouns">he/him</span>            | CMU LTI MIIS        | 09/2023&ndash;present |
+| Priyanshu Kumar <span class="pronouns">he/him</span>         | CMU LTI MIIS        | 09/2023&ndash;present |
+| Abhinav Rao <span class="pronouns">he/him</span>             | CMU LTI MIIS        | 09/2023&ndash;present |
+| Vishwa Shah <span class="pronouns">she/her</span>            | CMU LTI MIIS        | 09/2023&ndash;present |
 | Sravani Nanduri <span class="pronouns">she/her</span> (*<small>co-advised with Liwei Jiang</small>*) | UW CSE BS           | 09/2021&ndash;10/2022 |
 | [Skyler Hallinan](https://skylerhallinan.com/) <span class="pronouns">he/him</span> | UW CSE BS           | 01/2021&ndash;08/2022 |
 | Zhilin Wang <span class="pronouns">he/him</span>             | UW CLMS             | 01/2021&ndash;09/2021 |
