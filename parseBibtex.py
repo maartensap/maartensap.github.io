@@ -101,14 +101,14 @@ def beautifyBibtex(bibD):
   if entryType in ["preprint", "demo"]:
     entryType = "article"
   
-  out = "@"+entryType+"{"+bibD["bibKey"]+",</br>"
-  out += "&nbsp;&nbsp;title={"+bibD["title"]+"},</br>"
-  out += "&nbsp;&nbsp;author={"+bibD["author"]+"},</br>"
+  out = "@"+entryType+"{"+bibD["bibKey"]+",</br>\n"
+  out += "&nbsp;&nbsp;title={"+bibD["title"]+"},</br>\n"
+  out += "&nbsp;&nbsp;author={"+bibD["author"]+"},</br>\n"
   for k, v in bibD.items():
     if k in keysToSkip: continue
-    out += "&nbsp;&nbsp;"+k+"={"+v+"},</br>"
+    out += "&nbsp;&nbsp;"+k+"={"+v+"},</br>\n"
   out += "}"
-  out = re.sub(r",</br>}","</br>}",out)
+  out = re.sub(r",</br>\n}","</br>\n}",out)
   for c, repl in bibtexSpecialChars.items():
     out = out.replace(c,repl)
   return out

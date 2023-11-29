@@ -11,9 +11,11 @@
 
   <!-- Page Content -->
   <div class="container" style="padding-top: 10px;">
+    <a class="btn btn-light" id="copy" onclick="copyCites()">Copy all</a>
     
-    <python generateBibtexPublications>
-   
+    <div id="all-cites">
+      <python generateBibtexPublications>
+    </div>
     <!-- Footer -->
      <python addFooter>
   </div>
@@ -72,7 +74,7 @@
     }
   </style>
   <script>
-    var targ, d;
+    var targ, d, text, h;
     function jumpAndHighlight(){
       targ = window.location.hash;
       if (targ == "")
@@ -83,7 +85,6 @@
       setTimeout(function(){ d.removeClass("highlighted") }, 5000);
     }
     
-    var t;
     $("label.badge>input[type='radio']").on("change", function(e){
       //e.preventDefault();
       t = e.target;
@@ -96,7 +97,18 @@
         $("div.jumptarget."+type).show();
       }
     });
+    function copyCites() {
+      // Get the text field
+      var $temp = $("<textarea>");
+      $("body").append($temp);
+      text = $("#all-cites").text().replace(/\u00a0/g, " ").trim();
+      $temp.val(text).select();
+      
+      document.execCommand("copy");
+      $temp.remove();
+    };
     window.onload = jumpAndHighlight;
+    
   </script>
 </body>
 </html>

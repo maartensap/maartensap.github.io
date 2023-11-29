@@ -99,137 +99,529 @@
 
   <!-- Page Content -->
   <div class="container" style="padding-top: 10px;">
+    <a class="btn btn-light" id="copy" onclick="copyCites()">Copy all</a>
     
-    <div><code>@article{antoniak2023whereStories,</br>&nbsp;&nbsp;title={Where Do People Tell Stories Online? Story Detection Across Online Communities},</br>&nbsp;&nbsp;author={Antoniak, Maria and Mire, Joel and Sap, Maarten and Ash, Elliott and Piper, Andrew},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={http://arxiv.org/abs/2311.09675},</br>&nbsp;&nbsp;journal={arXiv}</br>}</code>
+    <div id="all-cites">
+      <div><code>@article{antoniak2023whereStories,</br>
+&nbsp;&nbsp;title={Where Do People Tell Stories Online? Story Detection Across Online Communities},</br>
+&nbsp;&nbsp;author={Antoniak, Maria and Mire, Joel and Sap, Maarten and Ash, Elliott and Piper, Andrew},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={http://arxiv.org/abs/2311.09675},</br>
+&nbsp;&nbsp;journal={arXiv}</br>
+}</code>
 </div>
-<div><code>@article{mireshghallah2023canLLMsKeepASecret,</br>&nbsp;&nbsp;title={Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory},</br>&nbsp;&nbsp;author={Mireshghallah, Niloofar and Kim, Hyunwoo and Zhou, Xuhui and Tsvetkov, Yulia and Sap, Maarten and Shokri, Reza and Choi, Yejin},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={http://arxiv.org/abs/2310.17884},</br>&nbsp;&nbsp;journal={arXiv}</br>}</code>
+<div><code>@article{mireshghallah2023canLLMsKeepASecret,</br>
+&nbsp;&nbsp;title={Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory},</br>
+&nbsp;&nbsp;author={Mireshghallah, Niloofar and Kim, Hyunwoo and Zhou, Xuhui and Tsvetkov, Yulia and Sap, Maarten and Shokri, Reza and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={http://arxiv.org/abs/2310.17884},</br>
+&nbsp;&nbsp;journal={arXiv}</br>
+}</code>
 </div>
-<div><code>@article{zhou2023sotopia,</br>&nbsp;&nbsp;title={SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents},</br>&nbsp;&nbsp;author={Zhou, Xuhui and Zhu, Hao and Mathur, Leena and Zhang, Ruohong and Yu, Haofei and Qi, Zhengyang and Morency, Louis-Philippe and Bisk, Yonatan and Fried, Daniel and Neubig, Graham and Sap, Maarten},</br>&nbsp;&nbsp;journal={arXiv},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2310.11667}</br>}</code>
+<div><code>@article{zhou2023sotopia,</br>
+&nbsp;&nbsp;title={SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents},</br>
+&nbsp;&nbsp;author={Zhou, Xuhui and Zhu, Hao and Mathur, Leena and Zhang, Ruohong and Yu, Haofei and Qi, Zhengyang and Morency, Louis-Philippe and Bisk, Yonatan and Fried, Daniel and Neubig, Graham and Sap, Maarten},</br>
+&nbsp;&nbsp;journal={arXiv},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2310.11667}</br>
+}</code>
 </div>
-<div><code>@inproceedings{yerukola2023contextRewrite,</br>&nbsp;&nbsp;title={``Don't Take This Out of Context!'' On the Need for Contextual Models and Evaluations for Stylistic Rewriting},</br>&nbsp;&nbsp;author={Yerukola, Akhila and Zhou, Xuhui and Clark, Elizabeth and Sap, Maarten},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2305.14755}</br>}</code>
+<div><code>@inproceedings{yerukola2023contextRewrite,</br>
+&nbsp;&nbsp;title={``Don't Take This Out of Context!'' On the Need for Contextual Models and Evaluations for Stylistic Rewriting},</br>
+&nbsp;&nbsp;author={Yerukola, Akhila and Zhou, Xuhui and Clark, Elizabeth and Sap, Maarten},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2305.14755}</br>
+}</code>
 </div>
-<div><code>@inproceedings{zhang2023biasX,</br>&nbsp;&nbsp;title={BiasX: ``Thinking Slow'' in Toxic Language Annotation with Explanations of Implied Social Biases},</br>&nbsp;&nbsp;author={Zhang, Yiming and Nanduri, Sravani U. and Jiang, Liwei and Wu, Tongshuang and Sap, Maarten},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2305.13589}</br>}</code>
+<div><code>@inproceedings{zhang2023biasX,</br>
+&nbsp;&nbsp;title={BiasX: ``Thinking Slow'' in Toxic Language Annotation with Explanations of Implied Social Biases},</br>
+&nbsp;&nbsp;author={Zhang, Yiming and Nanduri, Sravani U. and Jiang, Liwei and Wu, Tongshuang and Sap, Maarten},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2305.13589}</br>
+}</code>
 </div>
-<div><code>@inproceedings{shen2023empathicSimilarity,</br>&nbsp;&nbsp;title={Modeling Empathic Similarity in Personal Narratives},</br>&nbsp;&nbsp;author={Shen, Jocelyn and Sap, Maarten and Colon-Hernandez, Pedro and Park, Hae Won and Breazeal, Cynthia},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2305.14246}</br>}</code>
+<div><code>@inproceedings{shen2023empathicSimilarity,</br>
+&nbsp;&nbsp;title={Modeling Empathic Similarity in Personal Narratives},</br>
+&nbsp;&nbsp;author={Shen, Jocelyn and Sap, Maarten and Colon-Hernandez, Pedro and Park, Hae Won and Breazeal, Cynthia},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2305.14246}</br>
+}</code>
 </div>
-<div><code>@inproceedings{mun2023beyondDenouncingHate,</br>&nbsp;&nbsp;title={Beyond Denouncing Hate: Strategies for Countering Implied Biases and Stereotypes in Language},</br>&nbsp;&nbsp;author={Mun, Jimin and Allaway, Emily and Yerukola, Akhila and Vianna, Laura and Leslie, Sarah-Jane and Sap, Maarten},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2311.00161},</br>&nbsp;&nbsp;booktitle={Findings of EMNLP}</br>}</code>
+<div><code>@inproceedings{mun2023beyondDenouncingHate,</br>
+&nbsp;&nbsp;title={Beyond Denouncing Hate: Strategies for Countering Implied Biases and Stereotypes in Language},</br>
+&nbsp;&nbsp;author={Mun, Jimin and Allaway, Emily and Yerukola, Akhila and Vianna, Laura and Leslie, Sarah-Jane and Sap, Maarten},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2311.00161},</br>
+&nbsp;&nbsp;booktitle={Findings of EMNLP}</br>
+}</code>
 </div>
-<div><code>@inproceedings{kim2023fantom,</br>&nbsp;&nbsp;title={FANToM: A Benchmark for Stress-testing Machine Theory of Mind in Interactions},</br>&nbsp;&nbsp;author={Kim, Hyunwoo and Sclar, Melanie and Zhou, Xuhui and Le Bras, Ronan and Kim, Gunhee and Choi, Yejin and Sap, Maarten},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2310.15421},</br>&nbsp;&nbsp;booktitle={EMNLP}</br>}</code>
+<div><code>@inproceedings{kim2023fantom,</br>
+&nbsp;&nbsp;title={FANToM: A Benchmark for Stress-testing Machine Theory of Mind in Interactions},</br>
+&nbsp;&nbsp;author={Kim, Hyunwoo and Sclar, Melanie and Zhou, Xuhui and Le Bras, Ronan and Kim, Gunhee and Choi, Yejin and Sap, Maarten},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2310.15421},</br>
+&nbsp;&nbsp;booktitle={EMNLP}</br>
+}</code>
 </div>
-<div><code>@inproceedings{kim2023soda,</br>&nbsp;&nbsp;title={SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization},</br>&nbsp;&nbsp;author={Kim, Hyunwoo and Hessel, Jack and Jiang, Liwei and West, Peter and Lu, Ximing and Yu, Youngjae and Zhou, Pei and Le Bras, Ronan and Alikhani, Malihe and Kim, Gunhee and Sap, Maarten and Choi, Yejin},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2212.10465},</br>&nbsp;&nbsp;booktitle={EMNLP}</br>}</code>
+<div><code>@inproceedings{kim2023soda,</br>
+&nbsp;&nbsp;title={SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization},</br>
+&nbsp;&nbsp;author={Kim, Hyunwoo and Hessel, Jack and Jiang, Liwei and West, Peter and Lu, Ximing and Yu, Youngjae and Zhou, Pei and Le Bras, Ronan and Alikhani, Malihe and Kim, Gunhee and Sap, Maarten and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2212.10465},</br>
+&nbsp;&nbsp;booktitle={EMNLP}</br>
+}</code>
 </div>
-<div><code>@inproceedings{zhou2023cobraframes,</br>&nbsp;&nbsp;title={COBRA Frames: Contextual Reasoning about Effects and Harms of Offensive Statements},</br>&nbsp;&nbsp;author={Zhou, Xuhui and Zhu, Hao and Yerukola, Akhila and Davidson, Thomas and Hwang, Jena D. and Swayamdipta, Swabha and Sap, Maarten},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;booktitle={Findings of ACL},</br>&nbsp;&nbsp;url={http://arxiv.org/abs/2306.01985}</br>}</code>
+<div><code>@inproceedings{zhou2023cobraframes,</br>
+&nbsp;&nbsp;title={COBRA Frames: Contextual Reasoning about Effects and Harms of Offensive Statements},</br>
+&nbsp;&nbsp;author={Zhou, Xuhui and Zhu, Hao and Yerukola, Akhila and Davidson, Thomas and Hwang, Jena D. and Swayamdipta, Swabha and Sap, Maarten},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;booktitle={Findings of ACL},</br>
+&nbsp;&nbsp;url={http://arxiv.org/abs/2306.01985}</br>
+}</code>
 </div>
-<div><code>@inproceedings{mendelsohn2023dogwhistles,</br>&nbsp;&nbsp;title={From Dogwhistles to Bullhorns: Unveiling Coded Rhetoric with Language Models},</br>&nbsp;&nbsp;author={Mendelsohn, Julia and Bras, Ronan Le and Choi, Yejin and Sap, Maarten},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2305.17174}</br>}</code>
+<div><code>@inproceedings{mendelsohn2023dogwhistles,</br>
+&nbsp;&nbsp;title={From Dogwhistles to Bullhorns: Unveiling Coded Rhetoric with Language Models},</br>
+&nbsp;&nbsp;author={Mendelsohn, Julia and Bras, Ronan Le and Choi, Yejin and Sap, Maarten},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2305.17174}</br>
+}</code>
 </div>
-<div><code>@inproceedings{santy2023nlpositionality,</br>&nbsp;&nbsp;title={NLPositionality: Characterizing Design Biases of Datasets and Models},</br>&nbsp;&nbsp;author={Santy, Sebastin and Liang, Jenny T. and Bras, Ronan Le and Reinecke, Katharina and Sap, Maarten},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2306.01943}</br>}</code>
+<div><code>@inproceedings{santy2023nlpositionality,</br>
+&nbsp;&nbsp;title={NLPositionality: Characterizing Design Biases of Datasets and Models},</br>
+&nbsp;&nbsp;author={Santy, Sebastin and Liang, Jenny T. and Bras, Ronan Le and Reinecke, Katharina and Sap, Maarten},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2306.01943}</br>
+}</code>
 </div>
-<div><code>@inproceedings{hallinan2023marco,</br>&nbsp;&nbsp;title={Detoxifying Text with MaRCo: Controllable Revision with Experts and Anti-Experts},</br>&nbsp;&nbsp;author={Hallinan, Skyler and Liu, Alisa and Choi, Yejin and Sap, Maarten},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2212.10543},</br>&nbsp;&nbsp;booktitle={ACL}</br>}</code>
+<div><code>@inproceedings{hallinan2023marco,</br>
+&nbsp;&nbsp;title={Detoxifying Text with MaRCo: Controllable Revision with Experts and Anti-Experts},</br>
+&nbsp;&nbsp;author={Hallinan, Skyler and Liu, Alisa and Choi, Yejin and Sap, Maarten},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2212.10543},</br>
+&nbsp;&nbsp;booktitle={ACL}</br>
+}</code>
 </div>
-<div><code>@inproceedings{antoniak2023riveter,</br>&nbsp;&nbsp;title={Riveter: Measuring Power and Social Dynamics Between Entities},</br>&nbsp;&nbsp;author={Antoniak, Maria and Field, Anjalie and Mun, Ji Min and Walsh, Melanie and Klein, Lauren F. and Sap, Maarten},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;booktitle={ACL demonstrations}</br>}</code>
+<div><code>@inproceedings{antoniak2023riveter,</br>
+&nbsp;&nbsp;title={Riveter: Measuring Power and Social Dynamics Between Entities},</br>
+&nbsp;&nbsp;author={Antoniak, Maria and Field, Anjalie and Mun, Ji Min and Walsh, Melanie and Klein, Lauren F. and Sap, Maarten},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;booktitle={ACL demonstrations}</br>
+}</code>
 </div>
-<div><code>@inproceedings{OrganizersOfQueerin2023QueerAI,</br>&nbsp;&nbsp;title={Queer In AI: A Case Study in Community-Led Participatory AI},</br>&nbsp;&nbsp;author={QueerinAI, Organizers Of and Ovalle, Anaelia and Subramonian, Arjun and Singh, Ashwin and Voelcker, Claas and Sutherl, Danica J. and Locatelli, Davide and Breznik, Eva and Klubicka, Filip and Yuan, Hang and Hetvi, J and Zhang, Huan and Shriram, Jaidev and Lehman, Kruno and Soldaini, Luca and Sap, Maarten and Deisenroth, Marc Peter and Pacheco, Maria Leonor and Ryskina, Maria and Mundt, Martin and Agarwal, Milind and McLean, Nyx and Xu, Pan and Pranav, A and Korpan, Raj and Ray, Ruchira and Mathew, Sarah and Arora, Sarthak and John, St and An, Tanvi and Agrawal, Vishakha and Agnew, William and Long, Yanan and Wang, Zijie J. and Talat, Zeerak and Ghosh, Avijit and Dennler, Nathaniel and Noseworthy, Michael and Jha, Sharvani and Baylor, Emily and Joshi, Aditya and Bilenko, Natalia Y. and McNamara, Andrew and Gontijo-Lopes, Raphael and Markham, Alex and Dǒng, Evyn and Kay, Jackie and Saraswat, Manu and Vytla, Nikhil and Stark, Luke},</br>&nbsp;&nbsp;booktitle={FAccT},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={https://dl.acm.org/doi/10.1145/3593013.3594134}</br>}</code>
+<div><code>@inproceedings{OrganizersOfQueerin2023QueerAI,</br>
+&nbsp;&nbsp;title={Queer In AI: A Case Study in Community-Led Participatory AI},</br>
+&nbsp;&nbsp;author={QueerinAI, Organizers Of and Ovalle, Anaelia and Subramonian, Arjun and Singh, Ashwin and Voelcker, Claas and Sutherl, Danica J. and Locatelli, Davide and Breznik, Eva and Klubicka, Filip and Yuan, Hang and Hetvi, J and Zhang, Huan and Shriram, Jaidev and Lehman, Kruno and Soldaini, Luca and Sap, Maarten and Deisenroth, Marc Peter and Pacheco, Maria Leonor and Ryskina, Maria and Mundt, Martin and Agarwal, Milind and McLean, Nyx and Xu, Pan and Pranav, A and Korpan, Raj and Ray, Ruchira and Mathew, Sarah and Arora, Sarthak and John, St and An, Tanvi and Agrawal, Vishakha and Agnew, William and Long, Yanan and Wang, Zijie J. and Talat, Zeerak and Ghosh, Avijit and Dennler, Nathaniel and Noseworthy, Michael and Jha, Sharvani and Baylor, Emily and Joshi, Aditya and Bilenko, Natalia Y. and McNamara, Andrew and Gontijo-Lopes, Raphael and Markham, Alex and Dǒng, Evyn and Kay, Jackie and Saraswat, Manu and Vytla, Nikhil and Stark, Luke},</br>
+&nbsp;&nbsp;booktitle={FAccT},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={https://dl.acm.org/doi/10.1145/3593013.3594134}</br>
+}</code>
 </div>
-<div><code>@article{sorensen2023valueKaleidoscope,</br>&nbsp;&nbsp;title={Value Kaleidoscope: Engaging AI with Pluralistic Human Values, Rights, and Duties},</br>&nbsp;&nbsp;author={Sorensen, Taylor and Jiang, Liwei and Hwang, Jena and Levine, Sydney and Pyatkin, Valentina and West, Peter and Dziri, Nouha and Lu, Ximing and Rao, Kavel and Bhagavatula, Chandra and Sap, Maarten and Tasioulas, John and Choi, Yejin},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2309.00779},</br>&nbsp;&nbsp;journal={arXiv}</br>}</code>
+<div><code>@article{sorensen2023valueKaleidoscope,</br>
+&nbsp;&nbsp;title={Value Kaleidoscope: Engaging AI with Pluralistic Human Values, Rights, and Duties},</br>
+&nbsp;&nbsp;author={Sorensen, Taylor and Jiang, Liwei and Hwang, Jena and Levine, Sydney and Pyatkin, Valentina and West, Peter and Dziri, Nouha and Lu, Ximing and Rao, Kavel and Bhagavatula, Chandra and Sap, Maarten and Tasioulas, John and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2309.00779},</br>
+&nbsp;&nbsp;journal={arXiv}</br>
+}</code>
 </div>
-<div><code>@article{shapira2023cleverHans,</br>&nbsp;&nbsp;title={Clever Hans or Neural Theory of Mind? Stress Testing Social Reasoning in Large Language Models},</br>&nbsp;&nbsp;author={Shapira, Natalie and Levy, Mosh and Seyed Alavi, Hossein and Zhou, Xuhui and Choi, Yejin and Goldberg, Yoav and Sap, Maarten and Shwartz, Vered},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2305.14763},</br>&nbsp;&nbsp;journal={arXiv}</br>}</code>
+<div><code>@article{shapira2023cleverHans,</br>
+&nbsp;&nbsp;title={Clever Hans or Neural Theory of Mind? Stress Testing Social Reasoning in Large Language Models},</br>
+&nbsp;&nbsp;author={Shapira, Natalie and Levy, Mosh and Seyed Alavi, Hossein and Zhou, Xuhui and Choi, Yejin and Goldberg, Yoav and Sap, Maarten and Shwartz, Vered},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2305.14763},</br>
+&nbsp;&nbsp;journal={arXiv}</br>
+}</code>
 </div>
-<div><code>@article{baheti2023LoLRL,</br>&nbsp;&nbsp;title={Improving Language Models with Advantage-based Offline Policy Gradients},</br>&nbsp;&nbsp;author={Baheti, Ashutosh and Lu, Ximing and Brahman, Faeze and Bras, Le Ronan and Sap, Maarten and Riedl, Mark},</br>&nbsp;&nbsp;year={2023},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2305.14718},</br>&nbsp;&nbsp;journal={arXiv}</br>}</code>
+<div><code>@article{baheti2023LoLRL,</br>
+&nbsp;&nbsp;title={Improving Language Models with Advantage-based Offline Policy Gradients},</br>
+&nbsp;&nbsp;author={Baheti, Ashutosh and Lu, Ximing and Brahman, Faeze and Bras, Le Ronan and Sap, Maarten and Riedl, Mark},</br>
+&nbsp;&nbsp;year={2023},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2305.14718},</br>
+&nbsp;&nbsp;journal={arXiv}</br>
+}</code>
 </div>
-<div><code>@journal{sap2022quantifying,</br>&nbsp;&nbsp;title={Quantifying the narrative flow of imagined versus autobiographical stories},</br>&nbsp;&nbsp;author={Sap, Maarten and Jafarpour, Anna and Choi, Yejin and Smith, Noah A. and Pennebaker, James W. and Horvitz, Eric},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;journal={PNAS},</br>&nbsp;&nbsp;url={https://www.pnas.org/doi/10.1073/pnas.2211715119}</br>}</code>
+<div><code>@journal{sap2022quantifying,</br>
+&nbsp;&nbsp;title={Quantifying the narrative flow of imagined versus autobiographical stories},</br>
+&nbsp;&nbsp;author={Sap, Maarten and Jafarpour, Anna and Choi, Yejin and Smith, Noah A. and Pennebaker, James W. and Horvitz, Eric},</br>
+&nbsp;&nbsp;year={2022},</br>
+&nbsp;&nbsp;journal={PNAS},</br>
+&nbsp;&nbsp;url={https://www.pnas.org/doi/10.1073/pnas.2211715119}</br>
+}</code>
 </div>
-<div><code>@inproceedings{kim2022prosocialDialog,</br>&nbsp;&nbsp;title={ProsocialDialog: A Prosocial Backbone for Conversational Agents},</br>&nbsp;&nbsp;author={Kim, Hyunwoo and Yu, Youngjae and Jiang, Liwei and Lu, Ximing and Khashabi, Daniel and Kim, Gunhee and Choi, Yejin and Sap, Maarten},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2205.12688},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;booktitle={EMNLP}</br>}</code>
+<div><code>@inproceedings{kim2022prosocialDialog,</br>
+&nbsp;&nbsp;title={ProsocialDialog: A Prosocial Backbone for Conversational Agents},</br>
+&nbsp;&nbsp;author={Kim, Hyunwoo and Yu, Youngjae and Jiang, Liwei and Lu, Ximing and Khashabi, Daniel and Kim, Gunhee and Choi, Yejin and Sap, Maarten},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2205.12688},</br>
+&nbsp;&nbsp;year={2022},</br>
+&nbsp;&nbsp;booktitle={EMNLP}</br>
+}</code>
 </div>
-<div><code>@inproceedings{sap2022neuralToM,</br>&nbsp;&nbsp;title={Neural Theory-of-Mind? On the Limits of Social Intelligence in Large LMs},</br>&nbsp;&nbsp;author={Sap, Maarten and Bras, Ronan Le and Fried, Daniel and Choi, Yejin},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://aclanthology.org/2022.emnlp-main.248/}</br>}</code>
+<div><code>@inproceedings{sap2022neuralToM,</br>
+&nbsp;&nbsp;title={Neural Theory-of-Mind? On the Limits of Social Intelligence in Large LMs},</br>
+&nbsp;&nbsp;author={Sap, Maarten and Bras, Ronan Le and Fried, Daniel and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2022},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;url={https://aclanthology.org/2022.emnlp-main.248/}</br>
+}</code>
 </div>
-<div><code>@inproceedings{allaway2022countering,</br>&nbsp;&nbsp;title={Towards Countering Essentialism through Social Bias Reasoning},</br>&nbsp;&nbsp;author={Allaway, Emily and Taneja, Nina and Leslie, Sarah-Jane and Sap, Maarten},</br>&nbsp;&nbsp;booktitle={EMNLP workshop on NLP for Positive Impact},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2303.16173},</br>&nbsp;&nbsp;year={2022}</br>}</code>
+<div><code>@inproceedings{allaway2022countering,</br>
+&nbsp;&nbsp;title={Towards Countering Essentialism through Social Bias Reasoning},</br>
+&nbsp;&nbsp;author={Allaway, Emily and Taneja, Nina and Leslie, Sarah-Jane and Sap, Maarten},</br>
+&nbsp;&nbsp;booktitle={EMNLP workshop on NLP for Positive Impact},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2303.16173},</br>
+&nbsp;&nbsp;year={2022}</br>
+}</code>
 </div>
-<div><code>@inproceedings{jin2022ruleBased,</br>&nbsp;&nbsp;title={When to Make Exceptions: Exploring Language Models as Accounts of Human Moral Judgment},</br>&nbsp;&nbsp;author={Jin, Zhijing and Levine, Sydney and Gonzalez Adauto, Fernando and Kamal, Ojasv and Sap, Maarten and Sachan, Mrinmaya and Mihalcea, Rada and Tenenbaum, Joshua B. and Sch\"{o}lkopf, Bernhard},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;booktitle={NeurIPS},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2210.01478}</br>}</code>
+<div><code>@inproceedings{jin2022ruleBased,</br>
+&nbsp;&nbsp;title={When to Make Exceptions: Exploring Language Models as Accounts of Human Moral Judgment},</br>
+&nbsp;&nbsp;author={Jin, Zhijing and Levine, Sydney and Gonzalez Adauto, Fernando and Kamal, Ojasv and Sap, Maarten and Sachan, Mrinmaya and Mihalcea, Rada and Tenenbaum, Joshua B. and Sch\"{o}lkopf, Bernhard},</br>
+&nbsp;&nbsp;year={2022},</br>
+&nbsp;&nbsp;booktitle={NeurIPS},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2210.01478}</br>
+}</code>
 </div>
-<div><code>@inproceedings{sap2022annotatorsWithAttitudes,</br>&nbsp;&nbsp;title={Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection},</br>&nbsp;&nbsp;author={Sap, Maarten and Swayamdipta, Swabha and Vianna, Laura and Zhou, Xuhui and Choi, Yejin and Smith, Noah A.},</br>&nbsp;&nbsp;url={https://aclanthology.org/2022.naacl-main.431/},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;booktitle={NAACL}</br>}</code>
+<div><code>@inproceedings{sap2022annotatorsWithAttitudes,</br>
+&nbsp;&nbsp;title={Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection},</br>
+&nbsp;&nbsp;author={Sap, Maarten and Swayamdipta, Swabha and Vianna, Laura and Zhou, Xuhui and Choi, Yejin and Smith, Noah A.},</br>
+&nbsp;&nbsp;url={https://aclanthology.org/2022.naacl-main.431/},</br>
+&nbsp;&nbsp;year={2022},</br>
+&nbsp;&nbsp;booktitle={NAACL}</br>
+}</code>
 </div>
-<div><code>@inproceedings{ammanabrolu2022galad,</br>&nbsp;&nbsp;title={Aligning to Social Norms and Values in Interactive Narratives},</br>&nbsp;&nbsp;author={Ammanabrolu, Prithviraj and Jiang, Liwei and Sap, Maarten and Hajishirzi, Hanna and Choi, Yejin and Smith, Noah A.},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;booktitle={NAACL},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2205.01975}</br>}</code>
+<div><code>@inproceedings{ammanabrolu2022galad,</br>
+&nbsp;&nbsp;title={Aligning to Social Norms and Values in Interactive Narratives},</br>
+&nbsp;&nbsp;author={Ammanabrolu, Prithviraj and Jiang, Liwei and Sap, Maarten and Hajishirzi, Hanna and Choi, Yejin and Smith, Noah A.},</br>
+&nbsp;&nbsp;year={2022},</br>
+&nbsp;&nbsp;booktitle={NAACL},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2205.01975}</br>
+}</code>
 </div>
-<div><code>@inproceedings{hartvigsen2022toxigen,</br>&nbsp;&nbsp;title={ToxiGen: Controlling Language Models to Generate Implied and Adversarial Toxicity},</br>&nbsp;&nbsp;author={Hartvigsen, Thomas and Gabriel, Saadia and Palangi, Hamid and Sap, Maarten and Ray, Dipankar and Kamar, Ece},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2203.09509}</br>}</code>
+<div><code>@inproceedings{hartvigsen2022toxigen,</br>
+&nbsp;&nbsp;title={ToxiGen: Controlling Language Models to Generate Implied and Adversarial Toxicity},</br>
+&nbsp;&nbsp;author={Hartvigsen, Thomas and Gabriel, Saadia and Palangi, Hamid and Sap, Maarten and Ray, Dipankar and Kamar, Ece},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;year={2022},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2203.09509}</br>
+}</code>
 </div>
-<div><code>@inproceedings{gabriel2022misinfoReactionFrames,</br>&nbsp;&nbsp;title={Misinfo Reaction Frames: Reasoning about Readers' Reactions to News Headlines},</br>&nbsp;&nbsp;author={Gabriel, Saadia and Hallinan, Skyler and Sap, Maarten and Nguyen, Pemi and Roesner, Franziska and Choi, Eunsol and Choi, Yejin},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2104.08790}</br>}</code>
+<div><code>@inproceedings{gabriel2022misinfoReactionFrames,</br>
+&nbsp;&nbsp;title={Misinfo Reaction Frames: Reasoning about Readers' Reactions to News Headlines},</br>
+&nbsp;&nbsp;author={Gabriel, Saadia and Hallinan, Skyler and Sap, Maarten and Nguyen, Pemi and Roesner, Franziska and Choi, Eunsol and Choi, Yejin},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;year={2022},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2104.08790}</br>
+}</code>
 </div>
-<div><code>@inproceedings{wang2022surprising,</br>&nbsp;&nbsp;title={Uncovering Surprising Event Boundaries in Narratives},</br>&nbsp;&nbsp;author={Wang, Zhilin and Jafarpour, Anna and Sap, Maarten},</br>&nbsp;&nbsp;url={https://aclanthology.org/2022.wnu-1.1/},</br>&nbsp;&nbsp;year={2022},</br>&nbsp;&nbsp;booktitle={Workshop on Narrative Understanding}</br>}</code>
+<div><code>@inproceedings{wang2022surprising,</br>
+&nbsp;&nbsp;title={Uncovering Surprising Event Boundaries in Narratives},</br>
+&nbsp;&nbsp;author={Wang, Zhilin and Jafarpour, Anna and Sap, Maarten},</br>
+&nbsp;&nbsp;url={https://aclanthology.org/2022.wnu-1.1/},</br>
+&nbsp;&nbsp;year={2022},</br>
+&nbsp;&nbsp;booktitle={Workshop on Narrative Understanding}</br>
+}</code>
 </div>
-<div><code>@article{jiang2021delphi,</br>&nbsp;&nbsp;title={Can Machines Learn Morality? The Delphi Experiment},</br>&nbsp;&nbsp;author={Jiang, Liwei and Hwang, Jena D and Bhagavatula, Chandra and Bras, Ronan Le and Liang, Jenny and Dodge, Jesse and Sakaguchi, Keisuke and Forbes, Maxwell and Borchardt, Jon and Gabriel, Saadia and Tsvetkov, Yulia and Etzioni, Oren and Sap, Maarten and Rini, Regina and Choi, Yejin},</br>&nbsp;&nbsp;url={https://arxiv.org/abs/2110.07574},</br>&nbsp;&nbsp;year={2021},</br>&nbsp;&nbsp;journal={arXiv}</br>}</code>
+<div><code>@article{jiang2021delphi,</br>
+&nbsp;&nbsp;title={Can Machines Learn Morality? The Delphi Experiment},</br>
+&nbsp;&nbsp;author={Jiang, Liwei and Hwang, Jena D and Bhagavatula, Chandra and Bras, Ronan Le and Liang, Jenny and Dodge, Jesse and Sakaguchi, Keisuke and Forbes, Maxwell and Borchardt, Jon and Gabriel, Saadia and Tsvetkov, Yulia and Etzioni, Oren and Sap, Maarten and Rini, Regina and Choi, Yejin},</br>
+&nbsp;&nbsp;url={https://arxiv.org/abs/2110.07574},</br>
+&nbsp;&nbsp;year={2021},</br>
+&nbsp;&nbsp;journal={arXiv}</br>
+}</code>
 </div>
-<div><code>@inproceedings{dodge2021documentingC4,</br>&nbsp;&nbsp;title={Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus},</br>&nbsp;&nbsp;author={Dodge, Jesse and Sap, Maarten and Marasović, Ana and Agnew, William and Ilharco, Gabriel and Groeneveld, Dirk and Mitchell, Margaret and Gardner, Matt},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://aclanthology.org/2021.emnlp-main.98/},</br>&nbsp;&nbsp;year={2021}</br>}</code>
+<div><code>@inproceedings{dodge2021documentingC4,</br>
+&nbsp;&nbsp;title={Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus},</br>
+&nbsp;&nbsp;author={Dodge, Jesse and Sap, Maarten and Marasović, Ana and Agnew, William and Ilharco, Gabriel and Groeneveld, Dirk and Mitchell, Margaret and Gardner, Matt},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;url={https://aclanthology.org/2021.emnlp-main.98/},</br>
+&nbsp;&nbsp;year={2021}</br>
+}</code>
 </div>
-<div><code>@inproceedings{baheti2021justSayNo,</br>&nbsp;&nbsp;title={Just Say No: Analyzing the Stance of Neural Dialogue Generation in Offensive Contexts},</br>&nbsp;&nbsp;author={Baheti, Ashutosh and Sap, Maarten and Ritter, Alan and Riedl, Mark},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;year={2021},</br>&nbsp;&nbsp;url={https://aclanthology.org/2021.emnlp-main.397/}</br>}</code>
+<div><code>@inproceedings{baheti2021justSayNo,</br>
+&nbsp;&nbsp;title={Just Say No: Analyzing the Stance of Neural Dialogue Generation in Offensive Contexts},</br>
+&nbsp;&nbsp;author={Baheti, Ashutosh and Sap, Maarten and Ritter, Alan and Riedl, Mark},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;year={2021},</br>
+&nbsp;&nbsp;url={https://aclanthology.org/2021.emnlp-main.397/}</br>
+}</code>
 </div>
-<div><code>@phdthesis{sap2021positiveAIwithSocialCommonsenseModels,</br>&nbsp;&nbsp;title={Positive AI with Social Commonsense Models},</br>&nbsp;&nbsp;author={Sap, Maarten},</br>&nbsp;&nbsp;year={2021}</br>}</code>
+<div><code>@phdthesis{sap2021positiveAIwithSocialCommonsenseModels,</br>
+&nbsp;&nbsp;title={Positive AI with Social Commonsense Models},</br>
+&nbsp;&nbsp;author={Sap, Maarten},</br>
+&nbsp;&nbsp;year={2021}</br>
+}</code>
 </div>
-<div><code>@inproceedings{liu2021dexperts,</br>&nbsp;&nbsp;title={DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts},</br>&nbsp;&nbsp;author={Liu, Alisa and Sap, Maarten and Lu, Ximing and Swayamdipta, Swabha and Bhagavatula, Chandra and Smith, Noah A. and Choi, Yejin},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;year={2021},</br>&nbsp;&nbsp;url={https://aclanthology.org/2021.acl-long.522/}</br>}</code>
+<div><code>@inproceedings{liu2021dexperts,</br>
+&nbsp;&nbsp;title={DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts},</br>
+&nbsp;&nbsp;author={Liu, Alisa and Sap, Maarten and Lu, Ximing and Swayamdipta, Swabha and Bhagavatula, Chandra and Smith, Noah A. and Choi, Yejin},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;year={2021},</br>
+&nbsp;&nbsp;url={https://aclanthology.org/2021.acl-long.522/}</br>
+}</code>
 </div>
-<div><code>@inproceedings{xu2021detoxifying,</br>&nbsp;&nbsp;title={Detoxifying Language Models Risks Marginalizing Minority Voices},</br>&nbsp;&nbsp;author={Xu, Albert and Pathak, Eshaan and Wallace, Eric and Gururangan, Suchin and Sap, Maarten and Klein, Dan},</br>&nbsp;&nbsp;booktitle={NAACL},</br>&nbsp;&nbsp;year={2021},</br>&nbsp;&nbsp;url={https://aclanthology.org/2021.naacl-main.190/}</br>}</code>
+<div><code>@inproceedings{xu2021detoxifying,</br>
+&nbsp;&nbsp;title={Detoxifying Language Models Risks Marginalizing Minority Voices},</br>
+&nbsp;&nbsp;author={Xu, Albert and Pathak, Eshaan and Wallace, Eric and Gururangan, Suchin and Sap, Maarten and Klein, Dan},</br>
+&nbsp;&nbsp;booktitle={NAACL},</br>
+&nbsp;&nbsp;year={2021},</br>
+&nbsp;&nbsp;url={https://aclanthology.org/2021.naacl-main.190/}</br>
+}</code>
 </div>
-<div><code>@inproceedings{zhou2021challenges,</br>&nbsp;&nbsp;title={Challenges in Automated Debiasing for Toxic Language Detection},</br>&nbsp;&nbsp;author={Zhou, Xuhui and Sap, Maarten and Swayamdipta, Swabha and Choi, Yejin and Smith, Noah A.},</br>&nbsp;&nbsp;booktitle={EACL},</br>&nbsp;&nbsp;url={https://aclanthology.org/2021.eacl-main.274/},</br>&nbsp;&nbsp;year={2021}</br>}</code>
+<div><code>@inproceedings{zhou2021challenges,</br>
+&nbsp;&nbsp;title={Challenges in Automated Debiasing for Toxic Language Detection},</br>
+&nbsp;&nbsp;author={Zhou, Xuhui and Sap, Maarten and Swayamdipta, Swabha and Choi, Yejin and Smith, Noah A.},</br>
+&nbsp;&nbsp;booktitle={EACL},</br>
+&nbsp;&nbsp;url={https://aclanthology.org/2021.eacl-main.274/},</br>
+&nbsp;&nbsp;year={2021}</br>
+}</code>
 </div>
-<div><code>@inproceedings{ma2020powerTransformer,</br>&nbsp;&nbsp;title={PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction},</br>&nbsp;&nbsp;author={Ma, Xinyao and Sap, Maarten and Rashkin, Hannah and Choi, Yejin},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.emnlp-main.602}</br>}</code>
+<div><code>@inproceedings{ma2020powerTransformer,</br>
+&nbsp;&nbsp;title={PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction},</br>
+&nbsp;&nbsp;author={Ma, Xinyao and Sap, Maarten and Rashkin, Hannah and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2020},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.emnlp-main.602}</br>
+}</code>
 </div>
-<div><code>@inproceedings{gehman2020realtoxicityprompts,</br>&nbsp;&nbsp;title={RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models},</br>&nbsp;&nbsp;author={Gehman, Sam and Gururangan, Suchin and Sap, Maarten and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={Findings of EMNLP},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.findings-emnlp.301/}</br>}</code>
+<div><code>@inproceedings{gehman2020realtoxicityprompts,</br>
+&nbsp;&nbsp;title={RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models},</br>
+&nbsp;&nbsp;author={Gehman, Sam and Gururangan, Suchin and Sap, Maarten and Choi, Yejin and Smith, Noah A},</br>
+&nbsp;&nbsp;year={2020},</br>
+&nbsp;&nbsp;booktitle={Findings of EMNLP},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.findings-emnlp.301/}</br>
+}</code>
 </div>
-<div><code>@inproceedings{forbes2020socialchemistry,</br>&nbsp;&nbsp;title={Social Chemistry 101: Learning to Reason about Social and Moral Norms},</br>&nbsp;&nbsp;author={Forbes, Maxwell and Hwang, Jena D. and Shwartz, Vered and Sap, Maarten and Choi, Yejin},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.emnlp-main.48}</br>}</code>
+<div><code>@inproceedings{forbes2020socialchemistry,</br>
+&nbsp;&nbsp;title={Social Chemistry 101: Learning to Reason about Social and Moral Norms},</br>
+&nbsp;&nbsp;author={Forbes, Maxwell and Hwang, Jena D. and Shwartz, Vered and Sap, Maarten and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2020},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.emnlp-main.48}</br>
+}</code>
 </div>
-<div><code>@inproceedings{sap2020recollectionImagination,</br>&nbsp;&nbsp;title={Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models},</br>&nbsp;&nbsp;author={Sap, Maarten and Horvitz, Eric and Choi, Yejin and Smith, Noah A and Pennebaker, James W.},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.acl-main.178}</br>}</code>
+<div><code>@inproceedings{sap2020recollectionImagination,</br>
+&nbsp;&nbsp;title={Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models},</br>
+&nbsp;&nbsp;author={Sap, Maarten and Horvitz, Eric and Choi, Yejin and Smith, Noah A and Pennebaker, James W.},</br>
+&nbsp;&nbsp;year={2020},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.acl-main.178}</br>
+}</code>
 </div>
-<div><code>@inproceedings{sap2020socialbiasframes,</br>&nbsp;&nbsp;title={Social Bias Frames: Reasoning about Social and Power Implications of Language},</br>&nbsp;&nbsp;author={Sap, Maarten and Gabriel, Saadia and Qin, Lianhui and Jurafsky, Dan and Smith, Noah A and Choi, Yejin},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.acl-main.486}</br>}</code>
+<div><code>@inproceedings{sap2020socialbiasframes,</br>
+&nbsp;&nbsp;title={Social Bias Frames: Reasoning about Social and Power Implications of Language},</br>
+&nbsp;&nbsp;author={Sap, Maarten and Gabriel, Saadia and Qin, Lianhui and Jurafsky, Dan and Smith, Noah A and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2020},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.acl-main.486}</br>
+}</code>
 </div>
-<div><code>@inproceedings{august2020storiesInTheWild,</br>&nbsp;&nbsp;title={Exploring the Effect of Author and Reader Identity in Online Story Writing: the StoriesInTheWild Corpus},</br>&nbsp;&nbsp;author={August, Tal and Sap, Maarten and Clark, Elizabeth and Reinecke, Katharina and Smith, Noah A.},</br>&nbsp;&nbsp;year={2020},</br>&nbsp;&nbsp;booktitle={Workshop on Narrative Understanding, Storylines, and Events (NUSE)@ ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.nuse-1.6}</br>}</code>
+<div><code>@inproceedings{august2020storiesInTheWild,</br>
+&nbsp;&nbsp;title={Exploring the Effect of Author and Reader Identity in Online Story Writing: the StoriesInTheWild Corpus},</br>
+&nbsp;&nbsp;author={August, Tal and Sap, Maarten and Clark, Elizabeth and Reinecke, Katharina and Smith, Noah A.},</br>
+&nbsp;&nbsp;year={2020},</br>
+&nbsp;&nbsp;booktitle={Workshop on Narrative Understanding, Storylines, and Events (NUSE)@ ACL},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/2020.nuse-1.6}</br>
+}</code>
 </div>
-<div><code>@inproceedings{sap2019socialIQa,</br>&nbsp;&nbsp;title={Social IQa: Commonsense Reasoning about Social Interactions},</br>&nbsp;&nbsp;author={Sap, Maarten and Rashkin, Hannah and Chen, Derek and LeBras, Ronan and Choi, Yejin},</br>&nbsp;&nbsp;year={2019},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D19-1454}</br>}</code>
+<div><code>@inproceedings{sap2019socialIQa,</br>
+&nbsp;&nbsp;title={Social IQa: Commonsense Reasoning about Social Interactions},</br>
+&nbsp;&nbsp;author={Sap, Maarten and Rashkin, Hannah and Chen, Derek and LeBras, Ronan and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2019},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D19-1454}</br>
+}</code>
 </div>
-<div><code>@inproceedings{sap2019risk,</br>&nbsp;&nbsp;title={The Risk of Racial Bias in Hate Speech Detection},</br>&nbsp;&nbsp;author={Sap, Maarten and Card, Dallas and Gabriel, Saadia and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;year={2019},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P19-1163.pdf}</br>}</code>
+<div><code>@inproceedings{sap2019risk,</br>
+&nbsp;&nbsp;title={The Risk of Racial Bias in Hate Speech Detection},</br>
+&nbsp;&nbsp;author={Sap, Maarten and Card, Dallas and Gabriel, Saadia and Choi, Yejin and Smith, Noah A},</br>
+&nbsp;&nbsp;year={2019},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P19-1163.pdf}</br>
+}</code>
 </div>
-<div><code>@inproceedings{bosselut2019comet,</br>&nbsp;&nbsp;title={COMET: Commonsense Transformers for Automatic Knowledge Graph Construction},</br>&nbsp;&nbsp;author={Bosselut, Antoine and Rashkin, Hannah and Sap, Maarten and Malaviya, Chaitanya and Celikyilmaz, Asli and Choi, Yejin },</br>&nbsp;&nbsp;year={2019},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P19-1470}</br>}</code>
+<div><code>@inproceedings{bosselut2019comet,</br>
+&nbsp;&nbsp;title={COMET: Commonsense Transformers for Automatic Knowledge Graph Construction},</br>
+&nbsp;&nbsp;author={Bosselut, Antoine and Rashkin, Hannah and Sap, Maarten and Malaviya, Chaitanya and Celikyilmaz, Asli and Choi, Yejin },</br>
+&nbsp;&nbsp;year={2019},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P19-1470}</br>
+}</code>
 </div>
-<div><code>@inproceedings{sap2019atomic,</br>&nbsp;&nbsp;title={ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning},</br>&nbsp;&nbsp;author={Sap, Maarten and LeBras, Ronan and Allaway, Emily and Bhagavatula, Chandra and Lourie, Nicholas and Rashkin, Hannah and Roof, Brendan and Smith, Noah A and Choi, Yejin},</br>&nbsp;&nbsp;year={2019},</br>&nbsp;&nbsp;booktitle={AAAI},</br>&nbsp;&nbsp;url={https://aaai.org/ojs/index.php/AAAI/article/view/4160}</br>}</code>
+<div><code>@inproceedings{sap2019atomic,</br>
+&nbsp;&nbsp;title={ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning},</br>
+&nbsp;&nbsp;author={Sap, Maarten and LeBras, Ronan and Allaway, Emily and Bhagavatula, Chandra and Lourie, Nicholas and Rashkin, Hannah and Roof, Brendan and Smith, Noah A and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2019},</br>
+&nbsp;&nbsp;booktitle={AAAI},</br>
+&nbsp;&nbsp;url={https://aaai.org/ojs/index.php/AAAI/article/view/4160}</br>
+}</code>
 </div>
-<div><code>@inproceedings{rashkin2018modeling,</br>&nbsp;&nbsp;title={Modeling Naive Psychology of Characters in Simple Commonsense Stories},</br>&nbsp;&nbsp;author={Rashkin, Hannah and Bosselut, Antoine and Sap, Maarten and Knight, Kevin and Choi, Yejin},</br>&nbsp;&nbsp;year={2018},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P18-1213}</br>}</code>
+<div><code>@inproceedings{rashkin2018modeling,</br>
+&nbsp;&nbsp;title={Modeling Naive Psychology of Characters in Simple Commonsense Stories},</br>
+&nbsp;&nbsp;author={Rashkin, Hannah and Bosselut, Antoine and Sap, Maarten and Knight, Kevin and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2018},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P18-1213}</br>
+}</code>
 </div>
-<div><code>@inproceedings{rashkin2018event2mind,</br>&nbsp;&nbsp;title={Event2Mind: Commonsense Inference on Events, Intents, and Reactions},</br>&nbsp;&nbsp;author={Rashkin, Hannah and Sap, Maarten and Allaway, Emily and Smith, Noah A. and Choi, Yejin},</br>&nbsp;&nbsp;year={2018},</br>&nbsp;&nbsp;booktitle={ACL},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P18-1043}</br>}</code>
+<div><code>@inproceedings{rashkin2018event2mind,</br>
+&nbsp;&nbsp;title={Event2Mind: Commonsense Inference on Events, Intents, and Reactions},</br>
+&nbsp;&nbsp;author={Rashkin, Hannah and Sap, Maarten and Allaway, Emily and Smith, Noah A. and Choi, Yejin},</br>
+&nbsp;&nbsp;year={2018},</br>
+&nbsp;&nbsp;booktitle={ACL},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/P18-1043}</br>
+}</code>
 </div>
-<div><code>@inproceedings{fang2018soundingboard,</br>&nbsp;&nbsp;title={Sounding Board: A User-Centric and Content-Driven Social Chatbot},</br>&nbsp;&nbsp;author={Fang, Hao and Cheng, Hao and Sap, Maarten and Clark, Elizabeth and Holtzman, Ariel and Choi, Yejin and Smith, Noah A and Ostendorf, Mari},</br>&nbsp;&nbsp;year={2018},</br>&nbsp;&nbsp;booktitle={NAACL System Demonstrations},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/N18-5020}</br>}</code>
+<div><code>@inproceedings{fang2018soundingboard,</br>
+&nbsp;&nbsp;title={Sounding Board: A User-Centric and Content-Driven Social Chatbot},</br>
+&nbsp;&nbsp;author={Fang, Hao and Cheng, Hao and Sap, Maarten and Clark, Elizabeth and Holtzman, Ariel and Choi, Yejin and Smith, Noah A and Ostendorf, Mari},</br>
+&nbsp;&nbsp;year={2018},</br>
+&nbsp;&nbsp;booktitle={NAACL System Demonstrations},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/N18-5020}</br>
+}</code>
 </div>
-<div><code>@inproceedings{schwartz2017dlatk,</br>&nbsp;&nbsp;title={DLATK: Differential Language Analysis ToolKit},</br>&nbsp;&nbsp;author={Schwartz, H Andrew and Giorgi, Salvatore and Sap, Maarten and Crutchley, Patrick and Ungar, Lyle and Eichstaedt, Johannes},</br>&nbsp;&nbsp;booktitle={EMNLP System Demonstrations},</br>&nbsp;&nbsp;pages={55--60},</br>&nbsp;&nbsp;year={2017},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D17-2010}</br>}</code>
+<div><code>@inproceedings{schwartz2017dlatk,</br>
+&nbsp;&nbsp;title={DLATK: Differential Language Analysis ToolKit},</br>
+&nbsp;&nbsp;author={Schwartz, H Andrew and Giorgi, Salvatore and Sap, Maarten and Crutchley, Patrick and Ungar, Lyle and Eichstaedt, Johannes},</br>
+&nbsp;&nbsp;booktitle={EMNLP System Demonstrations},</br>
+&nbsp;&nbsp;pages={55--60},</br>
+&nbsp;&nbsp;year={2017},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D17-2010}</br>
+}</code>
 </div>
-<div><code>@inproceedings{fang2017alexatechreport,</br>&nbsp;&nbsp;title={Sounding Board - University of Washington’s Alexa Prize Submission},</br>&nbsp;&nbsp;author={Fang, Hao and Cheng, Hao and Clark, Elizabeth and Holtzman, Ariel and Sap, Maarten and Ostendorf, Mari and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;booktitle={Alexa Prize Proceedings},</br>&nbsp;&nbsp;year={2017}</br>}</code>
+<div><code>@inproceedings{fang2017alexatechreport,</br>
+&nbsp;&nbsp;title={Sounding Board - University of Washington’s Alexa Prize Submission},</br>
+&nbsp;&nbsp;author={Fang, Hao and Cheng, Hao and Clark, Elizabeth and Holtzman, Ariel and Sap, Maarten and Ostendorf, Mari and Choi, Yejin and Smith, Noah A},</br>
+&nbsp;&nbsp;booktitle={Alexa Prize Proceedings},</br>
+&nbsp;&nbsp;year={2017}</br>
+}</code>
 </div>
-<div><code>@inproceedings{sap2017connotation,</br>&nbsp;&nbsp;title={Connotation Frames of Power and Agency in Modern Films},</br>&nbsp;&nbsp;author={Sap, Maarten and Prasetio, Marcella Cindy and Holtzman, Ari and Rashkin, Hannah and Choi, Yejin},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;year={2017},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D17-1247}</br>}</code>
+<div><code>@inproceedings{sap2017connotation,</br>
+&nbsp;&nbsp;title={Connotation Frames of Power and Agency in Modern Films},</br>
+&nbsp;&nbsp;author={Sap, Maarten and Prasetio, Marcella Cindy and Holtzman, Ari and Rashkin, Hannah and Choi, Yejin},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;year={2017},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D17-1247}</br>
+}</code>
 </div>
-<div><code>@inproceedings{schwartz2017effect,</br>&nbsp;&nbsp;title={The Effect of Different Writing Tasks on Linguistic Style: A Case Study of the ROC Story Cloze Task},</br>&nbsp;&nbsp;author={Schwartz, Roy and Sap, Maarten and Konstas, Ioannis and Zilles, Li and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;booktitle={CoNLL},</br>&nbsp;&nbsp;year={2017},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/K17-1004}</br>}</code>
+<div><code>@inproceedings{schwartz2017effect,</br>
+&nbsp;&nbsp;title={The Effect of Different Writing Tasks on Linguistic Style: A Case Study of the ROC Story Cloze Task},</br>
+&nbsp;&nbsp;author={Schwartz, Roy and Sap, Maarten and Konstas, Ioannis and Zilles, Li and Choi, Yejin and Smith, Noah A},</br>
+&nbsp;&nbsp;booktitle={CoNLL},</br>
+&nbsp;&nbsp;year={2017},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/K17-1004}</br>
+}</code>
 </div>
-<div><code>@inproceedings{schwartz2017story,</br>&nbsp;&nbsp;title={Story Cloze task: UW NLP System},</br>&nbsp;&nbsp;author={Schwartz, Roy and Sap, Maarten and Konstas, Ioannis and Zilles, Li and Choi, Yejin and Smith, Noah A},</br>&nbsp;&nbsp;booktitle={EACL Workshop LSD Sem},</br>&nbsp;&nbsp;pages={52--55},</br>&nbsp;&nbsp;year={2017}</br>}</code>
+<div><code>@inproceedings{schwartz2017story,</br>
+&nbsp;&nbsp;title={Story Cloze task: UW NLP System},</br>
+&nbsp;&nbsp;author={Schwartz, Roy and Sap, Maarten and Konstas, Ioannis and Zilles, Li and Choi, Yejin and Smith, Noah A},</br>
+&nbsp;&nbsp;booktitle={EACL Workshop LSD Sem},</br>
+&nbsp;&nbsp;pages={52--55},</br>
+&nbsp;&nbsp;year={2017}</br>
+}</code>
 </div>
-<div><code>@article{park2017living,</br>&nbsp;&nbsp;title={Living in the Past, Present, and Future: Measuring Temporal Orientation with Language},</br>&nbsp;&nbsp;author={Park, Gregory and Schwartz, H Andrew and Sap, Maarten and Kern, Margaret L and Weingarten, Evan and Eichstaedt, Johannes C and Berger, Jonah and Stillwell, David J and Kosinski, Michal and Ungar, Lyle H and Seligman, Martin E P},</br>&nbsp;&nbsp;journal={Journal of Personality},</br>&nbsp;&nbsp;year={2017}</br>}</code>
+<div><code>@article{park2017living,</br>
+&nbsp;&nbsp;title={Living in the Past, Present, and Future: Measuring Temporal Orientation with Language},</br>
+&nbsp;&nbsp;author={Park, Gregory and Schwartz, H Andrew and Sap, Maarten and Kern, Margaret L and Weingarten, Evan and Eichstaedt, Johannes C and Berger, Jonah and Stillwell, David J and Kosinski, Michal and Ungar, Lyle H and Seligman, Martin E P},</br>
+&nbsp;&nbsp;journal={Journal of Personality},</br>
+&nbsp;&nbsp;year={2017}</br>
+}</code>
 </div>
-<div><code>@article{kern2016gaining,</br>&nbsp;&nbsp;title={Gaining Insights From Social Media Language: Methodologies and Challenges},</br>&nbsp;&nbsp;author={Kern, Margaret L and Park, Gregory and Eichstaedt, Johannes C and Schwartz, H Andrew and Sap, Maarten and Smith, Laura K, and Ungar, Lyle H},</br>&nbsp;&nbsp;year={2016},</br>&nbsp;&nbsp;journal={Psychological Methods},</br>&nbsp;&nbsp;doi={10.1037/met0000091},</br>&nbsp;&nbsp;url={http://dx.doi.org/10.1037/met0000091}</br>}</code>
+<div><code>@article{kern2016gaining,</br>
+&nbsp;&nbsp;title={Gaining Insights From Social Media Language: Methodologies and Challenges},</br>
+&nbsp;&nbsp;author={Kern, Margaret L and Park, Gregory and Eichstaedt, Johannes C and Schwartz, H Andrew and Sap, Maarten and Smith, Laura K, and Ungar, Lyle H},</br>
+&nbsp;&nbsp;year={2016},</br>
+&nbsp;&nbsp;journal={Psychological Methods},</br>
+&nbsp;&nbsp;doi={10.1037/met0000091},</br>
+&nbsp;&nbsp;url={http://dx.doi.org/10.1037/met0000091}</br>
+}</code>
 </div>
-<div><code>@inproceedings{schwartz2016predicting,</br>&nbsp;&nbsp;title={Predicting individual well-being through the language of social media},</br>&nbsp;&nbsp;author={Schwartz, H Andrew and Sap, Maarten and Kern, Margaret L and Eichstaedt, Johannes C and Kapelner, Adam and Agrawal, Megha and Blanco, Eduardo and Dziurzynski, Lukasz and Park, Gregory and Stillwell, David and Kosinski, Michal and Seligman, Martin E P and Ungar, Lyle H},</br>&nbsp;&nbsp;booktitle={Biocomputing 2016: Proceedings of the Pacific Symposium},</br>&nbsp;&nbsp;pages={516--527},</br>&nbsp;&nbsp;year={2016}</br>}</code>
+<div><code>@inproceedings{schwartz2016predicting,</br>
+&nbsp;&nbsp;title={Predicting individual well-being through the language of social media},</br>
+&nbsp;&nbsp;author={Schwartz, H Andrew and Sap, Maarten and Kern, Margaret L and Eichstaedt, Johannes C and Kapelner, Adam and Agrawal, Megha and Blanco, Eduardo and Dziurzynski, Lukasz and Park, Gregory and Stillwell, David and Kosinski, Michal and Seligman, Martin E P and Ungar, Lyle H},</br>
+&nbsp;&nbsp;booktitle={Biocomputing 2016: Proceedings of the Pacific Symposium},</br>
+&nbsp;&nbsp;pages={516--527},</br>
+&nbsp;&nbsp;year={2016}</br>
+}</code>
 </div>
-<div><code>@article{eichstaedt2015psychological,</br>&nbsp;&nbsp;title={Psychological Language on Twitter Predicts County-level Heart Disease Mortality},</br>&nbsp;&nbsp;author={Eichstaedt, Johannes C and Schwartz, H Andrew and Kern, Margaret L and Park, Gregory and Labarthe, Darwin R and Merchant, Raina M and Jha, Sneha and Agrawal, Megha and Dziurzynski, Lukasz A and Sap, Maarten and Weeg, Christopher and Larson, Emily and Ungar, Lyle H and Seligman, Martin E P},</br>&nbsp;&nbsp;journal={Psychological Science},</br>&nbsp;&nbsp;volume={26},</br>&nbsp;&nbsp;number={2},</br>&nbsp;&nbsp;pages={159--169},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;publisher={SAGE Publications}</br>}</code>
+<div><code>@article{eichstaedt2015psychological,</br>
+&nbsp;&nbsp;title={Psychological Language on Twitter Predicts County-level Heart Disease Mortality},</br>
+&nbsp;&nbsp;author={Eichstaedt, Johannes C and Schwartz, H Andrew and Kern, Margaret L and Park, Gregory and Labarthe, Darwin R and Merchant, Raina M and Jha, Sneha and Agrawal, Megha and Dziurzynski, Lukasz A and Sap, Maarten and Weeg, Christopher and Larson, Emily and Ungar, Lyle H and Seligman, Martin E P},</br>
+&nbsp;&nbsp;journal={Psychological Science},</br>
+&nbsp;&nbsp;volume={26},</br>
+&nbsp;&nbsp;number={2},</br>
+&nbsp;&nbsp;pages={159--169},</br>
+&nbsp;&nbsp;year={2015},</br>
+&nbsp;&nbsp;publisher={SAGE Publications}</br>
+}</code>
 </div>
-<div><code>@article{schwartz2015extracting,</br>&nbsp;&nbsp;title={Extracting Human Temporal Orientation from Facebook Language},</br>&nbsp;&nbsp;author={Schwartz, H. Andrew  and  Park, Gregory  and  Sap, Maarten  and  Weingarten, Evan  and  Eichstaedt, Johannes  and  Kern, Margaret  and  Stillwell, David  and  Kosinski, Michal  and  Berger, Jonah  and  Seligman, Martin  and  Ungar, Lyle},</br>&nbsp;&nbsp;booktitle={NAACL},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;url={http://www.aclweb.org/anthology/N15-1044}</br>}</code>
+<div><code>@article{schwartz2015extracting,</br>
+&nbsp;&nbsp;title={Extracting Human Temporal Orientation from Facebook Language},</br>
+&nbsp;&nbsp;author={Schwartz, H. Andrew  and  Park, Gregory  and  Sap, Maarten  and  Weingarten, Evan  and  Eichstaedt, Johannes  and  Kern, Margaret  and  Stillwell, David  and  Kosinski, Michal  and  Berger, Jonah  and  Seligman, Martin  and  Ungar, Lyle},</br>
+&nbsp;&nbsp;booktitle={NAACL},</br>
+&nbsp;&nbsp;year={2015},</br>
+&nbsp;&nbsp;url={http://www.aclweb.org/anthology/N15-1044}</br>
+}</code>
 </div>
-<div><code>@article{preotiuc2015mental,</br>&nbsp;&nbsp;title={Mental Illness Detection at the World Well-Being Project for the CLPsych 2015 Shared Task},</br>&nbsp;&nbsp;author={Preotiuc-Pietro, Daniel and Sap, Maarten and Schwartz, H Andrew and Ungar, Lyle},</br>&nbsp;&nbsp;journal={NAACL Workshop on CLPsych},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/W15-1205}</br>}</code>
+<div><code>@article{preotiuc2015mental,</br>
+&nbsp;&nbsp;title={Mental Illness Detection at the World Well-Being Project for the CLPsych 2015 Shared Task},</br>
+&nbsp;&nbsp;author={Preotiuc-Pietro, Daniel and Sap, Maarten and Schwartz, H Andrew and Ungar, Lyle},</br>
+&nbsp;&nbsp;journal={NAACL Workshop on CLPsych},</br>
+&nbsp;&nbsp;year={2015},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/W15-1205}</br>
+}</code>
 </div>
-<div><code>@article{preotiuc2015role,</br>&nbsp;&nbsp;title={The Role of Personality, Age and Gender in Tweeting about Mental Illnesses},</br>&nbsp;&nbsp;author={Preotiuc-Pietro, Daniel and Eichstaedt, Johannes and Park, Gregory and Sap, Maarten and Smith, Laura and Tobolsky, Victoria and Schwartz, H Andrew and Ungar, Lyle},</br>&nbsp;&nbsp;journal={NAACL Workshop on CLPsych},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/W15-1203}</br>}</code>
+<div><code>@article{preotiuc2015role,</br>
+&nbsp;&nbsp;title={The Role of Personality, Age and Gender in Tweeting about Mental Illnesses},</br>
+&nbsp;&nbsp;author={Preotiuc-Pietro, Daniel and Eichstaedt, Johannes and Park, Gregory and Sap, Maarten and Smith, Laura and Tobolsky, Victoria and Schwartz, H Andrew and Ungar, Lyle},</br>
+&nbsp;&nbsp;journal={NAACL Workshop on CLPsych},</br>
+&nbsp;&nbsp;year={2015},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/W15-1203}</br>
+}</code>
 </div>
-<div><code>@article{wong2015twitter,</br>&nbsp;&nbsp;title={Twitter Sentiment Predicts Affordable Care Act Marketplace Enrollment},</br>&nbsp;&nbsp;author={Wong, Charlene A and Sap, Maarten and Schwartz, Hansen Andrew and Town, Robert and Baker, Tom and Ungar, Lyle and Merchant, Raina M},</br>&nbsp;&nbsp;journal={Journal of Medical Internet Research},</br>&nbsp;&nbsp;volume={17},</br>&nbsp;&nbsp;number={2},</br>&nbsp;&nbsp;year={2015},</br>&nbsp;&nbsp;publisher={JMIR Publications Inc.},</br>&nbsp;&nbsp;url={https://www.jmir.org/2015/2/e51/}</br>}</code>
+<div><code>@article{wong2015twitter,</br>
+&nbsp;&nbsp;title={Twitter Sentiment Predicts Affordable Care Act Marketplace Enrollment},</br>
+&nbsp;&nbsp;author={Wong, Charlene A and Sap, Maarten and Schwartz, Hansen Andrew and Town, Robert and Baker, Tom and Ungar, Lyle and Merchant, Raina M},</br>
+&nbsp;&nbsp;journal={Journal of Medical Internet Research},</br>
+&nbsp;&nbsp;volume={17},</br>
+&nbsp;&nbsp;number={2},</br>
+&nbsp;&nbsp;year={2015},</br>
+&nbsp;&nbsp;publisher={JMIR Publications Inc.},</br>
+&nbsp;&nbsp;url={https://www.jmir.org/2015/2/e51/}</br>
+}</code>
 </div>
-<div><code>@inproceedings{sap2014developing,</br>&nbsp;&nbsp;title={Developing Age and Gender Predictive Lexica over Social Media},</br>&nbsp;&nbsp;author={Sap, Maarten and Park, Gregory and Eichstaedt, Johannes C. and Kern, Margaret L. and Stillwell, David J. and Kosinski, Michal and Ungar, Lyle H. and Schwartz, Hansen Andrew},</br>&nbsp;&nbsp;booktitle={EMNLP},</br>&nbsp;&nbsp;year={2014},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D14-1121/}</br>}</code>
+<div><code>@inproceedings{sap2014developing,</br>
+&nbsp;&nbsp;title={Developing Age and Gender Predictive Lexica over Social Media},</br>
+&nbsp;&nbsp;author={Sap, Maarten and Park, Gregory and Eichstaedt, Johannes C. and Kern, Margaret L. and Stillwell, David J. and Kosinski, Michal and Ungar, Lyle H. and Schwartz, Hansen Andrew},</br>
+&nbsp;&nbsp;booktitle={EMNLP},</br>
+&nbsp;&nbsp;year={2014},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/D14-1121/}</br>
+}</code>
 </div>
-<div><code>@article{schwartz2014towards,</br>&nbsp;&nbsp;title={Towards Assessing Changes in Degree of Depression through Facebook},</br>&nbsp;&nbsp;author={Schwartz, H Andrew and Eichstaedt, Johannes and Kern, Margaret L and Park, Gregory and Sap, Maarten and Stillwell, David and Kosinski, Michal and Ungar, Lyle},</br>&nbsp;&nbsp;journal={ACL Workshop on CLPsych},</br>&nbsp;&nbsp;pages={118--125},</br>&nbsp;&nbsp;year={2014},</br>&nbsp;&nbsp;url={https://www.aclweb.org/anthology/W14-3214}</br>}</code>
+<div><code>@article{schwartz2014towards,</br>
+&nbsp;&nbsp;title={Towards Assessing Changes in Degree of Depression through Facebook},</br>
+&nbsp;&nbsp;author={Schwartz, H Andrew and Eichstaedt, Johannes and Kern, Margaret L and Park, Gregory and Sap, Maarten and Stillwell, David and Kosinski, Michal and Ungar, Lyle},</br>
+&nbsp;&nbsp;journal={ACL Workshop on CLPsych},</br>
+&nbsp;&nbsp;pages={118--125},</br>
+&nbsp;&nbsp;year={2014},</br>
+&nbsp;&nbsp;url={https://www.aclweb.org/anthology/W14-3214}</br>
+}</code>
 </div>
-<div><code>@article{merchant20142013,</br>&nbsp;&nbsp;title={The 2013 US Government Shutdown (#Shutdown) and Health: An Emerging Role for Social Media},</br>&nbsp;&nbsp;author={Merchant, Raina M. and Ha, Yoonhee P. and Wong, Charlene A. and Schwartz, H. Andrew and Sap, Maarten and Ungar, Lyle H. and Asch, David A.},</br>&nbsp;&nbsp;journal={American Journal of Public Health},</br>&nbsp;&nbsp;volume={2014},</br>&nbsp;&nbsp;pages={e1--e3},</br>&nbsp;&nbsp;year={2014},</br>&nbsp;&nbsp;url={https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4232112/}</br>}</code>
+<div><code>@article{merchant20142013,</br>
+&nbsp;&nbsp;title={The 2013 US Government Shutdown (#Shutdown) and Health: An Emerging Role for Social Media},</br>
+&nbsp;&nbsp;author={Merchant, Raina M. and Ha, Yoonhee P. and Wong, Charlene A. and Schwartz, H. Andrew and Sap, Maarten and Ungar, Lyle H. and Asch, David A.},</br>
+&nbsp;&nbsp;journal={American Journal of Public Health},</br>
+&nbsp;&nbsp;volume={2014},</br>
+&nbsp;&nbsp;pages={e1--e3},</br>
+&nbsp;&nbsp;year={2014},</br>
+&nbsp;&nbsp;url={https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4232112/}</br>
+}</code>
 </div>
 
-   
+    </div>
     <!-- Footer -->
      
   <footer class="footer">
@@ -249,7 +641,7 @@
         <div class="col-2 mb-1">
           <div class="text-muted small" style="font-style: italic; text-align: right;">
           Last updated: <br>
-          2022-04-14
+          2023-11-29
           </div>
         </div>
       </div>
@@ -313,7 +705,7 @@
     }
   </style>
   <script>
-    var targ, d;
+    var targ, d, text, h;
     function jumpAndHighlight(){
       targ = window.location.hash;
       if (targ == "")
@@ -324,7 +716,6 @@
       setTimeout(function(){ d.removeClass("highlighted") }, 5000);
     }
     
-    var t;
     $("label.badge>input[type='radio']").on("change", function(e){
       //e.preventDefault();
       t = e.target;
@@ -337,7 +728,18 @@
         $("div.jumptarget."+type).show();
       }
     });
+    function copyCites() {
+      // Get the text field
+      var $temp = $("<textarea>");
+      $("body").append($temp);
+      text = $("#all-cites").text().replace(/\u00a0/g, " ").trim();
+      $temp.val(text).select();
+      
+      document.execCommand("copy");
+      $temp.remove();
+    };
     window.onload = jumpAndHighlight;
+    
   </script>
 </body>
 </html>
