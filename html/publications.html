@@ -31,15 +31,16 @@
         <label class="badge type-badge btn badge-preprint"><input type="radio" value="preprint">preprint</label>
         <label class="badge type-badge btn badge-other"><input type="radio" value="other">other</label>
       </div> 
-      <!--br>
+      <br>
       Filter by year:&nbsp;
       <div class="btn-group btn-group-toggle"  data-toggle="buttons">
         <python generatePubYearRanges>
-      </div-->
+      </div>
     </div>
     <hr>
-    <python generateHTMLpublications>
-   
+    <div id="allPubs">
+      <python generateHTMLpublications>
+    </div>
     <!-- Footer -->
      <python addFooter>
   </div>
@@ -76,6 +77,10 @@
       font-style: italic;
       font-weight: 600;
       color: ForestGreen;
+    }
+    .awards::before{
+      content: "\1F3C5 ";
+      font-style: normal;
     }
     .highlighted {
       background-color: #d8ebff;

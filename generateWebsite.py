@@ -64,10 +64,11 @@ def addFooter(lastEditTime="",parentPath="",**kwargs):
 
 def generatePubYearRanges(**kwargs):
   pubs = loadPubs()
-  tmp = """<label class="badge year-badge btn badge-light active"><input type="radio" value="{y}" checked>{y} <small><em>({n})</em></small></label>"""
+  tmp = """<label class="badge year-badge btn badge-light"><input type="radio" value="{y}">{y} <small><em>({n})</em></small></label>"""
   years = [p["year"] for p in pubs]
   cntYears = Counter(years)
-  out = ""
+  allCnt = sum(cntYears.values())
+  out = """<label class="badge year-badge btn badge-light active"><input type="radio" value="{y}" checked>{y} <small><em>({n})</em></small></label>""".format(y="all",n=allCnt)+"\n"
   for y, n in sorted(cntYears.items(),reverse=True):
     out += tmp.format(y=y,n=n)+"\n"
   return out
