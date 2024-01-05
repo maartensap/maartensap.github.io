@@ -105,9 +105,11 @@
     .badge-preprint {
       background-color: #fbb4ae;
     }
+
+
   </style>
   <script>
-    var targ, d;
+    var targ, d,e, selection, plaintext ;
     function jumpAndHighlight(){
       targ = window.location.hash;
       if (targ == "")
@@ -143,6 +145,23 @@
         $("div.jumptarget."+type).show();
       }
     });
+    $(".citation-box").each(function (i, element){
+      e = element; 
+      element.addEventListener('copy',function(event){
+        d = event;
+        selection = window.getSelection().toString();
+        plainText = selection.replace(/<[^>]+>/g, '').replace(/[\r\n]+$/, ''); // Remove HTML tags
+        event.preventDefault();
+        if (event.clipboardData) {
+          event.clipboardData.setData('text/plain', plainText);
+        } else if (window.clipboardData) {
+          window.clipboardData.setData('Text', plainText);
+        }
+        //event.clipboardData.setData('text/plain', plainText); // Set plain text to clipboard        
+        console.log(event);
+      });
+    });
+    
     window.onload = jumpAndHighlight;
   </script>
 </body>

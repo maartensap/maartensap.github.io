@@ -1306,7 +1306,7 @@ Raina M. Merchant, Yoonhee P. Ha, Charlene A. Wong, H. Andrew Schwartz, <strong>
         <div class="col-2 mb-1">
           <div class="text-muted small" style="font-style: italic; text-align: right;">
           Last updated: <br>
-          2023-12-22
+          2024-01-05
           </div>
         </div>
       </div>
@@ -1376,9 +1376,11 @@ Raina M. Merchant, Yoonhee P. Ha, Charlene A. Wong, H. Andrew Schwartz, <strong>
     .badge-preprint {
       background-color: #fbb4ae;
     }
+
+
   </style>
   <script>
-    var targ, d;
+    var targ, d,e, selection, plaintext ;
     function jumpAndHighlight(){
       targ = window.location.hash;
       if (targ == "")
@@ -1414,6 +1416,23 @@ Raina M. Merchant, Yoonhee P. Ha, Charlene A. Wong, H. Andrew Schwartz, <strong>
         $("div.jumptarget."+type).show();
       }
     });
+    $(".citation-box").each(function (i, element){
+      e = element; 
+      element.addEventListener('copy',function(event){
+        d = event;
+        selection = window.getSelection().toString();
+        plainText = selection.replace(/<[^>]+>/g, '').replace(/[\r\n]+$/, ''); // Remove HTML tags
+        event.preventDefault();
+        if (event.clipboardData) {
+          event.clipboardData.setData('text/plain', plainText);
+        } else if (window.clipboardData) {
+          window.clipboardData.setData('Text', plainText);
+        }
+        //event.clipboardData.setData('text/plain', plainText); // Set plain text to clipboard        
+        console.log(event);
+      });
+    });
+    
     window.onload = jumpAndHighlight;
   </script>
 </body>
