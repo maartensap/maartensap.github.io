@@ -96,7 +96,7 @@ def prepTitleForNonBibTex(title):
 def beautifyBibtex(bibD):
   keysToSkip = ["projecturl","dataurl","equalcontrib","awards","entryType",
                 "title","author","bibKey","venue","updatedurl","updateddate",
-                "news", "codeurl"]
+                "news", "codeurl", "accolade"]
   entryType = bibD["entryType"]
   if entryType in ["preprint", "demo"]:
     entryType = "article"

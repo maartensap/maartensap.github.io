@@ -141,6 +141,9 @@ def generateHTMLpublications(**kwargs):
     # awards
     if "awards" in p:
       out += "<span class=\"awards\">"+p["awards"]+"</span>\n"
+    # accolade
+    if "accolade" in p:
+      out += "<span class=\"accolade\">"+p["accolade"]+"</span>\n"
     out += "</div>\n"
     out += "</div>\n"
   # embed();exit()
