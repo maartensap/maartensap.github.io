@@ -13,6 +13,12 @@ bibtexSpecialChars = {
   "ö": r'\"{o}',
   "ä": r'\"{a}',
 }
+mainAuthor = "Maarten Sap"
+mainAuthorFirst = "Maarten";
+mainAuthorLast = "Sap";
+listOfConferences = ["ACL","NAACL","EMNLP","EACL","CoNLL","AAAI","Findings of EMNLP",
+                     "Findings of ACL", "Findings of NAACL", "NeurIPS","FAccT", "ICLR"]
+listOfJournals = ["Psychological Science", "Psychological Methods"]
 
 def parseBibtex(bib):
   out = {}
@@ -37,12 +43,6 @@ def parseBibtex(bib):
     # print(forMarkdown)
   return out
 
-mainAuthor = "Maarten Sap"
-mainAuthorFirst = "Maarten";
-mainAuthorLast = "Sap";
-listOfConferences = ["ACL","NAACL","EMNLP","EACL","CoNLL","AAAI","Findings of EMNLP",
-                     "Findings of ACL", "Findings of NAACL", "NeurIPS","FAccT"]
-listOfJournals = ["Psychological Science", "Psychological Methods"]
 
 def getPubType(bibD):
   venue = bibD["venue"]
