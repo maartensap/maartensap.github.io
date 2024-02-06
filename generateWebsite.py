@@ -127,7 +127,7 @@ def generateHTMLpublications(**kwargs):
     out+= "</div>\n"
     # bibtex
     out+= f"<div id=\"bibtex{i}\" class=\"collapse bibtex citation-box\">\n"
-    out+= f"<code class=\"bibtex\">{beautifyBibtex(p)}</code>\n"
+    out+= f"<pre class=\"bibtex\">{beautifyBibtex(p)}</pre>\n"
     out+= "</div>\n"
 
     # news
@@ -156,7 +156,7 @@ def generateBibtexPublications(**kwargs):
     # type = getPubType(p)
     
     out+= "<div>"
-    out+= f"<code>{beautifyBibtex(p)}</code>\n"
+    out+= f"<pre>{beautifyBibtex(p)}</pre>\n"
     out+= "</div>\n"
   return out
 

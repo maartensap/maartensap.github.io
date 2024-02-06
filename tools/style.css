@@ -17,7 +17,14 @@ a.citation-toggle {
   margin: 10px;
   display: block;
 }
-
+pre {
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+    margin-bottom: 0em;
+}
 .twitter-timeline-maarten {
     /*width: 28%;
     float: left;
@@ -58,6 +65,7 @@ a.citation-toggle {
   -moz-user-select: all;     /* Firefox 43+ */
   -ms-user-select: all;      /* No support yet */
   user-select: all;          /* Likely future */
+  margin-bottom: 0em;
 }
 .title {
   /*float:left;

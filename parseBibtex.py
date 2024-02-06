@@ -111,6 +111,9 @@ def beautifyBibtex(bibD):
   out = re.sub(r",</br>\n}","</br>\n}",out)
   for c, repl in bibtexSpecialChars.items():
     out = out.replace(c,repl)
+
+  out = out.replace("&nbsp;"," ").replace("</br>","")
+  
   return out
 
 def wordCitation(bibD):
