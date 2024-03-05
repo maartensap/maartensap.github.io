@@ -19,6 +19,10 @@ mainAuthorLast = "Sap";
 listOfConferences = ["ACL","NAACL","EMNLP","EACL","CoNLL","AAAI","Findings of EMNLP",
                      "Findings of ACL", "Findings of NAACL", "NeurIPS","FAccT", "ICLR", "CHI"]
 listOfJournals = ["Psychological Science", "Psychological Methods"]
+keysToSkip = ["projecturl","dataurl","equalcontrib","awards","entryType",
+              "title","author","bibKey","venue","updatedurl","updateddate",
+              "news", "codeurl", "accolade","tags"]
+
 
 def parseBibtex(bib):
   out = {}
@@ -62,9 +66,12 @@ def generatePubTypeBadge(bibD):
   pubType = getPubType(bibD)
   return f'<span class="badge badge-{pubType}">{pubType}</span>'
 
-def parseAuthors(bibD):
+
+def parseAuthors(bibD,reverse_order=False):
   authorList = bibD["author"].split(" and ")
-  authors = [a.split(", ") for a in authorList]
+  authors = [[w.strip() for w in a.split(", ")] for a in authorList]
+  if reverse_order:
+    authors = [list(reversed(a)) for a in authors]
   return authors
 
 def prettifyAuthors(bibD,noBold=False):
@@ -94,9 +101,6 @@ def prepTitleForNonBibTex(title):
   return title
   
 def beautifyBibtex(bibD):
-  keysToSkip = ["projecturl","dataurl","equalcontrib","awards","entryType",
-                "title","author","bibKey","venue","updatedurl","updateddate",
-                "news", "codeurl", "accolade"]
   entryType = bibD["entryType"]
   if entryType in ["preprint", "demo"]:
     entryType = "article"

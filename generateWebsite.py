@@ -73,6 +73,27 @@ def generatePubYearRanges(**kwargs):
     out += tmp.format(y=y,n=n)+"\n"
   return out
 
+def generateTagList(**kwargs):
+  pubs = loadPubs()
+  tags = [t for p in pubs for t in p.get("tags","").split(",") if t]
+  
+  tagsCnts = Counter(tags)
+
+  tmp = """<label class="badge year-badge btn badge-secondary"><input type="radio" value="{y}">{y} <small><em>({n})</em></small></label>"""
+  
+  out = """<label class="badge year-badge btn badge-secondary active"><input type="radio" value="{y}" checked>{y} </label>""".format(y="all")+"\n"
+  
+  for y, n in sorted(tagsCnts.items()):
+    out += tmp.format(y=y,n=n)+"\n"
+  return out
+
+
+def generateTagBadge(tagList):
+  out = [f'<span class="badge badge-secondary">{t}</span>'
+         for t in tagList]
+  
+  return " ".join(out)
+
   
 def generateHTMLpublications(**kwargs):
   out = ""
@@ -85,12 +106,15 @@ def generateHTMLpublications(**kwargs):
     if p["year"] != year:
       year = p["year"]
       out += f'<div class="row"><div class="col-12"><h4 class="year">{year}</h4></div></div>\n'
-    
-    out += f'<div class="row {type} {year} jumptarget" id={p["bibKey"]} style="margin-bottom: 10px;">\n'
+
+    tagList = p.get("tags","").split(",")
+    tagsTxt = " ".join(tagList)
+      
+    out += f'<div class="row {type} {year} {tagsTxt} jumptarget" id={p["bibKey"]} style="margin-bottom: 10px;">\n'
     out += f'<div class="col-12"><h5 style="margin: 15px 0px 5px 0px">{title}</h5>\n'
     # if "neural theory-of-mind" in p["title"].lower():
     #   embed();exit()
-    out += f'{p["venue"]} ({p["year"]})&nbsp;{generatePubTypeBadge(p)}<br>\n'
+    out += f'{p["venue"]} ({p["year"]})&nbsp;{generatePubTypeBadge(p)}&nbsp;{generateTagBadge(tagList)}<br>\n'
 
     out += prettifyAuthors(p)+"</div>"
     
