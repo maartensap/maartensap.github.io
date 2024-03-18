@@ -12,6 +12,7 @@ fieldRE = re.compile(r"(\w+)=\{([^\}]+)},?")
 bibtexSpecialChars = {
   "ö": r'\"{o}',
   "ä": r'\"{a}',
+  'π': r'$\pi$',
 }
 mainAuthor = "Maarten Sap"
 mainAuthorFirst = "Maarten";
@@ -23,6 +24,57 @@ keysToSkip = ["projecturl","dataurl","equalcontrib","awards","entryType",
               "title","author","bibKey","venue","updatedurl","updateddate",
               "news", "codeurl", "accolade","tags"]
 
+special_chars = {
+  '\\': '\\\\',
+  '{': '\\{',
+  '}': '\\}',
+  '[': '\\[',
+  ']': '\\]',
+  '^': '\\^{}',
+  '_': '\\_',
+  '&': '\\&',
+  '~': '\\textasciitilde{}',
+  '%': '\\%',
+  '#': '\\#',
+  '$': '\\$',
+  'Π': '\\Pi',
+  'α': '\\alpha',
+  'β': '\\beta',
+  'γ': '\\gamma',
+  'Γ': '\\Gamma',
+  'δ': '\\delta',
+  'Δ': '\\Delta',
+  'ε': '\\epsilon',
+  'Ε': '\\Epsilon',
+  'ζ': '\\zeta',
+  'η': '\\eta',
+  'θ': '\\theta',
+  'Θ': '\\Theta',
+  'ι': '\\iota',
+  'κ': '\\kappa',
+  'λ': '\\lambda',
+  'Λ': '\\Lambda',
+  'μ': '\\mu',
+  'ν': '\\nu',
+  'ξ': '\\xi',
+  'Ξ': '\\Xi',
+  'ο': '\\omicron',
+  'π': '\\pi',
+  'Π': '\\Pi',
+  'ρ': '\\rho',
+  'σ': '\\sigma',
+  'Σ': '\\Sigma',
+  'τ': '\\tau',
+  'υ': '\\upsilon',
+  'Υ': '\\Upsilon',
+  'φ': '\\phi',
+  'Φ': '\\Phi',
+  'χ': '\\chi',
+  'ψ': '\\psi',
+  'Ψ': '\\Psi',
+  'ω': '\\omega',
+  'Ω': '\\Omega'
+}
 
 def parseBibtex(bib):
   out = {}
@@ -117,7 +169,7 @@ def beautifyBibtex(bibD):
     out = out.replace(c,repl)
 
   out = out.replace("&nbsp;"," ").replace("</br>","")
-  
+
   return out
 
 def wordCitation(bibD):
