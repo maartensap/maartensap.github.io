@@ -4,9 +4,9 @@
 
 Make sure to re-add the intercept_ to the extracted prediction after summing all the weights.
 
-Age lexicon: [./emnlp14age.csv]()
+Age lexicon: [./emnlp14age.csv](./emnlp14age.csv)
 
-Gender lexicon: [./emnlp14gender.csv]()
+Gender lexicon: [./emnlp14gender.csv](./emnlp14gender.csv)
 
 ----
 
