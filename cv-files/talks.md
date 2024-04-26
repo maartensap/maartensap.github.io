@@ -1,5 +1,8 @@
 |                                                              |         |
 | ------------------------------------------------------------ | ------: |
+| <strong style="margin-top: 1em; display: block;">Artificial Social Intelligence? On the challenges of Socially Aware and Ethically informed LLMs</strong> |         |
+| [CMU Agent Workshop 2024](https://cmu-agent-workshop.github.io/) | 05/2024 |
+| [UNC Chapel Hill Symposium on AI and Society](https://cs.unc.edu/event/symposium-on-ai-and-society/) | 04/2024 |
 | <strong style="margin-top: 1em; display: block;">Towards Socially Aware AI with Pragmatic Competence</strong> |         |
 | [ICML workshop on Theory of Mind](https://tomworkshop.github.io/) (*invited speaker*) | 07/2023 |
 | <strong style="margin-top: 1em; display: block;">The Pivotal Role of Social Context in Toxic Language Detection</strong> |         |
