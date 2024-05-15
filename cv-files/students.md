@@ -18,17 +18,16 @@
 | [Julia Mendelsohn](https://juliamendelsohn.github.io/) <span class="pronouns">she/her</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
 | [Sebastin Santy](http://sebastinsanty.com/) <span class="pronouns">he/him</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
 
-
-
 ### Undergraduates &amp; Professional Masters
 |                                                              |                     |                       |
 | ------------------------------------------------------------ | ------------------- | --------------------: |
-| Sanketh Rangreji <span class="pronouns">he/him</span>        | CMU LTI MIIS        | 09/2023&ndash;present |
-| Anubha Kabra <span class="pronouns">she/her</span>           | CMU LTI MIIS        | 09/2023&ndash;present |
-| Devansh Jain <span class="pronouns">he/him</span>            | CMU LTI MIIS        | 09/2023&ndash;present |
-| Priyanshu Kumar <span class="pronouns">he/him</span>         | CMU LTI MIIS        | 09/2023&ndash;present |
-| Abhinav Rao <span class="pronouns">he/him</span>             | CMU LTI MIIS        | 09/2023&ndash;present |
-| Vishwa Shah <span class="pronouns">she/her</span>            | CMU LTI MIIS        | 09/2023&ndash;present |
+| [Zhe Su](https://bugsz.github.io/) <span class="pronouns">he/him</span> | CMU MSML            | 09/2023&ndash;present |
+| [Devansh Jain](https://devanshrj.github.io/) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;present |
+| [Priyanshu Kumar](https://scholar.google.com/citations?user=SHQikPwAAAAJ) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;present |
+| [Abhinav Rao](https://aetherprior.github.io/) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;present |
+| [Vishwa Shah](https://sites.google.com/view/vishwavshah/) <span class="pronouns">she/her</span> | CMU LTI MIIS        | 09/2023&ndash;present |
+| Sanketh Rangreji <span class="pronouns">he/him</span>        | CMU LTI MIIS        | 09/2023&ndash;12/2023 |
+| Anubha Kabra <span class="pronouns">she/her</span>           | CMU LTI MIIS        | 09/2023&ndash;12/2023 |
 | Sravani Nanduri <span class="pronouns">she/her</span> (*<small>co-advised with Liwei Jiang</small>*) | UW CSE BS           | 09/2021&ndash;10/2022 |
 | [Skyler Hallinan](https://skylerhallinan.com/) <span class="pronouns">he/him</span> | UW CSE BS           | 01/2021&ndash;08/2022 |
 | Zhilin Wang <span class="pronouns">he/him</span>             | UW CLMS             | 01/2021&ndash;09/2021 |
