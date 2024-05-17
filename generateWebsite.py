@@ -75,10 +75,11 @@ def generatePubYearRanges(**kwargs):
 
 def generateTagList(**kwargs):
   pubs = loadPubs()
-  tags = [t for p in pubs for t in p.get("tags","").split(",") if t]
+  tags = [t.strip() for p in pubs for t in p.get("tags","").split(",") if t]
   
   tagsCnts = Counter(tags)
-
+  print(tagsCnts)
+  
   tmp = """<label class="badge year-badge btn badge-secondary"><input type="radio" value="{y}">{y} <small><em>({n})</em></small></label>"""
   
   out = """<label class="badge year-badge btn badge-secondary active"><input type="radio" value="{y}" checked>{y} </label>""".format(y="all")+"\n"
