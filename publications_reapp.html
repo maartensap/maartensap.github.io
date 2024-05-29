@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T8EHFV852B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T8EHFV852B');
+</script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Maarten Sap">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="imagesfavicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="imagesfavicon-16x16.png">
+<link rel="manifest" href="tools/site.webmanifest">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  
+  <title>Maarten Sap - Publications</title>
+</head>
+
+<body style="padding-top: 0px;">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container" style="max-width: 80%;">
+    <a class="navbar-brand" href="index.html">Maarten Sap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="publications.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutme.html">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html">CV</a>
+        </li>
+        <!--li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="CVdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CV
+          </a>
+          <div class="dropdown-menu" aria-labelledby="CVdropdown">
+            <a class="dropdown-item" href="cv.html" target="_blank"> html</a>
+            <a class="dropdown-item" href="files/CVMaartenSap.pdf" target="_blank"> pdf <!--img src="images/pdf_icon.png" style="height: 1em;"-></a>
+          </div>
+        </li-->
+        <!--li class="nav-item">
+          <a class="nav-link" href="files/CVMaartenSap.pdf" target="_blank"> <img src="images/pdf_icon_white.png" style="height: 1em;"> CV (pdf)</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html" target="_blank"> CV (html)</a>
+        </li-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Notes/Blogposts
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  <a class="dropdown-item" href="notes/apply-grad-school.html">Applying to grad school</a>
+  <a class="dropdown-item" href="notes/giving-talk-feedback.html">Giving feedback for talks</a>
+  <a class="dropdown-item" href="notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+  <a class="dropdown-item" href="notes/NLGDecoding.pptx">NLGDecoding [pptx]</a>
+  <a class="dropdown-item" href="notes/presenting-your-research.html">Presenting your research</a>
+  <a class="dropdown-item" href="notes/rebuttals.html">Writing rebuttals</a>
+  <a class="dropdown-item" href="notes/turking-tips.html">Turking tips</a>
+</div>
+
+          <!--div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="notes/presenting-your-research.html">Presenting Your Research</a>
+            <a class="dropdown-item" href="notes/apply-grad-school.html">How to Apply to Grad School</a>
+            <a class="dropdown-item" href="notes/seq2seq-tricks.html">Seq2Seq Magic Tips</a>
+            <a class="dropdown-item" href="notes/NLGDecoding.pptx">Tutorial on beam search and NLG decoding [pptx]</a>
+            <a class="dropdown-item" href="notes/turking-tips.html">Tips for Turking</a>
+            <a class="dropdown-item" href="notes/rebuttals.html">Writing rebuttals</a>
+            <a class="dropdown-item"  href="notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+          </div-->
+        </li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+
+  <!-- Page Content -->
+  <div class="container" style="padding-top: 10px; font-weight: 200;">
+    
+    <ol><h4 style="margin-left: 1em;">REFEREED JOURNAL PAPERS - PUBLISHED</h4>
+<li class="pretty">Maarten Sap, Anna Jafarpour, Yejin Choi, Noah A. Smith, James W. Pennebaker & Eric Horvitz (2022) Quantifying the narrative flow of imagined versus autobiographical stories. <em>PNAS</em>.</li>
+<li class="pretty">Gregory Park, H Andrew Schwartz, Maarten Sap, Margaret L Kern, Evan Weingarten, Johannes C Eichstaedt, Jonah Berger, David J Stillwell, Michal Kosinski, Lyle H Ungar & Martin E P Seligman (2017) Living in the Past, Present, and Future: Measuring Temporal Orientation with Language. <em>Journal of Personality</em>.</li>
+<li class="pretty">Margaret L Kern, Gregory Park, Johannes C Eichstaedt, H Andrew Schwartz, Maarten Sap, Laura K, Smith & Lyle H Ungar (2016) Gaining Insights From Social Media Language: Methodologies and Challenges. <em>Psychological Methods</em>.</li>
+<li class="pretty">Johannes C Eichstaedt, H Andrew Schwartz, Margaret L Kern, Gregory Park, Darwin R Labarthe, Raina M Merchant, Sneha Jha, Megha Agrawal, Lukasz A Dziurzynski, Maarten Sap, Christopher Weeg, Emily Larson, Lyle H Ungar & Martin E P Seligman (2015) Psychological Language on Twitter Predicts County-level Heart Disease Mortality. <em>Psychological Science</em> 26(2). SAGE Publications. 159--169.</li>
+<li class="pretty">Charlene A Wong, Maarten Sap, Hansen Andrew Schwartz, Robert Town, Tom Baker, Lyle Ungar & Raina M Merchant (2015) Twitter Sentiment Predicts Affordable Care Act Marketplace Enrollment. <em>Journal of Medical Internet Research</em> 17(2). JMIR Publications Inc.</li>
+<li class="pretty">Raina M. Merchant, Yoonhee P. Ha, Charlene A. Wong, H. Andrew Schwartz, Maarten Sap, Lyle H. Ungar & David A. Asch (2014) The 2013 US Government Shutdown (#Shutdown) and Health: An Emerging Role for Social Media. <em>American Journal of Public Health</em> 2014. e1--e3.</li>
+<h4 style="margin-left: 1em;">REFEREED CONFERENCE/WORKSHOP PAPERS</h4>
+<li class="pretty">Maria Antoniak, Joel Mire, Maarten Sap, Elliott Ash & Andrew Piper (2024) Where Do People Tell Stories Online? Story Detection Across Online Communities. <strong>ACL</strong>.</li>
+<li class="pretty">Akhila Yerukola, Saujas Vadugur, Daniel Fried & Maarten Sap (2024) Is the Pope Catholic? Yes, the Pope is Catholic. Generative Evaluation of Intent Resolution in LLMs. <strong>ACL</strong>.</li>
+<li class="pretty">Kaitlyn Zhou, Jena D Hwang, Xiang Ren & Maarten Sap (2024) Relying on the Unreliable: The Impact of Language Models' Reluctance to Express Uncertainty. <strong>ACL</strong>.</li>
+<li class="pretty">Ruiyi Wang, Haofei Yu, Wenxin Zhang, Zhengyang Qi, Maarten Sap, Graham Neubig, Yonatan Bisk & Hao Zhu (2024) SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents. <strong>ACL</strong>.</li>
+<li class="pretty">Jimin Mun, Cathy Buerger, Jenny T. Liang, Joshua Garland & Maarten Sap (2024) Counterspeakers’ Perspectives: Unveiling Barriers and AI Needs in the Fight against Online Hate. <strong>CHI</strong>.</li>
+<li class="pretty">Natalie Shapira, Mosh Levy, Hossein Seyed Alavi, Xuhui Zhou, Yejin Choi, Yoav Goldberg, Maarten Sap & Vered Shwartz (2024) Clever Hans or Neural Theory of Mind? Stress Testing Social Reasoning in Large Language Models. <strong>EACL</strong>.</li>
+<li class="pretty">Xuhui Zhou, Hao Zhu, Leena Mathur, Ruohong Zhang, Haofei Yu, Zhengyang Qi, Louis-Philippe Morency, Yonatan Bisk, Daniel Fried, Graham Neubig & Maarten Sap (2024) SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents. <strong>ICLR</strong>.</li>
+<li class="pretty">Niloofar Mireshghallah, Hyunwoo Kim, Xuhui Zhou, Yulia Tsvetkov, Maarten Sap, Reza Shokri & Yejin Choi (2024) Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory. <strong>ICLR</strong>.</li>
+<li class="pretty">Ashutosh Baheti, Ximing Lu, Faeze Brahman, Le Ronan Bras, Maarten Sap & Mark Riedl (2024) Leftover-Lunch: Advantage-based Offline Reinforcement Learning for Language Models. <strong>ICLR</strong>.</li>
+<li class="pretty">Taylor Sorensen, Liwei Jiang, Jena Hwang, Sydney Levine, Valentina Pyatkin, Peter West, Nouha Dziri, Ximing Lu, Kavel Rao, Chandra Bhagavatula, Maarten Sap, John Tasioulas & Yejin Choi (2024) Value Kaleidoscope: Engaging AI with Pluralistic Human Values, Rights, and Duties. <strong>AAAI</strong>.</li>
+<li class="pretty">Akhila Yerukola, Xuhui Zhou, Elizabeth Clark & Maarten Sap (2023) ``Don't Take This Out of Context!'' On the Need for Contextual Models and Evaluations for Stylistic Rewriting. <strong>EMNLP</strong>.</li>
+<li class="pretty">Yiming Zhang, Sravani U. Nanduri, Liwei Jiang, Tongshuang Wu & Maarten Sap (2023) BiasX: ``Thinking Slow'' in Toxic Language Annotation with Explanations of Implied Social Biases. <strong>EMNLP</strong>.</li>
+<li class="pretty">Jocelyn Shen, Maarten Sap, Pedro Colon-Hernandez, Hae Won Park & Cynthia Breazeal (2023) Modeling Empathic Similarity in Personal Narratives. <strong>EMNLP</strong>.</li>
+<li class="pretty">Jimin Mun, Emily Allaway, Akhila Yerukola, Laura Vianna, Sarah-Jane Leslie & Maarten Sap (2023) Beyond Denouncing Hate: Strategies for Countering Implied Biases and Stereotypes in Language. <strong>Findings of EMNLP</strong>.</li>
+<li class="pretty">Hyunwoo Kim, Melanie Sclar, Xuhui Zhou, Ronan Le Bras, Gunhee Kim, Yejin Choi & Maarten Sap (2023) FANToM: A Benchmark for Stress-testing Machine Theory of Mind in Interactions. <strong>EMNLP</strong>.</li>
+<li class="pretty">Hyunwoo Kim, Jack Hessel, Liwei Jiang, Peter West, Ximing Lu, Youngjae Yu, Pei Zhou, Ronan Le Bras, Malihe Alikhani, Gunhee Kim, Maarten Sap & Yejin Choi (2023) SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization. <strong>EMNLP</strong>.</li>
+<li class="pretty">Xuhui Zhou, Hao Zhu, Akhila Yerukola, Thomas Davidson, Jena D. Hwang, Swabha Swayamdipta & Maarten Sap (2023) COBRA Frames: Contextual Reasoning about Effects and Harms of Offensive Statements. <strong>Findings of ACL</strong>.</li>
+<li class="pretty">Julia Mendelsohn, Ronan Le Bras, Yejin Choi & Maarten Sap (2023) From Dogwhistles to Bullhorns: Unveiling Coded Rhetoric with Language Models. <strong>ACL</strong>.</li>
+<li class="pretty">Sebastin Santy, Jenny T. Liang, Ronan Le Bras, Katharina Reinecke & Maarten Sap (2023) NLPositionality: Characterizing Design Biases of Datasets and Models. <strong>ACL</strong>.</li>
+<li class="pretty">Skyler Hallinan, Alisa Liu, Yejin Choi & Maarten Sap (2023) Detoxifying Text with MaRCo: Controllable Revision with Experts and Anti-Experts. <strong>ACL</strong>.</li>
+<li class="pretty">Organizers Of QueerinAI, Anaelia Ovalle, Arjun Subramonian, Ashwin Singh, Claas Voelcker, Danica J. Sutherl, Davide Locatelli, Eva Breznik, Filip Klubicka, Hang Yuan, J Hetvi, Huan Zhang, Jaidev Shriram, Kruno Lehman, Luca Soldaini, Maarten Sap, Marc Peter Deisenroth, Maria Leonor Pacheco, Maria Ryskina, Martin Mundt, Milind Agarwal, Nyx McLean, Pan Xu, A Pranav, Raj Korpan, Ruchira Ray, Sarah Mathew, Sarthak Arora, St John, Tanvi An, Vishakha Agrawal, William Agnew, Yanan Long, Zijie J. Wang, Zeerak Talat, Avijit Ghosh, Nathaniel Dennler, Michael Noseworthy, Sharvani Jha, Emily Baylor, Aditya Joshi, Natalia Y. Bilenko, Andrew McNamara, Raphael Gontijo-Lopes, Alex Markham, Evyn Dǒng, Jackie Kay, Manu Saraswat, Nikhil Vytla & Luke Stark (2023) Queer In AI: A Case Study in Community-Led Participatory AI. <strong>FAccT</strong>.</li>
+<li class="pretty">Hyunwoo Kim, Youngjae Yu, Liwei Jiang, Ximing Lu, Daniel Khashabi, Gunhee Kim, Yejin Choi & Maarten Sap (2022) ProsocialDialog: A Prosocial Backbone for Conversational Agents. <strong>EMNLP</strong>.</li>
+<li class="pretty">Maarten Sap, Ronan Le Bras, Daniel Fried & Yejin Choi (2022) Neural Theory-of-Mind? On the Limits of Social Intelligence in Large LMs. <strong>EMNLP</strong>.</li>
+<li class="pretty">Emily Allaway, Nina Taneja, Sarah-Jane Leslie & Maarten Sap (2022) Towards Countering Essentialism through Social Bias Reasoning. <strong>EMNLP workshop on NLP for Positive Impact</strong>.</li>
+<li class="pretty">Zhijing Jin, Sydney Levine, Fernando Gonzalez Adauto, Ojasv Kamal, Maarten Sap, Mrinmaya Sachan, Rada Mihalcea, Joshua B. Tenenbaum & Bernhard Schölkopf (2022) When to Make Exceptions: Exploring Language Models as Accounts of Human Moral Judgment. <strong>NeurIPS</strong>.</li>
+<li class="pretty">Maarten Sap, Swabha Swayamdipta, Laura Vianna, Xuhui Zhou, Yejin Choi & Noah A. Smith (2022) Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection. <strong>NAACL</strong>.</li>
+<li class="pretty">Prithviraj Ammanabrolu, Liwei Jiang, Maarten Sap, Hanna Hajishirzi, Yejin Choi & Noah A. Smith (2022) Aligning to Social Norms and Values in Interactive Narratives. <strong>NAACL</strong>.</li>
+<li class="pretty">Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, Maarten Sap, Dipankar Ray & Ece Kamar (2022) ToxiGen: Controlling Language Models to Generate Implied and Adversarial Toxicity. <strong>ACL</strong>.</li>
+<li class="pretty">Saadia Gabriel, Skyler Hallinan, Maarten Sap, Pemi Nguyen, Franziska Roesner, Eunsol Choi & Yejin Choi (2022) Misinfo Reaction Frames: Reasoning about Readers' Reactions to News Headlines. <strong>ACL</strong>.</li>
+<li class="pretty">Zhilin Wang, Anna Jafarpour & Maarten Sap (2022) Uncovering Surprising Event Boundaries in Narratives. <strong>Workshop on Narrative Understanding</strong>.</li>
+<li class="pretty">Jesse Dodge, Maarten Sap, Ana Marasović, William Agnew, Gabriel Ilharco, Dirk Groeneveld, Margaret Mitchell & Matt Gardner (2021) Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus. <strong>EMNLP</strong>.</li>
+<li class="pretty">Ashutosh Baheti, Maarten Sap, Alan Ritter & Mark Riedl (2021) Just Say No: Analyzing the Stance of Neural Dialogue Generation in Offensive Contexts. <strong>EMNLP</strong>.</li>
+<li class="pretty">Alisa Liu, Maarten Sap, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A. Smith & Yejin Choi (2021) DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts. <strong>ACL</strong>.</li>
+<li class="pretty">Albert Xu, Eshaan Pathak, Eric Wallace, Suchin Gururangan, Maarten Sap & Dan Klein (2021) Detoxifying Language Models Risks Marginalizing Minority Voices. <strong>NAACL</strong>.</li>
+<li class="pretty">Xuhui Zhou, Maarten Sap, Swabha Swayamdipta, Yejin Choi & Noah A. Smith (2021) Challenges in Automated Debiasing for Toxic Language Detection. <strong>EACL</strong>.</li>
+<li class="pretty">Xinyao Ma, Maarten Sap, Hannah Rashkin & Yejin Choi (2020) PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction. <strong>EMNLP</strong>.</li>
+<li class="pretty">Sam Gehman, Suchin Gururangan, Maarten Sap, Yejin Choi & Noah A Smith (2020) RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models. <strong>Findings of EMNLP</strong>.</li>
+<li class="pretty">Maxwell Forbes, Jena D. Hwang, Vered Shwartz, Maarten Sap & Yejin Choi (2020) Social Chemistry 101: Learning to Reason about Social and Moral Norms. <strong>EMNLP</strong>.</li>
+<li class="pretty">Maarten Sap, Eric Horvitz, Yejin Choi, Noah A Smith & James W. Pennebaker (2020) Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models. <strong>ACL</strong>.</li>
+<li class="pretty">Maarten Sap, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith & Yejin Choi (2020) Social Bias Frames: Reasoning about Social and Power Implications of Language. <strong>ACL</strong>.</li>
+<li class="pretty">Tal August, Maarten Sap, Elizabeth Clark, Katharina Reinecke & Noah A. Smith (2020) Exploring the Effect of Author and Reader Identity in Online Story Writing: the StoriesInTheWild Corpus. <strong>Workshop on Narrative Understanding, Storylines, and Events (NUSE)@ ACL</strong>.</li>
+<li class="pretty">Maarten Sap, Hannah Rashkin, Derek Chen, Ronan LeBras & Yejin Choi (2019) Social IQa: Commonsense Reasoning about Social Interactions. <strong>EMNLP</strong>.</li>
+<li class="pretty">Maarten Sap, Dallas Card, Saadia Gabriel, Yejin Choi & Noah A Smith (2019) The Risk of Racial Bias in Hate Speech Detection. <strong>ACL</strong>.</li>
+<li class="pretty">Antoine Bosselut, Hannah Rashkin, Maarten Sap, Chaitanya Malaviya, Asli Celikyilmaz & Yejin Choi (2019) COMET: Commonsense Transformers for Automatic Knowledge Graph Construction. <strong>ACL</strong>.</li>
+<li class="pretty">Maarten Sap, Ronan LeBras, Emily Allaway, Chandra Bhagavatula, Nicholas Lourie, Hannah Rashkin, Brendan Roof, Noah A Smith & Yejin Choi (2019) ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning. <strong>AAAI</strong>.</li>
+<li class="pretty">Hannah Rashkin, Antoine Bosselut, Maarten Sap, Kevin Knight & Yejin Choi (2018) Modeling Naive Psychology of Characters in Simple Commonsense Stories. <strong>ACL</strong>.</li>
+<li class="pretty">Hannah Rashkin, Maarten Sap, Emily Allaway, Noah A. Smith & Yejin Choi (2018) Event2Mind: Commonsense Inference on Events, Intents, and Reactions. <strong>ACL</strong>.</li>
+<li class="pretty">Maarten Sap, Marcella Cindy Prasetio, Ari Holtzman, Hannah Rashkin & Yejin Choi (2017) Connotation Frames of Power and Agency in Modern Films. <strong>EMNLP</strong>.</li>
+<li class="pretty">Roy Schwartz, Maarten Sap, Ioannis Konstas, Li Zilles, Yejin Choi & Noah A Smith (2017) The Effect of Different Writing Tasks on Linguistic Style: A Case Study of the ROC Story Cloze Task. <strong>CoNLL</strong>.</li>
+<li class="pretty">Roy Schwartz, Maarten Sap, Ioannis Konstas, Li Zilles, Yejin Choi & Noah A Smith (2017) Story Cloze task: UW NLP System. <strong>EACL Workshop LSD Sem</strong>. 52--55.</li>
+<li class="pretty">H. Andrew Schwartz, Gregory Park, Maarten Sap, Evan Weingarten, Johannes Eichstaedt, Margaret Kern, David Stillwell, Michal Kosinski, Jonah Berger, Martin Seligman & Lyle Ungar (2015) Extracting Human Temporal Orientation from Facebook Language. <strong>NAACL</strong>.</li>
+<li class="pretty">Daniel Preotiuc-Pietro, Maarten Sap, H Andrew Schwartz & Lyle Ungar (2015) Mental Illness Detection at the World Well-Being Project for the CLPsych 2015 Shared Task. <strong>NAACL Workshop on CLPsych</strong>.</li>
+<li class="pretty">Daniel Preotiuc-Pietro, Johannes Eichstaedt, Gregory Park, Maarten Sap, Laura Smith, Victoria Tobolsky, H Andrew Schwartz & Lyle Ungar (2015) The Role of Personality, Age and Gender in Tweeting about Mental Illnesses. <strong>NAACL Workshop on CLPsych</strong>.</li>
+<li class="pretty">Maarten Sap, Gregory Park, Johannes C. Eichstaedt, Margaret L. Kern, David J. Stillwell, Michal Kosinski, Lyle H. Ungar & Hansen Andrew Schwartz (2014) Developing Age and Gender Predictive Lexica over Social Media. <strong>EMNLP</strong>.</li>
+<li class="pretty">H Andrew Schwartz, Johannes Eichstaedt, Margaret L Kern, Gregory Park, Maarten Sap, David Stillwell, Michal Kosinski & Lyle Ungar (2014) Towards Assessing Changes in Degree of Depression through Facebook. <strong>ACL Workshop on CLPsych</strong>. 118--125.</li>
+<h4 style="margin-left: 1em;">UNREFEREED CONFERENCE/WORKSHOP PAPERS</h4>
+<li class="pretty">Devansh Jain, Priyanshu Kumar, Samuel Gehman, Xuhui Zhou, Thomas Hartvigsen & Maarten Sap (2024) PolygloToxicityPrompts: Multilingual Evaluation of Neural Toxic Degeneration in Large Language Models.</li>
+<li class="pretty">Abhinav Rao, Akhila Yerukola, Vishwa Shah, Katharina Reinecke & Maarten Sap (2024) NormAd: A Benchmark for Measuring the Cultural Adaptability of Large Language Models.</li>
+<li class="pretty">Jimin Mun, Liwei Jiang, Jenny Liang, Inyoung Cheong, Nicole DeCario, Yejin Choi, Tadayoshi Kohno & Maarten Sap (2024) Particip-AI: A Democratic Surveying Framework for Anticipating Future AI Use Cases, Harms and Benefits.</li>
+<li class="pretty">Xuhui Zhou, Zhe Su, Tiwalayo Eisape, Hyunwoo Kim & Maarten Sap (2024) Is This the Real Life? Is This Just Fantasy? The Misleading Success of Simulating Social Interactions With LLMs.</li>
+<li class="pretty">Liwei Jiang, Jena D Hwang, Chandra Bhagavatula, Ronan Le Bras, Jenny Liang, Jesse Dodge, Keisuke Sakaguchi, Maxwell Forbes, Jon Borchardt, Saadia Gabriel, Yulia Tsvetkov, Oren Etzioni, Maarten Sap, Regina Rini & Yejin Choi (2021) Can Machines Learn Morality? The Delphi Experiment.</li>
+<h4 style="margin-left: 1em;">TECHNICAL REPORTS</h4>
+<li class="pretty">Maarten Sap (2021) Positive AI with Social Commonsense Models.</li>
+<li class="pretty">Hao Fang, Hao Cheng, Elizabeth Clark, Ariel Holtzman, Maarten Sap, Mari Ostendorf, Yejin Choi & Noah A Smith (2017) Sounding Board - University of Washington’s Alexa Prize Submission. <strong>Alexa Prize Proceedings</strong>.</li>
+<li class="pretty">H Andrew Schwartz, Maarten Sap, Margaret L Kern, Johannes C Eichstaedt, Adam Kapelner, Megha Agrawal, Eduardo Blanco, Lukasz Dziurzynski, Gregory Park, David Stillwell, Michal Kosinski, Martin E P Seligman & Lyle H Ungar (2016) Predicting individual well-being through the language of social media. <strong>Biocomputing 2016: Proceedings of the Pacific Symposium</strong>. 516--527.</li>
+<h4 style="margin-left: 1em;">SOFTWARE ARTIFACTS</h4>
+<li class="pretty">Maria Antoniak, Anjalie Field, Ji Min Mun, Melanie Walsh, Lauren F. Klein & Maarten Sap (2023) Riveter: Measuring Power and Social Dynamics Between Entities. <strong>ACL demonstrations</strong>.</li>
+<li class="pretty">Hao Fang, Hao Cheng, Maarten Sap, Elizabeth Clark, Ariel Holtzman, Yejin Choi, Noah A Smith & Mari Ostendorf (2018) Sounding Board: A User-Centric and Content-Driven Social Chatbot. <strong>NAACL System Demonstrations</strong>.</li>
+<li class="pretty">H Andrew Schwartz, Salvatore Giorgi, Maarten Sap, Patrick Crutchley, Lyle Ungar & Johannes Eichstaedt (2017) DLATK: Differential Language Analysis ToolKit. <strong>EMNLP System Demonstrations</strong>. 55--60.</li>
+</ol>
+   
+    <!-- Footer -->
+     
+  <footer class="footer">
+    <hr>
+    <div style="width:99%">
+    <!--div class="wraptocenter"-->    
+    <!--div class="col-sm-12">
+        <img src="files/AllenSchool.png" style="width:200px;">
+      </div-->
+      <div class="row">
+        <div class="col-2">
+          
+        </div>
+        <div class="col-8 text-center">
+          <img src="images/LTI-logo.png" style="width:300px; margin-bottom: 20px;">
+        </div>
+        <div class="col-2 mb-1">
+          <div class="text-muted small" style="font-style: italic; text-align: right;">
+          Last updated: <br>
+          2024-05-29
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  </div>
+  <!-- /.container -->
+  
+  <!-- jQuery >
+  <script src="tools/bootstrap/js/jquery.js"></script>
+  
+  <!- Bootstrap Core JavaScript ->
+  <script src="tools/bootstrap/js/bootstrap.min.js"></script-->
+  <style>
+    .in-citation {
+      margin-left: 20px;
+    }
+    .citation-toggle {
+      
+    }
+    .year {
+      font-weight: 100;
+      font-style: italic;
+      text-align: center;
+      margin: .5em 0 0 0;
+    }
+    a.badge.active {
+      border: 1px solid red;
+    }
+    .awards {
+      margin-top: .5em;
+      display: block;
+      font-style: italic;
+      font-weight: 600;
+      color: ForestGreen;
+    }
+    .highlighted {
+      background-color: #d8ebff;
+      box-shadow: 0px 0px 1.5px 1.5px #d8ebff;
+      border-radius: 10px;
+    }
+    .badge-conference {
+      background-color: #decbe4;
+    }
+    .badge-workshop {
+      background-color: #b3cde3;
+    }
+    .badge-demo {
+      background-color: #ffffcc;
+    }
+    .badge-journal {
+      background-color: #ccebc5;
+    }
+    .badge-other {
+      background-color: #fed9a6;
+    }
+    .badge-preprint {
+      background-color: #fbb4ae;
+    }
+    h1,h2,h3,h4,h5 {
+      font-weight: 200;
+      font-style: italic;
+    }
+  </style>
+  <script>
+    var targ, d;
+    function jumpAndHighlight(){
+      targ = window.location.hash;
+      if (targ == "")
+        return ;
+      
+      d = $(targ);
+      d.addClass("highlighted");
+      setTimeout(function(){ d.removeClass("highlighted") }, 5000);
+    }
+    
+    var t;
+    $("label.badge>input[type='radio']").on("change", function(e){
+      //e.preventDefault();
+      t = e.target;
+      var type = e.target.value;
+      console.log(e.target.value);
+      if (type==="all"){
+        $("div.jumptarget").show();
+      } else {
+        $("div.jumptarget").not("."+type).hide();
+        $("div.jumptarget."+type).show();
+      }
+    });
+    window.onload = jumpAndHighlight;
+  </script>
+</body>
+</html>

@@ -185,7 +185,6 @@ def generateBibtexPublications(**kwargs):
     out+= "</div>\n"
   return out
 
-  
 def generateWordFriendlyPublications(**kwargs):
   pubs = loadPubs()
   typeToPubs = {}
@@ -208,6 +207,42 @@ def generateWordFriendlyPublications(**kwargs):
       out+="</li>\n"
       index += 1
     out+="</ol>"
+  return out
+
+
+def generateWordFriendlyPublicationsReapp(**kwargs):
+  pubs = loadPubs()
+  typeToPubs = {}
+  for p in pubs:
+    type = getPubType(p)
+    if type in ["conference", "workshop"]:
+      type = "conference or workshop"
+    typeToPubs[type] = typeToPubs.get(type,[])
+    typeToPubs[type].append(p)
+    
+  order = ["journal","conference or workshop","preprint","other","demo"]
+  prettyHeadings = {
+    "journal": "REFEREED JOURNAL PAPERS - PUBLISHED",
+    "conference or workshop": "REFEREED CONFERENCE/WORKSHOP PAPERS",
+    "preprint": "UNREFEREED CONFERENCE/WORKSHOP PAPERS",
+    "other": "TECHNICAL REPORTS",
+    "demo": "SOFTWARE ARTIFACTS"
+  }
+  out = "<ol>"
+  index = 1
+  for t in order:
+    out+=f'<h4 style="margin-left: 1em;">{prettyHeadings[t]}</h4>\n'
+    # out+=f'<ol start="{index}">'
+    for p in typeToPubs[t]:
+      # out+=f"<p><small><em>{index}.</em></small>&nbsp;"
+      out+=f'<li class="pretty">'
+      # out+=wordCitation(p)
+      out+=reappCitation(p)
+      # out+="</p>\n"
+      out+="</li>\n"
+      index += 1
+    #out+="</ol>"
+  out+="</ol>"
   return out
 
 def loadAffiliations():

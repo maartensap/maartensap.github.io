@@ -172,6 +172,38 @@ def beautifyBibtex(bibD):
 
   return out
 
+def reappCitation(bibD):
+  out = prettifyAuthors(bibD,noBold=True)
+  out += " (" + bibD["year"] + ") "
+  out += bibD["title"]+". "
+
+  # BOLDFACE Book Titles and Conference Proceedings
+  # ITALICIZE Names of Journals
+  if bibD["entryType"] in ["article"]:
+    out += "<em>"+bibD["venue"]+"</em>"
+  elif bibD["entryType"] in ["inproceedings"]:
+    out += "<strong>"+bibD["venue"]+"</strong>"
+  else:
+    print(bibD)
+    
+  # out += f' '+bibD["venue"]
+  if "volume" in bibD:
+    out += " "+bibD["volume"]
+
+  if "number" in bibD:
+    out += "("+ bibD["number"] +")"
+    
+  out += '.'
+  
+  if "publisher" in bibD:
+    out += " "+bibD["publisher"]+"."
+  if "series" in bibD:
+    out += " "+bibD["series"]+"." 
+  if "pages" in bibD:
+    out += " "+bibD["pages"]+"."
+  
+  return out.replace("  "," ").replace("  "," ").replace(". .",".").replace("..",".")
+
 def wordCitation(bibD):
   out = prettifyAuthors(bibD)
   out += " (" + bibD["year"] + ") "
