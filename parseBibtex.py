@@ -258,12 +258,14 @@ def loadPubs():
   entries = ["@"+e.strip() for e in open("pubs.bib").read().split("\n@") if e]
 
   parsedEntries = [parseBibtex(e) for e in entries]
+  
   return parsedEntries
 
 
 if __name__ == "__main__":
   parsedEntries = loadPubs()
   types = {d["bibKey"]: generatePubTypeBadge(d) for d in parsedEntries}
+  noTag = [d for d in parsedEntries if "tags" not in d]
   
   embed()
   
