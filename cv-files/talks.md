@@ -1,5 +1,7 @@
 |                                                              |         |
 | ------------------------------------------------------------ | ------: |
+| <strong style="margin-top: 1em; display: block;">Developing Computational Analyses of the Social Aspects of Narratives</strong> |         |
+| [Princeton Workshop on Narrative Possibilities](https://anthropology.princeton.edu/events/workshop-narrative-possibilities) | 06/2024 |
 | <strong style="margin-top: 1em; display: block;">Artificial Social Intelligence? On the challenges of Socially Aware and Ethically informed LLMs</strong> |         |
 | [CMU Agent Workshop 2024](https://cmu-agent-workshop.github.io/) | 05/2024 |
 | [UNC Chapel Hill Symposium on AI and Society](https://cs.unc.edu/event/symposium-on-ai-and-society/) | 04/2024 |
