@@ -1,11 +1,13 @@
 ### Workshops
 
-|                                                              |                    |            |
-| ------------------------------------------------------------ | ------------------ | ---------: |
-| [Multimodal Content Moderation Workshop](https://multimodal-content-moderation.github.io/) | co-organizer       |  CVPR 2024 |
-| [Multimodal Content Moderation Workshop](https://multimodal-content-moderation.github.io/mmcm23/index.html) | co-organizer       |  CVPR 2023 |
-| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact) | steering committee | EMNLP 2022 |
-| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact/previous-workshops/acl-2021-workshop) | co-organizer       |   ACL 2021 |
+|                                                              |                    |              |
+| ------------------------------------------------------------ | ------------------ | -----------: |
+| [Socially Responsible Language Modelling Research (SoLaR)](https://solar-neurips.github.io/) | co-organizer       | NeurIPS 2024 |
+| [Pluralistic Alignment](https://pluralistic-alignment.github.io/) | co-organizer       | NeurIPS 2024 |
+| [Multimodal Content Moderation Workshop](https://multimodal-content-moderation.github.io/) | co-organizer       |    CVPR 2024 |
+| [Multimodal Content Moderation Workshop](https://multimodal-content-moderation.github.io/mmcm23/index.html) | co-organizer       |    CVPR 2023 |
+| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact) | steering committee |   EMNLP 2022 |
+| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact/previous-workshops/acl-2021-workshop) | co-organizer       |     ACL 2021 |
 
 ### Committees
 
