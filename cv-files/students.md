@@ -1,11 +1,11 @@
 ### PhD & MLT students
 |                                                              |               |                       |
 | ------------------------------------------------------------ | ------------- | --------------------: |
-| [Dan Chechelnitsky](https://chechelnitskd.github.io/) <span class="pronouns">he/him</span> <small>co-advised with [Chrysoula Zerva](https://scholar.google.com/citations?user=S5NGkFsAAAAJ&hl=en&oi=ao)</small> | LTI PhD       | 09/2024&ndash;present |
-| [Mingqian Zheng ](https://eeelisa.github.io/) <span class="pronouns">she/her</span> <small>co-advised with [Carolyn Rosé](https://www.cs.cmu.edu/~cprose/) </small> | LTI PhD       | 09/2024&ndash;present |
+| [Dan Chechelnitsky](https://chechelnitskd.github.io/) <span class="pronouns">he/him</span> <small>(*co-advised with [Chrysoula Zerva](https://scholar.google.com/citations?user=S5NGkFsAAAAJ&hl=en&oi=ao)*)</small> | LTI PhD       | 09/2024&ndash;present |
+| [Mingqian Zheng ](https://eeelisa.github.io/) <span class="pronouns">she/her</span> <small>(*co-advised with [Carolyn Rosé](https://www.cs.cmu.edu/~cprose/)*)</small> | LTI PhD       | 09/2024&ndash;present |
 | [Jocelyn Shen](https://jocelynshen.com/) <span class="pronouns">she/her</span> <small>(*co-advised with [Cynthia Breazeal](https://www.media.mit.edu/people/cynthiab/overview/)*)</small> | MIT Media Lab | 11/2023&ndash;present |
 | [Joel Mire](https://joelmire.notion.site/) <span class="pronouns">he/him</span> | LTI MLT       | 09/2023&ndash;present |
-| [Karina Halevy](https://enscma2.github.io/) <span class="pronouns">she/her</span> <small>(*co-advised with [Mona Diab](https://lti.cs.cmu.edu/people/222228496/mona-diab)*)</small> | LTI PhD       | 09/2023&ndash;present |
+| [Karina Halevy](https://enscma2.github.io/) <span class="pronouns">she/her</span> <small>(*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | LTI PhD       | 09/2023&ndash;present |
 | [Jimin Mun](https://jiminmun.github.io/) <span class="pronouns">she/her</span> | LTI PhD       | 09/2022&ndash;present |
 | [Akhila Yerukola](https://akhila-yerukola.github.io/) <span class="pronouns">she/her</span> | LTI PhD       | 09/2022&ndash;present |
 | [Xuhui Zhou](https://xuhuizhou.github.io/) <span class="pronouns">he/him</span> | LTI PhD       | 09/2022&ndash;present |
