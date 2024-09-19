@@ -60,7 +60,6 @@
 |                                                              |                       |
 | ------------------------------------------------------------ | --------------------: |
 | Member of the Ethics Committee of [AI2's OLMO project](https://allenai.org/olmo) |       09/2023–present |
-| Panelist at the [AAAI Workshop on Responsible Language Models](https://sites.google.com/vectorinstitute.ai/relm2024/) |               02/2024 |
 | [Responsible AI](https://www.cmu.edu/block-center/responsible-ai/index.html) salon on generative AI at CMU |               03/2023 |
 | Presentation to U.S. congressional appropriations committee about risks and implications of AI and LLMs |               03/2023 |
 | [Red-teaming GPT-4](https://cdn.openai.com/papers/gpt-4-system-card.pdf) for OpenAI | 09/2022&ndash;12/2022 |
