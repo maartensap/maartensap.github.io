@@ -12,7 +12,7 @@
 |                                                              |                     |                       |
 | ------------------------------------------------------------ | ------------------- | --------------------: |
 | [Kaitlyn Zhou](https://cs.stanford.edu/~katezhou/) <span class="pronouns">she/her</span> | AI2 Research Intern | 06/2023&ndash;present |
-| [Ashutosh Baheti](https://abaheti95.github.io/) <span class="pronouns">he/him</span> | AI2 Research Intern | 09/2022&ndash;present |
+| [Ashutosh Baheti](https://abaheti95.github.io/) <span class="pronouns">he/him</span> | AI2 Research Intern | 09/2022&ndash;05/2024 |
 | [Yiming Zhang](https://y0mingzhang.github.io/) <span class="pronouns">he/him</span> (*<small>co-advised with [Sherry Tongshuang Wu]()</small>*) | UChicago MS         | 09/2022&ndash;09/2023 |
 | [Athiya Deviyani](https://www.athiyadeviyani.com/) <span class="pronouns">she/her</span> | LTI MSAII           | 09/2022&ndash;09/2023 |
 | [Julia Mendelsohn](https://juliamendelsohn.github.io/) <span class="pronouns">she/her</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
