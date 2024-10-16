@@ -9,6 +9,7 @@
 ### Guest lectures & Tutorials
 |                                                              |                      |             |
 | ------------------------------------------------------------ | -------------------- | ----------: |
+| Social intelligence of LLM agents                            | 05-899 Guest lecture |   Fall 2024 |
 | Bias in Natural Language Processing                          | 66-142 Guest lecture | Spring 2024 |
 | Bias in Natural Language Processing                          | 11-711 Guest Lecture | Spring 2024 |
 | Toxicity in LLMs                                             | 11-667 Guest Lecture |   Fall 2023 |

@@ -1,6 +1,8 @@
 |                                                              |         |
 | ------------------------------------------------------------ | ------: |
 | <strong style="margin-top: 1em; display: block;">Artificial Social Intelligence? On the challenges of Socially Aware and Ethically informed LLMs</strong> |         |
+| University of Pittsburgh CS colloquium                       | 11/2024 |
+| Columbia NLP seminar                                         | 10/2024 |
 | [NAE Frontiers of Engineering](https://www.naefrontiers.org/212813/2024-US-Frontiers-of-Engineering-Symposium) (*invited talk*) | 09/2024 |
 | DSTA Faculty speaker series                                  | 09/2024 |
 | Aptima Brown Bag                                             | 07/2024 |
