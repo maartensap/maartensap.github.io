@@ -5,9 +5,9 @@ import re
 from urllib.parse import urlparse
 
 entryTypeBibKeyRE = re.compile(r"@(\w+)\{(\w+),?")
-titleRE = re.compile(r"title=\{([^\}]+)},?")
-authorRE = re.compile(r"author=\{([^\}]+)},?")
-fieldRE = re.compile(r"(\w+)=\{([^\}]+)},?")
+titleRE = re.compile(r"title\s*=\s*\{([^\}]+)},?")
+authorRE = re.compile(r"author\s*=\s*\{([^\}]+)},?")
+fieldRE = re.compile(r"(\w+)\s*=\s*\{([^\}]+)},?")
 
 bibtexSpecialChars = {
   "ö": r'\"{o}',
