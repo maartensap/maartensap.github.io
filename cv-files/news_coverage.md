@@ -21,6 +21,7 @@
 
 ##### [Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus](websiteRoot/publications.html#dodge2021documentingC4) (2021)
 
+ - [Nature.com](https://web.archive.org/web/20240924194623/https://www.nature.com/articles/s43588-024-00695-4)
  - [washingtonpost.com](https://web.archive.org/web/20230419120558/https://www.washingtonpost.com/technology/interactive/2023/ai-chatbot-learning/)
  - [wired.com](https://web.archive.org/web/20230330110735/https://www.wired.com/story/review-ai-chatbots-bing-bard-chat-gpt/)
  - [wired.com](https://web.archive.org/web/20230314202533/https://www.wired.com/story/efforts-make-text-ai-less-racist-terrible/)
