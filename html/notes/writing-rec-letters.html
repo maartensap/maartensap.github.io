@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <python addHeader>
+  <title>Writing recommendation letters</title>
+</head>
+
+<body>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <python addNavBar>
+  <div class="row justify-content-center" style="background-color:#FFEDD8; width: 100%; margin: 0;">
+
+    <div class="col-7" style="margin-top: 10px;color: #6E9AFA;font-weight: 100; max-width: 800px;min-height: 220px;">
+      <h1 style="  position: absolute;   top: 50%;   -ms-transform: translateY(-50%);  transform: translateY(-60%);">My Process for Writing Recommendation Letters</h1>
+      <em></em>
+    </div>
+    <div class="col-3" style="text-align: center;">
+      <img style="width: 100%; max-width: 400px; margin: auto;"src="websiteRoot/images/recletter.png">
+      </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-10" style="margin-top: 10px;margin-bottom: 20px;" id="content">
+
+
+### Before writing:
+
+- I make sure to get the applicants draft statements, CV, and transcripts.
+- I also ask the applicant to provide me with a set of bullet points that they think I should emphasize in my letter. I haven't perfected this yet, but essentially here's what I tell them:
+  - Please provide me with a list of 3-4 bullet points that make you unique or stand out among the pool of applicants, that I can emphasize in my rec letter.
+  - Strengths can be (a) research-related (e.g., unique research vision, creativity in research, ability to pivot, impressive number of papers, etc.), (b) practical (e.g., efficient coder, proficient writer, etc.), or more interpersonal, DEIB, or service related (e.g., ability to start new collaborations with external or interdisciplinary people, service done during undergrad, etc.)
+  - Each strength you mention should be something that I can reasonably be expected to speak about, either from having direct experience with you or from being able to see it in your CV. Don't mention things that I didn't realistically witness (e.g., if we didn't work together during undergrad, don't mention how independent you were during your undergraduate research because I couldn't really know that... However, you can mention that you were extremely proficient during undergrad which I should be able to gauge from your CV). It's usually more impactful to list strengths that I can speak directly about, since I'll have more material to write about and it'll be more convincing.
+
+### During writing:
+
+I typically start with a general high level structure:
+
+- Intro paragraph
+  - I've been using some scale ranging from things like "I recommend" < "It is my pleasure to recommend" < "I strongly recommend" < "It's my pleasure to strongly recommend" < "it's my utmost pleasure to strongly recommend" < "It's my utmost pleasure to give my strongest (possible) recommendation" etc to give some gradation of the applications.
+  - This might also be a good place to say CV-related things like how many first-author papers they have, what ranking they had in the class, etc.
+- Relationship to the applicant
+  - How long I've worked with them or known them
+  - How we started working together and in what capacity
+  - How often we meet
+- Research done together
+  - As a rule of thumb, I try to not spend more than 2 paragraphs on each main project, and 1 paragraph or less on other projects.
+  - I tend to bold where projects get published here.
+- *Each of the individual strengths I want to emphasize*
+  - Here's where I draw from the research experiences described above and synthesize how the candidate displayed them.
+- (sometimes) personal note: what is the candidate like for more interpersonal things (e.g., "X is a joy to work with")
+- Concluding note
+
+### Other notes:
+
+- Try to put yourself in the mindset of a reader (e.g., person on the PhD committee) who is spending somewhat little time reading these applications. This means, you should emphasize (e.g., bold, paragraph headings) the things you want them to takeaways that answer the question in their mind ("Will this person make a good PhD student?"). So I'll often use phrases like "Another strength of this candidate" or "What will make this candidate a good PhD student is..."
+- I'm not sure if this is true, but I have heard that length of letters matters as well, which I don't know how to feel about... But essentially the more positive things you have to say the longer the letter will be?
+- Writing these letters can take some time! I try to time-box this writing to 2-3h, but sometimes it takes longer (esp. if there are many positive things to say). Starting early is therefore useful, as the number of letters you will write will grow as you get more senior.
+
+
+
+      </div>
+    </div>
+    <python addFooter>
+  </div>
+
+
+</body>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>
+<style>
+h1,h2,h3,h4, .col {
+  font-style: italic;
+}
+html * {
+   font-weight: 200;
+}
+emm{
+  font-weight: 400;
+}
+.good {
+  color: #053061;
+}
+.bad {
+  color: #67001f;
+}
+</style>
