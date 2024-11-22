@@ -6,7 +6,7 @@ import re, os
 import datetime
 from glob import glob
 import pandas as pd
-
+import pickle, json
 import markdown
 
 from collections import Counter
@@ -14,6 +14,9 @@ from collections import Counter
 # import pdfgen
 
 import argparse
+
+from openai import OpenAI
+openai_api_key = "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"
 
 findPythonRE = re.compile(r"<python ([^>]+)>")
 findTitleRE = re.compile(r"<title>(.+)</title>")
@@ -408,25 +411,94 @@ def generateStudentsList(silent=False,**kwargs):
 # embed();exit()
 
 #################################################################
+def loadResearchThemes(fn="cachedThemes.pkl"):
+  try:
+    with open(fn,"rb") as f:
+      themes = pickle.load(f)
+      return themes
+  except:
+    # embed();exit()
+    print(f"no {fn} pickle found")
+    return None, None
+
+    
+def cacheResearchThemes(themes,fn="cachedThemes.pkl"):
+  with open(fn,"wb+") as f:
+    pickle.dump(themes,f)
+
+def comparePubs(p1,p2):
+  def flattenPubs(p):
+    p_ = [i["bibKey"] for i in p]
+    return p_
+  
+  if p1 is None or p2 is None: return False
+  
+  return flattenPubs(p1) == flattenPubs(p2)
+  
 def createResearchThemes(silent=False,year_window=3,**kwargs):
   """Uses GPT-4 to generate research themes"""
-  prompt = """Given the following recent research papers and their general tags, please generate a summary of ongoing research.
-Write 3-4 sentences per theme. Each theme should correspond to a tag.
-
-Paper titles and tags:
-"""
+  themes, oldPubs = loadResearchThemes()
   pubs = loadPubs()
-  recentPubs = [p for p in pubs if int(p["year"]) >= datetime.date.today().year-year_window]
-  tags2papers = {}
-  for p in recentPubs:
-    tags = [t.strip() for t in p["tags"].split(",")]
-    for t in tags:
-      l = tags2papers.get(t,[])
-      l.append(p)
-      tags2papers[t] = l
-  tags2titles = {t: [p["title"] for p in ps] for t,ps in tags2papers.items()}
-  return ""
+  if not (themes or comparePubs(oldPubs,pubs)):
+    print("Recreating themes with GPT-4")
+  
+    recentPubs = [p.copy() for p in pubs if
+                  int(p["year"]) >= datetime.date.today().year-year_window
+                  and p["entryType"] != "thesis"]
+    tags2papers = {}
+    for p in recentPubs:
+      tags = [t.strip() for t in p["tags"].split(",")]
+      p["important"] = ("Sap, Maarten" in " and ".join(p["author"].split(" and ")[-2:])) or ("Sap, Maarten" in " and ".join(p["author"].split(" and ")[:2]))
+
+      for t in tags:
+        l = tags2papers.get(t,[])
+        l.append(p.copy())
+        tags2papers[t] = l
+        
+    tags2titles = {t: [(p["title"],p["important"],p.get("url","")) for p in ps] for t,ps in tags2papers.items()}
+
+    client = OpenAI(api_key=openai_api_key)
+
+    prompt = """Given the following recent research papers and their general tags, please generate a summary of ongoing research.  Each theme should correspond to a tag, but please name the theme something more descriptive. There should be 4-5 themes.
+
+    Please phrase theme desciptions as "My research group explores ..." and theme names in 3-5 words. 
+    Write 4-5 sentences per theme, starting with an overview sentence, and then some sentences about important papers.
+    Mention two or three papers in each description but only mention ones marked as IMPORTANT, and link them in markdown format.
+
+    Make sure one theme is around ethical and responsible AI.
+    Also, make sure one theme is around narrative analyses.
+    Also, make sure there is one theme around social intelligence or social simulations.
+    For other themes, base them on papers.
+
+    Important, DO NOT mention the same paper for each theme. Each important paper may only be used for one theme.
+
+    Paper titles and tags:
+    """
+
+    for t, titles in tags2titles.items():
+      prompt = prompt+"""Tag: {tag}
+  {ts}\n""".format(tag=t,ts="\n".join([("IMPORTANT -- " if i else "")+t+" "+u for t,i, u in titles]))
+
+    prompt += "\nPlease format the output in json {'theme name': 'description'}"
+
+    # embed();exit()
+    chat_completion = client.chat.completions.create(
+      model="gpt-4o-mini",
+      messages=[{"role": "user", "content": prompt}],
+      response_format={ "type": "json_object"}
+    )
+
+    themes = json.loads(chat_completion.choices[0].message.content)
+    cacheResearchThemes((themes,pubs))
+    
+  prettyThemes = "*Extracted by GPT-4, there may be inconsistencies.*\n\n"
+  prettyThemes += "\n".join([f"#### *{t}*\n{desc}\n" for t,desc in themes.items()])
+  print(prettyThemes)
+  
   # embed();exit()
+  
+  return prettyThemes
+  
 
 #################################################################
 def generateNotesFiles(silent=False):

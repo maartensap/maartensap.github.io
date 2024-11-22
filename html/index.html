@@ -7,6 +7,8 @@
   <title>Maarten Sap - Home</title>
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 <body>
   <python addNavBar>
   <!-- Page Content -->
@@ -189,7 +191,9 @@
           <div class="col-12">
             <h2>Overarching Research Themes</h2>
           </div>
-          <python createResearchThemes>
+		  <div class="col-12" id="content">
+<python createResearchThemes>
+	      </div>
           <!--div class="row col-12 text-center">
             <div class="col-12 col-sm-12">
               <div class="card" style="border: solid #1b9e77">
@@ -271,6 +275,7 @@
             
             
           </div-->
+		  
         </div>
         <!-- /.row -->
         
@@ -292,7 +297,7 @@
             
           </div>
         </div>
-
+		
       </div>
       <!--div class="clearfix hidden-sm-up"></div-->
       <!--div class="col-sm-12 col-md-12 col-lg-3">
@@ -345,6 +350,10 @@
 <!-- Footer -->
 <python addFooter>
 </html>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>
 <style>
 .card {
   padding: 0px;

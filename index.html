@@ -33,6 +33,8 @@
   <title>Maarten Sap - Home</title>
 </head>
 
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 <body>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container" style="max-width: 80%;">
@@ -291,7 +293,22 @@ Excited to attend <a target="_blank" href="https://colmweb.org/">COLM</a> at UPe
           <div class="col-12">
             <h2>Overarching Research Themes</h2>
           </div>
-          
+		  <div class="col-12" id="content">
+*Extracted by GPT-4, there may be inconsistencies.*
+
+#### *Ethics in AI Development*
+My research group explores the complex dimensions of ethical AI and its implications for society. One of our pivotal works, [HAICOSYSTEM: An Ecosystem for Sandboxing Safety Risks in Human-AI Interactions](http://arxiv.org/abs/2409.16427), introduces a framework designed to simulate potential safety risks associated with human-AI interactions. We also investigate the balance between usability and ethical considerations through our paper, [AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents](https://arxiv.org/abs/2409.09013), which highlights the dilemmas faced by LLMs in delivering truthful responses. Our efforts culminate in [Particip-AI: A Democratic Surveying Framework](https://arxiv.org/abs/2403.14791) that aims to engage a broader audience in discussions of future AI applications and their impacts.
+
+#### *Narrative Dynamics in AI*
+My research group explores the way narratives are constructed and perceived through AI technologies. We delve into emotional resonance in storytelling with our important study, [HEART-felt Narratives: Tracing Empathy and Narrative Style in Personal Stories with LLMs](https://arxiv.org/abs/2405.17633), which examines how narrative styles can evoke empathy. Additionally, our work, [Modeling Empathic Similarity in Personal Narratives](https://arxiv.org/abs/2305.14246), quantifies connections between audiences and narratives, enriching our understanding of storytelling mechanics. Another significant contribution, [Quantifying the narrative flow of imagined versus autobiographical stories](https://www.pnas.org/doi/10.1073/pnas.2211715119), provides insights into how different types of personal stories affect listener engagement.
+
+#### *Social Intelligence and Simulation*
+My research group explores how social intelligence can be embedded and evaluated in language models. We critically assess the limitations of simulating genuine interpersonal engagements in our study, [Is This the Real Life? Is This Just Fantasy? The Misleading Success of Simulating Social Interactions With LLMs](http://arxiv.org/abs/2403.05020), which reveals the gaps between simulated responses and authentic human communication. To foster more effective models, we research the efficacy of context in understanding social dynamics through [Clever Hans or Neural Theory of Mind? Stress Testing Social Reasoning in Large Language Models](https://arxiv.org/abs/2305.14763). Our ongoing efforts also led to [SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents](https://arxiv.org/abs/2310.11667), which advances the measures of social reasoning capabilities among AI agents.
+
+#### *Addressing Toxic Language*
+My research group explores the pressing challenges in mitigating toxic language generation within AI systems. We highlight multilingual aspects of this issue with our notable study, [PolygloToxicityPrompts: Multilingual Evaluation of Neural Toxic Degeneration in Large Language Models](https://arxiv.org/abs/2405.09373), which scrutinizes how toxic content manifests across languages. Another critical observation is presented in [Counterspeakers’ Perspectives: Unveiling Barriers and AI Needs in the Fight against Online Hate](https://arxiv.org/abs/2403.00179), offering insights into the requirements for combating hate speech effectively. Additionally, our work, [Leftover-Lunch: Advantage-based Offline Reinforcement Learning for Language Models](https://arxiv.org/abs/2305.14718), investigates reinforcement learning strategies to enhance ethical dialogue generation.
+
+	      </div>
           <!--div class="row col-12 text-center">
             <div class="col-12 col-sm-12">
               <div class="card" style="border: solid #1b9e77">
@@ -373,6 +390,7 @@ Excited to attend <a target="_blank" href="https://colmweb.org/">COLM</a> at UPe
             
             
           </div-->
+		  
         </div>
         <!-- /.row -->
         
@@ -394,7 +412,7 @@ Excited to attend <a target="_blank" href="https://colmweb.org/">COLM</a> at UPe
             
           </div>
         </div>
-
+		
       </div>
       <!--div class="clearfix hidden-sm-up"></div-->
       <!--div class="col-sm-12 col-md-12 col-lg-3">
@@ -472,6 +490,10 @@ Excited to attend <a target="_blank" href="https://colmweb.org/">COLM</a> at UPe
 
 
 </html>
+<script>
+  document.getElementById('content').innerHTML =
+    marked.parse(document.getElementById('content').innerHTML);
+</script>
 <style>
 .card {
   padding: 0px;
