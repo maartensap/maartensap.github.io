@@ -408,6 +408,27 @@ def generateStudentsList(silent=False,**kwargs):
 # embed();exit()
 
 #################################################################
+def createResearchThemes(silent=False,year_window=3,**kwargs):
+  """Uses GPT-4 to generate research themes"""
+  prompt = """Given the following recent research papers and their general tags, please generate a summary of ongoing research.
+Write 3-4 sentences per theme. Each theme should correspond to a tag.
+
+Paper titles and tags:
+"""
+  pubs = loadPubs()
+  recentPubs = [p for p in pubs if int(p["year"]) >= datetime.date.today().year-year_window]
+  tags2papers = {}
+  for p in recentPubs:
+    tags = [t.strip() for t in p["tags"].split(",")]
+    for t in tags:
+      l = tags2papers.get(t,[])
+      l.append(p)
+      tags2papers[t] = l
+  tags2titles = {t: [p["title"] for p in ps] for t,ps in tags2papers.items()}
+  return ""
+  # embed();exit()
+
+#################################################################
 def generateNotesFiles(silent=False):
   notesFiles = glob("html/notes/*.html")
   for ffn in notesFiles:
