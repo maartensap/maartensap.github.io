@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
-
 <head>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-T8EHFV852B"></script>
@@ -29,11 +29,11 @@
 <link rel="icon" type="image/png" sizes="16x16" href="imagesfavicon-16x16.png">
 <link rel="manifest" href="tools/site.webmanifest">
 <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="stylesheet" type="text/css" href="tools/style.css">
-  <title>Maarten Sap - DEI &amp; Service</title>
+  
+  <title>Maarten Sap - CV</title>
 </head>
-<body>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<body style="padding-top: 0px;">
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container" style="max-width: 80%;">
     <a class="navbar-brand" href="index.html">Maarten Sap</a>
@@ -101,38 +101,38 @@
     </div>  
   </div>
 </nav>
-   
-  <div class="row justify-content-center" style="background-color:  #F0F8FF; min-height: 140px;margin: 0;">
-    
-    <div class="col-6" style="font-weight: 100; max-width: 660px; vertical-align: text-bottom; position: relative;">
-      <h1 style="  position: absolute;   top: 50%;   -ms-transform: translateY(-50%);  transform: translateY(-50%);">Service, Leadership, DEI</h1>
-      <!--em>Based on my own experience with Amazon Mechanical Turk and valuable advice from my lab members.</em-->
-    </div>
-    <div class="col-3" style="text-align: center; position: relative;">
-      <img style="max-width: 100%; max-height: 100%; margin: auto; left: 0; bottom: 0; right: 0; position: absolute;"src="images/DEI-hands.png">
-    </div>
-  </div>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-11" style="margin-top: 10px;margin-bottom: 20px;" id="content">
-Working with a diverse set of collaborators has confirmed my belief that <emm>anyone has the potential to become a great computer scientist</emm>, and that there is <emm>great strength in bringing together people from different backgrounds and cultures or with different identities</emm>. 
-For this reason, it is <emm>crucial to dismantle barriers to diversity in computer science</emm> (e.g., lack of role models, stereotypical culture),
-which I have made a priority during my graduate studies at the University of Washington's (UW) Allen School of Computer Science &amp; Engineering. 
-As a professor, I plan to continue my efforts to increase diversity and belonging in computer science in three different directions, drawing on my past experience:
-- <emm>Broadening Participation Through Advising and Outreach</emm> – mentorship and outreach to
-support and recruit women, students of color, and LGBTQ+ students
-- <emm>Positive Societal Impact Through Research</emm> – research and workshop organization to promote
-fairness, justice, and ethics in artificial intelligence
-- <emm>Supportive and Inclusive Environment Through Structural Change</emm> – departmental service,
-research community leadership, and community organization 
 
-In all my efforts, I strive to use evidence-based practices and center experiences from historically
-underrepresented groups (including, when relevant, my own as an out LGBTQ+ person).
+  <!-- Page Content -->
+  <div class="container" style="padding-top: 10px;font-weight: 200;">
+    <h1Teaching</h1>
+      <div id="teaching">
+### Courses
+||||
+|-|-|-:|
+|[11-430/830 Ethics, Safety, and Social Impact in NLP and LLMs](https://maartensap.com/11830/Spring2025/)||Spring 2025|
+|[11-361 Data Science Seminar](https://mcds-cmu.github.io/11631/f24/)||Fall 2024|
+|[11-830 Ethics, Social Biases, and Positive Impact in Language Technologies](http://maartensap.com/11830/Spring2024)||Spring 2024|
+|[11-361 Data Science Seminar](https://mcds-cmu.github.io/11631/f23/)||Fall 2023|
+| [11-830 Computational Ethics](http://maartensap.com/11-830-Spring2023/) | | Spring 2023 |
 
-For more detailed information, please see my [diversity statement](files/2020jobsearch/maarten_diversity_statement.pdf).
-      </div>
-    </div>
-  
+### Guest lectures & Tutorials
+|                                                              |                      |             |
+| ------------------------------------------------------------ | -------------------- | ----------: |
+| Social intelligence of LLM agents                            | 05-899 Guest lecture |   Fall 2024 |
+| Bias in Natural Language Processing                          | 66-142 Guest lecture | Spring 2024 |
+| Bias in Natural Language Processing                          | 11-711 Guest Lecture | Spring 2024 |
+| Toxicity in LLMs                                             | 11-667 Guest Lecture |   Fall 2023 |
+| Bias in Natural Language Processing                          | 11-711 Guest Lecture |   Fall 2023 |
+| Bias in Natural Language Processing                          | 05-899 Guest Lecture | Spring 2023 |
+| Bias in Natural Language Processing                          | 15-884 Guest Lecture |   Fall 2022 |
+| "[Crowdsourcing Beyond Annotation](https://nlp-crowdsourcing.github.io/)" | Tutorial             |  EMNLP 2021 |
+| "[Commonsense Reasoning in Natural Language Processing](./acl2020-commonsense/index.html)" | Tutorial             |    ACL 2020 |
+
+      </div> 
+
+    <!--python generateTalksList-->
+    <!-- Footer -->
+     
   <footer class="footer">
     <hr>
     <div style="width:99%">
@@ -150,7 +150,7 @@ For more detailed information, please see my [diversity statement](files/2020job
         <div class="col-2 mb-1">
           <div class="text-muted small" style="font-style: italic; text-align: right;">
           Last updated: <br>
-          2024-07-15
+          2024-12-03
           </div>
         </div>
       </div>
@@ -158,23 +158,113 @@ For more detailed information, please see my [diversity statement](files/2020job
   </footer>
 
 
-
   </div>
+  <!-- /.container -->
+  
+  <!-- jQuery >
+  <script src="tools/bootstrap/js/jquery.js"></script>
+  
+  <!- Bootstrap Core JavaScript ->
+  <script src="tools/bootstrap/js/bootstrap.min.js"></script-->
+
+  <script>
+    var targ, d;
+    function jumpAndHighlight(){
+      targ = window.location.hash;
+      if (targ == "")
+        return ;
+      
+      d = $(targ);
+      d.addClass("highlighted");
+      setTimeout(function(){ d.removeClass("highlighted") }, 5000);
+    }
     
+    var t;
+    $("label.badge>input[type='radio']").on("change", function(e){
+      //e.preventDefault();
+      t = e.target;
+      var type = e.target.value;
+      console.log(e.target.value);
+      if (type==="all"){
+        $("div.jumptarget").show();
+      } else {
+        $("div.jumptarget").not("."+type).hide();
+        $("div.jumptarget."+type).show();
+      }
+    });
+    window.onload = jumpAndHighlight;
+  </script>
 </body>
+</html>
+
 <script>
-  document.getElementById('content').innerHTML =
-    marked.parse(document.getElementById('content').innerHTML);
+   //document.getElementById('content').innerHTML =
+    // marked.parse(document.getElementById('content').innerHTML);
+   //$("#content").html(marked.parse($("#content").html()));
+   $(".markdown").each(function (i,e){e.innerHTML = marked.parse(e.innerHTML)})
+
 </script>
+
 <style>
-h1,h2,h3,h4, .col {
-  font-style: italic;
-}
-html * {
-   font-weight: 200;
-}
-emm{
-  font-weight: 400;
-  font-style: italic;
-}
+  h1,h2,h3,h4,h5 {
+    font-weight: 200;
+    margin-top: 1em;
+    font-style: italic;
+  }
+  h2 {
+    border-left: solid grey .1em;
+    padding: .1em;
+  }
+  small {
+    font-weight: 200;
+  }
+  .in-citation {
+    margin-left: 20px;
+  }
+  .citation-toggle {
+    
+  }
+  table {
+    width:100%;
+  }
+
+  .year {
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    margin: .5em 0 0 0;
+  }
+  a.badge.active {
+    border: 1px solid red;
+  }
+  .awards {
+    margin-top: .5em;
+    display: block;
+    font-style: italic;
+    font-weight: 600;
+    color: ForestGreen;
+  }
+  .highlighted {
+    background-color: #d8ebff;
+    box-shadow: 0px 0px 1.5px 1.5px #d8ebff;
+    border-radius: 10px;
+  }
+  .badge-conference {
+    background-color: #decbe4;
+  }
+  .badge-workshop {
+    background-color: #b3cde3;
+  }
+  .badge-demo {
+    background-color: #ffffcc;
+  }
+  .badge-journal {
+    background-color: #ccebc5;
+  }
+  .badge-other {
+    background-color: #fed9a6;
+  }
+  .badge-preprint {
+    background-color: #fbb4ae;
+  }
 </style>

@@ -1,6 +1,7 @@
 ### Courses
 ||||
 |-|-|-:|
+|[11-430/830 Ethics, Safety, and Social Impact in NLP and LLMs](https://maartensap.com/11830/Spring2025/)||Spring 2025|
 |[11-361 Data Science Seminar](https://mcds-cmu.github.io/11631/f24/)||Fall 2024|
 |[11-830 Ethics, Social Biases, and Positive Impact in Language Technologies](http://maartensap.com/11830/Spring2024)||Spring 2024|
 |[11-361 Data Science Seminar](https://mcds-cmu.github.io/11631/f23/)||Fall 2023|
