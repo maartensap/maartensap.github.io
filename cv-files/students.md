@@ -25,11 +25,19 @@
 
 |                                                              |                     |                       |
 | ------------------------------------------------------------ | ------------------- | --------------------: |
-| Jiarui Liu <span class="pronouns">he/him</span> <small>(*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | CMU MLT             | 02/2024&ndash;present |
-| Wenkai Li <span class="pronouns">he/him</span><small> (*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | CMU MIIS            | 02/2024&ndash;present |
+| Neel Bhandari <span class="pronouns">he/him</span> | CMU LTI MIIS | 08/2024&ndash;present |
+| Tiya Cao <span class="pronouns">she/her</span> | CMU LTI MIIS | 08/2024&ndash;present |
+| Jenna Godsey <span class="pronouns">she/her</span> | CMU BS | 08/2024&ndash;present |
+| Bruno Neira <span class="pronouns">he/him</span> | CMU BS | 08/2024&ndash;present |
+| Kshitish Ghate <span class="pronouns">he/him</span><small> (*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | CMU LTI MLT | 08/2024&ndash;present |
+| Sophie Feng <span class="pronouns">she/her</span> | CMU BS | 08/2024&ndash;present |
+| Wenkai Li <span class="pronouns">he/him</span><small> (*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | CMU LTI MIIS        | 02/2024&ndash;present |
 | [Devansh Jain](https://devanshrj.github.io/) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;present |
 | [Priyanshu Kumar](https://scholar.google.com/citations?user=SHQikPwAAAAJ) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;present |
-| [Abhinav Rao](https://aetherprior.github.io/) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;present |
+| Liwen Sun <span class="pronouns">he/him</span> | CMU LTI MIIS | 08/2024&ndash;12/2024 |
+| Zhenxiang Guan <span class="pronouns">he/him</span> | CMU LTI MIIS | 08/2024&ndash;12/2024 |
+| Jiarui Liu <span class="pronouns">he/him</span> <small>(*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | CMU LTI MLT         | 02/2024&ndash;09/2024 |
+| [Abhinav Rao](https://aetherprior.github.io/) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;07/2024 |
 | [Vishwa Shah](https://sites.google.com/view/vishwavshah/) <span class="pronouns">she/her</span> | CMU LTI MIIS        | 09/2023&ndash;07/2024 |
 | Sanketh Rangreji <span class="pronouns">he/him</span>        | CMU LTI MIIS        | 09/2023&ndash;12/2023 |
 | Anubha Kabra <span class="pronouns">she/her</span>           | CMU LTI MIIS        | 09/2023&ndash;12/2023 |
