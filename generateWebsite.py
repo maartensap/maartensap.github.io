@@ -439,7 +439,8 @@ def createResearchThemes(silent=False,year_window=3,**kwargs):
   """Uses GPT-4 to generate research themes"""
   themes, oldPubs = loadResearchThemes()
   pubs = loadPubs()
-  if not (themes or comparePubs(oldPubs,pubs)):
+  # embed();exit()
+  if not comparePubs(oldPubs,pubs):
     print("Recreating themes with GPT-4")
   
     recentPubs = [p.copy() for p in pubs if
@@ -465,9 +466,9 @@ def createResearchThemes(silent=False,year_window=3,**kwargs):
     Write 4-5 sentences per theme, starting with an overview sentence, and then some sentences about important papers.
     Mention two or three papers in each description but only mention ones marked as IMPORTANT, and link them in markdown format.
 
-    Make sure one theme is around ethical and responsible AI.
-    Also, make sure one theme is around narrative analyses.
-    Also, make sure there is one theme around social intelligence or social simulations.
+    Make sure one theme is around ethics, responsible AI, and human-centered AI.
+    Also, make sure one theme is around narrative analyses or stories.
+    Also, make sure there is one theme around AI agents, social intelligence, or social simulations.
     For other themes, base them on papers.
 
     Important, DO NOT mention the same paper for each theme. Each important paper may only be used for one theme.

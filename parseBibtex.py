@@ -180,12 +180,13 @@ def reappCitation(bibD):
 
   # BOLDFACE Book Titles and Conference Proceedings
   # ITALICIZE Names of Journals
-  if bibD["entryType"] in ["article"]:
+  if bibD["entryType"] in ["article","preprint","phdthesis"]:
     out += "<em>"+bibD["venue"]+"</em>"
   elif bibD["entryType"] in ["inproceedings"]:
     out += "<strong>"+bibD["venue"]+"</strong>"
   else:
-    print(bibD)
+    print("reappCitation",bibD)
+    # embed();exit()
     
   # out += f' '+bibD["venue"]
   if "volume" in bibD:
