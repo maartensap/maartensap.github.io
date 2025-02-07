@@ -76,10 +76,12 @@
 
 ##### Miscellaneous
 
+- 2024
+  - On evalutation of AI: [TheMarkup.org](https://web.archive.org/web/20240717143254/https://themarkup.org/artificial-intelligence/2024/07/17/everyone-is-judging-ai-by-these-tests-but-experts-say-theyre-close-to-meaningless)
 - 2023
-  - On "Sparks of AGI": [nytimes.com](https://web.archive.org/web/20230516091858/https://www.nytimes.com/2023/05/16/technology/microsoft-ai-human-reasoning.html)
-  - On AI social coaches: [techcrunch.com](https://web.archive.org/web/20230520020144/https://techcrunch.com/2023/05/13/ai-relationship-building-amorai/)
-  - On GPT-4 red-teaming: [financialtimes.com](https://web.archive.org/web/20230414132856/https://www.ft.com/content/0876687a-f8b7-4b39-b513-5fee942831e8?accessToken=zwAAAYd_9J4skc8Idmh6-LdLOdO1E1_ulCgx6A.MEQCIFehPSHqO7vjyrQmUHmZGujI6tVxlndevV5vIQGnWzENAiBJg7ltMLzzeyNNXxQC36cpuLwYQ9BB26_O2upfGLGyyw&segmentId=e95a9ae7-622c-6235-5f87-51e412b47e97&shareType=enterprise)
-  - On users falling in love with ChatGPT: [time.com](https://web.archive.org/web/20230224153642/https://www.time.com/6257790/ai-chatbots-love/)
+  - On "Sparks of AGI": [NYTimes.com](https://web.archive.org/web/20230516091858/https://www.nytimes.com/2023/05/16/technology/microsoft-ai-human-reasoning.html)
+  - On AI social coaches: [TechCrunch.com](https://web.archive.org/web/20230520020144/https://techcrunch.com/2023/05/13/ai-relationship-building-amorai/)
+  - On GPT-4 red-teaming: [FinancialTimes.com](https://web.archive.org/web/20230414132856/https://www.ft.com/content/0876687a-f8b7-4b39-b513-5fee942831e8?accessToken=zwAAAYd_9J4skc8Idmh6-LdLOdO1E1_ulCgx6A.MEQCIFehPSHqO7vjyrQmUHmZGujI6tVxlndevV5vIQGnWzENAiBJg7ltMLzzeyNNXxQC36cpuLwYQ9BB26_O2upfGLGyyw&segmentId=e95a9ae7-622c-6235-5f87-51e412b47e97&shareType=enterprise)
+  - On users falling in love with ChatGPT: [Time.com](https://web.archive.org/web/20230224153642/https://www.time.com/6257790/ai-chatbots-love/)
 - 2022
   - On openness of large LMs: [spectrum.ieee.org](https://web.archive.org/web/20230321062817/https://spectrum.ieee.org/large-language-models-meta-openai)

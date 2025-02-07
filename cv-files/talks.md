@@ -1,6 +1,7 @@
 |                                                              |         |
 | ------------------------------------------------------------ | ------: |
 | <strong style="margin-top: 1em; display: block;">Artificial Social Intelligence? On the challenges of Socially Aware and Ethically informed LLMs</strong> |         |
+| [Cluster of Excellence "Science of Intelligence" (SCIoI)](https://www.scienceofintelligence.de/) | 01/2025 |
 | NeurIPS [New In ML](https://newinml.github.io/) workshop (*invited speaker*) | 12/2024 |
 | University of Pittsburgh CS colloquium                       | 11/2024 |
 | Columbia NLP seminar                                         | 10/2024 |
@@ -9,6 +10,8 @@
 | Aptima Brown Bag                                             | 07/2024 |
 | [CMU Agent Workshop 2024](https://cmu-agent-workshop.github.io/) (*invited speaker*) | 05/2024 |
 | [UNC Chapel Hill Symposium on AI and Society](https://cs.unc.edu/event/symposium-on-ai-and-society/) | 04/2024 |
+| <strong style="margin-top: 1em; display: block;">Rethinking the Role of AI in Counterspeech</strong> |         |
+| [First Workshop on Multilingual Counterspeech Generation](https://sites.google.com/view/multilang-counterspeech-gen/) at COLING 2025 (*invited speaker*) | 01/2025 |
 | <strong style="margin-top: 1em; display: block;">Developing Computational Analyses of the Social Aspects of Narratives</strong> |         |
 | EMNLP [Workshop on Narrative Understanding](https://sites.google.com/cs.stonybrook.edu/wnu2024) (*invited speaker*) | 11/2024 |
 | [Princeton Workshop on Narrative Possibilities](https://anthropology.princeton.edu/events/workshop-narrative-possibilities) (*invited speaker*) | 06/2024 |

@@ -1,3 +1,4 @@
+01/2025,👨🏼‍🏫🧠,Happy to give a talk in *Artificial Social Intelligence* at the [Cluster of Excellence "Science of Intelligence" (SCIoI)](https://www.scienceofintelligence.de/) at the Technische Universität Berlin.
 01/2025,👨🏼‍🏫📢,I'm happy to be giving a talk at the [First Workshop on Multilingual Counterspeech Generation](https://sites.google.com/view/multilang-counterspeech-gen/) at COLING 2025 (remotely)!
 12/2024,🇨🇦⛰️,Excited to be attending my very first NeurIPS conference in Vancouver BC! I'll be giving a talk at [New in ML](https://newinml.github.io/) at 3pm on Tuesday!
 11/2024,,I received a [Google Academic Research Award](https://news.pantheon.cmu.edu/stories/archives/2024/november/scs-faculty-receive-google-academic-research-awards) for our work on participatory impact assessment of future AI use cases. 

@@ -14,7 +14,7 @@
 
 |                                                              |                                                              |      |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ---: |
-| Selected to speak at the National Academy of Engineering's [Frontiers of Engineering](https://www.naefrontiers.org/212813/2024-US-Frontiers-of-Engineering-Symposium) | Artificial Social Intelligence? On the challenges of Socially Aware and Ethically informed LLMs |      |
+| Selected to speak at the National Academy of Engineering's [Frontiers of Engineering](https://www.naefrontiers.org/212813/2024-US-Frontiers-of-Engineering-Symposium) | Artificial Social Intelligence? On the challenges of Socially Aware and Ethically informed LLMs | 2024 |
 | William Chan Memorial Dissertation Award                     | [Positive AI with Social Commonsense Models](./publications.html#sap2021positiveAIwithSocialCommonsenseModels) | 2021 |
 | Amazon Alexa Prize                                           | [Sounding Board](https://sounding-board.github.io/): [A User-Centric and Content-Driven Social Chatbot](./publications.html#fang2017alexatechreport) | 2017 |
 
