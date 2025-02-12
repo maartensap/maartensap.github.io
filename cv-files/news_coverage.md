@@ -76,8 +76,10 @@
 
 ##### Miscellaneous
 
+- 2025
+  - On personality of AI systems: [ScienceNews.com](https://web.archive.org/web/20250207163618/https://www.sciencenews.org/article/ai-chatbot-personalities)
 - 2024
-  - On evalutation of AI: [TheMarkup.org](https://web.archive.org/web/20240717143254/https://themarkup.org/artificial-intelligence/2024/07/17/everyone-is-judging-ai-by-these-tests-but-experts-say-theyre-close-to-meaningless)
+  - On evaluation of AI: [TheMarkup.org](https://web.archive.org/web/20240717143254/https://themarkup.org/artificial-intelligence/2024/07/17/everyone-is-judging-ai-by-these-tests-but-experts-say-theyre-close-to-meaningless)
 - 2023
   - On "Sparks of AGI": [NYTimes.com](https://web.archive.org/web/20230516091858/https://www.nytimes.com/2023/05/16/technology/microsoft-ai-human-reasoning.html)
   - On AI social coaches: [TechCrunch.com](https://web.archive.org/web/20230520020144/https://techcrunch.com/2023/05/13/ai-relationship-building-amorai/)
