@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <python addHeader>
+  
+  <title>Maarten Sap - CV</title>
+</head>
+
+<body style="padding-top: 0px;">
+  <python addNavBar>
+
+  <!-- Page Content -->
+  <div class="container" style="padding-top: 10px;font-weight: 200;">
+    <h1>Maarten Sap <span style="font-size: .9rem;">(he/him)</span></h1>
+	<p>
+		<img src="images/email-icon-black.png" class="icon" title="Email Icon" alt="Email Icon">&nbsp;<a href="mailto:msap2@andrew.cmu.edu">msap2@andrew.cmu.edu</a>&nbsp;&nbsp;&nbsp;<img src="images/google-scholar-icon.png" class="icon" title="Google Scholar Profile" alt="Google Scholar Profile">&nbsp;<a href="https://scholar.google.com/citations?user=gFN4QUYAAAAJ&hl=en&oi=ao">https://scholar.google.com/citations?user=gFN4QUYAAAAJ</a>
+	</p>
+    <h2>Positions</h2>
+    <div class="markdown" style="padding-left: 1em;">
+<python includeMarkdownFile("cv-files/employment.md")>
+
+    </div>
+    
+    <h2>Education</h2>
+    <div class="markdown" style="padding-left: 1em;">
+<python includeMarkdownFile("cv-files/education.md")>
+
+    </div>
+    
+      <!--table style="width: 100%;">
+        <tr>
+          <td style="width: 80%;"><strong>Carnegie Mellon University</strong>: Language Technologies Institute</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Assistant Professor</td>
+          <td>2022 &ndash; present</td>
+        </tr>
+        <tr style="border-top: 1em solid transparent;">
+          <td style="width: 80%;"><strong>Allen Institute for AI</strong></td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Visiting Research Scientist</td>
+          <td>2022 &ndash; present</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Postdoctoral Researcher / Young Investigator</td>
+          <td>2021 &ndash; 2022</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Research Intern</td>
+          <td>2018 &ndash; 2019</td>
+        </tr>
+        <tr style="border-top: 1em solid transparent;">
+          <td style="width: 80%;"><strong>Microsoft Research</strong></td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Research Intern</td>
+          <td>2019</td>
+        </tr>
+      </table-->
+    <!--h2>Education</h2>
+      <table style="width: 100%;">
+        <tr>
+          <td style="width: 80%;"><strong>University of Washington</strong>: Paul G. Allen School of Computer Science &amp; Engineering</td>
+          <td>2015 &ndash; 2022</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">PhD in Computer Science &amp; Engineering, research focus on Natural Language Processing</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">advised by Yejin Choi &amp; Noah Smith</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">
+            Thesis: <a href="websiteRoot/pdfs/sap2021positiveAIwithSocialCommonsenseModels.pdf">Positive AI with Social Commonsense Models</a>
+          </td>
+        </tr>
+        <tr style="border-top: 1em solid transparent;">
+          <td style="width: 80%;"><strong>École Polytechnique Fédérale de Lausanne</strong>: School of Computer and Communication Sciences</td>
+          <td>2010 &ndash; 2014</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">BS in Communications and Information Systems</td>
+        </tr>
+      </table-->
+      
+      
+    <h2 class="" data-toggle="collapse" href="#advising" role="button" aria-expanded="true" aria-controls="advising">Advising</h2>
+    
+    <div class="markdown show" id="advising">
+<python includeMarkdownFile("cv-files/students.md")>
+
+    </div>
+    
+      <!--python generateStudentsList-->
+    
+    <h2 data-toggle="collapse" href="#publications" role="button" aria-expanded="true" aria-controls="publications">Publications</h2>
+    <div class="show" id="publications">
+    <python generateWordFriendlyPublications>
+    </div>
+    
+    <h2 data-toggle="collapse" href="#awards" role="button" aria-expanded="true" aria-controls="awards">Awards</h2>
+    <div class="markdown show" id="awards">
+<python includeMarkdownFile("cv-files/awards.md")>
+    </div>
+	
+	<h2 data-toggle="collapse" href="#grants" role="button" aria-expanded="true" aria-controls="grants">Grants</h2>
+    <div class="markdown show" id="grants">
+<python includeMarkdownFile("cv-files/grants.md")>
+    </div>
+    
+    <h2 data-toggle="collapse" href="#theses" role="button" aria-expanded="true" aria-controls="theses">Thesis Committees</h2>
+      <div class="markdown show" id="theses">
+<python includeMarkdownFile("cv-files/theses.md")>
+
+      </div>
+
+    <h2 data-toggle="collapse" href="#teaching" role="button" aria-expanded="true" aria-controls="teaching">Teaching</h2>
+      <div class="markdown show" id="teaching">
+<python includeMarkdownFile("cv-files/teaching.md")>
+
+      </div> 
+      
+    <h2 data-toggle="collapse" href="#service" role="button" aria-expanded="true" aria-controls="service">Service</h2>
+    <div class="markdown show" id="service">
+<python includeMarkdownFile("cv-files/service.md")>
+
+    </div>
+
+    <h2 data-toggle="collapse" href="#talks" role="button" aria-expanded="true" aria-controls="talks"> Talks</h2>
+ 
+    <div class="markdown show" id="talks">
+<python includeMarkdownFile("cv-files/talks.md")>
+    </div>
+    
+    <h2 data-toggle="collapse" href="#news" role="button" aria-expanded="true" aria-controls="news"> News Coverage</h2>
+ 
+    <div class="markdown show" id="news">
+<python includeMarkdownFile("cv-files/news_coverage.md")>
+    </div>
+
+    <!--python generateTalksList-->
+    <!-- Footer -->
+     <python addFooter>
+  </div>
+  <!-- /.container -->
+  
+  <!-- jQuery >
+  <script src="tools/bootstrap/js/jquery.js"></script>
+  
+  <!- Bootstrap Core JavaScript ->
+  <script src="tools/bootstrap/js/bootstrap.min.js"></script-->
+
+  <script>
+    var targ, d;
+    function jumpAndHighlight(){
+      targ = window.location.hash;
+      if (targ == "")
+        return ;
+      
+      d = $(targ);
+      d.addClass("highlighted");
+      setTimeout(function(){ d.removeClass("highlighted") }, 5000);
+    }
+    
+    var t;
+    $("label.badge>input[type='radio']").on("change", function(e){
+      //e.preventDefault();
+      t = e.target;
+      var type = e.target.value;
+      console.log(e.target.value);
+      if (type==="all"){
+        $("div.jumptarget").show();
+      } else {
+        $("div.jumptarget").not("."+type).hide();
+        $("div.jumptarget."+type).show();
+      }
+    });
+    window.onload = jumpAndHighlight;
+  </script>
+</body>
+</html>
+
+<script>
+   //document.getElementById('content').innerHTML =
+    // marked.parse(document.getElementById('content').innerHTML);
+   //$("#content").html(marked.parse($("#content").html()));
+   $(".markdown").each(function (i,e){e.innerHTML = marked.parse(e.innerHTML)})
+
+</script>
+
+<style>
+  h1,h2,h3,h4,h5 {
+    font-weight: 200;
+    margin-top: 1em;
+    font-style: italic;
+  }
+  h2 {
+    border-left: solid grey .1em;
+    padding: .1em;
+  }
+  small {
+    font-weight: 200;
+  }
+  .in-citation {
+    margin-left: 20px;
+  }
+  .citation-toggle {
+    
+  }
+  table {
+    width:100%;
+  }
+
+  .year {
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    margin: .5em 0 0 0;
+  }
+  a.badge.active {
+    border: 1px solid red;
+  }
+  .awards {
+    margin-top: .5em;
+    display: block;
+    font-style: italic;
+    font-weight: 600;
+    color: ForestGreen;
+  }
+  .highlighted {
+    background-color: #d8ebff;
+    box-shadow: 0px 0px 1.5px 1.5px #d8ebff;
+    border-radius: 10px;
+  }
+  .badge-conference {
+    background-color: #decbe4;
+  }
+  .badge-workshop {
+    background-color: #b3cde3;
+  }
+  .badge-demo {
+    background-color: #ffffcc;
+  }
+  .badge-journal {
+    background-color: #ccebc5;
+  }
+  .badge-other {
+    background-color: #fed9a6;
+  }
+  .badge-preprint {
+    background-color: #fbb4ae;
+  }
+</style>

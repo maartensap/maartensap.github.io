@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T8EHFV852B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T8EHFV852B');
+</script>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Maarten Sap">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="imagesfavicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="imagesfavicon-16x16.png">
+<link rel="manifest" href="tools/site.webmanifest">
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  
+  <title>Maarten Sap - CV</title>
+</head>
+
+<body style="padding-top: 0px;">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container" style="max-width: 80%;">
+    <a class="navbar-brand" href="index.html">Maarten Sap</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="publications.html">Publications</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+		<li class="nav-item">
+          <a class="nav-link" href="teaching.html">Teaching</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="aboutme.html">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html">CV</a>
+        </li>
+        <!--li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="CVdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            CV
+          </a>
+          <div class="dropdown-menu" aria-labelledby="CVdropdown">
+            <a class="dropdown-item" href="cv.html" target="_blank"> html</a>
+            <a class="dropdown-item" href="files/CVMaartenSap.pdf" target="_blank"> pdf <!--img src="images/pdf_icon.png" style="height: 1em;"-></a>
+          </div>
+        </li-->
+        <!--li class="nav-item">
+          <a class="nav-link" href="files/CVMaartenSap.pdf" target="_blank"> <img src="images/pdf_icon_white.png" style="height: 1em;"> CV (pdf)</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="cv.html" target="_blank"> CV (html)</a>
+        </li-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Notes/Blogposts
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+  <a class="dropdown-item" href="notes/01-apply-grad-school.html">Applying to grad school</a>
+  <a class="dropdown-item" href="notes/02-giving-talk-feedback.html">Giving feedback for talks</a>
+  <a class="dropdown-item" href="notes/03-presenting-your-research.html">Presenting your research</a>
+  <a class="dropdown-item" href="notes/04-turking-tips.html">Turking tips</a>
+  <a class="dropdown-item" href="notes/05-rebuttals.html">Writing rebuttals</a>
+  <a class="dropdown-item" href="notes/06-job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+  <a class="dropdown-item" href="notes/07-writing-rec-letters.html">Writing recommendation letters</a>
+  <a class="dropdown-item" href="notes/08-third-year-part-1-postdoc.html">Reflections after 2 years as Faculty -- Part 1: Postdoc year</a>
+  <a class="dropdown-item" href="notes/09-third-year-part-2-first-year.html">Reflections after 2 years as Faculty -- Part 2: First year faculty</a>
+  <a class="dropdown-item" href="notes/10-third-year-part-3-second-year.html">Reflections after 2 years as Faculty -- Part 3: Second year Faculty</a>
+</div>
+
+          <!--div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="notes/presenting-your-research.html">Presenting Your Research</a>
+            <a class="dropdown-item" href="notes/apply-grad-school.html">How to Apply to Grad School</a>
+            <a class="dropdown-item" href="notes/seq2seq-tricks.html">Seq2Seq Magic Tips</a>
+            <a class="dropdown-item" href="notes/NLGDecoding.pptx">Tutorial on beam search and NLG decoding [pptx]</a>
+            <a class="dropdown-item" href="notes/turking-tips.html">Tips for Turking</a>
+            <a class="dropdown-item" href="notes/rebuttals.html">Writing rebuttals</a>
+            <a class="dropdown-item"  href="notes/job-search-2020.html">Notes from my 2020 Academic Job Search</a>
+          </div-->
+        </li>
+      </ul>
+    </div>  
+  </div>
+</nav>
+
+  <!-- Page Content -->
+  <div class="container" style="padding-top: 10px;font-weight: 200;">
+    <h1>Maarten Sap <span style="font-size: .9rem;">(he/him)</span></h1>
+	<p>
+		<img src="images/email-icon-black.png" class="icon" title="Email Icon" alt="Email Icon">&nbsp;<a href="mailto:msap2@andrew.cmu.edu">msap2@andrew.cmu.edu</a>&nbsp;&nbsp;&nbsp;<img src="images/google-scholar-icon.png" class="icon" title="Google Scholar Profile" alt="Google Scholar Profile">&nbsp;<a href="https://scholar.google.com/citations?user=gFN4QUYAAAAJ&hl=en&oi=ao">https://scholar.google.com/citations?user=gFN4QUYAAAAJ</a>
+	</p>
+    <h2>Positions</h2>
+    <div class="markdown" style="padding-left: 1em;">
+
+
+|                                                              |                |
+| ------------------------------------------------------------ | -------------: |
+| <span style="margin-left: -1em;">**Carnegie Mellon University**: School of Computer Science</span> |                |
+| Assistant Professor - *Language Technologies Institute*      | 2022 – present |
+| Affiliated Faculty - *Human Compuer Interaction Institute*   | 2024 – present |
+| <span style="margin-left: -1em; margin-top: 1em; display: block;">**Allen Institute for AI**</span> |                |
+| Visiting Research Scientist                                  | 2022 – present |
+| Postdoctoral Researcher / Young Investigator                 |    2021 – 2022 |
+| Research Intern                                              |    2018 – 2019 |
+| <span style="margin-left: -1em; margin-top: 1em; display: block;">**Microsoft Research**</span> |                |
+| Research Intern                                              |           2019 |
+
+
+    </div>
+    
+    <h2>Education</h2>
+    <div class="markdown" style="padding-left: 1em;">
+|                                                              |             |
+| ------------------------------------------------------------ | ----------: |
+| <span style="margin-left: -1em;">**University of Washington**: Paul G. Allen School of Computer Science & Engineering </span> | 2015 – 2022 |
+| PhD in Computer Science & Engineering, research focus on Natural Language Processing |             |
+| advised by Yejin Choi & Noah Smith                           |             |
+| Thesis: [Positive AI with Social Commonsense Models](pdfs/sap2021positiveAIwithSocialCommonsenseModels.pdf) |             |
+| <span style="margin-left: -1em; margin-top: 1em; display: block;">**École Polytechnique Fédérale de Lausanne**: School of Computer and Communication Sciences</span> | 2010 – 2014 |
+| BS in Communications and Information Systems                 |             |
+
+    </div>
+    
+      <!--table style="width: 100%;">
+        <tr>
+          <td style="width: 80%;"><strong>Carnegie Mellon University</strong>: Language Technologies Institute</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Assistant Professor</td>
+          <td>2022 &ndash; present</td>
+        </tr>
+        <tr style="border-top: 1em solid transparent;">
+          <td style="width: 80%;"><strong>Allen Institute for AI</strong></td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Visiting Research Scientist</td>
+          <td>2022 &ndash; present</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Postdoctoral Researcher / Young Investigator</td>
+          <td>2021 &ndash; 2022</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Research Intern</td>
+          <td>2018 &ndash; 2019</td>
+        </tr>
+        <tr style="border-top: 1em solid transparent;">
+          <td style="width: 80%;"><strong>Microsoft Research</strong></td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">Research Intern</td>
+          <td>2019</td>
+        </tr>
+      </table-->
+    <!--h2>Education</h2>
+      <table style="width: 100%;">
+        <tr>
+          <td style="width: 80%;"><strong>University of Washington</strong>: Paul G. Allen School of Computer Science &amp; Engineering</td>
+          <td>2015 &ndash; 2022</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">PhD in Computer Science &amp; Engineering, research focus on Natural Language Processing</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">advised by Yejin Choi &amp; Noah Smith</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">
+            Thesis: <a href="pdfs/sap2021positiveAIwithSocialCommonsenseModels.pdf">Positive AI with Social Commonsense Models</a>
+          </td>
+        </tr>
+        <tr style="border-top: 1em solid transparent;">
+          <td style="width: 80%;"><strong>École Polytechnique Fédérale de Lausanne</strong>: School of Computer and Communication Sciences</td>
+          <td>2010 &ndash; 2014</td>
+        </tr>
+        <tr>
+          <td style="padding-left: 1em;">BS in Communications and Information Systems</td>
+        </tr>
+      </table-->
+      
+      
+    <h2 class="" data-toggle="collapse" href="#advising" role="button" aria-expanded="true" aria-controls="advising">Advising</h2>
+    
+    <div class="markdown show" id="advising">
+### PhD & MLT students
+|                                                              |               |                       |
+| ------------------------------------------------------------ | ------------- | --------------------: |
+| [Dan Chechelnitsky](https://chechelnitskd.github.io/) <span class="pronouns">he/him</span> <small>(*co-advised with [Chrysoula Zerva](https://scholar.google.com/citations?user=S5NGkFsAAAAJ&hl=en&oi=ao)*)</small> | LTI PhD       | 09/2024&ndash;present |
+| [Mingqian Zheng ](https://eeelisa.github.io/) <span class="pronouns">she/her</span> <small>(*co-advised with [Carolyn Rosé](https://www.cs.cmu.edu/~cprose/)*)</small> | LTI PhD       | 09/2024&ndash;present |
+| [Jocelyn Shen](https://jocelynshen.com/) <span class="pronouns">she/her</span> <small>(*co-advised with [Cynthia Breazeal](https://www.media.mit.edu/people/cynthiab/overview/)*)</small> | MIT Media Lab | 11/2023&ndash;present |
+| [Joel Mire](https://joelmire.notion.site/) <span class="pronouns">he/him</span> | LTI MLT       | 09/2023&ndash;present |
+| [Karina Halevy](https://enscma2.github.io/) <span class="pronouns">she/her</span> <small>(*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | LTI PhD       | 09/2023&ndash;present |
+| [Jimin Mun](https://jiminmun.github.io/) <span class="pronouns">she/her</span> | LTI PhD       | 09/2022&ndash;present |
+| [Akhila Yerukola](https://akhila-yerukola.github.io/) <span class="pronouns">she/her</span> | LTI PhD       | 09/2022&ndash;present |
+| [Xuhui Zhou](https://xuhuizhou.github.io/) <span class="pronouns">he/him</span> | LTI PhD       | 09/2022&ndash;present |
+
+### Research Interns & Research Masters
+|                                                              |                     |                       |
+| ------------------------------------------------------------ | ------------------- | --------------------: |
+| [Zhe Su](https://bugsz.github.io/) <span class="pronouns">he/him</span> | CMU MSML            | 09/2023&ndash;present |
+| [Kaitlyn Zhou](https://cs.stanford.edu/~katezhou/) <span class="pronouns">she/her</span> | AI2 Research Intern | 06/2023&ndash;present |
+| [Ashutosh Baheti](https://abaheti95.github.io/) <span class="pronouns">he/him</span> | AI2 Research Intern | 09/2022&ndash;07-2024 |
+| [Yiming Zhang](https://y0mingzhang.github.io/) <span class="pronouns">he/him</span> (*<small>co-advised with [Sherry Tongshuang Wu]()</small>*) | UChicago MS         | 09/2022&ndash;09/2023 |
+| [Athiya Deviyani](https://www.athiyadeviyani.com/) <span class="pronouns">she/her</span> | LTI MSAII           | 09/2022&ndash;09/2023 |
+| [Julia Mendelsohn](https://juliamendelsohn.github.io/) <span class="pronouns">she/her</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
+| [Sebastin Santy](http://sebastinsanty.com/) <span class="pronouns">he/him</span> | AI2 Research Intern | 06/2022&ndash;01/2023 |
+
+### Undergraduates &amp; Professional Masters
+
+|                                                              |                     |                       |
+| ------------------------------------------------------------ | ------------------- | --------------------: |
+| Neel Bhandari <span class="pronouns">he/him</span> | CMU LTI MIIS | 08/2024&ndash;present |
+| Tiya Cao <span class="pronouns">she/her</span> | CMU LTI MIIS | 08/2024&ndash;present |
+| Jenna Godsey <span class="pronouns">she/her</span> | CMU BS | 08/2024&ndash;present |
+| Bruno Neira <span class="pronouns">he/him</span> | CMU BS | 08/2024&ndash;present |
+| Kshitish Ghate <span class="pronouns">he/him</span><small> (*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | CMU LTI MLT | 08/2024&ndash;present |
+| Sophie Feng <span class="pronouns">she/her</span> | CMU BS | 08/2024&ndash;present |
+| Wenkai Li <span class="pronouns">he/him</span><small> (*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | CMU LTI MIIS        | 02/2024&ndash;present |
+| [Devansh Jain](https://devanshrj.github.io/) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;present |
+| [Priyanshu Kumar](https://scholar.google.com/citations?user=SHQikPwAAAAJ) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;present |
+| Liwen Sun <span class="pronouns">he/him</span> | CMU LTI MIIS | 08/2024&ndash;12/2024 |
+| Zhenxiang Guan <span class="pronouns">he/him</span> | CMU LTI MIIS | 08/2024&ndash;12/2024 |
+| Jiarui Liu <span class="pronouns">he/him</span> <small>(*co-advised with [Mona Diab](https://scholar.google.com.vn/citations?user=-y6SIhQAAAAJ&hl=vi)*)</small> | CMU LTI MLT         | 02/2024&ndash;09/2024 |
+| [Abhinav Rao](https://aetherprior.github.io/) <span class="pronouns">he/him</span> | CMU LTI MIIS        | 09/2023&ndash;07/2024 |
+| [Vishwa Shah](https://sites.google.com/view/vishwavshah/) <span class="pronouns">she/her</span> | CMU LTI MIIS        | 09/2023&ndash;07/2024 |
+| Sanketh Rangreji <span class="pronouns">he/him</span>        | CMU LTI MIIS        | 09/2023&ndash;12/2023 |
+| Anubha Kabra <span class="pronouns">she/her</span>           | CMU LTI MIIS        | 09/2023&ndash;12/2023 |
+| Sravani Nanduri <span class="pronouns">she/her</span> *<small>(co-advised with [Liwei Jiang](https://liweijiang.me/))</small>* | UW CSE BS           | 09/2021&ndash;10/2022 |
+| [Skyler Hallinan](https://skylerhallinan.com/) <span class="pronouns">he/him</span> | UW CSE BS           | 01/2021&ndash;08/2022 |
+| Zhilin Wang <span class="pronouns">he/him</span>             | UW CLMS             | 01/2021&ndash;09/2021 |
+| Michelle Ma <span class="pronouns">she/her</span> *<small>(co-advised with [Hannah Rashkin](https://hrashkin.github.io/)</small>*) | UW CSE BS           | 09/2019&ndash;12/2020 |
+| Sam Gehman <span class="pronouns">he/him</span>              | UW CSE MS           | 09/2019&ndash;07/2020 |
+| Aishwarya Nirmal <span class="pronouns">she/her</span>       | UW CSE MS           | 01/2018&ndash;06/2019 |
+| Kenta Takatsu <span class="pronouns">he/him</span>           | Cornell BS          | 07/2018&ndash;03/2019 |
+| [Zachary Horvitz](https://zacharyhorvitz.github.io/) <span class="pronouns">he/him</span> *<small>(co-advised with [Antoine Bosselut](https://atcbosselut.github.io/))</small>* | AI2 Research Intern | 07/2018&ndash;03/2019 |
+| Sarah Yu <span class="pronouns">she/her</span>               | UW CSE BS           | 03/2018&ndash;06/2018 |
+| Lanhao Wu <span class="pronouns">he/him</span> *<small>(co-advised with [Saadia Gabriel](https://saadiagabriel.com/))</small>* | UW CSE BS           | 03/2018&ndash;06/2018 |
+| Boyan Li <span class="pronouns">he/him</span> *<small>(co-advised with [Saadia Gabriel](https://saadiagabriel.com/))</small>* | UW CSE BS           | 01/2018&ndash;06/2018 |
+| Amy Shah <span class="pronouns">she/her</span> *<small>(co-advised with [Elizabeth Clark](https://eaclark07.github.io/))</small>* | UW CSE BS           | 09/2017&ndash;06/2018 |
+| [Emily Allaway](https://emilyallaway.github.io/) <span class="pronouns">she/her</span> *<small>(co-advised with [Hannah Rashkin](https://hrashkin.github.io/))</small>* | UW CSE BS           | 07/2017&ndash;06/2018 |
+| Marcela Cindy Prasetio <span class="pronouns">she/her</span> *<small>(co-advised with [Hannah Rashkin](https://hrashkin.github.io/))</small>* | UW CSE BS           | 01/2016&ndash;06/2017 |
+
+
+    </div>
+    
+      <!--python generateStudentsList-->
+    
+    <h2 data-toggle="collapse" href="#publications" role="button" aria-expanded="true" aria-controls="publications">Publications</h2>
+    <div class="show" id="publications">
+    <h4 style="margin-left: 1em;">Journal</h4>
+<ol start="1"><li class="pretty">Liwei Jiang, Jena D Hwang, Chandra Bhagavatula, Ronan Le Bras, Jenny Liang, Jesse Dodge, Keisuke Sakaguchi, Maxwell Forbes, Jon Borchardt, Saadia Gabriel, Yulia Tsvetkov, Oren Etzioni, <strong>Maarten</strong> <strong>Sap</strong>, Regina Rini & Yejin Choi (2025) <em>An Empirical Investigation of Machines’ Capabilities for Moral Judgment with the Delphi Experiment</em>. Nature Machine Intelligence.</li>
+<li class="pretty">Jocelyn Shen, Daniella DiPaola, Safinah Ali, <strong>Maarten</strong> <strong>Sap</strong>, Hae Won Park & Cynthia Breazeal (2024) <em>Empathy Towards AI vs Human Experiences: The Role of Transparency in Mental Health and Social Support Chatbot Design</em>. JMIR Mental Health.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Anna Jafarpour, Yejin Choi, Noah A. Smith, James W. Pennebaker & Eric Horvitz (2022) <em>Quantifying the narrative flow of imagined versus autobiographical stories</em>. PNAS.</li>
+<li class="pretty">Gregory Park, H Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Margaret L Kern, Evan Weingarten, Johannes C Eichstaedt, Jonah Berger, David J Stillwell, Michal Kosinski, Lyle H Ungar & Martin E P Seligman (2017) <em>Living in the Past, Present, and Future: Measuring Temporal Orientation with Language</em>. Journal of Personality.</li>
+<li class="pretty">Margaret L Kern, Gregory Park, Johannes C Eichstaedt, H Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Laura K, Smith & Lyle H Ungar (2016) <em>Gaining Insights From Social Media Language: Methodologies and Challenges</em>. Psychological Methods.</li>
+<li class="pretty">Johannes C Eichstaedt, H Andrew Schwartz, Margaret L Kern, Gregory Park, Darwin R Labarthe, Raina M Merchant, Sneha Jha, Megha Agrawal, Lukasz A Dziurzynski, <strong>Maarten</strong> <strong>Sap</strong>, Christopher Weeg, Emily Larson, Lyle H Ungar & Martin E P Seligman (2015) <em>Psychological Language on Twitter Predicts County-level Heart Disease Mortality</em>. Psychological Science 26(2). SAGE Publications. 159--169.</li>
+<li class="pretty">Charlene A Wong, <strong>Maarten</strong> <strong>Sap</strong>, Hansen Andrew Schwartz, Robert Town, Tom Baker, Lyle Ungar & Raina M Merchant (2015) <em>Twitter Sentiment Predicts Affordable Care Act Marketplace Enrollment</em>. Journal of Medical Internet Research 17(2). JMIR Publications Inc..</li>
+<li class="pretty">Raina M. Merchant, Yoonhee P. Ha, Charlene A. Wong, H. Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Lyle H. Ungar & David A. Asch (2014) <em>The 2013 US Government Shutdown (#Shutdown) and Health: An Emerging Role for Social Media</em>. American Journal of Public Health 2014. e1--e3.</li>
+</ol><h4 style="margin-left: 1em;">Conference</h4>
+<ol start="9"><li class="pretty">Joel Mire<sup>*</sup>, Zubin Trivadi Aysola<sup>*</sup>, Daniel Chechelnitsky, Nicholas Deas, Chrysoula Zerva & <strong>Maarten</strong> <strong>Sap</strong> (2025) <em>Rejected Dialects: Biases Against African American Language in Reward Models</em>. NAACL.</li>
+<li class="pretty">Kaitlyn Zhou, Jena D. Hwang, Xiang Ren, Nouha Dziri, Dan Jurafsky & <strong>Maarten</strong> <strong>Sap</strong> (2025) <em>Rel-A.I.: An Interaction-Centered Approach To Measuring Human-LM Reliance</em>. NAACL.</li>
+<li class="pretty">Zhe Su, Xuhui Zhou, Sanketh Rangreji, Anubha Kabra, Julia Mendelsohn, Faeze Brahman & <strong>Maarten</strong> <strong>Sap</strong> (2025) <em>AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents</em>. NAACL.</li>
+<li class="pretty">Abhinav Rao<sup>*</sup>, Akhila Yerukola<sup>*</sup>, Vishwa Shah, Katharina Reinecke & <strong>Maarten</strong> <strong>Sap</strong> (2025) <em>NormAd: A Benchmark for Measuring the Cultural Adaptability of Large Language Models</em>. NAACL.</li>
+<li class="pretty">Xianzhe Fan, Qing Xiao, Xuhui Zhou, Jiaxin Pei, <strong>Maarten</strong> <strong>Sap</strong>, Zhicong Lu & Hong Shen (2025) <em>User-Driven Value Alignment: Understanding Users' Perceptions and Strategies for Addressing Biased and Discriminatory Statements in AI Companions</em>. CHI.</li>
+<li class="pretty">Joel Mire, Maria Antoniak, Elliott Ash, Andrew Piper & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>The Empirical Variability of Narrative Perceptions of Social Media Texts</em>. EMNLP.</li>
+<li class="pretty">Xuhui Zhou, Zhe Su, Tiwalayo Eisape, Hyunwoo Kim & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>Is This the Real Life? Is This Just Fantasy? The Misleading Success of Simulating Social Interactions With LLMs</em>. EMNLP.</li>
+<li class="pretty">Jocelyn Shen, Joel Mire, Hae Won Park, Cynthia Breazeal & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>HEART-felt Narratives: Tracing Empathy and Narrative Style in Personal Stories with LLMs</em>. EMNLP.</li>
+<li class="pretty">Liwei Jiang, Kavel Rao, Seungju Han, Allyson Ettinger, Faeze Brahman, Sachin Kumar, Niloofar Mireshghallah, Ximing Lu, <strong>Maarten</strong> <strong>Sap</strong>, Nouha Dziri & Yejin Choi (2024) <em>WildTeaming at Scale: From In-the-Wild Jailbreaks to (Adversarially) Safer Language Models</em>. NeurIPS.</li>
+<li class="pretty">Jimin Mun, Liwei Jiang, Jenny Liang, Inyoung Cheong, Nicole DeCario, Yejin Choi, Tadayoshi Kohno & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>Particip-AI: A Democratic Surveying Framework for Anticipating Future AI Use Cases, Harms and Benefits</em>. AIES.</li>
+<li class="pretty">Devansh Jain, Priyanshu Kumar, Samuel Gehman, Xuhui Zhou, Thomas Hartvigsen & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>PolygloToxicityPrompts: Multilingual Evaluation of Neural Toxic Degeneration in Large Language Models</em>. COLM.</li>
+<li class="pretty">Maria Antoniak, Joel Mire, <strong>Maarten</strong> <strong>Sap</strong>, Elliott Ash & Andrew Piper (2024) <em>Where Do People Tell Stories Online? Story Detection Across Online Communities</em>. ACL.</li>
+<li class="pretty">Akhila Yerukola, Saujas Vadugur, Daniel Fried & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>Is the Pope Catholic? Yes, the Pope is Catholic. Generative Evaluation of Non-Literal Intent Resolution in LLMs</em>. ACL.</li>
+<li class="pretty">Kaitlyn Zhou, Jena D Hwang, Xiang Ren & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>Relying on the Unreliable: The Impact of Language Models' Reluctance to Express Uncertainty</em>. ACL.</li>
+<li class="pretty">Ruiyi Wang, Haofei Yu, Wenxin Zhang, Zhengyang Qi, <strong>Maarten</strong> <strong>Sap</strong>, Graham Neubig, Yonatan Bisk & Hao Zhu (2024) <em>SOTOPIA-π: Interactive Learning of Socially Intelligent Language Agents</em>. ACL.</li>
+<li class="pretty">Jimin Mun, Cathy Buerger, Jenny T. Liang, Joshua Garland & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>Counterspeakers’ Perspectives: Unveiling Barriers and AI Needs in the Fight against Online Hate</em>. CHI.</li>
+<li class="pretty">Natalie Shapira, Mosh Levy, Hossein Seyed Alavi, Xuhui Zhou, Yejin Choi, Yoav Goldberg, <strong>Maarten</strong> <strong>Sap</strong> & Vered Shwartz (2024) <em>Clever Hans or Neural Theory of Mind? Stress Testing Social Reasoning in Large Language Models</em>. EACL.</li>
+<li class="pretty">Xuhui Zhou, Hao Zhu, Leena Mathur, Ruohong Zhang, Haofei Yu, Zhengyang Qi, Louis-Philippe Morency, Yonatan Bisk, Daniel Fried, Graham Neubig & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>SOTOPIA: Interactive Evaluation for Social Intelligence in Language Agents</em>. ICLR.</li>
+<li class="pretty">Niloofar Mireshghallah, Hyunwoo Kim, Xuhui Zhou, Yulia Tsvetkov, <strong>Maarten</strong> <strong>Sap</strong>, Reza Shokri & Yejin Choi (2024) <em>Can LLMs Keep a Secret? Testing Privacy Implications of Language Models via Contextual Integrity Theory</em>. ICLR.</li>
+<li class="pretty">Ashutosh Baheti, Ximing Lu, Faeze Brahman, Le Ronan Bras, <strong>Maarten</strong> <strong>Sap</strong> & Mark Riedl (2024) <em>Leftover-Lunch: Advantage-based Offline Reinforcement Learning for Language Models</em>. ICLR.</li>
+<li class="pretty">Taylor Sorensen, Liwei Jiang, Jena Hwang, Sydney Levine, Valentina Pyatkin, Peter West, Nouha Dziri, Ximing Lu, Kavel Rao, Chandra Bhagavatula, <strong>Maarten</strong> <strong>Sap</strong>, John Tasioulas & Yejin Choi (2024) <em>Value Kaleidoscope: Engaging AI with Pluralistic Human Values, Rights, and Duties</em>. AAAI.</li>
+<li class="pretty">Akhila Yerukola, Xuhui Zhou, Elizabeth Clark & <strong>Maarten</strong> <strong>Sap</strong> (2023) <em>``Don't Take This Out of Context!'' On the Need for Contextual Models and Evaluations for Stylistic Rewriting</em>. EMNLP.</li>
+<li class="pretty">Yiming Zhang, Sravani U. Nanduri, Liwei Jiang, Tongshuang Wu & <strong>Maarten</strong> <strong>Sap</strong> (2023) <em>BiasX: ``Thinking Slow'' in Toxic Language Annotation with Explanations of Implied Social Biases</em>. EMNLP.</li>
+<li class="pretty">Jocelyn Shen, <strong>Maarten</strong> <strong>Sap</strong>, Pedro Colon-Hernandez, Hae Won Park & Cynthia Breazeal (2023) <em>Modeling Empathic Similarity in Personal Narratives</em>. EMNLP.</li>
+<li class="pretty">Jimin Mun, Emily Allaway, Akhila Yerukola, Laura Vianna, Sarah-Jane Leslie & <strong>Maarten</strong> <strong>Sap</strong> (2023) <em>Beyond Denouncing Hate: Strategies for Countering Implied Biases and Stereotypes in Language</em>. Findings of EMNLP.</li>
+<li class="pretty">Hyunwoo Kim, Melanie Sclar, Xuhui Zhou, Ronan Le Bras, Gunhee Kim, Yejin Choi & <strong>Maarten</strong> <strong>Sap</strong> (2023) <em>FANToM: A Benchmark for Stress-testing Machine Theory of Mind in Interactions</em>. EMNLP.</li>
+<li class="pretty">Hyunwoo Kim, Jack Hessel, Liwei Jiang, Peter West, Ximing Lu, Youngjae Yu, Pei Zhou, Ronan Le Bras, Malihe Alikhani, Gunhee Kim, <strong>Maarten</strong> <strong>Sap</strong> & Yejin Choi (2023) <em>SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization</em>. EMNLP.</li>
+<li class="pretty">Xuhui Zhou, Hao Zhu, Akhila Yerukola, Thomas Davidson, Jena D. Hwang, Swabha Swayamdipta & <strong>Maarten</strong> <strong>Sap</strong> (2023) <em>COBRA Frames: Contextual Reasoning about Effects and Harms of Offensive Statements</em>. Findings of ACL.</li>
+<li class="pretty">Julia Mendelsohn, Ronan Le Bras, Yejin Choi & <strong>Maarten</strong> <strong>Sap</strong> (2023) <em>From Dogwhistles to Bullhorns: Unveiling Coded Rhetoric with Language Models</em>. ACL.</li>
+<li class="pretty">Sebastin Santy<sup>*</sup>, Jenny T. Liang<sup>*</sup>, Ronan Le Bras, Katharina Reinecke & <strong>Maarten</strong> <strong>Sap</strong> (2023) <em>NLPositionality: Characterizing Design Biases of Datasets and Models</em>. ACL.</li>
+<li class="pretty">Skyler Hallinan, Alisa Liu, Yejin Choi & <strong>Maarten</strong> <strong>Sap</strong> (2023) <em>Detoxifying Text with MaRCo: Controllable Revision with Experts and Anti-Experts</em>. ACL.</li>
+<li class="pretty">Organizers Of QueerinAI, Anaelia Ovalle, Arjun Subramonian, Ashwin Singh, Claas Voelcker, Danica J. Sutherl, Davide Locatelli, Eva Breznik, Filip Klubicka, Hang Yuan, J Hetvi, Huan Zhang, Jaidev Shriram, Kruno Lehman, Luca Soldaini, <strong>Maarten</strong> <strong>Sap</strong>, Marc Peter Deisenroth, Maria Leonor Pacheco, Maria Ryskina, Martin Mundt, Milind Agarwal, Nyx McLean, Pan Xu, A Pranav, Raj Korpan, Ruchira Ray, Sarah Mathew, Sarthak Arora, St John, Tanvi An, Vishakha Agrawal, William Agnew, Yanan Long, Zijie J. Wang, Zeerak Talat, Avijit Ghosh, Nathaniel Dennler, Michael Noseworthy, Sharvani Jha, Emily Baylor, Aditya Joshi, Natalia Y. Bilenko, Andrew McNamara, Raphael Gontijo-Lopes, Alex Markham, Evyn Dǒng, Jackie Kay, Manu Saraswat, Nikhil Vytla & Luke Stark (2023) <em>Queer In AI: A Case Study in Community-Led Participatory AI</em>. FAccT.</li>
+<li class="pretty">Hyunwoo Kim, Youngjae Yu, Liwei Jiang, Ximing Lu, Daniel Khashabi, Gunhee Kim, Yejin Choi & <strong>Maarten</strong> <strong>Sap</strong> (2022) <em>ProsocialDialog: A Prosocial Backbone for Conversational Agents</em>. EMNLP.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Ronan Le Bras, Daniel Fried & Yejin Choi (2022) <em>Neural Theory-of-Mind? On the Limits of Social Intelligence in Large LMs</em>. EMNLP.</li>
+<li class="pretty">Zhijing Jin, Sydney Levine, Fernando Gonzalez Adauto, Ojasv Kamal, <strong>Maarten</strong> <strong>Sap</strong>, Mrinmaya Sachan, Rada Mihalcea, Joshua B. Tenenbaum & Bernhard Schölkopf (2022) <em>When to Make Exceptions: Exploring Language Models as Accounts of Human Moral Judgment</em>. NeurIPS.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Swabha Swayamdipta, Laura Vianna, Xuhui Zhou, Yejin Choi & Noah A. Smith (2022) <em>Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection</em>. NAACL.</li>
+<li class="pretty">Prithviraj Ammanabrolu, Liwei Jiang, <strong>Maarten</strong> <strong>Sap</strong>, Hanna Hajishirzi, Yejin Choi & Noah A. Smith (2022) <em>Aligning to Social Norms and Values in Interactive Narratives</em>. NAACL.</li>
+<li class="pretty">Thomas Hartvigsen, Saadia Gabriel, Hamid Palangi, <strong>Maarten</strong> <strong>Sap</strong>, Dipankar Ray & Ece Kamar (2022) <em>ToxiGen: Controlling Language Models to Generate Implied and Adversarial Toxicity</em>. ACL.</li>
+<li class="pretty">Saadia Gabriel, Skyler Hallinan, <strong>Maarten</strong> <strong>Sap</strong>, Pemi Nguyen, Franziska Roesner, Eunsol Choi & Yejin Choi (2022) <em>Misinfo Reaction Frames: Reasoning about Readers' Reactions to News Headlines</em>. ACL.</li>
+<li class="pretty">Jesse Dodge, <strong>Maarten</strong> <strong>Sap</strong>, Ana Marasović, William Agnew, Gabriel Ilharco, Dirk Groeneveld, Margaret Mitchell & Matt Gardner (2021) <em>Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus</em>. EMNLP.</li>
+<li class="pretty">Ashutosh Baheti, <strong>Maarten</strong> <strong>Sap</strong>, Alan Ritter & Mark Riedl (2021) <em>Just Say No: Analyzing the Stance of Neural Dialogue Generation in Offensive Contexts</em>. EMNLP.</li>
+<li class="pretty">Alisa Liu, <strong>Maarten</strong> <strong>Sap</strong>, Ximing Lu, Swabha Swayamdipta, Chandra Bhagavatula, Noah A. Smith & Yejin Choi (2021) <em>DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts</em>. ACL.</li>
+<li class="pretty">Albert Xu, Eshaan Pathak, Eric Wallace, Suchin Gururangan, <strong>Maarten</strong> <strong>Sap</strong> & Dan Klein (2021) <em>Detoxifying Language Models Risks Marginalizing Minority Voices</em>. NAACL.</li>
+<li class="pretty">Xuhui Zhou, <strong>Maarten</strong> <strong>Sap</strong>, Swabha Swayamdipta, Yejin Choi & Noah A. Smith (2021) <em>Challenges in Automated Debiasing for Toxic Language Detection</em>. EACL.</li>
+<li class="pretty">Xinyao Ma<sup>*</sup>, <strong>Maarten</strong> <strong>Sap</strong><sup>*</sup>, Hannah Rashkin & Yejin Choi (2020) <em>PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction</em>. EMNLP.</li>
+<li class="pretty">Sam Gehman, Suchin Gururangan, <strong>Maarten</strong> <strong>Sap</strong>, Yejin Choi & Noah A Smith (2020) <em>RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models</em>. Findings of EMNLP.</li>
+<li class="pretty">Maxwell Forbes, Jena D. Hwang, Vered Shwartz, <strong>Maarten</strong> <strong>Sap</strong> & Yejin Choi (2020) <em>Social Chemistry 101: Learning to Reason about Social and Moral Norms</em>. EMNLP.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Eric Horvitz, Yejin Choi, Noah A Smith & James W. Pennebaker (2020) <em>Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models</em>. ACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Saadia Gabriel, Lianhui Qin, Dan Jurafsky, Noah A Smith & Yejin Choi (2020) <em>Social Bias Frames: Reasoning about Social and Power Implications of Language</em>. ACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong><sup>*</sup>, Hannah Rashkin<sup>*</sup>, Derek Chen, Ronan LeBras & Yejin Choi (2019) <em>Social IQa: Commonsense Reasoning about Social Interactions</em>. EMNLP.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Dallas Card, Saadia Gabriel, Yejin Choi & Noah A Smith (2019) <em>The Risk of Racial Bias in Hate Speech Detection</em>. ACL.</li>
+<li class="pretty">Antoine Bosselut, Hannah Rashkin, <strong>Maarten</strong> <strong>Sap</strong>, Chaitanya Malaviya, Asli Celikyilmaz & Yejin Choi (2019) <em>COMET: Commonsense Transformers for Automatic Knowledge Graph Construction</em>. ACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Ronan LeBras, Emily Allaway, Chandra Bhagavatula, Nicholas Lourie, Hannah Rashkin, Brendan Roof, Noah A Smith & Yejin Choi (2019) <em>ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning</em>. AAAI.</li>
+<li class="pretty">Hannah Rashkin, Antoine Bosselut, <strong>Maarten</strong> <strong>Sap</strong>, Kevin Knight & Yejin Choi (2018) <em>Modeling Naive Psychology of Characters in Simple Commonsense Stories</em>. ACL.</li>
+<li class="pretty">Hannah Rashkin<sup>*</sup>, <strong>Maarten</strong> <strong>Sap</strong><sup>*</sup>, Emily Allaway, Noah A. Smith & Yejin Choi (2018) <em>Event2Mind: Commonsense Inference on Events, Intents, and Reactions</em>. ACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Marcella Cindy Prasetio, Ari Holtzman, Hannah Rashkin & Yejin Choi (2017) <em>Connotation Frames of Power and Agency in Modern Films</em>. EMNLP.</li>
+<li class="pretty">Roy Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Ioannis Konstas, Li Zilles, Yejin Choi & Noah A Smith (2017) <em>The Effect of Different Writing Tasks on Linguistic Style: A Case Study of the ROC Story Cloze Task</em>. CoNLL.</li>
+<li class="pretty">H. Andrew Schwartz, Gregory Park, <strong>Maarten</strong> <strong>Sap</strong>, Evan Weingarten, Johannes Eichstaedt, Margaret Kern, David Stillwell, Michal Kosinski, Jonah Berger, Martin Seligman & Lyle Ungar (2015) <em>Extracting Human Temporal Orientation from Facebook Language</em>. NAACL.</li>
+<li class="pretty"><strong>Maarten</strong> <strong>Sap</strong>, Gregory Park, Johannes C. Eichstaedt, Margaret L. Kern, David J. Stillwell, Michal Kosinski, Lyle H. Ungar & Hansen Andrew Schwartz (2014) <em>Developing Age and Gender Predictive Lexica over Social Media</em>. EMNLP.</li>
+</ol><h4 style="margin-left: 1em;">Workshop</h4>
+<ol start="68"><li class="pretty">Emily Allaway, Nina Taneja, Sarah-Jane Leslie & <strong>Maarten</strong> <strong>Sap</strong> (2022) <em>Towards Countering Essentialism through Social Bias Reasoning</em>. EMNLP workshop on NLP for Positive Impact.</li>
+<li class="pretty">Zhilin Wang, Anna Jafarpour & <strong>Maarten</strong> <strong>Sap</strong> (2022) <em>Uncovering Surprising Event Boundaries in Narratives</em>. Workshop on Narrative Understanding.</li>
+<li class="pretty">Tal August, <strong>Maarten</strong> <strong>Sap</strong>, Elizabeth Clark, Katharina Reinecke & Noah A. Smith (2020) <em>Exploring the Effect of Author and Reader Identity in Online Story Writing: the StoriesInTheWild Corpus</em>. Workshop on Narrative Understanding, Storylines, and Events (NUSE)@ ACL.</li>
+<li class="pretty">Roy Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Ioannis Konstas, Li Zilles, Yejin Choi & Noah A Smith (2017) <em>Story Cloze task: UW NLP System</em>. EACL Workshop LSD Sem. 52--55.</li>
+<li class="pretty">Daniel Preotiuc-Pietro, <strong>Maarten</strong> <strong>Sap</strong>, H Andrew Schwartz & Lyle Ungar (2015) <em>Mental Illness Detection at the World Well-Being Project for the CLPsych 2015 Shared Task</em>. NAACL Workshop on CLPsych.</li>
+<li class="pretty">Daniel Preotiuc-Pietro, Johannes Eichstaedt, Gregory Park, <strong>Maarten</strong> <strong>Sap</strong>, Laura Smith, Victoria Tobolsky, H Andrew Schwartz & Lyle Ungar (2015) <em>The Role of Personality, Age and Gender in Tweeting about Mental Illnesses</em>. NAACL Workshop on CLPsych.</li>
+<li class="pretty">H Andrew Schwartz, Johannes Eichstaedt, Margaret L Kern, Gregory Park, <strong>Maarten</strong> <strong>Sap</strong>, David Stillwell, Michal Kosinski & Lyle Ungar (2014) <em>Towards Assessing Changes in Degree of Depression through Facebook</em>. ACL Workshop on CLPsych. 118--125.</li>
+</ol><h4 style="margin-left: 1em;">Demo</h4>
+<ol start="75"><li class="pretty">Maria Antoniak, Anjalie Field, Ji Min Mun, Melanie Walsh, Lauren F. Klein & <strong>Maarten</strong> <strong>Sap</strong> (2023) <em>Riveter: Measuring Power and Social Dynamics Between Entities</em>. ACL demonstrations.</li>
+<li class="pretty">Hao Fang, Hao Cheng, <strong>Maarten</strong> <strong>Sap</strong>, Elizabeth Clark, Ariel Holtzman, Yejin Choi, Noah A Smith & Mari Ostendorf (2018) <em>Sounding Board: A User-Centric and Content-Driven Social Chatbot</em>. NAACL System Demonstrations.</li>
+<li class="pretty">H Andrew Schwartz, Salvatore Giorgi, <strong>Maarten</strong> <strong>Sap</strong>, Patrick Crutchley, Lyle Ungar & Johannes Eichstaedt (2017) <em>DLATK: Differential Language Analysis ToolKit</em>. EMNLP System Demonstrations. 55--60.</li>
+</ol><h4 style="margin-left: 1em;">Other</h4>
+<ol start="78"><li class="pretty"><strong>Maarten</strong> <strong>Sap</strong> (2021) <em>Positive AI with Social Commonsense Models</em>.</li>
+<li class="pretty">Hao Fang, Hao Cheng, Elizabeth Clark, Ariel Holtzman, <strong>Maarten</strong> <strong>Sap</strong>, Mari Ostendorf, Yejin Choi & Noah A Smith (2017) <em>Sounding Board - University of Washington’s Alexa Prize Submission</em>. Alexa Prize Proceedings.</li>
+<li class="pretty">H Andrew Schwartz, <strong>Maarten</strong> <strong>Sap</strong>, Margaret L Kern, Johannes C Eichstaedt, Adam Kapelner, Megha Agrawal, Eduardo Blanco, Lukasz Dziurzynski, Gregory Park, David Stillwell, Michal Kosinski, Martin E P Seligman & Lyle H Ungar (2016) <em>Predicting individual well-being through the language of social media</em>. Biocomputing 2016: Proceedings of the Pacific Symposium. 516--527.</li>
+</ol><h4 style="margin-left: 1em;">Preprint</h4>
+<ol start="81"><li class="pretty">Jimin Mun, Wei Bin Au Yeong, Wesley Hanwen Deng, Jana Schaich Borg & <strong>Maarten</strong> <strong>Sap</strong> (2025) <em>Diverse Perspectives on AI: Examining People's Acceptability and Reasoning of Possible AI Use Cases</em>. arXiv.</li>
+<li class="pretty">Jiaxin Ge, Zora Zhiruo Wang, Xuhui Zhou, Yi-Hao Peng, Sanjay Subramanian, Qinyue Tan, <strong>Maarten</strong> <strong>Sap</strong>, Alane Suhr, Daniel Fried, Graham Neubig & Trevor Darrell (2025) <em>AutoPresent: Designing Structured Visuals from Scratch</em>. arXiv.</li>
+<li class="pretty">Jing-Jing Li, Valentina Pyatkin, Max Kleiman-Weiner, Liwei Jiang, Nouha Dziri, Anne G. E. Collins, Jana Schaich Borg, <strong>Maarten</strong> <strong>Sap</strong>, Yejin Choi & Sydney Levine (2024) <em>SafetyAnalyst: Interpretable, transparent, and steerable LLM safety moderation</em>. arXiv.</li>
+<li class="pretty">Wenkai Li, Jiarui Liu, Andy Liu, Xuhui Zhou, Mona Diab & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>BIG5-CHAT: Shaping LLM Personalities Through Training on Human-Grounded Data</em>. arXiv.</li>
+<li class="pretty">Xuhui Zhou, Hyunwoo Kim, Faeze Brahman, Liwei Jiang, Hao Zhu, Ximing Lu, Frank Xu, Bill Yuchen Lin, Yejin Choi, Niloofar Mireshghallah, Ronan Le Bras & <strong>Maarten</strong> <strong>Sap</strong> (2024) <em>HAICOSYSTEM: An Ecosystem for Sandboxing Safety Risks in Human-AI Interactions</em>. arXiv.</li>
+<li class="pretty">Jen-tse Huang, Jiaxu Zhou, Tailin Jin, Xuhui Zhou, Zixi Chen, Wenxuan Wang, Youliang Yuan, <strong>Maarten</strong> <strong>Sap</strong> & Michael R. Lyu (2024) <em>On the Resilience of Multi-Agent Systems with Malicious Agents</em>. arXiv.</li>
+</ol>
+    </div>
+    
+    <h2 data-toggle="collapse" href="#awards" role="button" aria-expanded="true" aria-controls="awards">Awards</h2>
+    <div class="markdown show" id="awards">
+
+
+### Paper awards
+
+|                             |                                                              |             |
+| --------------------------- | ------------------------------------------------------------ | ----------: |
+| Outstanding paper           | [SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization](./publications.html#kim2023soda) |  EMNLP 2023 |
+| Outstanding Paper           | [NLPositionality: Characterizing Design Biases of Datasets and Models](./publications.html#santy2023nlpositionality) |    ACL 2023 |
+| Best Paper                  | [Queer In AI: A Case Study in Community-Led Participatory AI](./publications.html#OrganizersOfQueerin2023QueerAI) |  FAccT 2023 |
+| Best Paper                  | [Social Bias Frames: Reasoning about Social and Power Implications of Language](./publications.html#sap2020socialbiasframes) | WeCNLP 2020 |
+| Best Short Paper Nomination | [The Risk of Racial Bias in Hate Speech Detection](./publications.html#sap2019risk) |    ACL 2019 |
+
+### Other awards and honors
+
+|                                                              |                                                              |      |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ---: |
+| Selected to speak at the National Academy of Engineering's [Frontiers of Engineering](https://www.naefrontiers.org/212813/2024-US-Frontiers-of-Engineering-Symposium) | Artificial Social Intelligence? On the challenges of Socially Aware and Ethically informed LLMs | 2024 |
+| William Chan Memorial Dissertation Award                     | [Positive AI with Social Commonsense Models](./publications.html#sap2021positiveAIwithSocialCommonsenseModels) | 2021 |
+| Amazon Alexa Prize                                           | [Sounding Board](https://sounding-board.github.io/): [A User-Centric and Content-Driven Social Chatbot](./publications.html#fang2017alexatechreport) | 2017 |
+
+
+    </div>
+	
+	<h2 data-toggle="collapse" href="#grants" role="button" aria-expanded="true" aria-controls="grants">Grants</h2>
+    <div class="markdown show" id="grants">
+
+
+
+
+|                                |                                                              |          |         |
+| ------------------------------ | ------------------------------------------------------------ | -------: | ------: |
+| CMU Block center (seed)        | Responsible Language Model Design and Personalization for Minority Users |  $65,000 | 12/2024 |
+| Schmidt Sciences SafeAI        | OpenAgentSafety: Measuring and Mitigating Safety Harms of LLM-based AI Agent Interactions. | $467,951 | 12/2024 |
+| Google Academic Research Award | Particip-AI: Studying Lay People’s Needs, Judgments, and Impact Assessment for Future AI Use Cases and AI Dilemmas |  $75,000 | 09/2024 |
+| DARPA EMHAT                    | AgInteract: LLM-based Human-AI Teaming Simulation Environment | $129,951 | 03/2024 |
+| CMU Block center (seed)        | Particip-AI: Anticipating and governing future AI use cases and dilemmas with participatory frameworks and democratic processes |  $50,000 | 11/2023 |
+| Google Jigsaw                  | RealerToxicityPrompts (RTP-2.0): Multilingual and Adversarial Prompts for Evaluating Neural Toxic Degeneration in Large Language Models | $200,000 | 10/2023 |
+| AWS generative AI award        | RLKF: Mitigating Factual Hallucinations and Social Biases with Knowledge-based Reinforcement Learning |  $70,000 | 08/2023 |
+| Singapore DSO                  | Combating Hallucination in Large Language Models             | $200,000 | 08/2023 |
+| Google Internal Grant (GIG)    | Perceptions of Generative AI with non-standard English competency |  $30,000 | 08/2023 |
+| Cisco Ethics of AI             | EXPHARM: Socially Aware, Ethically Informed, and Explanation-Centric AI Systems | $100,000 | 02/2023 |
+| NSF IIS core small (co PI)     | World Values of Conversational AI and the Consequences for Human-AI Interaction | $600,000 | 12/2022 |
+| AI2 YI award                   | EXPHARM: Socially Aware, Ethically Informed, and Explanation-Centric AI Systems | $100,000 | 09/2022 |
+| Meta Dynabench                 | CONTEXTOX: Context-Aware and Explainable Toxicity Detection  |  $50,000 | 05/2022 |
+
+
+    </div>
+    
+    <h2 data-toggle="collapse" href="#theses" role="button" aria-expanded="true" aria-controls="theses">Thesis Committees</h2>
+      <div class="markdown show" id="theses">
+|      |                 |                       |      |
+| ---- | --------------- | --------------------- | ---: |
+| PhD | Ashutosh Baheti | Mark Rield, GATech | 2024 |
+| PhD | Kaixin Ma | Eric Nyberg, CMU | 2023 |
+| PhD  | Prakhar Gupta   | Jeff Bingham, CMU     | 2023 |
+| Ms   | Jocelyn Chen    | Cytnhia Breazeal, MIT | 2023 |
+| PhD  | Chan Young Park | Yulia Tsvetkov, UW    | 2023 |
+| PhD  | Paul Röttger    | Scott Hale, University of Oxford | 2023 |
+
+
+      </div>
+
+    <h2 data-toggle="collapse" href="#teaching" role="button" aria-expanded="true" aria-controls="teaching">Teaching</h2>
+      <div class="markdown show" id="teaching">
+### Courses
+||||
+|-|-|-:|
+|[11-430/830 Ethics, Safety, and Social Impact in NLP and LLMs](https://maartensap.com/11830/Spring2025/)||Spring 2025|
+|[11-361 Data Science Seminar](https://mcds-cmu.github.io/11631/f24/)||Fall 2024|
+|[11-830 Ethics, Social Biases, and Positive Impact in Language Technologies](http://maartensap.com/11830/Spring2024)||Spring 2024|
+|[11-361 Data Science Seminar](https://mcds-cmu.github.io/11631/f23/)||Fall 2023|
+| [11-830 Computational Ethics](http://maartensap.com/11-830-Spring2023/) | | Spring 2023 |
+
+### Guest lectures & Tutorials
+|                                                              |                      |             |
+| ------------------------------------------------------------ | -------------------- | ----------: |
+| Social intelligence of LLM agents                            | 05-899 Guest lecture |   Fall 2024 |
+| Bias in Natural Language Processing                          | 66-142 Guest lecture | Spring 2024 |
+| Bias in Natural Language Processing                          | 11-711 Guest Lecture | Spring 2024 |
+| Toxicity in LLMs                                             | 11-667 Guest Lecture |   Fall 2023 |
+| Bias in Natural Language Processing                          | 11-711 Guest Lecture |   Fall 2023 |
+| Bias in Natural Language Processing                          | 05-899 Guest Lecture | Spring 2023 |
+| Bias in Natural Language Processing                          | 15-884 Guest Lecture |   Fall 2022 |
+| "[Crowdsourcing Beyond Annotation](https://nlp-crowdsourcing.github.io/)" | Tutorial             |  EMNLP 2021 |
+| "[Commonsense Reasoning in Natural Language Processing](./acl2020-commonsense/index.html)" | Tutorial             |    ACL 2020 |
+
+      </div> 
+      
+    <h2 data-toggle="collapse" href="#service" role="button" aria-expanded="true" aria-controls="service">Service</h2>
+    <div class="markdown show" id="service">
+### Workshops
+
+|                                                              |                    |              |
+| ------------------------------------------------------------ | ------------------ | -----------: |
+| [Socially Responsible Language Modelling Research (SoLaR)](https://solar-neurips.github.io/) | co-organizer       | NeurIPS 2024 |
+| [Pluralistic Alignment](https://pluralistic-alignment.github.io/) | co-organizer       | NeurIPS 2024 |
+| [Multimodal Content Moderation Workshop](https://multimodal-content-moderation.github.io/) | co-organizer       |    CVPR 2024 |
+| [Multimodal Content Moderation Workshop](https://multimodal-content-moderation.github.io/mmcm23/index.html) | co-organizer       |    CVPR 2023 |
+| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact) | steering committee |   EMNLP 2022 |
+| [NLP for Positive Impact Workshop](https://sites.google.com/view/nlp4positiveimpact/previous-workshops/acl-2021-workshop) | co-organizer       |     ACL 2021 |
+
+### Committees
+
+|                                                  |         |                 |
+| ------------------------------------------------ | ------- | --------------: |
+| Diversity, Equity, and Inclusion committee       | CMU LTI |    2022-present |
+| PhD & MLT admissions committee                   | CMU LTI |    2022-present |
+| Socio-cultural diversity and inclusion committee | ACL     |            2020 |
+| Diversity committee                              | UW CSE  |       2016–2020 |
+| Graduate student advisory council (G5PAC)        | UW CSE  | 01/2018–12/2020 |
+
+#### Senior program committees
+
+|                    |              |
+| ------------------ | -----------: |
+| ACL rolling review | 2020–present |
+| AAAI               |         2021 |
+
+#### Reviewing
+
+
+|                                                              |              |
+| ------------------------------------------------------------ | -----------: |
+| <strong style="margin-top: 1em; display: block;">*Journals & conferences*</strong> |              |
+| ACL rolling review                                           | 2020–present |
+| ACL                                                          | 2019–present |
+| FAccT                                                        |         2024 |
+| PNAS                                                         |         2024 |
+| EMNLP                                                        |    2018–2023 |
+| Journal of Psycholinguistic Research                         |         2023 |
+| Computing Survey                                             |         2023 |
+| Transactions of ACL                                          |  2020,  2022 |
+| AAAI                                                         |         2020 |
+| ICWSM                                                        |         2021 |
+| Dementia and Geriatric Cognitive Disorders Journal           |         2020 |
+| Computational Linguistic                                     |   2019, 2020 |
+| Humanities and Social Sciences Communications                |         2019 |
+| Journal of Artificial Intelligence Research                  |         2019 |
+| IEEE Transactions on Cognitive and Developmental Systems     |         2019 |
+| Social Psychological and Personality Science                 |         2018 |
+| <strong style="margin-top: 1em; display: block;">*Workshops*</strong> |              |
+| Workshop on NLP for Positive Impact                          |         2022 |
+| Workshop on NLP for Causal Inference                         |         2021 |
+| NAACL Student Research Workshop                              |         2019 |
+| CLPsych workshop                                             |    2016–2018 |
+| Stylistic Variation workshop                                 |         2018 |
+
+### Panels & other service or outreach
+
+|                                                              |                       |
+| ------------------------------------------------------------ | --------------------: |
+| Member of the Ethics Committee of [AI2's OLMO project](https://allenai.org/olmo) |       09/2023–present |
+| [Responsible AI](https://www.cmu.edu/block-center/responsible-ai/index.html) salon on generative AI at CMU |               03/2023 |
+| Presentation to U.S. congressional appropriations committee about risks and implications of AI and LLMs |               03/2023 |
+| [Red-teaming GPT-4](https://cdn.openai.com/papers/gpt-4-system-card.pdf) for OpenAI | 09/2022&ndash;12/2022 |
+
+
+    </div>
+
+    <h2 data-toggle="collapse" href="#talks" role="button" aria-expanded="true" aria-controls="talks"> Talks</h2>
+ 
+    <div class="markdown show" id="talks">
+|                                                              |         |
+| ------------------------------------------------------------ | ------: |
+| <strong style="margin-top: 1em; display: block;">Artificial Social Intelligence? On the challenges of Socially Aware and Ethically informed LLMs</strong> |         |
+| [Cluster of Excellence "Science of Intelligence" (SCIoI)](https://www.scienceofintelligence.de/) | 01/2025 |
+| NeurIPS [New In ML](https://newinml.github.io/) workshop (*invited speaker*) | 12/2024 |
+| University of Pittsburgh CS colloquium                       | 11/2024 |
+| Columbia NLP seminar                                         | 10/2024 |
+| [NAE Frontiers of Engineering](https://www.naefrontiers.org/212813/2024-US-Frontiers-of-Engineering-Symposium) (*invited talk*) | 09/2024 |
+| DSTA Faculty speaker series                                  | 09/2024 |
+| Aptima Brown Bag                                             | 07/2024 |
+| [CMU Agent Workshop 2024](https://cmu-agent-workshop.github.io/) (*invited speaker*) | 05/2024 |
+| [UNC Chapel Hill Symposium on AI and Society](https://cs.unc.edu/event/symposium-on-ai-and-society/) | 04/2024 |
+| <strong style="margin-top: 1em; display: block;">Rethinking the Role of AI in Counterspeech</strong> |         |
+| [First Workshop on Multilingual Counterspeech Generation](https://sites.google.com/view/multilang-counterspeech-gen/) at COLING 2025 (*invited speaker*) | 01/2025 |
+| <strong style="margin-top: 1em; display: block;">Developing Computational Analyses of the Social Aspects of Narratives</strong> |         |
+| EMNLP [Workshop on Narrative Understanding](https://sites.google.com/cs.stonybrook.edu/wnu2024) (*invited speaker*) | 11/2024 |
+| [Princeton Workshop on Narrative Possibilities](https://anthropology.princeton.edu/events/workshop-narrative-possibilities) (*invited speaker*) | 06/2024 |
+| <strong style="margin-top: 1em; display: block;">Towards Socially Aware AI with Pragmatic Competence</strong> |         |
+| [ICML workshop on Theory of Mind](https://tomworkshop.github.io/) (*invited speaker*) | 07/2023 |
+| <strong style="margin-top: 1em; display: block;">The Pivotal Role of Social Context in Toxic Language Detection</strong> |         |
+| [ACL workshop on online abuse and harms](https://www.workshopononlineabuse.com/) (*invited speaker*) | 07/2023 |
+| [Dealing with meaning variation Workshop](https://sites.google.com/view/dealingwithmeaningvariation/demeva-2023-public-kickoff) (*invited speaker*) | 10/2023 |
+| <strong style="margin-top: 1em; display: block;">Toward Prosocial NLP: Reasoning About And Responding to Toxicity in Language</strong> |         |
+| MIT Media Lab Breazeal Group Meeting                         | 11/2022 |
+| CMU S3D Computational Social Science Seminar                 | 11/2022 |
+| Amazon Alexa Trust & Privacy                                 | 11/2022 |
+| University of Minnesota NLP seminar                          | 10/2022 |
+| <strong style="margin-top: 1em; display: block;">Detecting and Rewriting Social Biases in Language</strong> |         |
+| Pinterest NLP seminar                                        | 09/2022 |
+| UIUC Responsible Data Science Seminar Series                 | 02/2022 |
+| MilaNLP seminar at Università Bocconi                        | 10/2021 |
+| [PAN workshop at CLEF](https://pan.webis.de/clef21/pan21-web/index.html) (*invited speaker*) | 09/2021 |
+| <strong style="margin-top: 1em; display: block;">Annotators with Attitudes: How Annotator Beliefs And Identities Bias Toxic Language Detection</strong> |         |
+| NAACL                                                        | 07/2022 |
+| Text As Data (TADA)                                          | 10/2021 |
+| <strong style="margin-top: 1em; display: block;">Positive AI with Social Commonsense Models</strong> |         |
+| The Web Conf [Workshop UserNLP: User-centered Natural Language Processing Workshop](https://caisa.informatik.uni-marburg.de/user_nlp.html) (*invited speaker*) | 04/2022 |
+| AKBC [Workshop on Commonsense Reasoning](https://akbc-cskb.github.io/) (*invited speaker*) | 10/2021 |
+| University of Toronto Computer Science                       | 04/2021 |
+| MIT EECS                                                     | 03/2021 |
+| CMU LTI/MLD                                                  | 03/2021 |
+| UChicago CS                                                  | 03/2021 |
+| TTIC                                                         | 02/2021 |
+| Emory CS                                                     | 02/2021 |
+| Vanderbilt CS                                                | 02/2021 |
+| EPFL I&C                                                     | 01/2021 |
+| Yale Data Science & Statistics seminar                       | 01/2021 |
+| <strong style="margin-top: 1em; display: block;">PowerTransformer: Unsupervised Controllable Revision for Biased Language Correction</strong> |         |
+| EMNLP conference                                             | 11/2020 |
+| <strong style="margin-top: 1em; display: block;">Social Bias Frames: Reasoning About Social and Power Dynamics</strong> |         |
+| WeCNLP Summit                                                | 10/2020 |
+| ACL Conference                                               | 07/2020 |
+| <strong style="margin-top: 1em; display: block;">Reasoning about Social Dynamics and Social Bias in Language</strong> |         |
+| SRI seminar                                                  | 01/2021 |
+| Georgia Tech NLP seminar                                     | 10/2020 |
+| Berkeley NLP seminar                                         | 02/2020 |
+| Stanford NLP seminar                                         | 02/2020 |
+| <strong style="margin-top: 1em; display: block;">Social and Ethical Considerations in English Toxic Language Detection</strong> |         |
+| NLP with Friends                                             | 08/2020 |
+| <strong style="margin-top: 1em; display: block;">Recollection versus Imagination: Exploring Human Memory and Cognition via Neural Language Models</strong> |         |
+| ACL Conference                                               | 07/2020 |
+| <strong style="margin-top: 1em; display: block;">COMET: Commonsense Transformers for Automatic Knowledge Graph Construction</strong> |         |
+| DARPA Communicating with Computers grant meeting             | 11/2019 |
+| <strong style="margin-top: 1em; display: block;">Social IQa: Commonsense Reasoning about Social Interactions</strong> |         |
+| EMNLP conference                                             | 11/2019 |
+| <strong style="margin-top: 1em; display: block;">The Risk of Racial Bias in Hate Speech Detection</strong> |         |
+| ACL Conference                                               | 07/2019 |
+| ICML Queer in AI workshop (*invited speaker*)                | 06/2019 |
+| <strong style="margin-top: 1em; display: block;">ATOMIC: An Atlas of Machine Commonsense for If-Then Reasoning</strong> |         |
+| AAAI conference                                              | 01/2019 |
+| AI2 seminar                                                  | 01/2019 |
+| <strong style="margin-top: 1em; display: block;">Event2Mind: Commonsense Inference on Events, Intents, and Reactions</strong> |         |
+| DARPA Communicating with Computers grant meeting             | 07/2018 |
+| <strong style="margin-top: 1em; display: block;">Detecting Implicit Bias in Text through Connotative Language</strong> |         |
+| UW Social Psychology seminar                                 | 04/2018 |
+    </div>
+    
+    <h2 data-toggle="collapse" href="#news" role="button" aria-expanded="true" aria-controls="news"> News Coverage</h2>
+ 
+    <div class="markdown show" id="news">
+##### [NLPositionality: Characterizing Design Biases of Datasets and Models](publications.html#santy2023NLPositionality) (2023)
+- [marktechpost.com](https://web.archive.org/web/20230717174128/https://www.marktechpost.com/2023/07/14/a-research-group-from-cmu-ai2-and-university-of-washington-introduces-nlpositionality-an-ai-framework-for-characterizing-design-biases-and-quantifying-the-positionality-of-nlp-datasets-and-models/)
+
+##### [ProsocialDialog: A Prosocial Backbone for Conversational Agents](publications.html#kim2022prosocialDialog) (2022)
+
+ - [sciencefocus.com](https://web.archive.org/web/20230327201644/https://www.sciencefocus.com/news/chatgpt-ted-lasso-internet-hate-speech/)
+
+##### [Neural Theory-of-Mind? On the Limits of Social Intelligence in Large LMs](publications.html#sap2022neuralToM) (2022)
+
+ - [nytimes.com](https://web.archive.org/web/20230327184321/https://www.nytimes.com/2023/03/27/science/ai-machine-learning-chatbots.html)
+
+##### [Delphi: Towards Machine Ethics and Norms](publications.html#jiang2021delphi) (2021)
+
+ - [nytimes.com](https://web.archive.org/web/20230305234708/https://www.nytimes.com/2021/11/19/technology/can-a-machine-learn-morality.html)
+ - [vox.com](https://web.archive.org/web/20221229172748/https://www.vox.com/future-perfect/2021/10/27/22747333/artificial-intelligence-ethics-delphi-ai)
+ - [theguardian.com](https://web.archive.org/web/20230213231329/https://www.theguardian.com/technology/2021/nov/02/delphi-online-ai-bot-philosophy)
+ - [wired.com](https://web.archive.org/web/20230329222042/https://www.wired.com/story/program-give-ai-ethics-sometimes/)
+ - [geekwire.com](https://web.archive.org/web/20230310030100/https://www.geekwire.com/2021/teaching-artificial-intelligence-right-from-wrong-new-tool-from-ai2-aims-to-model-ethical-judgments/)
+ - [futurism.com](https://web.archive.org/web/20230325165850/https://www.futurism.com/delphi-ai-ethics-racist)
+ - [Nature Outlook](https://web.archive.org/web/20231027052346/https://www.nature.com/articles/d41586-023-03258-1)
+
+##### [Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus](publications.html#dodge2021documentingC4) (2021)
+
+ - [Nature.com](https://web.archive.org/web/20240924194623/https://www.nature.com/articles/s43588-024-00695-4)
+ - [washingtonpost.com](https://web.archive.org/web/20230419120558/https://www.washingtonpost.com/technology/interactive/2023/ai-chatbot-learning/)
+ - [wired.com](https://web.archive.org/web/20230330110735/https://www.wired.com/story/review-ai-chatbots-bing-bard-chat-gpt/)
+ - [wired.com](https://web.archive.org/web/20230314202533/https://www.wired.com/story/efforts-make-text-ai-less-racist-terrible/)
+ - [unite.ai](https://web.archive.org/web/20230321034425/https://www.unite.ai/minority-voices-filtered-out-of-google-natural-language-processing-models/)
+
+##### [Just Say No: Analyzing the Stance of Neural Dialogue Generation in Offensive Contexts](publications.html#baheti2021justSayNo) (2021)
+
+ - [thenextweb.com](https://web.archive.org/web/20230404211115/https://www.thenextweb.com/news/gpt-3-and-humans-twice-as-likely-agree-with-offensive-reddit-comments-chatbots)
+
+##### [DExperts: Decoding-Time Controlled Text Generation with Experts and Anti-Experts](publications.html#liu2021dexperts) (2021)
+
+ - [geekwire.com](https://web.archive.org/web/20230404211810/https://www.geekwire.com/2021/researchers-develop-new-way-help-machine-generated-language-systems-reduce-toxic-language/)
+
+##### [RealToxicityPrompts: Evaluating Neural Toxic Degeneration in Language Models](publications.html#gehman2020realtoxicityprompts) (2020)
+
+ - [ieee.org](https://web.archive.org/web/20230321062841/https://spectrum.ieee.org/open-ais-powerful-text-generating-tool-is-ready-for-business)
+ - [fortune.com](https://web.archive.org/web/20230404205249/https://www.fortune.com/2020/09/29/artificial-intelligence-openai-gpt3-toxic/)
+ - [geekwire.com](https://web.archive.org/web/20230404212031/https://www.geekwire.com/2021/curse-neural-toxicity-ai2-uw-researchers-help-computers-watch-language/)
+ - [wired.com](https://web.archive.org/web/20230314171124/https://www.wired.com/story/ai-fueled-dungeon-game-got-much-darker/)
+
+##### [The Risk of Racial Bias in Hate Speech Detection](publications.html#sap2019risk) (2019)
+
+ - [forbes.com](https://web.archive.org/web/20221218082924/https://www.forbes.com/sites/nicolemartin1/2019/08/13/googles-artificial-intelligence-hate-speech-detector-is-racially-biased/?sh=37fa3a53326c)
+ - [vox.com](https://web.archive.org/web/20230404205546/https://www.vox.com/recode/2019/8/15/20806384/social-media-hate-speech-bias-black-african-american-facebook-twitter)
+ - [observer.com](https://web.archive.org/web/20220818104542/https://www.observer.com/2019/08/google-ai-hate-speech-detector-black-racial-bias-twitter-study/)
+ - [fortune.com](https://web.archive.org/web/20221206075315/https://www.fortune.com/2019/08/16/google-jigsaw-perspective-racial-bias/)
+ - [techcrunch.com](https://web.archive.org/web/20221130020534/https://www.techcrunch.com/2019/08/14/racial-bias-observed-in-hate-speech-detection-algorithm-from-google/)
+- [newscientist.com](https://www.newscientist.com/article/2213064-googles-hate-speech-detecting-ai-appears-to-be-racially-biased/)
+- [breitbart.com](http://web.archive.org/web/20200620080022/https://www.breitbart.com/tech/2019/08/17/ai-is-1-5-times-more-likely-to-flag-social-media-posts-by-black-people-as-offensive/)
+
+##### [Connotation Frames of Power and Agency in Modern Films](publications.html#sap2017connotation) (2017)
+
+ - [futurity.org](https://web.archive.org/web/20211205141552/https://www.futurity.org/movie-scripts-gender-bias-1605212/)
+ - [kuow.org](https://web.archive.org/web/20230404210655/https://www.kuow.org/stories/record-wednesday-november-15-2017/)
+ - [technologynetworks.com](https://web.archive.org/web/20221007062604/https://www.technologynetworks.com/informatics/news/scientists-use-machine-learning-to-analyze-language-in-movies-294179)
+ - [dailymail.co.uk](https://www.dailymail.co.uk/femail/article-5081501/How-Hollywood-films-FUEL-sexism.html)
+- [phys.org](https://phys.org/news/2017-11-ai-tool-quantifies-power-imbalance.html)
+- [electronics360.globalspec.com](https://electronics360.globalspec.com/article/10344/analyzing-gender-bias-with-ai)
+
+##### [Sounding Board - University of Washington’s Alexa Prize Submission](publications.html#fang2017alexatechreport) (2017)
+
+ - [theverge.com](https://www.theverge.com/2018/6/13/17453994/amazon-alexa-prize-2018-competition-conversational-ai-chatbots)
+ - [geekwire.com](https://www.geekwire.com/2018/secrets-500k-amazon-alexa-prize-winner-inside-univ-washingtons-socialbot/)
+ - [wired.com](https://www.wired.com/story/inside-amazon-alexa-prize/)
+ - [q13fox.com](http://q13fox.com/2018/01/08/uw-students-create-conversational-amazon-alexa-device/)
+ - [dailyuw.com](http://www.dailyuw.com/science/article_bc135d10-f0f7-11e7-a1ab-0be114c44429.html)
+ - [seattletimes.com](https://www.seattletimes.com/seattle-news/education/uw-students-teach-alexa-to-have-a-little-chat-with-us/)
+ - [komonews.com](http://komonews.com/news/local/uw-team-wins-500000-prize-from-amazon-for-conversational-bot)
+ - [amazon.com](https://developer.amazon.com/blogs/alexa/post/1a6a19d8-e45d-4b3b-981d-776a378ba625/university-of-washington-students-win-inaugural-alexa-prize)
+ - [komonews.com](http://komonews.com/news/local/uw-team-finalist-for-1-million-prize-to-hold-20-minute-conversation-amazons-alexa)
+ - [geekwire.com](https://www.geekwire.com/2017/amazon-reveals-3-university-finalists-2-5m-alexa-prize-including-one-uw/)
+
+##### Miscellaneous
+
+- 2025
+  - On personality of AI systems: [ScienceNews.com](https://web.archive.org/web/20250207163618/https://www.sciencenews.org/article/ai-chatbot-personalities)
+- 2024
+  - On evaluation of AI: [TheMarkup.org](https://web.archive.org/web/20240717143254/https://themarkup.org/artificial-intelligence/2024/07/17/everyone-is-judging-ai-by-these-tests-but-experts-say-theyre-close-to-meaningless)
+- 2023
+  - On "Sparks of AGI": [NYTimes.com](https://web.archive.org/web/20230516091858/https://www.nytimes.com/2023/05/16/technology/microsoft-ai-human-reasoning.html)
+  - On AI social coaches: [TechCrunch.com](https://web.archive.org/web/20230520020144/https://techcrunch.com/2023/05/13/ai-relationship-building-amorai/)
+  - On GPT-4 red-teaming: [FinancialTimes.com](https://web.archive.org/web/20230414132856/https://www.ft.com/content/0876687a-f8b7-4b39-b513-5fee942831e8?accessToken=zwAAAYd_9J4skc8Idmh6-LdLOdO1E1_ulCgx6A.MEQCIFehPSHqO7vjyrQmUHmZGujI6tVxlndevV5vIQGnWzENAiBJg7ltMLzzeyNNXxQC36cpuLwYQ9BB26_O2upfGLGyyw&segmentId=e95a9ae7-622c-6235-5f87-51e412b47e97&shareType=enterprise)
+  - On users falling in love with ChatGPT: [Time.com](https://web.archive.org/web/20230224153642/https://www.time.com/6257790/ai-chatbots-love/)
+- 2022
+  - On openness of large LMs: [spectrum.ieee.org](https://web.archive.org/web/20230321062817/https://spectrum.ieee.org/large-language-models-meta-openai)
+
+    </div>
+
+    <!--python generateTalksList-->
+    <!-- Footer -->
+     
+  <footer class="footer">
+    <hr>
+    <div style="width:99%">
+    <!--div class="wraptocenter"-->    
+    <!--div class="col-sm-12">
+        <img src="files/AllenSchool.png" style="width:200px;">
+      </div-->
+      <div class="row">
+        <div class="col-2">
+          
+        </div>
+        <div class="col-8 text-center">
+          <img src="images/LTI-logo.png" style="width:300px; margin-bottom: 20px;">
+        </div>
+        <div class="col-2 mb-1">
+          <div class="text-muted small" style="font-style: italic; text-align: right;">
+          Last updated: <br>
+          2025-02-17
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  </div>
+  <!-- /.container -->
+  
+  <!-- jQuery >
+  <script src="tools/bootstrap/js/jquery.js"></script>
+  
+  <!- Bootstrap Core JavaScript ->
+  <script src="tools/bootstrap/js/bootstrap.min.js"></script-->
+
+  <script>
+    var targ, d;
+    function jumpAndHighlight(){
+      targ = window.location.hash;
+      if (targ == "")
+        return ;
+      
+      d = $(targ);
+      d.addClass("highlighted");
+      setTimeout(function(){ d.removeClass("highlighted") }, 5000);
+    }
+    
+    var t;
+    $("label.badge>input[type='radio']").on("change", function(e){
+      //e.preventDefault();
+      t = e.target;
+      var type = e.target.value;
+      console.log(e.target.value);
+      if (type==="all"){
+        $("div.jumptarget").show();
+      } else {
+        $("div.jumptarget").not("."+type).hide();
+        $("div.jumptarget."+type).show();
+      }
+    });
+    window.onload = jumpAndHighlight;
+  </script>
+</body>
+</html>
+
+<script>
+   //document.getElementById('content').innerHTML =
+    // marked.parse(document.getElementById('content').innerHTML);
+   //$("#content").html(marked.parse($("#content").html()));
+   $(".markdown").each(function (i,e){e.innerHTML = marked.parse(e.innerHTML)})
+
+</script>
+
+<style>
+  h1,h2,h3,h4,h5 {
+    font-weight: 200;
+    margin-top: 1em;
+    font-style: italic;
+  }
+  h2 {
+    border-left: solid grey .1em;
+    padding: .1em;
+  }
+  small {
+    font-weight: 200;
+  }
+  .in-citation {
+    margin-left: 20px;
+  }
+  .citation-toggle {
+    
+  }
+  table {
+    width:100%;
+  }
+
+  .year {
+    font-weight: 100;
+    font-style: italic;
+    text-align: center;
+    margin: .5em 0 0 0;
+  }
+  a.badge.active {
+    border: 1px solid red;
+  }
+  .awards {
+    margin-top: .5em;
+    display: block;
+    font-style: italic;
+    font-weight: 600;
+    color: ForestGreen;
+  }
+  .highlighted {
+    background-color: #d8ebff;
+    box-shadow: 0px 0px 1.5px 1.5px #d8ebff;
+    border-radius: 10px;
+  }
+  .badge-conference {
+    background-color: #decbe4;
+  }
+  .badge-workshop {
+    background-color: #b3cde3;
+  }
+  .badge-demo {
+    background-color: #ffffcc;
+  }
+  .badge-journal {
+    background-color: #ccebc5;
+  }
+  .badge-other {
+    background-color: #fed9a6;
+  }
+  .badge-preprint {
+    background-color: #fbb4ae;
+  }
+</style>
