@@ -11,13 +11,13 @@
 
 ### Committees
 
-|                                                  |         |                 |
-| ------------------------------------------------ | ------- | --------------: |
-| Diversity, Equity, and Inclusion committee       | CMU LTI |    2022-present |
-| PhD & MLT admissions committee                   | CMU LTI |    2022-present |
-| Socio-cultural diversity and inclusion committee | ACL     |            2020 |
-| Diversity committee                              | UW CSE  |       2016–2020 |
-| Graduate student advisory council (G5PAC)        | UW CSE  | 01/2018–12/2020 |
+|                                                              |         |                 |
+| ------------------------------------------------------------ | ------- | --------------: |
+| Belonging and Engagement in Language Technologies Institute (BELTI) committee | CMU LTI |    2022-present |
+| PhD & MLT admissions committee                               | CMU LTI |    2022-present |
+| Socio-cultural diversity and inclusion committee             | ACL     |            2020 |
+| Diversity committee                                          | UW CSE  |       2016–2020 |
+| Graduate student advisory council (G5PAC)                    | UW CSE  | 01/2018–12/2020 |
 
 #### Senior program committees
 
