@@ -34,19 +34,7 @@
 <body>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script>
-	let password = "maarten";
-        (function passcodeprotect() {
-            let passcode = prompt("Enter PassCode");
-            while (passcode !== password) {
-                alert("Incorrect PassCode");
-                return passcodeprotect();
-            }
-        }());
-
-        document.getElementById("container")
-            .style.display = "block";
-  </script>
+  
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container" style="max-width: 80%;">
     <a class="navbar-brand" href="../index.html">Maarten Sap</a>
