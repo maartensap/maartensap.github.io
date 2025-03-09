@@ -25,7 +25,7 @@ def includeMarkdownFile(path):
   md = open(path).read()
   return md 
 
-def loadAndReplaceFile(fn,d="",parentPath="",silent=False):
+def loadAndReplaceFile(fn,d="",parentPath="",silent=False,**kwargs):
   ffn = f"html/{d}{fn}"
   html = open(f"html/{d}{fn}").read()
   if not silent:
@@ -38,7 +38,7 @@ def loadAndReplaceFile(fn,d="",parentPath="",silent=False):
       # embed();exit()
       res = eval(m)
     else:
-      res = eval(m+f"(parentPath='{parentPath}',lastEditTime=lastEditTime)")
+      res = eval(m+f"(parentPath='{parentPath}',lastEditTime=lastEditTime,**kwargs)")
     html= html.replace(f"<python {m}>",res)
     if not silent:
       print(fn,m)
@@ -435,12 +435,13 @@ def comparePubs(p1,p2):
   
   return flattenPubs(p1) == flattenPubs(p2)
   
-def createResearchThemes(silent=False,year_window=3,**kwargs):
+def createResearchThemes(silent=False,year_window=3,no_gpt_themes=False,**kwargs):
   """Uses GPT-4 to generate research themes"""
   themes, oldPubs = loadResearchThemes()
+  
   pubs = loadPubs()
-  # embed();exit()
-  if not comparePubs(oldPubs,pubs):
+  
+  if not no_gpt_themes and not comparePubs(oldPubs,pubs):
     print("Recreating themes with GPT-4")
   
     recentPubs = [p.copy() for p in pubs if
@@ -502,19 +503,19 @@ def createResearchThemes(silent=False,year_window=3,**kwargs):
   
 
 #################################################################
-def generateNotesFiles(silent=False):
+def generateNotesFiles(silent=False,**kwargs):
   notesFiles = glob("html/notes/*.html")
   for ffn in notesFiles:
     fn = os.path.basename(ffn)
-    loadAndReplaceFile(fn,d="notes/",parentPath="../",silent=silent)
+    loadAndReplaceFile(fn,d="notes/",parentPath="../",**kwargs)
 
-def generateMainFiles(silent=False):
+def generateMainFiles(silent=False,**kwargs):
   notesFiles = glob("html/*.html")
   for ffn in notesFiles:
     fn = os.path.basename(ffn)
-    loadAndReplaceFile(fn,silent=silent)
+    loadAndReplaceFile(fn,**kwargs)
     
-def generateProjectFiles(silent=False):
+def generateProjectFiles(silent=False,**kwargs):
   projectFiles = glob("html/*/*.html")
   projectFiles = [f for f in projectFiles if "notes/" not in f]
   
@@ -523,10 +524,10 @@ def generateProjectFiles(silent=False):
     d = os.sep.join(splitPath[1:-1])
     fn = splitPath[-1]
 
-    loadAndReplaceFile(fn,d=d+"/",parentPath="../"*(len(splitPath)-2),silent=silent)
+    loadAndReplaceFile(fn,d=d+"/",parentPath="../"*(len(splitPath)-2),**kwargs)
 
 
-def generateInSubmissionList(silent=False):
+def generateInSubmissionList(silent=False,**kwargs):
   d = "pdfs/insubmission"
   if not silent:
     print(f"Generating {d}/index.html")
@@ -541,7 +542,7 @@ def generateInSubmissionList(silent=False):
   with open(os.path.join(d,"index.html"),"w+") as f:
     f.write(html)
 
-def generateDataList(silent=False):
+def generateDataList(silent=False,**kwargs):
   if not silent:
     print("Generating data/index.html")
   d = "data/"
@@ -567,14 +568,15 @@ def generateDataList(silent=False):
 if __name__ == "__main__":
   p = argparse.ArgumentParser()
   p.add_argument("-s","--silent",action="store_true")
+  p.add_argument("-n","--no_gpt_themes",action="store_true")
   args = p.parse_args()
   #exit()
-  generateInSubmissionList(silent=args.silent)
-  generateDataList(silent=args.silent)
+  generateInSubmissionList(silent=args.silent,no_gpt_themes=args.no_gpt_themes)
+  generateDataList(silent=args.silent,no_gpt_themes=args.no_gpt_themes)
   
-  generateNotesFiles(silent=args.silent)
-  generateMainFiles(silent=args.silent)
-  generateProjectFiles(silent=args.silent)
+  generateNotesFiles(silent=args.silent,no_gpt_themes=args.no_gpt_themes)
+  generateMainFiles(silent=args.silent,no_gpt_themes=args.no_gpt_themes)
+  generateProjectFiles(silent=args.silent,no_gpt_themes=args.no_gpt_themes)
 
 
   # generateCVpdf(silent=args.silent)

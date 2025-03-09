@@ -19,7 +19,7 @@ mainAuthorFirst = "Maarten";
 mainAuthorLast = "Sap";
 listOfConferences = ["ACL","NAACL","EMNLP","EACL","CoNLL","AAAI","Findings of EMNLP",
                      "Findings of ACL", "Findings of NAACL", "NeurIPS","FAccT", "ICLR",
-                     "CHI", "COLM", "AIES"]
+                     "CHI", "COLM", "AIES", "CVPR", "ICML"]
 listOfJournals = ["Psychological Science", "Psychological Methods"]
 keysToSkip = ["projecturl","dataurl","equalcontrib","awards","entryType",
               "title","author","bibKey","venue","updatedurl","updateddate",
