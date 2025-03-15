@@ -11,14 +11,16 @@
 
   <python addNavBar>
   <div class="row justify-content-center" style="background-color:#e9dbc6; width: 100%; margin: 0;">
-
-    <div class="col-7" style="margin-top: 10px;color: #583d3f;font-weight: 100; max-width: 800px;min-height: 220px;">
-      <h1 style="  position: absolute;   top: 50%;   -ms-transform: translateY(-50%);  transform: translateY(-60%);">Reflecting on my first two years as faculty at CMU<br>Part 2: First year faculty</h1>
-      <em></em>
-    </div>
-    <div class="col-3" style="text-align: center;">
-      <img style="width: 100%; max-width: 400px; margin: auto;"src="websiteRoot/images/balancing-work-life.png">
-      </div>
+	<div class="container" style="background-color:#e9dbc6; width: 100%; margin: 0; padding: 20px; display: flex; align-items: center;">
+	  <div class="row justify-content-center w-100">
+		<div class="col-lg-7 col-md-12 col-sm-12" style="color: #583d3f; font-weight: 100; max-width: 800px;">
+		  <h1>Reflecting on my first two years as faculty at CMU<br>Part 2: First year faculty</h1>
+		</div>
+		<div class="col-lg-3 col-md-12 col-sm-12 text-center">
+		  <img style="width: 100%; max-width: 400px; margin: auto;" src="../images/balancing-work-life.png">
+		</div>
+	  </div>
+	</div>
   </div>
   <div class="container">
     <div class="row justify-content-center">
@@ -219,10 +221,12 @@ Here are some of my reflections about things I am glad happened and things I am 
   - Sad my perfectionist mindset made my life much harder. I feel less like a perfectionist these days, but I still have high standards for myself and put pressure on myself. But I wish that back then I didn't fall for some of the voices in my head that told me I should already know how to do this job, or that one grant rejection means I'm not cut out for the job. Therapy helped, but my brain is mean to me sometimes.
   - Sad that my scars from the job search affected my relationship to teaching so much and that it made me fear being judged by students. Most students are wonderful and excited to learn, and I wish I had internalized that earlier.
   - Sad that I was so nervous about teaching that I had a panic attack. That was not a pleasant experience.
-
+</div>
+</div>
 </div>
 </body>
-
+<python addFooter>
+</html>
 <script>
   document.getElementById('content').innerHTML =
     marked.parse(document.getElementById('content').innerHTML);
@@ -242,5 +246,19 @@ emm{
 }
 .bad {
   color: #67001f;
+}
+@media (max-width: 992px) {
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 </style>

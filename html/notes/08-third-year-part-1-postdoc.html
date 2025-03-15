@@ -10,14 +10,16 @@
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <python addNavBar>
   <div class="row justify-content-center" style="background-color:#e9dbc6; width: 100%; margin: 0;">
-
-    <div class="col-7" style="margin-top: 10px;color: #583d3f;font-weight: 100; max-width: 800px;min-height: 220px;">
-      <h1 style="  position: absolute;   top: 50%;   -ms-transform: translateY(-50%);  transform: translateY(-60%);">Reflecting on my first two years as faculty at CMU<br>Part 1: Postdoc year</h1>
-      <em></em>
-    </div>
-    <div class="col-3" style="text-align: center;">
-      <img style="width: 100%; max-width: 400px; margin: auto;"src="websiteRoot/images/balancing-work-life.png">
-      </div>
+	<div class="container" style="background-color:#e9dbc6; width: 100%; margin: 0; padding: 20px; display: flex; align-items: center;">
+	  <div class="row justify-content-center w-100">
+		<div class="col-lg-7 col-md-12 col-sm-12" style="color: #583d3f; font-weight: 100; max-width: 800px;">
+		  <h1>Reflecting on my first two years as faculty at CMU<br>Part 1: Postdoc year</h1>
+		</div>
+		<div class="col-lg-3 col-md-12 col-sm-12 text-center">
+		  <img style="width: 100%; max-width: 400px; margin: auto;" src="../images/balancing-work-life.png">
+		</div>
+	  </div>
+	</div>
   </div>
   <div class="container">
     <div class="row justify-content-center">
@@ -174,7 +176,11 @@ Looking back, I don't know what the right approach should have been, but since I
 
 
 </div>
+</div>
+</div>
 </body>
+<python addFooter>
+</html>
 <script>
   document.getElementById('content').innerHTML =
     marked.parse(document.getElementById('content').innerHTML);
@@ -194,5 +200,19 @@ emm{
 }
 .bad {
   color: #67001f;
+}
+@media (max-width: 992px) {
+  h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
 </style>
