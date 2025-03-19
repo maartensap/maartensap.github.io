@@ -78,6 +78,7 @@
 
 - 2025
   - On personality of AI systems: [ScienceNews.com](https://web.archive.org/web/20250207163618/https://www.sciencenews.org/article/ai-chatbot-personalities)
+  - On how to be a smarter AI user: [CNet.com](https://web.archive.org/web/20250314162336/https://www.cnet.com/tech/services-and-software/5-ways-to-stay-smart-when-using-gen-ai-explained-by-computer-science-professors/)
 - 2024
   - On evaluation of AI: [TheMarkup.org](https://web.archive.org/web/20240717143254/https://themarkup.org/artificial-intelligence/2024/07/17/everyone-is-judging-ai-by-these-tests-but-experts-say-theyre-close-to-meaningless)
 - 2023
