@@ -123,7 +123,6 @@ def generateHTMLpublications(**kwargs):
     out += prettifyAuthors(p)+"</div>"
     
     out += '<div class="col-12" style="font-size: .85em;"><em>Links:</em> '
-    embed();exit()
     if os.path.exists("pdfs/"+p["bibKey"]+".pdf"):
       out += f'<a class="bracket-link" target="_blank" href="pdfs/{p["bibKey"]}.pdf">[pdf]</a>\n'
     if "url" in p:
