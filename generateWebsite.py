@@ -483,7 +483,6 @@ def createResearchThemes(silent=False,year_window=3,no_gpt_themes=False,**kwargs
 
     prompt += "\nPlease format the output in json {'theme name': 'description'}"
 
-    # embed();exit()
     chat_completion = client.chat.completions.create(
       model="gpt-4o-mini",
       messages=[{"role": "user", "content": prompt}],
