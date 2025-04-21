@@ -4,6 +4,7 @@
 
 |                             |                                                              |             |
 | --------------------------- | ------------------------------------------------------------ | ----------: |
+| Best Paper Runner Up        | [Rel-A.I.: An Interaction-Centered Approach To Measuring Human-LM Reliance](./publications.html#zhou2025relai) |  NAACL 2025 |
 | Outstanding paper           | [SODA: Million-scale Dialogue Distillation with Social Commonsense Contextualization](./publications.html#kim2023soda) |  EMNLP 2023 |
 | Outstanding Paper           | [NLPositionality: Characterizing Design Biases of Datasets and Models](./publications.html#santy2023nlpositionality) |    ACL 2023 |
 | Best Paper                  | [Queer In AI: A Case Study in Community-Led Participatory AI](./publications.html#OrganizersOfQueerin2023QueerAI) |  FAccT 2023 |

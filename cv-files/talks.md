@@ -1,6 +1,7 @@
 |                                                              |         |
 | ------------------------------------------------------------ | ------: |
 | <strong style="margin-top: 1em; display: block;">Artificial Social Intelligence? On the challenges of Socially Aware and Ethically informed LLMs</strong> |         |
+| MIT CSAIL NLP seminar                                        | 04/2025 |
 | UCLA CS 269 Guest Lecture                                    | 02/2025 |
 | [Cluster of Excellence "Science of Intelligence" (SCIoI)](https://www.scienceofintelligence.de/) | 01/2025 |
 | NeurIPS [New In ML](https://newinml.github.io/) workshop (*invited speaker*) | 12/2024 |
