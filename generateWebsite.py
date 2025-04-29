@@ -464,7 +464,7 @@ def generateImagesForThemes(themes,client,model="dall-e-3"):
       f.write(image_bytes)
 
 def outputThemesAndImages2HTML(themes,img_dir):
-  formatting = '<div class="col-2"></div><div class="col-10><h4>{t}</h4></div>\n'
+  formatting = '<div class="col-2"></div><div class="col-10"><h4>{t}</h4></div>\n'
   formatting+= '<div class="col-2"><img class="theme-img" src="{i}"></div>\n'
   formatting+= '<div class="col-10 markdown">\n{d}</div>\n'
   # formatting+= '<div class="col-3"><img class="theme-img" src="{i}"></div>\n'
