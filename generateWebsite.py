@@ -8,6 +8,7 @@ from glob import glob
 import pandas as pd
 import pickle, json
 import markdown
+import base64
 
 from collections import Counter
 
@@ -435,7 +436,7 @@ def comparePubs(p1,p2):
   
   return flattenPubs(p1) == flattenPubs(p2)
 
-def generateImagesForThemes(themes,client,model="dall-e-3"):
+def generateImagesForThemes(themes,client,model="gpt-image-1"):
   prompt = "Take this description of a research theme and generate a very detailed caption for a simple clipart / graphic / abstract style drawing or image that depicts the main point of the theme. Do not suggest image captions that have text in them. Respond with only the caption, no formatting or bullets or anything.\n"
   
   imagePrompts = {}
@@ -446,14 +447,14 @@ def generateImagesForThemes(themes,client,model="dall-e-3"):
     )
     caption = chat_completion.choices[0].message.content
     imagePrompts[t] = caption
-
+    print("Generating image", i)
     result = client.images.generate(
       # model="gpt-image-1",
       model=model,#"dall-e-3",
       prompt=caption,
       n=1,
       size="1024x1024",
-      response_format="b64_json"
+      # response_format="b64_json"
     )
     
     image_base64 = result.data[0].b64_json
@@ -534,11 +535,12 @@ def createResearchThemesWithImages(silent=False,year_window=3,no_gpt_themes=Fals
     )
 
     themes = json.loads(chat_completion.choices[0].message.content)
-    cacheResearchThemes((themes,pubs))
-    
+    print("\n".join([f"#### *{t}*\n{desc}\n" for t,desc in themes.items()]))
     # generate images
     generateImagesForThemes(themes,client,model="gpt-image-1")
   
+    cacheResearchThemes((themes,pubs))
+    
   # output themes into HTML
   prettyThemes = outputThemesAndImages2HTML(themes,"images/themes/")
     
