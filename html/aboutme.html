@@ -1,282 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <head>
+  <link rel="stylesheet" type="text/css" href="tools/style.css">
   <python addHeader>
-  <title>Maarten Sap - About me</title>
+  <title>Maarten Sap - Home</title>
 </head>
-
 <body>
-  
   <python addNavBar>
-
   <!-- Page Content -->
-  <div class="container" style="padding-top: 10px;">
-    <div class="content-left" style="width: 100%">
-      <!-- Jumbotron Header -->
-      
-      <div class="row text-left">
-        <div class="col-12">
-          <h1>About me</h1>
-          <!--p>During my years of graduate school and after, I have made it a priority to mentor undergraduate and master students, be engaged in service for both my academic and university-wide communities.
-          </p-->
-          <p>
-            For more information about me, please see my <a href="./cv.html">CV</a>.
-          </p>
-          <h3>Third person bio</h3>
-          <p>
-            <python addBio>
-          </p>
-          
-        </div>
-      </div>
-      <div class="row text-left">
-        <div class="col-12">
-            <!--h2 class="" data-toggle="collapse" href="#advising" role="button" aria-expanded="true" aria-controls="advising">Advising</h2>
-      
-                <div class="markdown show" id="advising">
-<python includeMarkdownFile("cv-files/students.md")>
+  <!--div class="clearfix hidden-sm-up"></div-->
+  <div class="container" style="padding-top: 10px;max-width: 50%;">
+	<div class="row">
+	    <div class="col col-lg-4 col-md-12 col-sm-12 col-xs-12">
+			<img class="profile" src="images/headshots/armsCrossed_square_sm.jpg" alt="Maarten Sap" style="width: 100%; margin-bottom: 2em; ">
+		</div>
+		<div class="col col-lg-8 col-md-12 col-sm-12 col-xs-12">
+		<p>
+		Maarten Sap is an assistant professor in Carnegie Mellon University's Language Technologies Department (CMU LTI), and a courtesy appointment in the Human-Computer Interaction institute (HCII).
+		He is also a part-time research scientist and AI safety lead at the Allen Institute for AI.
+		His research focuses on measuring and improving AI systems' social and interactional intelligence, and analyzing social inequality, safety, and bias in human- or AI-generated language.
+		He has presented his work in top-tier NLP and AI conferences, receiving paper awards or nominations at EMNLP 2023, ACL 2023, FAccT 2023, WeCNLP 2020, and ACL 2019.
+		His research has been covered in the press, including the New York Times, Forbes, Fortune, Vox, and more.
+		<br>
+		Before joining CMU, he was a postdoc/young investigator at the Allen Institute for AI (AI2) on project MOSAIC.
+		He received his PhD from the University of Washington's Paul G. Allen School of Computer Science & Engineering where he was advised by Yejin Choi and Noah Smith.
+		</p>
+		</div>
+	  </div>
+   </div>
+</body> 
 
-                </div-->
-          <!--script type="text/javascript" charset="utf-8">var TgTableSort=window.TgTableSort||function(n,t){"use strict";function r(n,t){for(var e=[],o=n.childNodes,i=0;i<o.length;++i){var u=o[i];if("."==t.substring(0,1)){var a=t.substring(1);f(u,a)&&e.push(u)}else u.nodeName.toLowerCase()==t&&e.push(u);var c=r(u,t);e=e.concat(c)}return e}function e(n,t){var e=[],o=r(n,"tr");return o.forEach(function(n){var o=r(n,"td");t>=0&&t<o.length&&e.push(o[t])}),e}function o(n){return n.textContent||n.innerText||""}function i(n){return n.innerHTML||""}function u(n,t){var r=e(n,t);return r.map(o)}function a(n,t){var r=e(n,t);return r.map(i)}function c(n){var t=n.className||"";return t.match(/\S+/g)||[]}function f(n,t){return-1!=c(n).indexOf(t)}function s(n,t){f(n,t)||(n.className+=" "+t)}function d(n,t){if(f(n,t)){var r=c(n),e=r.indexOf(t);r.splice(e,1),n.className=r.join(" ")}}function v(n){d(n,L),d(n,E)}function l(n,t,e){r(n,"."+E).map(v),r(n,"."+L).map(v),e==T?s(t,E):s(t,L)}function g(n){return function(t,r){var e=n*t.str.localeCompare(r.str);return 0==e&&(e=t.index-r.index),e}}function h(n){return function(t,r){var e=+t.str,o=+r.str;return e==o?t.index-r.index:n*(e-o)}}function m(n,t,r){var e=u(n,t),o=e.map(function(n,t){return{str:n,index:t}}),i=e&&-1==e.map(isNaN).indexOf(!0),a=i?h(r):g(r);return o.sort(a),o.map(function(n){return n.index})}function p(n,t,r,o){for(var i=f(o,E)?N:T,u=m(n,r,i),c=0;t>c;++c){var s=e(n,c),d=a(n,c);s.forEach(function(n,t){n.innerHTML=d[u[t]]})}l(n,o,i)}function x(n,t){var r=t.length;t.forEach(function(t,e){t.addEventListener("click",function(){p(n,r,e,t)}),s(t,"tg-sort-header")})}var T=1,N=-1,E="tg-sort-asc",L="tg-sort-desc";return function(t){var e=n.getElementById(t),o=r(e,"tr"),i=o.length>0?r(o[0],"td"):[];0==i.length&&(i=r(o[0],"th"));for(var u=1;u<o.length;++u){var a=r(o[u],"td");if(a.length!=i.length)return}x(e,i)}}(document);document.addEventListener("DOMContentLoaded",function(n){TgTableSort("tg-9CgGi")});</script-->
-        </div>
-      </div>
-      <div class="row text-left">
-        <div class="col-11">
-          <!--h2 data-toggle="collapse" href="#service" role="button" aria-expanded="true" aria-controls="service">Service</h2>
-            <div class="markdown show" id="service">
-<python includeMarkdownFile("cv-files/service.md")>
-
-            </div-->
-          <!--h3>Service</h3>
-          <h4>Program Committee &amp; Reviewing</h4>
-          I regularly review for our NLP conferences and workshops:
-          <ul>
-            <li>ACL <a href="http://www.acl2019.org/">2019</a>, <a href="https://acl2020.org/">2020</a></li>
-            <li>NAACL <a href="http://naacl2019-srw.github.io/">Student Research Workshop 2019</a></li>
-            <li>NAACL <a href="http://naacl2019.org/">2019</a>, <a href="http://2021.naacl.org">2021</a></li>
-            <li>AAAI <a href="https://aaai.org/Conferences/AAAI-20/">2020</a>, <a href="https://aaai.org/Conferences/AAAI-21/">2021</a></li>
-            <li>EMNLP <a href="http://emnlp2018.org/">2018</a>, <a href="https://www.emnlp-ijcnlp2019.org/">2019</a>, <a href="https://2020.emnlp.org/">2020</a></li>
-            <li><a href="http://clpsych.org/">CLPsych</a> workshop at ACL/NAACL 2016, 2017, 2018</li>
-            <li><a href="https://sites.google.com/view/2ndstylisticvariation/home">Stylistic Variation</a> workshop at NAACL 2018</li>
-            <li><a href="https://sites.google.com/view/nuse">NUSE</a> workshop at ACL 2020</li>
-            <li>Workshop on <a href="https://sites.google.com/view/narrativeunderstanding">Narrative Understanding</a> at NAACL 2019</li>
-            <li>Workshop on <a href="https://neuralgen.io/">neural text Generation</a> at NAACL 2019</li>
-            <li>Workshop on Noisy User-generated Text <a href="http://noisy-text.github.io/2018/">2018</a>, <a href="http://noisy-text.github.io/2019/">2019</a>, <a href="http://noisy-text.github.io/2020/">2020</a></li>
-          </ul>
-          Additionally, I've reviewed for several journals (in NLP and other fields):
-          <ul>
-            <li><a href="https://transacl.org/index.php/tacl">Transactions of ACL</a> 2020</li>
-            <li><a href="https://www.karger.com/Journal/Home/224226">Dementia and Geriatric Cognitive Disorders</a> 2020</li>
-            <li><a href="https://www.mitpressjournals.org/loi/coli">Computational Linguistics</a> 2019, 2020</li>
-            <li><a href="https://www.nature.com/palcomms/">Humanities and Social Sciences Communications</a> 2019</li>
-            <li><a href="https://jair.org/index.php/jair">Journal of Artificial Intelligence Research</a> 2019</li>
-            <li><a href="https://cis.ieee.org/publications/t-cognitive-and-developmental-systems">IEEE Transactions on Cognitive and Developmental Systems</a> 2019</li>
-            <li><a href="http://journals.sagepub.com/home/spp">Social Psychological and Personality Science</a> 2018</li>
-          </ul>
-          <h4>Community &amp; Service</h4>
-          <ul>
-            <li>Member of the <a href="https://www.cs.washington.edu/diversity">diversity committee</a> at UW CSE (2017-now)</li>
-            <li>Member of the <a href="https://www.cs.washington.edu/students/grad/g5pac">grad student advisory council</a> at UW CSE (2018-now)</li>
-            <li>Organizer of the <a href="https://sites.google.com/view/queer-in-ai/acl-2020">Queer in AI social event</a> at ACL 2020</li> 
-            <li>Member of the <a href="https://acl2020.org/committees/diversity-inclusion">socio-cultural diversity and inclusion committee</a> at ACL 2020</li>
-            <li>Workshop reviewer for the <a href="http://tapiaconference.org/">2018 Tapia conference</a></li>
-            <li>Social Chair at UW CSE (2016-2017)</li>
-          </ul-->
-        </div>
-      </div>
-      <!--div class="row text-left">
-        <div class="col-11">
-          <h3>Teaching</h3>
-          I TA-ed the following courses at the University of Washington:
-          <ul>
-            <li>CSE 481: Natural Language Processing Capstone, Spring 2017</li>
-            <li>CSE 490U: Natural Language Processing, Spring 2016</li>
-          </ul>
-        </div>
-      </div-->
-
-
-      <!-- /.row -->
-    
-    </div> 
-  </div>
-  <!-- /.container -->
-
-<script>
-   //document.getElementById('content').innerHTML =
-    // marked.parse(document.getElementById('content').innerHTML);
-   //$("#content").html(marked.parse($("#content").html()));
-   $(".markdown").each(function (i,e){e.innerHTML = marked.parse(e.innerHTML)})
-
-</script>
-  <script type="text/javascript" charset="utf-8">
-  var de;
-  var col1_re = /(\w*)\s*(\(.*)?$/;
-  //var col2_re = /(\d{4})\s(\w+)/;
-var TgTableSort = window.TgTableSort || function(n, t) {
-  "use strict";
-
-  function r(n, t) {
-    for (var e = [], o = n.childNodes, i = 0; i < o.length; ++i) {
-      var u = o[i];
-      if ("." == t.substring(0, 1)) {
-        var a = t.substring(1);
-        f(u, a) && e.push(u)
-      } else u.nodeName.toLowerCase() == t && e.push(u);
-      var c = r(u, t);
-      e = e.concat(c)
-    }
-    return e
-  }
-
-  function e(n, t) {
-    var e = [],
-      o = r(n, "tr");
-    return o.forEach(function(n) {
-      var o = r(n, "td");
-      t >= 0 && t < o.length && e.push(o[t])
-    }), e
-  }
-  function o(n) {
-    /* Finds content to compute new order*/
-    //console.log("o");
-    var c = n.textContent || n.innerText || "";
-    var o_c = "";
-    var match;
-    if (n.classList.contains("col1")) {
-      match = col1_re.exec(c)// || ["", c];
-      o_c = match[1];
-    } else if (n.classList.contains("col2")) {
-      //match = col2_re.exec(c); //console.log("col2");
-      o_c = c.replace("now","2100");
-    }
-    //console.log(c+"->"+o_c);
-    return o_c;
-  }
-
-  function i(n) {
-    /* Gets the content after new order is determined */
-    //console.log("i");
-    return n.innerHTML || "";
-  }
-
-  function u(n, t) {
-    var r = e(n, t);
-    return r.map(o)
-  }
-
-  function a(n, t) {
-    var r = e(n, t);
-    return r.map(i)
-  }
-
-  function c(n) {
-    var t = n.className || "";
-    return t.match(/\S+/g) || []
-  }
-
-  function f(n, t) {
-    return -1 != c(n).indexOf(t)
-  }
-
-  function s(n, t) {
-    f(n, t) || (n.className += " " + t)
-  }
-
-  function d(n, t) {
-    if (f(n, t)) {
-      var r = c(n),
-        e = r.indexOf(t);
-      r.splice(e, 1), n.className = r.join(" ")
-    }
-  }
-
-  function v(n) {
-    d(n, L), d(n, E)
-  }
-
-  function l(n, t, e) {
-    r(n, "." + E).map(v), r(n, "." + L).map(v), e == T ? s(t, E) : s(t, L)
-  }
-
-  function g(n) {
-    return function(t, r) {
-      var e = n * t.str.localeCompare(r.str);
-      return 0 == e && (e = t.index - r.index), e
-    }
-  }
-
-  function h(n) {
-    return function(t, r) {
-      var e = +t.str,
-        o = +r.str;
-      return e == o ? t.index - r.index : n * (e - o)
-    }
-  }
-
-  function m(n, t, r) {
-    var e = u(n, t),
-      o = e.map(function(n, t) {
-        return {
-          str: n,
-          index: t
-        }
-      }),
-      i = e && -1 == e.map(isNaN).indexOf(!0),
-      a = i ? h(r) : g(r);
-    return o.sort(a), o.map(function(n) {
-      return n.index
-    })
-  }
-
-  function p(n, t, r, o) {
-    for (var i = f(o, E) ? N : T, u = m(n, r, i), c = 0; t > c; ++c) {
-      var s = e(n, c),
-        d = a(n, c);
-      s.forEach(function(n, t) {
-        n.innerHTML = d[u[t]]
-      })
-    }
-    l(n, o, i)
-  }
-
-  function x(n, t) {
-    var r = t.length;
-    t.forEach(function(t, e) {
-      t.addEventListener("click", function() {
-        p(n, r, e, t)
-      }), s(t, "tg-sort-header")
-    })
-  }
-  var T = 1,
-    N = -1,
-    E = "tg-sort-asc",
-    L = "tg-sort-desc";
-  return function(t) {
-    var e = n.getElementById(t),
-      o = r(e, "tr"),
-      i = o.length > 0 ? r(o[0], "td") : [];
-    0 == i.length && (i = r(o[0], "th"));
-    for (var u = 1; u < o.length; ++u) {
-      var a = r(o[u], "td");
-      if (a.length != i.length) return
-    }
-    x(e, i)
-  }
-}(document);
-document.addEventListener("DOMContentLoaded", function(n) {
-  TgTableSort("tg-9CgGi")
-});
-</script>
-  
-</body>
+<!-- Footer -->
 <python addFooter>
 </html>
-<style>
-  h1,h2,h3,h4{
-    font-style: italic;
-    font-weight: 100;
-  }
-</style>

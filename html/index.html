@@ -39,7 +39,7 @@
 
               </div>
               <div class="col-lg-9 col-md-9 col-sm-12 lead" style="padding-right:0px;">
-                <h2 class="display-4">Maarten Sap</h2>
+                <h1 class="display-4">Maarten Sap</h1>
                 <p>
                 I am an assistant professor at <a href="https://www.lti.cs.cmu.edu/" target="_blank">CMU's LTI</a> department with a courtesy appointment in <a href="https://hcii.cmu.edu/">HCII</a>, and a part-time research scientist and AI safety lead at the <a href="https://allenai.org" target="_blank">Allen Institute for AI (AI2)</a>.
                 My research focuses on measuring and improving AI systems' <strong>social and interactional intelligence</strong>, and understanding <strong>social inequality, safety, and bias</strong> in human- or AI-generated language.
@@ -49,7 +49,7 @@
                   I received my PhD from the University of Washington where I was advised by 
                   <a target="_blank" href="https://homes.cs.washington.edu/~nasmith/">Noah Smith</a> and 
                   <a target="_blank" href="https://homes.cs.washington.edu/~yejin/">Yejin Choi</a>, and have interned at AI2 working on social commonsense reasoning, and at Microsoft Research working on deep learning models for understanding human cognition.
-                  <br><a href="bio.html" style="font-size: .95rem;">[bio for talks]</a>
+                  <br><a href="aboutme.html" style="font-size: .95rem;">[bio for talks]</a>
                 </p>
                 
                 <!--p
@@ -190,10 +190,13 @@
         <div class="row">
           <div class="col-12">
             <h2>Overarching Research Themes</h2>
+			<em>Themes extracted and images generated with the OpenAI API; there may be inconsistencies.</em>
           </div>
-		  <div class="col-12" id="content">
-<python createResearchThemes>
-	      </div>
+		  <python createResearchThemesWithImages>
+		  	  
+		  <!--div class="col-12 markdown">
+			<pythoncreateResearchThemes>
+	      </div-->
           <!--div class="row col-12 text-center">
             <div class="col-12 col-sm-12">
               <div class="card" style="border: solid #1b9e77">
@@ -351,8 +354,7 @@
 <python addFooter>
 </html>
 <script>
-  document.getElementById('content').innerHTML =
-    marked.parse(document.getElementById('content').innerHTML);
+  $(".markdown").each(function (i,e){e.innerHTML = marked.parse(e.innerHTML)})
 </script>
 <style>
 .card {
@@ -366,6 +368,7 @@
   max-width: 300px;
   height: 100%;
   width: 100%;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
 }
 .card-img-top {
   max-height: 170px;
@@ -383,5 +386,17 @@
 }
 .no-border{
   border: none;
+}
+.theme-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
+}
+h2,h3,h4,h5 {
+	font-weight: 200;
+	margin-top: .5em;
+	font-style: italic;
 }
 </style>

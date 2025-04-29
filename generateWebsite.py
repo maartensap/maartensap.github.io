@@ -434,7 +434,122 @@ def comparePubs(p1,p2):
   if p1 is None or p2 is None: return False
   
   return flattenPubs(p1) == flattenPubs(p2)
+
+def generateImagesForThemes(themes,client,model="dall-e-3"):
+  prompt = "Take this description of a research theme and generate a very detailed caption for a simple clipart / graphic / abstract style drawing or image that depicts the main point of the theme. Do not suggest image captions that have text in them. Respond with only the caption, no formatting or bullets or anything.\n"
   
+  imagePrompts = {}
+  for i, (t, d) in enumerate(themes.items()):
+    chat_completion = client.chat.completions.create(
+      model="gpt-4o-mini",
+      messages=[{"role": "user", "content": prompt+d}]
+    )
+    caption = chat_completion.choices[0].message.content
+    imagePrompts[t] = caption
+
+    result = client.images.generate(
+      # model="gpt-image-1",
+      model=model,#"dall-e-3",
+      prompt=caption,
+      n=1,
+      size="1024x1024",
+      response_format="b64_json"
+    )
+    
+    image_base64 = result.data[0].b64_json
+    image_bytes = base64.b64decode(image_base64)
+    
+    # Save the image to a file
+    with open(f"images/themes/theme{i}.png", "wb") as f:
+      f.write(image_bytes)
+
+def outputThemesAndImages2HTML(themes,img_dir):
+  formatting = '<div class="col-2"></div><div class="col-10><h4>{t}</h4></div>\n'
+  formatting+= '<div class="col-2"><img class="theme-img" src="{i}"></div>\n'
+  formatting+= '<div class="col-10 markdown">\n{d}</div>\n'
+  # formatting+= '<div class="col-3"><img class="theme-img" src="{i}"></div>\n'
+  # formatting+= '<div class="col-9 markdown">\n#### *{t}*\n\n{d}</div>\n'
+
+  out = ""
+  
+  for i, (t, d) in enumerate(themes.items()):
+    out+=formatting.format(d=d,t=t,i=os.path.join(img_dir,f"theme{i}.png"))
+    
+  return out
+
+  
+      
+def createResearchThemesWithImages(silent=False,year_window=3,no_gpt_themes=False,**kwargs):
+  """Uses GPT-4 to generate research themes"""
+  themes, oldPubs = loadResearchThemes()
+  
+  pubs = loadPubs()
+  
+  if not no_gpt_themes and not comparePubs(oldPubs,pubs):
+    print("Recreating themes with GPT-4")
+  
+    recentPubs = [p.copy() for p in pubs if
+                  int(p["year"]) >= datetime.date.today().year-year_window
+                  and p["entryType"] != "thesis"]
+    tags2papers = {}
+    for p in recentPubs:
+      tags = [t.strip() for t in p["tags"].split(",")]
+      p["important"] = ("Sap, Maarten" in " and ".join(p["author"].split(" and ")[-2:])) or ("Sap, Maarten" in " and ".join(p["author"].split(" and ")[:2]))
+
+      for t in tags:
+        l = tags2papers.get(t,[])
+        l.append(p.copy())
+        tags2papers[t] = l
+        
+    tags2titles = {t: [(p["title"],p["important"],p.get("url","")) for p in ps] for t,ps in tags2papers.items()}
+
+    client = OpenAI(api_key=openai_api_key)
+
+    prompt = """Given the following recent research papers and their general tags, please generate a summary of ongoing research.  Each theme should correspond to a tag, but please name the theme something more descriptive. There should be 4-5 themes.
+
+    Please phrase theme desciptions as "My research group explores ..." and theme names in 3-5 words. 
+    Write 4-5 sentences per theme, starting with an overview sentence, and then some sentences about important papers.
+    Mention two or three papers in each description but only mention ones marked as IMPORTANT, and link them in markdown format.
+
+    Make sure one theme is around ethics, responsible AI, and human-centered AI.
+    Also, make sure one theme is around narrative analyses or stories.
+    Also, make sure there is one theme around AI agents, social intelligence, or social simulations.
+    For other themes, base them on papers.
+
+    Important, DO NOT mention the same paper for each theme. Each important paper may only be used for one theme.
+
+    Paper titles and tags:
+    """
+
+    for t, titles in tags2titles.items():
+      prompt = prompt+"""Tag: {tag}
+  {ts}\n""".format(tag=t,ts="\n".join([("IMPORTANT -- " if i else "")+t+" "+u for t,i, u in titles]))
+
+    prompt += "\nPlease format the output in json {'theme name': 'description'}"
+
+    chat_completion = client.chat.completions.create(
+      model="gpt-4o-mini",
+      messages=[{"role": "user", "content": prompt}],
+      response_format={ "type": "json_object"}
+    )
+
+    themes = json.loads(chat_completion.choices[0].message.content)
+    cacheResearchThemes((themes,pubs))
+    
+    # generate images
+    generateImagesForThemes(themes,client,model="gpt-image-1")
+  
+  # output themes into HTML
+  prettyThemes = outputThemesAndImages2HTML(themes,"images/themes/")
+    
+  # prettyThemes = "*Extracted by GPT-4, there may be inconsistencies.*\n\n"
+  # prettyThemes += "\n".join([f"#### *{t}*\n{desc}\n" for t,desc in themes.items()])
+  # print(prettyThemes)
+  
+  # embed();exit()
+  
+  return prettyThemes
+
 def createResearchThemes(silent=False,year_window=3,no_gpt_themes=False,**kwargs):
   """Uses GPT-4 to generate research themes"""
   themes, oldPubs = loadResearchThemes()
