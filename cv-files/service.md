@@ -2,6 +2,7 @@
 
 |                                                              |                    |              |
 | ------------------------------------------------------------ | ------------------ | -----------: |
+| [Agent Workshop @ CMU](https://cmu-agent-workshop.github.io/) | co-organizer       |  Spring 2025 |
 | [Socially Responsible Language Modelling Research (SoLaR)](https://solar-neurips.github.io/) | co-organizer       | NeurIPS 2024 |
 | [Pluralistic Alignment](https://pluralistic-alignment.github.io/) | co-organizer       | NeurIPS 2024 |
 | [Multimodal Content Moderation Workshop](https://multimodal-content-moderation.github.io/) | co-organizer       |    CVPR 2024 |
