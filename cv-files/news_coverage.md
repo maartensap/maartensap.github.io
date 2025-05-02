@@ -1,4 +1,9 @@
+##### [AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents](websiteRoot/publications.html#su2025ailiedar) (2025)
+
+- [theregister.com](https://web.archive.org/web/20250502022235/https://www.theregister.com/2025/05/01/ai_models_lie_research/)
+
 ##### [NLPositionality: Characterizing Design Biases of Datasets and Models](websiteRoot/publications.html#santy2023NLPositionality) (2023)
+
 - [marktechpost.com](https://web.archive.org/web/20230717174128/https://www.marktechpost.com/2023/07/14/a-research-group-from-cmu-ai2-and-university-of-washington-introduces-nlpositionality-an-ai-framework-for-characterizing-design-biases-and-quantifying-the-positionality-of-nlp-datasets-and-models/)
 
 ##### [ProsocialDialog: A Prosocial Backbone for Conversational Agents](websiteRoot/publications.html#kim2022prosocialDialog) (2022)
