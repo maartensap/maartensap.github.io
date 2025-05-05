@@ -1,6 +1,7 @@
 ##### [AI-LieDar: Examine the Trade-off Between Utility and Truthfulness in LLM Agents](websiteRoot/publications.html#su2025ailiedar) (2025)
 
 - [theregister.com](https://web.archive.org/web/20250502022235/https://www.theregister.com/2025/05/01/ai_models_lie_research/)
+- [CNET.com](https://web.archive.org/web/20250503011903/https://www.cnet.com/tech/services-and-software/openai-yanked-a-chatgpt-update-heres-what-it-said-and-why-it-matters/)
 
 ##### [NLPositionality: Characterizing Design Biases of Datasets and Models](websiteRoot/publications.html#santy2023NLPositionality) (2023)
 
