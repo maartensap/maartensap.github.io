@@ -3,6 +3,10 @@
 - [theregister.com](https://web.archive.org/web/20250502022235/https://www.theregister.com/2025/05/01/ai_models_lie_research/)
 - [CNET.com](https://web.archive.org/web/20250503011903/https://www.cnet.com/tech/services-and-software/openai-yanked-a-chatgpt-update-heres-what-it-said-and-why-it-matters/)
 
+##### [Rejected Dialects: Biases Against African American Language in Reward Models](websiteRoot/publications.html#mire2025rejectedDialects) (2025)
+
+- [IBM.com](https://perma.cc/YMZ4-2NAM)
+
 ##### [NLPositionality: Characterizing Design Biases of Datasets and Models](websiteRoot/publications.html#santy2023NLPositionality) (2023)
 
 - [marktechpost.com](https://web.archive.org/web/20230717174128/https://www.marktechpost.com/2023/07/14/a-research-group-from-cmu-ai2-and-university-of-washington-introduces-nlpositionality-an-ai-framework-for-characterizing-design-biases-and-quantifying-the-positionality-of-nlp-datasets-and-models/)
